@@ -1,0 +1,1043 @@
+\documentclass[a4paper,dvipdfmx,reqno,12pt]{amsart}
+%\documentclass[a4paper,reqno,12pt]{amsart}%for arxiv
+\synctex=1
+%
+%%%% packages
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathtools,thmtools}
+%\usepackage{pgf,pgfplots}
+%\usepackage{tikz}
+%\pgfplotsset{compat=1.15}
+%\usetikzlibrary{arrows}
+\usepackage{tikz-cd}%
+%\usetikzlibrary{cd}
+%\usetikzlibrary{calc}
+
+\usepackage{graphicx,color}%for images
+\usepackage{bm}%fonts
+\usepackage{amsmath,amsthm,amstext,amsfonts,amsbsy}%
+\usepackage{amssymb}
+\usepackage{latexsym}%
+%\usepackage{algpseudocode,algorithm}%
+\usepackage{todonotes}%comments
+\usepackage[margin=3cm]{geometry}
+\usepackage{layout}
+\usepackage[T1]{fontenc}%font encoding
+\usepackage{physics}
+\usepackage{braket}%after physics
+
+% \usepackage{imakeidx}%before hyperref for pagebackref
+\usepackage[pagebackref]{hyperref}
+\usepackage[capitalize]{cleveref}
+\hypersetup{
+     colorlinks = true,
+     citecolor  = blue,
+     linkcolor  = blue, 
+     urlcolor   = blue, 
+}
+%\usepackage{pxjahyper}%for hyperref in Japanese
+\usepackage{bookmark}
+
+\usepackage{fancyhdr}
+\pagestyle{plain}
+\setlength{\footskip}{30pt}
+
+%%%%
+
+
+%%%% theoremstyle
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{definition*}{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem*{example*}{Example}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{note}[theorem]{Note}
+\newtheorem*{note*}{Note}
+\newtheorem{notice}[theorem]{Notice}
+\newtheorem*{notice*}{Notice}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+\newtheorem{question}[theorem]{Question}
+\newtheorem*{question*}{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{conjecture*}{Conjecture}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem*{notation*}{Notation}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{remark*}{Remark}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem*{condition*}{Condition}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem*{convention*}{Convention}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem*{observation*}{Observation}
+%%%% newcommand
+
+%%%logic symbol
+\newcommand{\deq}{\coloneqq}
+
+\newcommand{\dbraket}[1]{\hspace{-1.5pt}\braket{\hspace{-2.2pt}\braket{#1}\hspace{-2.2pt}}}
+
+\newcommand{\textcmd}[1]{\texttt{\symbol{"5C}#1}}
+
+%%special sets
+\newcommand{\emp}{\varnothing}%emptyset
+\newcommand{\C}{\mathbb{C}}%complex number
+\newcommand{\Ha}{\mathbb{H}}%quaternion
+\newcommand{\F}{\mathbb{F}}%field
+\newcommand{\R}{\mathbb{R}}%real number
+\newcommand{\Q}{\mathbb{Q}}%rational number
+\newcommand{\Z}{\mathbb{Z}}%integer
+\newcommand{\N}{\mathbb{N}_{0}}%natural number
+\newcommand{\Pj}{\mathbb{P}}%bold p
+\newcommand{\vep}{\varepsilon}%varepsilon
+
+%%%%
+
+\newcommand{\mb}[1]{\mathbb{#1}}%blackboard bold (for math mode)
+\newcommand{\mcal}[1]{\mathcal{#1}}%
+
+\newcommand{\opn}[1]{\operatorname{#1}}
+\newcommand{\catn}[1]{\mathbf{#1}}
+
+\newcommand{\abk}[1]{\langle {#1} \rangle}%angle bracket 
+\newcommand{\Abk}[1]{\left \langle {#1} \right \rangle}%angle bracket (auto sizing)
+\newcommand{\dabk}[1]{\langle\! \langle {#1}\rangle \! \rangle}%double angle bracket
+\newcommand{\Dabk}[1]{\left \langle \! \left \langle {#1} \right \rangle \! \right \rangle}%double angle bracket
+\newcommand{\Sbk}[1]{\left[ {#1} ]\right }% square bracket [] (auto sizing)
+\newcommand{\Cbk}[1]{\left \{ {#1}\right \}}% curly bracket {} (auto sizing)
+\newcommand{\dcbk}[1]{\{\!\!\{ {#1}\}\!\!\}} % double curly bracket {{}} 
+\newcommand{\Dcbk}[1]{\left \{\!\! \left \{ {#1} \right\} \!\!\right \}} % double curly bracket {{}} (auto sizing)
+\newcommand{\Paren}[1]{\left ( {#1} \right )}%parenthesis () (auto sizing)
+\newcommand{\dparen}[1]{(\!({#1})\!)}%double parenthesis
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\xgets}[1]{\xleftarrow{#1}}
+\newcommand{\hookto}{\hookrightarrow}
+
+
+%%%% 
+
+% %%%% mathabx.sty (font) 
+% \DeclareFontFamily{U}{matha}{\hyphenchar\font45}
+% \DeclareFontShape{U}{matha}{m}{n}{
+%       <5> <6> <7> <8> <9> <10> gen * matha
+%       <10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
+%       }{}
+% \DeclareSymbolFont{matha}{U}{matha}{m}{n}
+
+% \DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
+% \DeclareFontShape{U}{mathb}{m}{n}{
+%       <5> <6> <7> <8> <9> <10> gen * mathb
+%       <10.95> mathb10 <12> <14.4> <17.28> <20.74> <24.88> mathb12
+%       }{}
+% \DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
+
+% \DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+% \DeclareFontShape{U}{mathx}{m}{n}{
+%       <5> <6> <7> <8> <9> <10>
+%       <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+%       mathx10
+%       }{}
+% \DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+
+% %DeclareMathSymbol (from mathabx.sty)
+% \DeclareMathSymbol{\bigboxslash}{\mathop}{mathx}{"FE}
+% \DeclareMathSymbol{\bigboxtimes}{\mathop}{mathx}{"D2}
+% %%%%
+
+% %%%% MnSymbol.sty (font)
+% \DeclareFontFamily{U}{MnSymbolC}{}
+% \DeclareFontShape{U}{MnSymbolC}{m}{n}{
+%   <-6> MnSymbolC5
+%   <6-7> MnSymbolC6
+%   <7-8> MnSymbolC7
+%   <8-9> MnSymbolC8
+%   <9-10> MnSymbolC9
+%   <10-12> MnSymbolC10
+%   <12-> MnSymbolC12}{}
+% \DeclareFontShape{U}{MnSymbolC}{b}{n}{
+%   <-6> MnSymbolA-Bold5
+%   <6-7> MnSymbolC-Bold6
+%   <7-8> MnSymbolC-Bold7
+%   <8-9> MnSymbolC-Bold8
+%   <9-10> MnSymbolC-Bold9
+%   <10-12> MnSymbolC-Bold10
+%   <12-> MnSymbolC-Bold12}{}
+
+% \DeclareSymbolFont{MnSyC}{U}{MnSymbolC}{m}{n}
+
+% %%%% DeclareMathSymbol (from MnSymbol.sty)
+
+% \DeclareMathSymbol{\tplus}{\mathbin}{MnSyC}{43}
+% \DeclareMathSymbol{\aplus}{\mathbin}{MnSyC}{190}
+
+%%%% renewcommand
+
+
+
+
+%%%% footnote
+
+\newcommand{\myfootnote}[1]{\hspace{-5pt}\footnote{#1}}
+
+\newcommand{\TB}{\mcal{T}_{B}}
+\newcommand{\TBZ}{\mcal{T}_{\Z,B}}
+\newcommand{\AffS}{{\mathop{\mcal{A}\!f\!\!f\!}\nolimits}}
+\newcommand{\simto}{ 
+\mathrel{\raisebox{0.13em}{${\sim}$}}
+\kern -0.75em \mathrel{\raisebox{-0.11em}{${\scriptstyle \to}$}}  
+}
+%%%%  
+
+%%%% 
+
+\renewcommand*{\backrefalt}[4]{%
+\ifcase #1 %
+\or        [Cited on p.#2.]%
+\else      [Cited on pp.#2.]%
+\fi}
+
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\CDiv}{Div^{\infty}}
+\DeclareMathOperator{\fuk}{fuk}
+\DeclareMathOperator{\coh}{coh}
+\DeclareMathOperator{\reg}{gen}
+\DeclareMathOperator{\tform}{\Omega}
+\DeclareMathOperator{\mform}{\mathcal{F}}
+
+\crefname{equation}{}{}
+\crefname{conjecture}{Conjecture}{Conjectures}
+
+\usepackage{mathrsfs}
+\usepackage{upgreek}
+\numberwithin{equation}{section}
+\title{トロピカル多様体の超曲面の補空間と Riemann--Roch 数}
+\author[Y. Tsutsui]{Yuki Tsutsui}
+\address{Graduate School of Mathematical Sciences,
+The University of Tokyo, 3-8-1 Komaba, Meguro-Ku,
+Tokyo, 153-8914, Japan}
+\email{tyuki@ms.u-tokyo.ac.jp}
+%\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\cite{demedrano2023chern}の理論によって
+トロピカル多様体の Todd類 が定義可能となった。
+特に、
+コンパクトトロピカル多様体$X$上の因子$D$ の
+Rimmann--Roch 数 $\opn{RR}(X;D)$ が
+次のように定義できるようになった。
+
+\begin{align}
+     \opn{RR}(X;D)\deq \int_{X}\opn{ch}(D)\opn{td}(X).
+\end{align}
+
+古典的には、この Rimmann--Roch 数は $\opn{RR}(X;D)$
+は$D$の定義する可逆層の Euler 数と対応する。
+しかし、トロピカル幾何では、
+可逆層とくに構造層は Abel 群のなす層では
+ないため、可逆層の層コホモロジーの Euler 数と
+Rimmann--Roch 数を比較することができない。
+いづれにせよ、
+$\opn{RR}(X;D)$ がトロピカル幾何的にどういう意味を持った
+量であるのかということの理解は、トロピカル幾何における
+Riemann--Roch の定理の定式化および解釈を与えるうえで
+重要な話題であるといえる。
+
+少なくとも$\opn{RR}(X;0)$の幾何学的な意味は、
+専門家の間で共通の認識が存在し、
+\cite[Conjecture 6.13]{demedrano2023chern}
+では、$\opn{RR}(X;0)=\chi_{\opn{top}}(X)$となると
+予想されており、
+$X$ が Delzant face 構造を持つトロピカル曲面の場合
+において\cite[Theorem 6.3]{demedrano2023chern}にて
+証明された。なお Delzant face 構造を持つという
+条件は、十分に広い範囲のトロピカル曲面で成立している
+\cite[Corollary 6.11]{demedrano2023chern}。
+
+なお、$\chi_{\opn{top}}(X)$が代数多様体上の構造層の
+コホモロジーの Euler 数のトロピカル幾何的な類似であるべき
+であることは、古くから期待されており、
+\cite[Corollary 2]{MR3961331}
+などで実際に対応していることが示されている。
+本論文では $\opn{RR}(X;D)$ のトロピカル幾何学的な
+意味について考察することが主目的である。
+
+--------イントロには要らないかも(はじまり)
+
+筆者は\cite{tsutsui2023graded}にて、
+ミラー対称性と超局所層理論のアイデアから
+コンパクトトロピカル多様体上の
+直線束を表現する$C^{\infty}$因子に対して
+次数付き加群を定義し、それが Riemann--Roch 数と
+一致するという予想\cite[Conjecture 1.2]{tsutsui2023graded}を
+提案し、トロピカル多様体がトロピカル曲線や Hesse 計量を
+許容する整アフィン多様体に対して成立することを示した。
+$C^{\infty}$因子のコホモロジカル
+局所 Morse データはSYZ変換のトロピカル類似によって
+古典的な複素直線束の Riemann--Roch 数
+と関連付けることができると期待している。
+さらに、理想的には$C^{\infty}$-因子に対して
+Floer コホモロジーが定義されると期待している。
+
+---------イントロには要らないかも(おわり)
+
+本文書では、前述の組み合わせ版を考察する。
+特に本文書では、トロピカル曲面の場合が中心的な
+話題であるが、これらの内容は高次元に一般化できると
+期待している。
+
+まず、代数幾何的な基本事項を整理する。
+$X$を非特異射影多様体とし、$D$をその非特異因子とし、
+$\iota\colon D\to X$を自然な閉埋め込みとする。
+このとき、次の層短完全列が存在する。
+\begin{align}
+     0\to \mathcal{O}_X(-D)\to 
+\mathcal{O}_X\to \iota_*\mathcal{O}_D\to 0
+\end{align}
+これより、次の等式が成り立つ。
+\begin{align}
+\chi(X;\mathcal{O}_X(-D))=\chi(X;\mathcal{O}_X)
+-\chi(D;\mathcal{O}_D)
+\end{align}
+
+次の予想は、以上の事実を踏まえるとごく自然であり,
+広く信じられていると思われる。
+
+\begin{conjecture}[{Folklore?}]
+\label{conjecture-rr-c-euler}
+$X$ をコンパクトトロピカル多様体とし、$D$を余次元$1$
+のコンパクト
+トロピカル部分多様体(tropical submanifold)とする
+\cite[Definition 2.14]{demedrano2023chern}。
+このとき、次の等式が成り立つ。
+\begin{align}
+\opn{RR}(X;-D)=
+\chi_c (X\setminus D) (=\chi_c (X)-\chi_c(D))
+\end{align}
+ここで$\chi_c(X)$とは、$X$のコンパクト台のコホモロジーの
+Euler 数である。
+
+\end{conjecture}
+
+\begin{example}
+$\dim X=1$ のときは、
+\cref{conjecture-rr-c-euler}は自明である。
+
+次に、$\dim X=2$かつ、$\opn{RR}(X;0)=\chi_{\opn{top}}(X)$
+が成り立っていると仮定する。
+
+\begin{align}
+\opn{RR}(X;-D)=\frac{(-D-K_X)(-D)}{2}+\opn{RR}(X;0)
+=\frac{(D+K_X)D}{2}+\chi_{\opn{top}}(X)
+\end{align}
+となるため、トロピカル曲線の随伴公式
+(\cite[Theorem 6]{shaw2015tropical}と
+\cite[Theorem 5.2]{demedrano2023chern}を参照)より、
+同様に \cref{conjecture-rr-c-euler}は直ちに成立する。
+\end{example}
+本論文の主役は、$\opn{RR}(X;-D)$の双対である
+$\opn{RR}(X;D)$の幾何学的意味を与える次の予想である。
+(こちらも、\cref{conjecture-rr-c-euler}と
+同様に他の研究者も予想していると思われるが、より非自明である。)
+\begin{conjecture}
+\label{conjecture-rr-euler}
+$X$ をコンパクトトロピカル多様体とし、$D$を余次元$1$
+のコンパクト
+トロピカル部分多様体(tropical submanifold)とする
+\cite[Definition 2.14]{demedrano2023chern}。
+$D$が$X$上の可容な配置
+(\cref{definition-permissible-position})にあるとき、次が成り立つ。
+\begin{align}
+\opn{RR}(X;D)=\chi_{\opn{top}}(X\setminus D)
+\end{align}
+\end{conjecture}
+
+可容な配置の条件は、十分に一般的なトロピカル部分多様体に対して
+成立する条件である一方で、満たさないものも簡単に作れる条件である。
+(\cref{example-permissible-point}などを参照。)
+
+本論文の主定理の一つは次のようになる。
+証明は難しくない。
+\begin{theorem}[{Main theorem}]
+$X$ をコンパクトトロピカル曲面とし、
+$D$を可容な位置にある
+余次元 $1$ のコンパクトトロピカル部分多様体
+\begin{align}
+\chi_{\opn{top}}(X\setminus D)=\frac{(D-K_X)D}{2}+
+\chi_{\opn{top}}(X)
+\end{align}
+特に、$X$ が Noether の公式を満たすとき、
+\cref{conjecture-rr-euler}は正しい。
+\end{theorem}
+
+また、Main theorem はいくつかの拡張を行う。
+
+\begin{example}
+\label{example-permissible-point}
+$C$をトロピカル曲線とする。点$p$が可容な(permissible)位置にあることは、
+$p\in C_{\opn{reg}}$ であることと同値である。
+当然、有限個の点集合の場合に一般化できる。
+簡単な計算から、可容な位置にある部分トロピカル多様体
+$D$に対して、
+\begin{align}
+\opn{RR}(C;D)=\sharp (\opn{supp}(D))+ \chi_{\opn{top}}(C)
+=\chi_{\opn{top}}(C\setminus D)
+\end{align}
+
+\end{example}
+
+\begin{example}[{トロピカル射影空間}]
+
+$\mathbb{T}P^{n}$ をトロピカル射影空間とし、
+$F$を$d\Delta_{n}$をNewton多面体とするトロピカル
+多項式とする。トロピカル超曲面 
+$V_{\mathbb{T}}(F)$ が滑らかとは、$F$ が定義する正則
+多面体分割が、unimodularな三角形分割になることであった。
+(例えば、\cite[\textsection 4.5]{MR3287221} を
+参照。)
+このとき、
+$\mathbb{T}P^{n}\setminus
+V_{\mathbb{T}}(F)$の各連結成分が$d\Delta_n$内の格子点集合と
+全単射になっていることは有名である
+(例えば、\cite[Proposition 3.1.6]{MR3287221})。各連結成分は、
+$\mathbb{T}P^{n}$内の凸多面体であるため、位相空間的には
+すべて可縮である。また、
+トーリック多様体における Chern 類の表現と
+CSM サイクルによる Chern 類の定義は整合的である
+\cite[Proposition 13.1.2]{MR2810322}。
+よって、Todd類も同等のものとなる
+(\cite[Theorem 13.1.6]{MR2810322} を参照)。よって、
+$c_1(V_{\mathbb{T}}(F))=d\in H^{1,1}(\mathbb{T}P^{n};
+\mathbb{Z})
+\simeq \mathbb{Z}$であることから次の等式が得られる。
+\begin{align}
+\opn{RR}(\mathbb{T}P^{n};V_{\mathbb{T}}(F))=
+\sharp d\Delta_n(\mathbb{Z})=
+\chi_{\mathrm{top}}(\mathbb{T}P^{n}\setminus
+V_{\mathbb{T}}(F))
+\end{align}
+なお、同様にして次の等式も得られる。
+\begin{align}
+\opn{RR}(\mathbb{T}P^{n};-V_{\mathbb{T}}(F))=
+(-1)^{n}\sharp \opn{int}(d\Delta_n(\mathbb{Z}))=
+\chi_{c}(\mathbb{T}P^{n}\setminus
+V_{\mathbb{T}}(F))   
+\end{align}
+二番目の等式は、
+$\chi_{c}(\mathbb{T}P^{n}\setminus
+V_{\mathbb{T}}(F))=1-\chi_{\opn{top}}(V_{\mathbb{T}}(F))$
+と$V_{\mathbb{T}}(F)$が、$(n-1)$次元球面
+$S^{n-1}$ 
+の$\sharp \opn{int}(d\Delta_n(\mathbb{Z}))$
+個の wedge 和とホモトピー同値であることから従う。
+\end{example}
+
+\begin{remark}[{特異点つき整アフィン多様体の場合}]
+この Remark の説明は、少々ヒューリスティックなものであるが、
+理解の助けとなるため記述した。
+$B$ を(境界をもたない)特異点つき整アフィン多様体とする。
+$B$ の因子の定義は一般には定義されているわけではないが、
+少なくとも$B$のある真の閉部分集合$D$
+として定義されると期待される。
+このとき、$B\setminus D$は位相多様体なので
+Poincar\'e 双対性より、
+\begin{align}
+\label{equation-p-dual}
+\chi_{\mathrm{top}}(B\setminus D)=(-1)^{\dim B}
+\chi_c(B\setminus D)
+\end{align}
+
+一般に(境界を持たない)向き付け可能な
+特異点つき整アフィン多様体は、Calabi--Yau 多様体
+$X$の類似物と考えられている。
+Calabi--Yau 多様体の標準束は自明なので
+Serre 双対性を考えると任意の因子$D$に対して
+\begin{align}
+\chi(X;\mathcal{O}_X(D))=(-1)^{\dim X}
+\chi(X;\mathcal{O}_{X}(-D))
+\end{align}
+となる。
+よって、もし \cref{conjecture-rr-c-euler}
+および \cref{conjecture-rr-euler} が特異点つき整アフィン多様体に対して
+成立するとき、
+\cref{equation-p-dual}の性質は非常にもっともらしく見える。
+\end{remark}
+
+もう少しだけ踏み込んだ話をする。
+トロピカル多様体$X$の
+余次元$1$のトロピカル部分多様体$D$
+$\opn{RR}(X;D)$の幾何学的な意味を与えると、
+次のようなもう少し一般的な因子に対しても
+幾何学的な意味を与えることができると期待できる。
+以下よりそれを説明する。
+
+$X$を非特異射影多様体とし、$D$を非特異因子とし、
+$\iota\colon D\to X$ を埋め込み写像とする。
+任意の因子 $D'$に対して次の短完全列が得られる。
+\begin{align}
+0 \to \mathcal{O}_X(D'-D)\to \mathcal{O}_X(D')
+\to \mathcal{O}_X(D')
+\otimes_{\mathcal{O}_X} \iota_*\mathcal{O}_D \to 0 
+\end{align}
+
+一方で局所自由層の射影公式より、
+\begin{align}
+\chi(X;\mathcal{O}_X(D')\otimes_{\mathcal{O}_X} \iota_*\mathcal{O}_D)
+=\chi(X;\iota_*(\iota^{*}\mathcal{O}_X(D')\otimes_{\mathcal{O}_D} \mathcal{O}_D))
+=\chi(D;\iota^{*}\mathcal{O}_X(D'))
+\end{align}
+となり、$D'$が非特異因子で$D\cap D'$もまた$D$の非特異因子
+になるならば、有効因子の引き戻しの性質として次のように
+書き直せる。
+\begin{align}
+\chi(D;\iota^{*}\mathcal{O}_X(D'))=\chi(D;\mathcal{O}_D(D'\cap D))
+\end{align}
+
+上述の条件を満たす $D,D'$ への条件は厳しいように見えるが
+Bertiniの定理の応用から射影多様体の任意の因子$D_0$に対して
+$D_0=D'-D$かつ
+$D,D',D\cap D'$ が非特異部分多様体になるように$D,D'$
+を選ぶことができる。
+そして、以上の仮定の下では次の等式が成り立つ。
+\begin{align}
+\chi(X;\mathcal{O}_X(D'-D))=
+\chi(X;\mathcal{O}_X(D'))-
+\chi(D;\mathcal{O}_D(D'\cap D))
+\end{align}
+
+当然ではあるが、Grothendieck--Riemann--Rochの定理からも
+同様の公式が導出される。これと補集合に関する前述の予想を融合させると
+次のことも期待できる。
+本文書ではこの予想についても、
+Noetherの公式を満たすトロピカル曲面の場合において示す。
+\begin{conjecture}
+\label{conjecture-rr-bertini}
+$X$をコンパクトトロピカル多様体とし, 
+$D,D'$を余次元$1$のトロピカル部分多様体または
+空集合とする。
+$D'$が$X$上可容な位置にあるとし、
+$D\cap D'$が$D$の余次元$1$のトロピカル部分多様体または
+空集合であり、$D\cap D'$ が$D$上可容な位置にあると仮定する。
+このとき、次の等式が成り立つ。
+\begin{align}
+\opn{RR}(X;D'-D)=\chi_{\opn{top}}(X\setminus D')-
+\chi_{\opn{top}}(D\setminus (D'\cap D))
+\end{align}
+
+\end{conjecture}
+
+\begin{remark}
+$D,D'$が空集合のとき、
+\cref{conjecture-rr-bertini}は、
+\cite[Conjecture 6.13]{demedrano2023chern}
+と同等である。また、$D'$が空集合で$D$が空ではないとき、
+\cref{conjecture-rr-bertini}は、
+\cref{conjecture-rr-c-euler}と同等であり、
+$D$が空集合で$D'$が空ではないとき、
+\cref{conjecture-rr-bertini}は、
+\cref{conjecture-rr-euler}と同等である。
+よって\cref{conjecture-rr-bertini}は上述の
+三つの予想を一般化したものとみなすことができる。
+\end{remark}
+
+\begin{conjecture}
+$X$をトロピカル射影空間の部分トロピカル多様体とする。
+このとき、任意の因子$D_0$に対して
+\cref{conjecture-rr-bertini}において課した
+条件をみたし、$D_0=D'-D$となる
+余次元$1$の部分トロピカル多様体の組
+$D,D'$が存在する。
+\end{conjecture}
+
+\begin{example}
+     
+\end{example}
+
+なお後述するが\cref{conjecture-rr-bertini}は、
+\cref{conjecture-rr-euler}とTodd類に関する
+満たすべき性質との組み合わせから帰結することが
+できる。
+
+右辺の量は随分具体的な量であるが、実は
+$D$も$X$上の可容な位置にあるとき、
+$C^{\infty}$因子の局所Morseデータと
+関連付けることが可能である。
+局所 Morse データ(の一般化論)を用いることで
+$\chi_c(X\setminus D)$ と
+$\chi_{\mathrm{top}}(X\setminus D)$
+は統一的に管理することができる。
+論文の最後にこのことを曲面の場合に説明する。
+
+\section{証明の準備}
+
+ここでは、本論文で必要な
+トロピカル多様体の基本事項を
+\cite{gross2019sheaftheoretic,demedrano2023chern}
+を参考に整理する。
+本論文の後半を記述する上での事情から、
+\cite{gross2019sheaftheoretic}による
+層理論的な定式化を主に採用することとする。
+また、本論文でのトロピカル多様体では
+finite typeに関する条件
+(e.g. \cite[Definition 7.1.14]{mikhalkin2018tropical} や
+\cite[Definition 2.3 (4)]{demedrano2023chern})
+は課さないこととする。トロピカル多様体がコンパクト
+なら finite type に関する条件は気にする必要はない。
+
+\cite{demedrano2023chern}に倣い、全体を被覆するチャートの集まり
+$\{(U_i,\psi_i)\}_{i\in I}$を
+$(X,\mathcal{O}_X^{\times})$のアトラスと呼ぶこととする。
+
+有理多面空間$(X,\mathcal{O}_X^{\times})$が
+\cite[Definition 6.1]{gross2019sheaftheoretic}の意味でトロピカル多様体
+であるとき、各チャート
+$\psi_i\colon U_i\to V_i(\subset \underline{\mathbb{R}}^{n_i})$
+の$V_i$が$L_M\times \underline{\mathbb{R}}^{r_i}$の開集合
+となるようなアトラス$\{(U_i,\psi_i)\}_{i\in I}$を
+取ることができる。
+
+\cite[Definition 2.14]{demedrano2023chern}
+に倣い、本文における部分有理多面空間
+(rational polyhedral subspace)
+の定義を以下にしておく。
+
+
+\begin{definition}
+
+$(X,\mathcal{O}_X^{\times})$ を有理多面空間とし,
+$Y$を部分空間とし, 
+$\mathcal{O}^{\times}_{Y}\deq 
+\opn{Im}(i^{-1}\mathcal{O}_X^{\times}\to \mathcal{C}_{Y}^{0})$
+とする。
+各点 $x\in Y$ に対して$X$のチャート
+$\psi\colon U\to V(\subset \mathbb{T}^{n})$
+の制限$\psi|_{U\cap Y}\colon U\cap Y\to 
+V\cap \psi(U\cap Y)(\subset \mathbb{T}^{n})$が
+$(Y,\mathcal{O}_Y^{\times})$のチャートとなるものが存在するとき、
+$(Y,\mathcal{O}_Y^{\times})$
+は、$(X,\mathcal{O}^{\times}_X)$
+の部分有理多面空間と呼ぶ。
+\end{definition}
+
+$X$が第二可算 Hausdorff なので
+$Y$もまた第二可算 Hausdorff である。
+よって、整合的なチャートが存在することさえ確認すればよい。
+
+$\psi_i|_{Y}\colon U_i\cap Y \to \psi_i(U_i\cap Y)(\subset 
+\underline{\mathbb{R}}^{n_i})$
+
+局所錐の包含射
+$\iota_{*,x}\colon \opn{LC}_x Y\to \opn{LC}_x X$
+が自然と誘導される。
+$\opn{LC}_x Y$は、
+
+\begin{definition}[{\cite[Definition 2.14]{demedrano2023chern}}]
+     
+\end{definition}
+
+\begin{remark}
+\cite[Example 2.15]{demedrano2023chern}でも強調されているように、
+トロピカル多様体の閉部分多面空間がトロピカル多様体だとしても
+トロピカル部分多様体であるとは限らない。
+典型例に Brugall\'e--Shaw による例が存在する。
+--------
+この埋め込みは、台集合を同じとするマトロイドに対する
+包含関係$L_M\subset L_N$に由来しない。
+
+この例について少し説明する。(なお、この例は
+()にて知った。)
+
+なお Vigeland の例も同様の性質を持つ。
+\end{remark}
+
+\begin{example}
+整アフィン多様体の部分トロピカル多様体に対応する概念が
+有理アファイン部分多様体として微分幾何に表れている。 
+\end{example}
+
+
+\begin{definition}[{可容配置}]
+\label{definition-permissible-position}
+$X$をトロピカル多様体とし、$Y$を$X$
+トロピカル部分多様体(tropical submanifold)とする。
+$Y$ が \emph{可容(permissible)} な配置にあるとは、
+任意の$x\in Y$に対して
+\begin{align}
+     \opn{lineal}(Y,x)\not \supset \opn{lineal}(X,x)
+\end{align}
+となることである。
+\end{definition}
+
+\begin{example}
+\begin{enumerate}
+\item $Y$が$X$上の可容な位置にあるとき、
+$Y$は$\opn{lineal}(X,x)$
+が自明となる点集合上には存在しない。
+\item $Y\cap X_{\mathrm{reg}}$ は、
+$X_{\mathrm{reg}}$ 上の可容な位置にある。
+特に $X$ が整アフィン多様体のとき、$Y$は
+常に可容な位置にある。
+\end{enumerate}
+
+\end{example}
+
+\begin{proposition}
+$X$ をコンパクトな整アフィン多様体とし、
+$D$ を余次元$1$のトロピカル部分多様体とする。
+このとき、\cref{conjecture-rr-c-euler}と
+\cref{conjecture-rr-euler}は同値である。
+\end{proposition}
+\begin{proof}
+定義より、$D$は常に$X$上の可容な位置にある。
+また、$\opn{td}(X)=1$なので、
+\begin{align}
+\opn{RR}(X;-D)=(-1)^{\dim X}\opn{RR}(X;D)
+\end{align}
+また、$X\setminus D$は位相多様体なので、Poincar\'e 双対性より
+\begin{align}
+\chi_c(X\setminus D)=(-1)^{\dim X}\chi_{\mathrm{top}}(X\setminus D)
+\end{align}
+が成り立つ。
+\end{proof}
+
+\begin{remark}
+     
+\end{remark}
+
+\begin{remark}
+$Y$が$X$の可容な位置にあるとき
+補集合 $X\setminus Y$ は、大抵 finite typeの条件を
+満たさない。
+\end{remark}
+
+トロピカル曲面上の各点の局所錐の構造は、
+\cite[Corollary 2.4]{shaw2015tropical}
+によって分類される。
+これを念頭に次の命題を解く。
+\begin{proposition}
+$S$をトロピカル曲面とし、$C$を$S$の部分トロピカル曲線とする。
+$C$が可容な位置にあるとき、次の等式が成り立つ。
+\begin{align}
+     C\cdot C=\sharp (C\cap S_{\mathrm{reg}})_{\mathrm{sing}}
+\end{align}
+\end{proposition}
+\begin{proof}
+$\opn{LC}_x C\subset \opn{LC}_x S$が、可容な位置にあるとき、
+$x$の近傍は$\Gamma_m\times \mathbb{R}$の
+$(m\geq 3)$の場合のみを考えればよい。
+このとき、$\Gamma_m$は任意の直線を部分集合として含まないため、
+$\dim \opn{lineal}(C,x)=0$である。
+また$\opn{LC}_x C\cap \opn{lineal}(S,x)=\{0\}$である。
+ゆえに$T_x C\cap \opn{lineal}(S,x)=\{0\}$である。
+さて、局所錐の包含写像は
+$\Gamma_{n}\subset \Gamma_m\times \mathbb{R}$
+で表現される。射影 $p\circ f\Gamma_n\to \Gamma_m$は単射となるが、
+バランス条件から$n=m$となる。
+包含写像を与える線形写像を考えると
+$p\circ f$はユニモジュラであることがわかる。
+\begin{align}
+C\cdot C=&\opn{deg}(K_C)-K_S\cdot C \\
+=& \sum_{p\in C_{\mathrm{sing}}}(\opn{val}(p)-2)
+- \sum_{p\in C_{\mathrm{sing}}\cap S_{\mathrm{sing}}}
+(\opn{val}(p)-2) \\
+=& \sharp (C\cap S_{\mathrm{reg}})_{\mathrm{sing}}
+\end{align}
+
+\end{proof}
+
+\begin{remark}
+     
+\end{remark}
+
+\begin{proof}[{Proof of }]
+     
+\end{proof}
+
+\section{その他の例}
+
+ここでは、トロピカル多様体のTodd類が
+満たすべき性質を持っている場合
+いくつかの初等的な例で予想が成立している
+ことを示す。
+トロピカル多様体の Chern 類は、ベクトル束の
+理論の直接的な類似として定義されていないため、
+現時点では多くのことはわかっていない。
+例えば、全 Chern 類に関する
+分裂原理(splitting principle)周りの
+議論のトロピカル類似がよくわかっていない。
+一方で乗法列\cite[\textsection 1]{MR1335917}の
+定義および
+形式的な議論のみで完了する内容はうまくいく
+部分がある。
+ここでは形式的な議論でうまくいく部分と
+Todd 類が持つべき性質を仮定した場合に、
+\cref{conjecture-rr-bertini} 
+が\cite[Conjecture 6.13]{demedrano2023chern}
+と\cref{conjecture-rr-euler} より
+帰結されることを見る。
+
+古典的には、複素多様体 $M$ 上の偶コホモロジー環
+$H^{\mathrm{even}}(M;\mathbb{Q})$
+と接束 $TM$の全 Chern 類 
+$c(TM)\deq \sum_{i=0}^{\infty}c_i(TM)\in 
+H^{\mathrm{even}}(X;\mathbb{Q})$
+に対して
+Todd $m$-列 $(\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
+を適用させることで Todd 類
+$\opn{td}(X)\deq \sum_{j=0}^{\infty}
+\opn{Todd}_j(c_1(TM),\ldots,c_j(TM))\in 
+H^{\mathrm{even}}(M;\mathbb{Q})$
+が定義されるのであった
+\cite[\textsection 10]{MR1335917}。
+
+上述の$H^{\mathrm{even}}(M;\mathbb{Q})$を
+$\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$
+に置き換えるだけで同様の議論ができる。
+
+トロピカル多様体$X$にも同様に
+$\opn{cyc}_k\colon Z_k(X)\to H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
+が存在する
+\cite{gross2019sheaftheoretic}。
+(\cite[Definition 4.13]{MR3894860}もみよ。)
+また、Poincar\'e 双対
+$\opn{PD}\colon H_{k,k}^{\opn{BM}}(X;\mathbb{Z})
+\to H_{n-k,n-k}^{\opn{BM}}(X;\mathbb{Z})$
+も存在する。
+
+\begin{notation}
+$X$ を$n$次元トロピカル多様体としたとき、
+$X$ の 第 $k$ Chern 類を次のように書く。 
+\begin{align}
+c_{k}^{\mathrm{sm}}(X)\deq
+\opn{PD}\circ \opn{cyc}_{n-k}(\opn{csm}_{n-k}(X))
+\end{align}
+なお、$c_{k}^{\mathrm{sm}}(X)$と書いたのは、
+因子類の Chern 類との混同を避けるためである。
+同様に$X$の全Chern類を
+$c^{\mathrm{sm}}(X)=\sum_{k=0}^{n} c_{k}^{\mathrm{sm}}(X)$
+とする。
+\end{notation}
+\cite{demedrano2023chern}に従いTodd類を次のように
+定義する。
+\begin{definition}[{\cite{demedrano2023chern}}]
+$X$をトロピカル多様体とする。
+第 $j$ 次 Todd 類を
+$\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$に
+関する Todd $m$-列 $\opn{Todd}\deq (\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
+に対して
+$X$ の全 Chern 類
+$c^{\mathrm{sm}}(X)$を代入することで得られるものとする。
+\begin{align}
+\opn{td}_j(X)\deq \opn{Todd}_j(c_{1}^{\mathrm{sm}}(X),
+\ldots,c_{j}^{\mathrm{sm}}(X)),
+\end{align}
+\begin{align}
+\opn{td}(X)\deq \sum_{j=0}^{\infty}\opn{td}_j(X)=
+\opn{Todd}(c^{\mathrm{sm}}(X)).
+\end{align}
+
+\end{definition}
+
+\begin{proposition}
+$X_1,X_2$ をトロピカル多様体とし、
+\begin{align}
+c^{\mathrm{sm}}(X_1\times X_2)=
+\pi^{*}_1(c^{\mathrm{sm}}(X_1))\cdot 
+\pi^{*}_2(c^{\mathrm{sm}}(X_2))
+\end{align}
+
+\end{proposition}
+
+\begin{proof}
+トロピカルサイクルと
+トロピカル
+Borel--Moore ホモロジーの
+クロス積の定義
+\cite[Definition 3.7, 
+Definition 4.15]{gross2019sheaftheoretic}
+とその整合性
+\cite[Proposition 5.9]{gross2019sheaftheoretic}
+および Poincar\'e 双対性より
+Chern--Schwartz--Macpherson cycleに関する
+次の等式を示せばよい。
+\begin{align}
+\opn{csm}_k(X_1\times X_2)=\sum_{i+j=k}
+\opn{csm}_{i}(X_1)\times \opn{csm}_{j}(X_2)
+\end{align}
+これは、
+$\pi_1^{*}\mathcal{F}^{\bullet}_{\mathbb{Z},X_1}\otimes
+\pi_2^{*}\mathcal{F}^{\bullet}_{\mathbb{Z},X_2}
+\simeq \mathcal{F}^{\bullet}_{\mathbb{Z},X_1\times X_2}$
+であること\cite[Lemma 4.14]{gross2019sheaftheoretic}
+と
+$X^{[k]}\deq \{x\in X\mid \dim \opn{lineal}(X,x)=k\}$
+に関する次の公式からわかる。
+\begin{align}
+(X_1\times X_2)^{[k]}=\bigsqcup_{i+j=k}
+X_1^{[i]}\times X_2^{[j]}
+\end{align}
+
+\end{proof}
+
+\begin{remark}上述の命題は
+\cite[Proposition 5.1]{demedrano2023chern}
+からも証明できる。
+\end{remark}
+
+よって、次の Todd 類の乗法性と
+因子$D$の Riemann--Roch 数に対する
+ K\"unneth の公式が成り立つ。
+
+\begin{proposition}
+$X_1,X_2$をトロピカル多様体とする。
+\begin{align}
+\opn{td}(X_1\times X_2)=\pi_{1}^{*}\opn{td}(X_1)\cdot 
+\pi_{2}^{*}\opn{td}(X_2)
+\end{align}
+とくに、任意の因子$D_i\in \opn{CDiv}(X_i)$ ($i=1,2$)
+に対して次が成り立つ。
+\begin{align}
+\opn{RR}(X_1\times X_2;D_1\boxtimes D_2)
+=\opn{RR}(X_1;D_1)\opn{RR}(X_2;D_2)
+\end{align}
+
+\end{proposition}
+
+\begin{proof}
+Todd $m$-列の乗法性より次が成り立つ。
+\begin{align}
+\opn{td}(X_1\times X_2)
+&=\opn{Todd}(\pi^{*}_1(c^{\mathrm{sm}}(X_1)))
+\cdot \opn{Todd}(\pi^{*}_2(c^{\mathrm{sm}}(X_2))) \\
+&=\pi^{*}_1\opn{td}(X_1)\cdot 
+\pi^{*}_2\opn{td}(X_2).
+\end{align}
+
+\end{proof}
+
+\begin{proposition}
+
+\end{proposition}
+\begin{proof}
+
+\begin{align}
+\opn{RR}(X_1;D_1)
+\opn{RR}(X_2;-D_2)
+= &\chi(X_1\setminus D_1)\chi_c(X_2\setminus D_2) \\
+= &\chi(X_1\setminus D_1)
+(\chi(X_2)-\chi(D_2)) \\
+= &\chi(X_1\times X_2\setminus D_1\times X_2)
+-\chi(D_1\times X_2\setminus D_1\times D_2)
+\end{align}
+
+\end{proof}
+
+
+
+
+\begin{example}
+$X_1,X_2$ をトロピカル多様体とし 
+$D_1,D_2$ を可容な位置にある
+余次元$1$のトロピカル部分多様体とする。
+このとき、
+\begin{align}
+\chi(X_1\setminus D_1)\chi(X_2\setminus D_2)
+=\chi(X_1\times X_2 \setminus (D_1\times X_2\cup X_1\times D_2)) \\
+=\chi(X_1\times X_2 \setminus (\pi_1^{*}D_1+\pi_2^{*}D_2))
+\end{align}
+
+\end{example}
+
+次の性質は Grothendieck--Riemann--Roch の定理
+の特殊例であるが、 Grothendieck 群を持ち出す必要がない。
+\begin{conjecture}
+\label{conjecture-grr-divisor}
+$X$をトロピカル多様体とし、$D$ を余次元$1$の
+部分トロピカル多様体とする。このとき、次が成り立つ。
+\begin{align}
+\iota_!(\opn{td}(D))=(1-\opn{ch}(-D))\opn{td}(X).
+\end{align}
+\end{conjecture}
+------
+
+おそらく、GRRや Shaw によるトロピカル曲面の随伴公式の
+場合と同様に$D$に沿ったトロピカル改変をして解くのが
+正攻法のように見える。微分演算子の指数$e^D$が
+シフト作用素となることと関係がありそう?
+
+------
+\begin{proposition}
+\cite[Conjecture 6.13]{demedrano2023chern},
+\cref{conjecture-grr-divisor,conjecture-rr-euler}
+が正しいなら、\cref{conjecture-rr-bertini}も正しい。  
+\end{proposition}
+
+\begin{proof}
+射影公式より、
+\begin{align}
+\iota_!(\opn{ch}(\iota^{*}(D'))\opn{td}(D))
+=\opn{ch}(D')\iota_!(\opn{td}(D))
+=(\opn{ch}(D')-\opn{ch}(D'-D))\opn{td}(X).
+\end{align}
+
+$D$
+
+よって
+
+\begin{align}
+\opn{RR}(X;D'-D)=\opn{RR}(X;D)
+\end{align}
+
+
+\end{proof}
+
+\begin{proof}[{Proof of }]
+\cref{conjecture-grr-divisor}をこの場合に示せばよい。  
+\end{proof}
+
+\section{補集合と局所 Morse データ}
+
+\begin{question}
+Berkovich curve の II, III型の点とこの補空間の理論は
+関係があるのではなかろうか? 
+(type Iの点とはおそらく相性が悪い。超平面配置の解析化が
+可縮であることからも想像できる。)
+\end{question}
+
+M\"obiusの反転公式より、次が成り立つ。
+
+\begin{proposition}[{Inclusiton-exclusion principle}]
+
+\begin{align}
+\chi(\bigcup_{i=1}^{n} X_i)=
+\sum_{k=1}^{n}(-1)^{n-k}\sum 
+\end{align}
+
+\end{proposition}
+
+
+
+
+
+
+
+
+
+
+\bibliography{tropical-complement}
+\bibliographystyle{amsalpha}
+
+\end{document}
