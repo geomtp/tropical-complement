@@ -372,6 +372,7 @@ $D$が$X$上の可容な配置
 本論文の主定理の一つは次のようになる。
 証明は難しくない。
 \begin{theorem}[{Main theorem}]
+\label{theorem-rr-euler-surface}
 $X$ をコンパクトトロピカル曲面とし、
 $D$を可容な位置にある
 余次元 $1$ のコンパクトトロピカル部分多様体
@@ -529,7 +530,8 @@ $X$をコンパクトトロピカル多様体とし,
 $D,D'$を余次元$1$のトロピカル部分多様体または
 空集合とする。
 $D'$が$X$上可容な位置にあるとし、
-$D\cap D'$が$D$の余次元$1$のトロピカル部分多様体または
+$D\cap D'$が$D$の(重みづけも含めて)
+余次元$1$のトロピカル部分多様体または
 空集合であり、$D\cap D'$ が$D$上可容な位置にあると仮定する。
 このとき、次の等式が成り立つ。
 \begin{align}
@@ -762,8 +764,17 @@ C\cdot C=&\opn{deg}(K_C)-K_S\cdot C \\
      
 \end{remark}
 
-\begin{proof}[{Proof of }]
-     
+\begin{proof}[{Proof of \cref{theorem-rr-euler-surface}}]
+
+$C$ は $S$ 上可容な位置にあるので、$x\in C$
+に対して $\dim \opn{lineal}(S,x)=1,2$
+
+$S\setminus C$ のレトラクトとなるような多面体空間
+$K$ を以下のように作る。
+
+
+$\opn{LC}_x S\simeq \mathbb{R}^{2}$
+
 \end{proof}
 
 \section{その他の例}
@@ -979,6 +990,55 @@ $X$をトロピカル多様体とし、$D$ を余次元$1$の
 シフト作用素となることと関係がありそう?
 
 ------
+
+有理多面空間の射は、スキームとは異なり
+$\psi^{-1}\mathcal{M}_Y\to \mathcal{M}_X$
+を常に誘導する。
+(スキームの場合は平坦射だと)
+よって、$\psi^{*}\colon 
+\opn{CDiv}(Y)\to \opn{CDiv}(X)$が誘導される。
+\begin{align}
+\opn{CDiv}(X)\times Z_{k}(X)\to Z_{k-1}(X)
+\end{align}
+
+
+特に、因子写像
+$\opn{div}_X\colon \opn{CDiv}(X)\to Z_{n-1}(X); 
+D\mapsto D\cdot X$
+が存在する。
+$X$が境界のないトロピカル多様体の場合
+$\opn{div}_X$は同型射である
+\cite[Theorem 4.5]{}。
+$A\in Z_{n-1}(X)$ が、余次元$1$のトロピカルサイクル
+であるとき、$D\cdot X=A$となる
+Cartier 因子 $D$ が存在する。
+当然このとき、$|D|=|A|$となっている。
+$|A|$がトロピカル部分多様体ならば、
+この Cartier 因子によって
+$D\cdot \colon Z_{n-1}(X)\to Z_{n-2}(X); $
+
+\begin{lemma}[{射影公式(Slogan)\cite[Proposition 7.7]{}}]
+$Y$を余次元$1$のトロピカル多様体とし、
+$\iota\colon Y\to X$を包含写像とする。
+このとき、次が成り立つ。
+\begin{align}
+\iota_{*}(\iota^{*}(D)\cdot Y)
+=D\cdot \iota_*(Y)\in Z_{n-2}(X).
+\end{align}
+
+
+\end{lemma}
+
+\begin{definition}
+
+\begin{align}
+     \iota^{*}(D)\cdot Y=A
+\end{align}
+
+\end{definition}
+
+
+
 \begin{proposition}
 \cite[Conjecture 6.13]{demedrano2023chern},
 \cref{conjecture-grr-divisor,conjecture-rr-euler}
@@ -993,9 +1053,7 @@ $X$をトロピカル多様体とし、$D$ を余次元$1$の
 =(\opn{ch}(D')-\opn{ch}(D'-D))\opn{td}(X).
 \end{align}
 
-$D$
-
-よって
+よって、
 
 \begin{align}
 \opn{RR}(X;D'-D)=\opn{RR}(X;D)
@@ -1025,6 +1083,11 @@ M\"obiusの反転公式より、次が成り立つ。
 \chi(\bigcup_{i=1}^{n} X_i)=
 \sum_{k=1}^{n}(-1)^{n-k}\sum 
 \end{align}
+
+\section{*トロピカル交叉理論からの復習}
+
+\subsection{boundarylessな場合}
+
 
 \end{proposition}
 
