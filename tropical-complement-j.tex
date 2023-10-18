@@ -233,26 +233,29 @@ Tokyo, 153-8914, Japan}
 
 \maketitle
 
+\section{イントロダクション}
+
 \cite{demedrano2023chern}の理論によって
-トロピカル多様体の Todd類 が定義可能となった。
+トロピカル多様体の Todd 類 が定義可能となった。
 特に、
 コンパクトトロピカル多様体$X$上の因子$D$ の
-Rimmann--Roch 数 $\opn{RR}(X;D)$ が
+Riemann--Roch 数 $\opn{RR}(X;D)$ が
 次のように定義できるようになった。
 
 \begin{align}
      \opn{RR}(X;D)\deq \int_{X}\opn{ch}(D)\opn{td}(X).
 \end{align}
 
-古典的には、この Rimmann--Roch 数は $\opn{RR}(X;D)$
+古典的には、この Riemann--Roch 数は $\opn{RR}(X;D)$
 は$D$の定義する可逆層の Euler 数と対応する。
 しかし、トロピカル幾何では、
 可逆層とくに構造層は Abel 群のなす層では
 ないため、可逆層の層コホモロジーの Euler 数と
-Rimmann--Roch 数を比較することができない。
+Riemann--Roch 数を比較することができない。
 いづれにせよ、
 $\opn{RR}(X;D)$ がトロピカル幾何的にどういう意味を持った
-量であるのかということの理解は、トロピカル幾何における
+量であるのかということの理解は、
+トロピカル幾何における
 Riemann--Roch の定理の定式化および解釈を与えるうえで
 重要な話題であるといえる。
 
@@ -341,7 +344,7 @@ $\dim X=1$ のときは、
 
 \begin{align}
 \opn{RR}(X;-D)=\frac{(-D-K_X)(-D)}{2}+\opn{RR}(X;0)
-=\frac{(D+K_X)D}{2}+\chi_{\opn{top}}(X)
+=\frac{(D+K_X)D}{2}+\chi_{\opn{top}}(X).
 \end{align}
 となるため、トロピカル曲線の随伴公式
 (\cite[Theorem 6]{shaw2015tropical}と
@@ -376,13 +379,20 @@ $D$が$X$上の可容な配置
 $X$ をコンパクトトロピカル曲面とし、
 $D$を可容な位置にある
 余次元 $1$ のコンパクトトロピカル部分多様体
+に対して次が成り立つ。
 \begin{align}
 \chi_{\opn{top}}(X\setminus D)=\frac{(D-K_X)D}{2}+
-\chi_{\opn{top}}(X)
+\chi_{\opn{top}}(X).
 \end{align}
 特に、$X$ が Noether の公式を満たすとき、
 \cref{conjecture-rr-euler}は正しい。
 \end{theorem}
+\cite[Theorem 6.3]{demedrano2023chern}
+とを合わせると次のようになる。
+\begin{corollary}
+$X$が Delzant face 構造をもつコンパクトトロピカル
+曲面のとき、 \cref{conjecture-rr-euler}は正しい。
+\end{corollary}
 
 また、Main theorem はいくつかの拡張を行う。
 
@@ -529,6 +539,17 @@ Noetherの公式を満たすトロピカル曲面の場合において示す。
 $X$をコンパクトトロピカル多様体とし, 
 $D,D'$を余次元$1$のトロピカル部分多様体または
 空集合とする。
+$D$ と $D'$ は次の条件を満たしているとする。
+\begin{enumerate}
+\item $D'$が$X$上可容な位置にある。
+\item $D$ と $D'$ は横断的かつ局所マトロイド的に
+交わる。
+\item[(2)'] $D\cap D'$が$D$の(重みづけも含めて)
+余次元$1$のトロピカル部分多様体または
+空集合である。
+\item $D\cap D'$ が $D$ 上可容な位置にある。
+\end{enumerate}
+
 $D'$が$X$上可容な位置にあるとし、
 $D\cap D'$が$D$の(重みづけも含めて)
 余次元$1$のトロピカル部分多様体または
@@ -586,9 +607,11 @@ $\chi_{\mathrm{top}}(X\setminus D)$
 \section{証明の準備}
 
 ここでは、本論文で必要な
-トロピカル多様体の基本事項を
-\cite{gross2019sheaftheoretic,demedrano2023chern}
+トロピカル多様体の
+前提知識を
+\cite{mikhalkin2018tropical,gross2019sheaftheoretic,demedrano2023chern}
 を参考に整理する。
+(必要に応じて、別の文献も引用する。)
 本論文の後半を記述する上での事情から、
 \cite{gross2019sheaftheoretic}による
 層理論的な定式化を主に採用することとする。
@@ -641,13 +664,29 @@ $Y$もまた第二可算 Hausdorff である。
 $\psi_i|_{Y}\colon U_i\cap Y \to \psi_i(U_i\cap Y)(\subset 
 \underline{\mathbb{R}}^{n_i})$
 
+$\iota\colon Y \to X$ を包含写像としたとき、
+
 局所錐の包含射
 $\iota_{*,x}\colon \opn{LC}_x Y\to \opn{LC}_x X$
 が自然と誘導される。
-$\opn{LC}_x Y$は、
+
+
+
+$\iota_{x}\colon \opn{LC}_x Y\times 
+\underline{\mathbb{R}}^{r_{\alpha}}
+\to \opn{LC}_x X\times \underline{\mathbb{R}}^{r_{\alpha'}}$
 
 \begin{definition}[{\cite[Definition 2.14]{demedrano2023chern}}]
-     
+$X$をトロピカル多様体とする。$Y$が
+トロピカル部分多様体とは、
+$Y$がトロピカル多様体かつ、
+任意の点$x\in Y$の
+局所錐の包含射
+$\iota_{*,x}\colon \opn{LC}_x Y\to 
+\opn{LC}_x X$
+がマトロイドの射から誘導される
+Bergman 扇の射と同値
+であるものをいう。
 \end{definition}
 
 \begin{remark}
@@ -664,12 +703,69 @@ $\opn{LC}_x Y$は、
 
 なお Vigeland の例も同様の性質を持つ。
 \end{remark}
+$X$がトロピカル多様体のとし、
+$\opn{sed}_X\colon 
+X\to \mathbb{Z}$ を
+$X$ 上の sedentarity 関数
+\cite[Definition 7.2.6]{mikhalkin2018tropical}
+とする。
+(\cite[Definition 2.4]{demedrano2023chern}
+もみよ。)
+$\opn{sed}_X$ は、
+上半連続関数である。
+特に次の集合たちは、
+$X$の閉部分集合である
+(上半連続関数の定義は例えば\cite[p.287]{MR463157})。
+\begin{align}
+X^{[\geq k]}\deq \{p\in X\mid \opn{sed}_X(p)\geq k\},
+\quad 
+X_{\infty}\deq X^{[\geq 1]}.
+\end{align}
+$X_{\infty}$ は、
+$X$の境界(boundary)
+と呼ばれ、
+$\partial X$と書く場合がある。
+($X$がトロピカルトーリック多様体のとき、
+$X_{\infty}$が$X$の境界つき
+位相多様体の境界となっていることと、
+代数幾何におけるトーリック境界の
+トロピカル類似になっていることに
+由来していると思われる。)
+さらに言えば、$\opn{sed}_X$ は
+semiconstant な関数なので、
+
+\begin{align}
+     \opn{sed}_X(x)+\dim \opn{LC}_x X=\dim X
+\end{align}
+
+
+$Y$ を $X$ のトロピカル部分多様体としたとき、
+任意の点$x\in Y$に対して
+\begin{align}
+\opn{sed}_X(x)-\opn{sed}_Y(x)
+=\opn{codim}(Y/X)-\opn{codim}(\opn{LC}_x Y/\opn{LC}_xX)
+\end{align}
+
+\begin{align}
+\opn{codim}(Y/X) \geq 
+\opn{sed}_X(x)-\opn{sed}_Y(x)\geq 0
+\end{align}
+とくに $\opn{codim}(Y/X)=1$
+のときは、両者の差は高々
+$1$しかないため、
+$\opn{sed}_X(x)-\opn{sed}_Y(x)=1$のとき、
+$\dim \opn{LC}_x Y=\dim \opn{LC}_x X$
+なので トロピカル部分多様体の定義より
+$\opn{LC}_x Y\simeq \opn{LC}_x X$
+となる。
 
 \begin{example}
 整アフィン多様体の部分トロピカル多様体に対応する概念が
 有理アファイン部分多様体として微分幾何に表れている。 
 \end{example}
 
+$\dim \opn{lineal}(X,\cdot)$
+は下半連続関数である。
 
 \begin{definition}[{可容配置}]
 \label{definition-permissible-position}
@@ -716,14 +812,25 @@ $D$ を余次元$1$のトロピカル部分多様体とする。
 \end{proof}
 
 \begin{remark}
-     
-\end{remark}
-
-\begin{remark}
 $Y$が$X$の可容な位置にあるとき
 補集合 $X\setminus Y$ は、大抵 finite typeの条件を
 満たさない。
 \end{remark}
+
+\begin{proposition}
+$X$ をトロピカル多様体とし、$Y$ を
+$X$ の余次元 $1$
+のトロピカル部分多様体とする。
+$Y$ が可容な位置にあるとき、
+$Y$ は sedentary 0 なトロピカル部分多様体である。
+\end{proposition}
+\begin{proof}
+点 $x\in Y$ に対して
+$\opn{sed}_X(x)-\opn{sed}_Y(x)=1$ ならば、
+$\opn{LC}_xY\simeq \opn{LC}_x X$ なので
+$Y$ が可容な位置にあるとき、そのような点は
+存在しない。
+\end{proof}
 
 トロピカル曲面上の各点の局所錐の構造は、
 \cite[Corollary 2.4]{shaw2015tropical}
@@ -894,11 +1001,11 @@ $\pi_1^{*}\mathcal{F}^{\bullet}_{\mathbb{Z},X_1}\otimes
 \simeq \mathcal{F}^{\bullet}_{\mathbb{Z},X_1\times X_2}$
 であること\cite[Lemma 4.14]{gross2019sheaftheoretic}
 と
-$X^{[k]}\deq \{x\in X\mid \dim \opn{lineal}(X,x)=k\}$
+$X^{[*,k]}\deq \{x\in X\mid \dim \opn{lineal}(X,x)=k\}$
 に関する次の公式からわかる。
 \begin{align}
-(X_1\times X_2)^{[k]}=\bigsqcup_{i+j=k}
-X_1^{[i]}\times X_2^{[j]}
+(X_1\times X_2)^{[*,k]}=\bigsqcup_{i+j=k}
+X_1^{[*,i]}\times X_2^{[*,j]}
 \end{align}
 
 \end{proof}
@@ -972,29 +1079,116 @@ $D_1,D_2$ を可容な位置にある
 
 \end{example}
 
-次の性質は Grothendieck--Riemann--Roch の定理
-の特殊例であるが、 Grothendieck 群を持ち出す必要がない。
+ここで代数多様体 $X$ の接束を$\mathcal{T}_X$とすると、
+非特異因子 $D$ に対して、次の公式が成り立つ。
+\begin{align}
+0 \to \mathcal{T}_{D}\to \iota^{*}\mathcal{T}_X
+\to \mathcal{N}_{D/X}\to 0
+\end{align}
+ここで、$\mathcal{N}_{D/X}\simeq \iota^{*}\mathcal{O}_X(D)$
+であるため、次の全 Chern 類の同伴等式が成り立つ。
+\begin{align}
+\label{equation-classical-total-adjunction}
+\iota^{*}c(\mathcal{T}_X)
+=c(\mathcal{T}_{D})c(\iota^{*}\mathcal{O}_X(D))
+\end{align}
+次数部分に着目すれば、$k\in \mathbb{Z}_{\geq 0}$
+に対して
+\begin{align}
+\label{equation-classical-total-adjunction}
+\iota^{*}c_k(\mathcal{T}_X)
+=c_{k}(\mathcal{T}_{D})+
+c_{k-1}(\mathcal{T}_{D})c_1(\iota^{*}\mathcal{O}_X(D))
+\end{align}
+である。
+\eqref{equation-classical-total-adjunction}の
+トロピカル幾何的類似は考察でき、次の予想が期待できる。
 \begin{conjecture}
 \label{conjecture-grr-divisor}
 $X$をトロピカル多様体とし、$D$ を余次元$1$の
 部分トロピカル多様体とする。このとき、次が成り立つ。
 \begin{align}
-\iota_!(\opn{td}(D))=(1-\opn{ch}(-D))\opn{td}(X).
+\label{equation-total-adjunction}
+\iota^{*}c^{\mathrm{sm}}(X)=c^{\mathrm{sm}}(D)c(\iota^{*}[D])
 \end{align}
+ここで、$c(\iota^{*}[D])$ は因子$\iota^{*}[D]$の
+全 Chern 類である。 
 \end{conjecture}
-------
+$\dim X=1,2$ のとき、
+\cref{conjecture-grr-divisor}
+は正しい。 
+\cref{conjecture-grr-divisor} 
+が正しいならば、
+どのような結論を導くのか見てみる。
+\eqref{equation-total-adjunction}と
+Todd類の性質より
+\begin{align}
+\iota^{*}\opn{td}(X)=\opn{td}(D)\frac{\iota^{*}[D]}{1-\opn{exp}(\iota^{*}[D])}
+\end{align}
+これを式変形すると
+\begin{align}
+\opn{td}(D)
+=\iota^{*}((1-\opn{exp}([D])/[D])\opn{td}(X))
+\end{align}
+また、これに射影公式
+\cite[Proposition 4.18]{gross2019sheaftheoretic}
+を当てはめると
+\begin{align}
+\label{equation-grr-divisor}
+\iota_!(\opn{td}(D))=(1-\opn{ch}(D))\opn{td}(X).
+\end{align}
+\eqref{equation-grr-divisor} は、
+Grothendieck--Riemann--Roch の定理の特殊例である。
 
-おそらく、GRRや Shaw によるトロピカル曲面の随伴公式の
-場合と同様に$D$に沿ったトロピカル改変をして解くのが
-正攻法のように見える。微分演算子の指数$e^D$が
-シフト作用素となることと関係がありそう?
+以上を踏まえて、\cref{theorem-rr-euler-surface}
+を一般化する。
 
-------
+\begin{theorem}
+\label{theorem-rr-bertini-surface}
+$X$を
+コンパクトトロピカル曲面とし、$D$ と $D'$が余次元$1$
+のトロピカル部分多様体とする。
+
+\begin{align}
+\chi(X\setminus D')-\chi(D\setminus (D'\cap D))
+=\frac{(D'-D)(D'-D-K_X)}{2}+\chi(X).
+\end{align}
+特に $X$ が Delzant 面構造をもつとき、
+\cref{conjecture-rr-bertini} は正しい。
+\end{theorem}
+
+\begin{proof}
+$\dim X=2$なので、
+\cref{conjecture-grr-divisor}は正しい。
+そのため射影公式と\eqref{equation-grr-divisor}より、
+\begin{align}
+\iota_!(\opn{ch}(\iota^{*}(D'))\opn{td}(D))
+=\opn{ch}(D')\iota_!(\opn{td}(D))
+=(\opn{ch}(D')-\opn{ch}(D'-D))\opn{td}(X).
+\end{align}
+
+よって、次が成り立つ。
+\begin{align}
+\label{equation-rr-number-divisor}
+\opn{RR}(X;D'-D)=\opn{RR}(X;D')-
+\opn{RR}(D;\iota^{*}(D')).
+\end{align}
+
+\cref{theorem-rr-euler-surface}と
+\eqref{equation-rr-number-divisor}より、
+\begin{align}
+\frac{(D'-D)(D'-D-K_X)}{2}=&
+\opn{RR}(X;D'-D)-\opn{RR}(X;0)-
+\opn{RR}(D;D'\cap D) \\
+=&\chi(X\setminus D')-\chi(X)-\chi(D\setminus (D'\cap D)).
+\end{align}
+\end{proof}
 
 有理多面空間の射は、スキームとは異なり
 $\psi^{-1}\mathcal{M}_Y\to \mathcal{M}_X$
 を常に誘導する。
-(スキームの場合は平坦射だと)
+(スキームの場合は平坦射などの
+性質が必要である。)
 よって、$\psi^{*}\colon 
 \opn{CDiv}(Y)\to \opn{CDiv}(X)$が誘導される。
 \begin{align}
@@ -1004,13 +1198,13 @@ $\psi^{-1}\mathcal{M}_Y\to \mathcal{M}_X$
 
 特に、因子写像
 $\opn{div}_X\colon \opn{CDiv}(X)\to Z_{n-1}(X); 
-D\mapsto D\cdot X$
+D\mapsto D\cdot [X]$
 が存在する。
 $X$が境界のないトロピカル多様体の場合
 $\opn{div}_X$は同型射である
 \cite[Theorem 4.5]{}。
 $A\in Z_{n-1}(X)$ が、余次元$1$のトロピカルサイクル
-であるとき、$D\cdot X=A$となる
+であるとき、$D\cdot [X]=A$となる
 Cartier 因子 $D$ が存在する。
 当然このとき、$|D|=|A|$となっている。
 $|A|$がトロピカル部分多様体ならば、
@@ -1022,8 +1216,8 @@ $Y$を余次元$1$のトロピカル多様体とし、
 $\iota\colon Y\to X$を包含写像とする。
 このとき、次が成り立つ。
 \begin{align}
-\iota_{*}(\iota^{*}(D)\cdot Y)
-=D\cdot \iota_*(Y)\in Z_{n-2}(X).
+\iota_{*}(\iota^{*}(D)\cdot [Y])
+=D\cdot \iota_*([Y])\in Z_{n-2}(X).
 \end{align}
 
 
@@ -1032,7 +1226,7 @@ $\iota\colon Y\to X$を包含写像とする。
 \begin{definition}
 
 \begin{align}
-     \iota^{*}(D)\cdot Y=A
+     \iota^{*}(D)\cdot [Y]=A
 \end{align}
 
 \end{definition}
@@ -1046,25 +1240,14 @@ $\iota\colon Y\to X$を包含写像とする。
 \end{proposition}
 
 \begin{proof}
-射影公式より、
-\begin{align}
-\iota_!(\opn{ch}(\iota^{*}(D'))\opn{td}(D))
-=\opn{ch}(D')\iota_!(\opn{td}(D))
-=(\opn{ch}(D')-\opn{ch}(D'-D))\opn{td}(X).
-\end{align}
 
-よって、
 
-\begin{align}
-\opn{RR}(X;D'-D)=\opn{RR}(X;D)
-\end{align}
+
 
 
 \end{proof}
 
-\begin{proof}[{Proof of }]
-\cref{conjecture-grr-divisor}をこの場合に示せばよい。  
-\end{proof}
+
 
 \section{補集合と局所 Morse データ}
 
