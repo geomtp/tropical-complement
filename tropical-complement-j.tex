@@ -384,8 +384,6 @@ $D$を可容な位置にある
 \chi_{\opn{top}}(X\setminus D)=\frac{(D-K_X)D}{2}+
 \chi_{\opn{top}}(X).
 \end{align}
-特に、$X$ が Noether の公式を満たすとき、
-\cref{conjecture-rr-euler}は正しい。
 \end{theorem}
 \cite[Theorem 6.3]{demedrano2023chern}
 とを合わせると次のようになる。
@@ -398,16 +396,18 @@ $X$が Delzant face 構造をもつコンパクトトロピカル
 
 \begin{example}
 \label{example-permissible-point}
-$C$をトロピカル曲線とする。点$p$が可容な(permissible)位置にあることは、
+$C$をコンパクトトロピカル曲線とする。点$p$が可容な(permissible)位置にあることは、
 $p\in C_{\opn{reg}}$ であることと同値である。
 当然、有限個の点集合の場合に一般化できる。
 簡単な計算から、可容な位置にある部分トロピカル多様体
 $D$に対して、
 \begin{align}
 \opn{RR}(C;D)=\sharp (\opn{supp}(D))+ \chi_{\opn{top}}(C)
-=\chi_{\opn{top}}(C\setminus D)
+=\chi_{\opn{top}}(C\setminus D).
 \end{align}
-
+よって、$\dim X=1$のとき、
+\cref{conjecture-rr-euler}
+は正しい。
 \end{example}
 
 \begin{example}[{トロピカル射影空間}]
@@ -735,24 +735,26 @@ $X_{\infty}$が$X$の境界つき
 semiconstant な関数なので、
 
 \begin{align}
-     \opn{sed}_X(x)+\dim \opn{LC}_x X=\dim X
+     \opn{sed}_X(x)+\dim \opn{LC}_x X=\dim_x X
 \end{align}
 
 
-$Y$ を $X$ のトロピカル部分多様体としたとき、
+$Y$ を $X$ 
+のトロピカル部分多様体としたとき、
 任意の点$x\in Y$に対して
 \begin{align}
 \opn{sed}_X(x)-\opn{sed}_Y(x)
-=\opn{codim}(Y/X)-\opn{codim}(\opn{LC}_x Y/\opn{LC}_xX)
+=\opn{codim}_x(Y/X)-\opn{codim}_x(\opn{LC}_x Y/\opn{LC}_xX),
 \end{align}
 
 \begin{align}
-\opn{codim}(Y/X) \geq 
+\opn{codim}_x(Y/X) \geq 
 \opn{sed}_X(x)-\opn{sed}_Y(x)\geq 0
 \end{align}
-とくに $\opn{codim}(Y/X)=1$
+とくに $\opn{codim}_x(Y/X)=1$
 のときは、両者の差は高々
-$1$しかないため、
+$1$しかない。
+そのため
 $\opn{sed}_X(x)-\opn{sed}_Y(x)=1$のとき、
 $\dim \opn{LC}_x Y=\dim \opn{LC}_x X$
 なので トロピカル部分多様体の定義より
@@ -941,6 +943,7 @@ $X$ の 第 $k$ Chern 類を次のように書く。
 \begin{align}
 c_{k}^{\mathrm{sm}}(X)\deq
 \opn{PD}\circ \opn{cyc}_{n-k}(\opn{csm}_{n-k}(X))
+\in H^{k,k}(X;\mathbb{Z})
 \end{align}
 なお、$c_{k}^{\mathrm{sm}}(X)$と書いたのは、
 因子類の Chern 類との混同を避けるためである。
@@ -1086,7 +1089,7 @@ $D_1,D_2$ を可容な位置にある
 \to \mathcal{N}_{D/X}\to 0
 \end{align}
 ここで、$\mathcal{N}_{D/X}\simeq \iota^{*}\mathcal{O}_X(D)$
-であるため、次の全 Chern 類の同伴等式が成り立つ。
+であるため、次の全 Chern 類の同伴公式が成り立つ。
 \begin{align}
 \label{equation-classical-total-adjunction}
 \iota^{*}c(\mathcal{T}_X)
@@ -1101,6 +1104,8 @@ $D_1,D_2$ を可容な位置にある
 c_{k-1}(\mathcal{T}_{D})c_1(\iota^{*}\mathcal{O}_X(D))
 \end{align}
 である。
+なお、Chern 類は、Chow 群の元としても定義でき、同様の
+同伴公式が成立する。
 \eqref{equation-classical-total-adjunction}の
 トロピカル幾何的類似は考察でき、次の予想が期待できる。
 \begin{conjecture}
@@ -1114,16 +1119,29 @@ $X$をトロピカル多様体とし、$D$ を余次元$1$の
 ここで、$c(\iota^{*}[D])$ は因子$\iota^{*}[D]$の
 全 Chern 類である。 
 \end{conjecture}
+\cref{conjecture-grr-divisor}では、簡単のために
+トロピカルコホモロジーの元に対するものとしたが、
+トロピカル Chow 群版も同様に期待できる。
 $\dim X=1,2$ のとき、
 \cref{conjecture-grr-divisor}
-は正しい。 
+は正しい。$\dim X=1$のときは、
+明らかで $\dim X=2$のときは、
+トロピカル同伴公式そのものである\cite[Theorem 6]{shaw2015tropical}。
 \cref{conjecture-grr-divisor} 
 が正しいならば、
 どのような結論を導くのか見てみる。
+
+まず、押し出しと射影公式から
+
+\begin{align}
+c^{\mathrm{sm}}(X)[D]=c^{\mathrm{sm}}(D)c(\iota^{*}[D])
+\end{align}
+
 \eqref{equation-total-adjunction}と
 Todd類の性質より
 \begin{align}
-\iota^{*}\opn{td}(X)=\opn{td}(D)\frac{\iota^{*}[D]}{1-\opn{exp}(\iota^{*}[D])}
+\iota^{*}\opn{td}(X)=
+\opn{td}(D)\frac{\iota^{*}[D]}{1-\opn{exp}(\iota^{*}[D])}.
 \end{align}
 これを式変形すると
 \begin{align}
@@ -1178,7 +1196,7 @@ $\dim X=2$なので、
 \eqref{equation-rr-number-divisor}より、
 \begin{align}
 \frac{(D'-D)(D'-D-K_X)}{2}=&
-\opn{RR}(X;D'-D)-\opn{RR}(X;0)-
+\opn{RR}(X;D')-\opn{RR}(X;0)-
 \opn{RR}(D;D'\cap D) \\
 =&\chi(X\setminus D')-\chi(X)-\chi(D\setminus (D'\cap D)).
 \end{align}
