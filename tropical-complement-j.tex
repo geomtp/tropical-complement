@@ -270,7 +270,8 @@ $X$ が Delzant face 構造を持つトロピカル曲面の場合
 条件は、十分に広い範囲のトロピカル曲面で成立している
 \cite[Corollary 6.11]{demedrano2023chern}。
 
-なお、$\chi_{\opn{top}}(X)$が代数多様体上の構造層の
+なお、位相的 Euler 数
+$\chi_{\opn{top}}(X)$が代数多様体上の構造層の
 コホモロジーの Euler 数のトロピカル幾何的な類似であるべき
 であることは、古くから期待されており、
 \cite[Corollary 2]{MR3961331}
@@ -364,7 +365,7 @@ $X$ をコンパクトトロピカル多様体とし、$D$を余次元$1$
 $D$が$X$上の可容な配置
 (\cref{definition-permissible-position})にあるとき、次が成り立つ。
 \begin{align}
-\opn{RR}(X;D)=\chi_{\opn{top}}(X\setminus D)
+\opn{RR}(X;D)=\chi_{\opn{top}}(X\setminus D).
 \end{align}
 \end{conjecture}
 
@@ -622,6 +623,25 @@ finite typeに関する条件
 は課さないこととする。トロピカル多様体がコンパクト
 なら finite type に関する条件は気にする必要はない。
 
+\begin{notation}
+本文書での
+有理多面空間 $(X,\mathcal{O}_X^{\times})$ の
+次元$\dim X$とは、$X$の局所コンパクト Hausdorff 空間
+の次元\cite[Chapter III. Definition 9.4]{MR842190}
+のことであり、点 $x\in X$ に対して
+$\dim_x X$ を $X$ の $x$ における局所次元と呼ぶ
+\cite[Chapter III. Definition 9.10]{MR842190}。
+有理多面空間
+$(X,\mathcal{O}_X^{\times})$
+が、純次元的(pure dimensional)
+とは、任意の点 $x\in X$ に対して
+$\dim X=\dim_x X$ であることをいう。
+この純次元は有理凸多面複体の純次元と整合的である。
+また、以降は
+$\chi_{\opn{top}}(X)$は、単に
+$\chi(X)$ と書く。
+\end{notation}
+
 \cite{demedrano2023chern}に倣い、全体を被覆するチャートの集まり
 $\{(U_i,\psi_i)\}_{i\in I}$を
 $(X,\mathcal{O}_X^{\times})$のアトラスと呼ぶこととする。
@@ -761,10 +781,7 @@ $\dim \opn{LC}_x Y=\dim \opn{LC}_x X$
 $\opn{LC}_x Y\simeq \opn{LC}_x X$
 となる。
 
-\begin{example}
-整アフィン多様体の部分トロピカル多様体に対応する概念が
-有理アファイン部分多様体として微分幾何に表れている。 
-\end{example}
+
 
 $\dim \opn{lineal}(X,\cdot)$
 は下半連続関数である。
@@ -794,6 +811,12 @@ $X_{\mathrm{reg}}$ 上の可容な位置にある。
 
 \end{example}
 
+\begin{remark}
+$Y$が$X$の可容な位置にあるとき
+補集合 $X\setminus Y$ は、大抵 finite typeの条件を
+満たさない。
+\end{remark}
+
 \begin{proposition}
 $X$ をコンパクトな整アフィン多様体とし、
 $D$ を余次元$1$のトロピカル部分多様体とする。
@@ -813,11 +836,7 @@ $D$ を余次元$1$のトロピカル部分多様体とする。
 が成り立つ。
 \end{proof}
 
-\begin{remark}
-$Y$が$X$の可容な位置にあるとき
-補集合 $X\setminus Y$ は、大抵 finite typeの条件を
-満たさない。
-\end{remark}
+
 
 \begin{proposition}
 $X$ をトロピカル多様体とし、$Y$ を
@@ -836,7 +855,7 @@ $Y$ が可容な位置にあるとき、そのような点は
 
 トロピカル曲面上の各点の局所錐の構造は、
 \cite[Corollary 2.4]{shaw2015tropical}
-によって分類される。
+によって分類されている。
 これを念頭に次の命題を解く。
 \begin{proposition}
 $S$をトロピカル曲面とし、$C$を$S$の部分トロピカル曲線とする。
@@ -933,7 +952,8 @@ $\opn{cyc}_k\colon Z_k(X)\to H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
 \cite{gross2019sheaftheoretic}。
 (\cite[Definition 4.13]{MR3894860}もみよ。)
 また、Poincar\'e 双対
-$\opn{PD}\colon H_{k,k}^{\opn{BM}}(X;\mathbb{Z})
+
+$\opn{PD}_X\colon H_{k,k}^{\opn{BM}}(X;\mathbb{Z})
 \to H_{n-k,n-k}^{\opn{BM}}(X;\mathbb{Z})$
 も存在する。
 
@@ -942,7 +962,7 @@ $X$ を$n$次元トロピカル多様体としたとき、
 $X$ の 第 $k$ Chern 類を次のように書く。 
 \begin{align}
 c_{k}^{\mathrm{sm}}(X)\deq
-\opn{PD}\circ \opn{cyc}_{n-k}(\opn{csm}_{n-k}(X))
+\opn{PD}_X\circ \opn{cyc}_{n-k}(\opn{csm}_{n-k}(X))
 \in H^{k,k}(X;\mathbb{Z})
 \end{align}
 なお、$c_{k}^{\mathrm{sm}}(X)$と書いたのは、
@@ -971,6 +991,12 @@ $c^{\mathrm{sm}}(X)$を代入することで得られるものとする。
 \end{align}
 
 \end{definition}
+
+$\pi_1\colon X_1\times X_2 \to X_1$
+
+\begin{align}
+Ra_{X*}
+\end{align}
 
 \begin{proposition}
 $X_1,X_2$ をトロピカル多様体とし、
@@ -1046,6 +1072,16 @@ Todd $m$-列の乗法性より次が成り立つ。
 &=\pi^{*}_1\opn{td}(X_1)\cdot 
 \pi^{*}_2\opn{td}(X_2).
 \end{align}
+よって、$\opn{ch}(\pi_1^{*}D_1+\pi_2^{*}D_2)=
+\opn{ch}(\pi_1^{*}D_1)\cdot \opn{ch}(\pi_2^{*}D_2)$
+より、
+\begin{align}
+\opn{ch}(\pi_1^{*}D_1+\pi_2^{*}D_2)
+\pi^{*}_1\opn{td}(X_1)\cdot 
+\pi^{*}_2\opn{td}(X_2)=
+\pi_1^{*}(\opn{ch}(D_1)\opn{td}(X_1))\cdot
+\pi_2^{*}(\opn{ch}(D_2)\opn{td}(X_2)).
+\end{align}
 
 \end{proof}
 
@@ -1083,7 +1119,7 @@ $D_1,D_2$ を可容な位置にある
 \end{example}
 
 ここで代数多様体 $X$ の接束を$\mathcal{T}_X$とすると、
-非特異因子 $D$ に対して、次の公式が成り立つ。
+非特異因子 $D$ に対して、次の層短完全列が存在する。
 \begin{align}
 0 \to \mathcal{T}_{D}\to \iota^{*}\mathcal{T}_X
 \to \mathcal{N}_{D/X}\to 0
@@ -1126,16 +1162,129 @@ $\dim X=1,2$ のとき、
 \cref{conjecture-grr-divisor}
 は正しい。$\dim X=1$のときは、
 明らかで $\dim X=2$のときは、
-トロピカル同伴公式そのものである\cite[Theorem 6]{shaw2015tropical}。
+トロピカル曲面内の
+部分トロピカル曲線の
+同伴公式そのものである\cite[Theorem 6]{shaw2015tropical}。
 \cref{conjecture-grr-divisor} 
 が正しいならば、
 どのような結論を導くのか見てみる。
 
-まず、押し出しと射影公式から
-
 \begin{align}
-c^{\mathrm{sm}}(X)[D]=c^{\mathrm{sm}}(D)c(\iota^{*}[D])
+\opn{PVD}^{(n-p)}_X\colon \Omega_{X}^{n-p}[n]\simeq
+\mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p})
 \end{align}
+ここで、$[X]\deq \opn{PVD}^{(n)}_X$ は
+トロピカル多様体の基本類(fundamental class)
+である。
+また、$\opn{PVD}^{(n-p)}_X$は、射の合成により同型
+\begin{align}
+H^{n-p,n-q}(X;\mathbb{Z})& \simeq
+\opn{Hom}_{D^{b}(\mathbb{Z}_X)}
+(\mathbb{Z}_X,\Omega_X^{n-p}[n-q]) \\
+& \simeq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}
+(\mathbb{Z}_X,\mathcal{D}_X(\Omega_X^{p})[-q])
+\label{equation-pvd-rhom} \\
+& \simeq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}
+(\Omega_X^{p}[q],\omega_X^{\bullet})
+\simeq H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})
+\label{equation-pvd-tensor}
+\end{align}
+を与える。さらに
+\cref{equation-pvd-rhom,equation-pvd-tensor}
+の同型は tensor-hom 随伴から由来するため、
+射の合成
+\begin{align}
+\mathbb{Z}_X \xto{\alpha} \Omega_X^{n-p}[n-q] 
+\xto{\opn{PVD}^{(n-p)}_X} 
+R\mathcal{H}om (\Omega_X^{p},\omega_X^{\bullet}[-q])
+\end{align}
+は、tensor-hom 随伴より次の射の合成
+\begin{align}
+\Omega_X^{p}[q]\xto{\alpha \otimes \opn{id}} \Omega_X^{n-p}[n-q]\otimes^{L}_{\mathbb{Z}_X}
+\Omega_X^{p}[q] \to\omega_X^{\bullet}
+\end{align}
+に対応する。
+さらに、$\opn{PVD}^{(n-p)}_X$の射の構成と
+Borel--Moore ホモロジーのカップ積の構成を
+先ほどと同様に tensor-hom 随伴と導来関手の
+普遍性に注意しながら見ると、
+$\opn{PVD}^{(n-p)}_X$ は、
+基本類のカップ積による同型
+$\cdot \frown [X]
+\colon H^{n-p,n-q}(X;\mathbb{Z})\simeq
+H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$
+を与えていることがわかる。
+($X$ が global な面構造を持つ場合の、
+基本類のカップ積による上述の同型は、
+\cite[Theorem 5.3]{MR3894860} にて示された。)
+
+次に、古典の場合に従い
+一般化された Gysin 押し出し(generalized Gysin map)
+を定義する(e.g. 
+\cite[Chapter 13]{MR2810322})。
+
+\begin{definition}
+$X,Y$ を pure なトロピカル多様体とし、
+$f\colon X\to Y$ を固有射とする。
+$f$ の \emph{generalized Gysin map} とは、
+次の射が可換となる射
+$f_!\colon H^{\bullet,\bullet}(X;Q)\to 
+H^{\bullet,\bullet}(Y;Q)$
+のことである。
+\begin{equation}
+\begin{tikzcd}
+	{H^{\bullet,\bullet}(X;Q)} & {H^{\bullet,\bullet}(Y;Q)} \\
+	{H_{\bullet,\bullet}^{\mathrm{BM}}(X;Q)} & {H_{\bullet,\bullet}^{\mathrm{BM}}(Y;Q)}
+	\arrow["{\cdot \frown [X]}"', from=1-1, to=2-1]
+	\arrow["{\cdot\frown[Y]}", from=1-2, to=2-2]
+	\arrow["{f_*}"', from=2-1, to=2-2]
+	\arrow["{f_!}", from=1-1, to=1-2]
+\end{tikzcd}    
+\end{equation}
+
+\end{definition}
+定義より、次の射影公式が成り立つ。
+\begin{proposition}[{射影公式}]
+$X,Y$ を pure なトロピカル多様体とし、
+$f\colon X\to Y$ を固有射とする。
+このとき、$c\in H^{\bullet,\bullet}(Y;Q) $
+$d\in H^{\bullet,\bullet}(X;Q)$
+に対して、次が成り立つ。
+\begin{align}
+    f_!(f^{*}(c)\cdot d)=c\cdot f_!(d).
+\end{align}
+
+\end{proposition}
+
+\begin{proof}
+$\cdot \frown [Y]$ は同型射なので、次の等式を
+示せばよい。
+\begin{align}
+    f_!(f^{*}(c)\cdot d)\frown [Y]=(c\cdot f_!(d))\frown [Y]
+\end{align}
+実際に、
+\begin{align}
+(c\cdot f_!(d))\frown [Y]=
+c\frown(f_!(d)\frown [Y])=
+c\frown f_*(d\frown [X])\\
+=f_*(f^*(c)\frown (d\frown [X]))=
+f_*((f^*(c)\cdot d) \frown [X])
+=f_!(f^{*}(c)\cdot d)\frown [Y].
+\end{align}
+よって示せた。
+\end{proof}
+
+以上の準備をもって
+
+まず、$\iota\colon D\to X$ に関する
+Gysin 押し出しと射影公式から
+\begin{align}
+c^{\mathrm{sm}}(X)[D]=\iota_!c^{\mathrm{sm}}(D)c([D]).
+\end{align}
+
+この等式は、第一次数部分に着目すれば
+同伴公式の高次元版の一種とみなせる
+(cf. \cite[Theorem 5.2]{demedrano2023chern})。
 
 \eqref{equation-total-adjunction}と
 Todd類の性質より
@@ -1143,7 +1292,7 @@ Todd類の性質より
 \iota^{*}\opn{td}(X)=
 \opn{td}(D)\frac{\iota^{*}[D]}{1-\opn{exp}(\iota^{*}[D])}.
 \end{align}
-これを式変形すると
+これを式変形すると次のようになる。
 \begin{align}
 \opn{td}(D)
 =\iota^{*}((1-\opn{exp}([D])/[D])\opn{td}(X))
@@ -1156,7 +1305,8 @@ Todd類の性質より
 \iota_!(\opn{td}(D))=(1-\opn{ch}(D))\opn{td}(X).
 \end{align}
 \eqref{equation-grr-divisor} は、
-Grothendieck--Riemann--Roch の定理の特殊例である。
+Grothendieck--Riemann--Roch の定理の特殊例
+のトロピカル類似である。
 
 以上を踏まえて、\cref{theorem-rr-euler-surface}
 を一般化する。
@@ -1202,60 +1352,11 @@ $\dim X=2$なので、
 \end{align}
 \end{proof}
 
-有理多面空間の射は、スキームとは異なり
-$\psi^{-1}\mathcal{M}_Y\to \mathcal{M}_X$
-を常に誘導する。
-(スキームの場合は平坦射などの
-性質が必要である。)
-よって、$\psi^{*}\colon 
-\opn{CDiv}(Y)\to \opn{CDiv}(X)$が誘導される。
-\begin{align}
-\opn{CDiv}(X)\times Z_{k}(X)\to Z_{k-1}(X)
-\end{align}
-
-
-特に、因子写像
-$\opn{div}_X\colon \opn{CDiv}(X)\to Z_{n-1}(X); 
-D\mapsto D\cdot [X]$
-が存在する。
-$X$が境界のないトロピカル多様体の場合
-$\opn{div}_X$は同型射である
-\cite[Theorem 4.5]{}。
-$A\in Z_{n-1}(X)$ が、余次元$1$のトロピカルサイクル
-であるとき、$D\cdot [X]=A$となる
-Cartier 因子 $D$ が存在する。
-当然このとき、$|D|=|A|$となっている。
-$|A|$がトロピカル部分多様体ならば、
-この Cartier 因子によって
-$D\cdot \colon Z_{n-1}(X)\to Z_{n-2}(X); $
-
-\begin{lemma}[{射影公式(Slogan)\cite[Proposition 7.7]{}}]
-$Y$を余次元$1$のトロピカル多様体とし、
-$\iota\colon Y\to X$を包含写像とする。
-このとき、次が成り立つ。
-\begin{align}
-\iota_{*}(\iota^{*}(D)\cdot [Y])
-=D\cdot \iota_*([Y])\in Z_{n-2}(X).
-\end{align}
-
-
-\end{lemma}
-
-\begin{definition}
-
-\begin{align}
-     \iota^{*}(D)\cdot [Y]=A
-\end{align}
-
-\end{definition}
-
-
-
-\begin{proposition}
+\begin{remark}
 \cite[Conjecture 6.13]{demedrano2023chern},
 \cref{conjecture-grr-divisor,conjecture-rr-euler}
 が正しいなら、\cref{conjecture-rr-bertini}も正しい。  
-\end{proposition}
+\end{remark}
 
 \begin{proof}
 
@@ -1285,7 +1386,6 @@ M\"obiusの反転公式より、次が成り立つ。
 \sum_{k=1}^{n}(-1)^{n-k}\sum 
 \end{align}
 
-\section{*トロピカル交叉理論からの復習}
 
 \subsection{boundarylessな場合}
 
