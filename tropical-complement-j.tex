@@ -324,7 +324,8 @@ $\iota\colon D\to X$を自然な閉埋め込みとする。
 \label{conjecture-rr-c-euler}
 $X$ をコンパクトトロピカル多様体とし、$D$を余次元$1$
 のコンパクト
-トロピカル部分多様体(tropical submanifold)とする
+トロピカル部分多様体(tropical submanifold)
+を表現する因子とする
 \cite[Definition 2.14]{demedrano2023chern}。
 このとき、次の等式が成り立つ。
 \begin{align}
@@ -382,7 +383,7 @@ $D$を可容な位置にある
 余次元 $1$ のコンパクトトロピカル部分多様体
 に対して次が成り立つ。
 \begin{align}
-\chi_{\opn{top}}(X\setminus D)=\frac{(D-K_X)D}{2}+
+\chi_{\opn{top}}(X\setminus D)=\frac{([D]-K_X)[D]}{2}+
 \chi_{\opn{top}}(X).
 \end{align}
 \end{theorem}
@@ -636,7 +637,7 @@ $(X,\mathcal{O}_X^{\times})$
 が、純次元的(pure dimensional)
 とは、任意の点 $x\in X$ に対して
 $\dim X=\dim_x X$ であることをいう。
-この純次元は有理凸多面複体の純次元と整合的である。
+この純次元は有理凸多面複体の純次元とも整合的である。
 また、以降は
 $\chi_{\opn{top}}(X)$は、単に
 $\chi(X)$ と書く。
@@ -951,14 +952,16 @@ $\opn{cyc}_k\colon Z_k(X)\to H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
 が存在する
 \cite{gross2019sheaftheoretic}。
 (\cite[Definition 4.13]{MR3894860}もみよ。)
-また、Poincar\'e 双対
-
+また、$X$が純 $n$ 次元トロピカル多様体のとき、
+Poincar\'e 双対
 $\opn{PD}_X\colon H_{k,k}^{\opn{BM}}(X;\mathbb{Z})
 \to H_{n-k,n-k}^{\opn{BM}}(X;\mathbb{Z})$
-も存在する。
+も存在する。この準同型射はトロピカル多様体の
+基本類のカップ積の射 \eqref{equation-cup-pd}
+の逆写像である。
 
 \begin{notation}
-$X$ を$n$次元トロピカル多様体としたとき、
+$X$ を純 $n$ 次元トロピカル多様体としたとき、
 $X$ の 第 $k$ Chern 類を次のように書く。 
 \begin{align}
 c_{k}^{\mathrm{sm}}(X)\deq
@@ -1152,8 +1155,7 @@ $X$をトロピカル多様体とし、$D$ を余次元$1$の
 \label{equation-total-adjunction}
 \iota^{*}c^{\mathrm{sm}}(X)=c^{\mathrm{sm}}(D)c(\iota^{*}[D])
 \end{align}
-ここで、$c(\iota^{*}[D])$ は因子$\iota^{*}[D]$の
-全 Chern 類である。 
+ここで、$c(\iota^{*}[D])\deq 1+c_1(\iota^{*}[D])$である。 
 \end{conjecture}
 \cref{conjecture-grr-divisor}では、簡単のために
 トロピカルコホモロジーの元に対するものとしたが、
@@ -1169,13 +1171,19 @@ $\dim X=1,2$ のとき、
 が正しいならば、
 どのような結論を導くのか見てみる。
 
+$X$が純 $n$ 次元トロピカル多様体のとき、
+任意の$p\in\mathbb{Z}_{\geq 0}$に対して
+次の同型が存在する
+\cite[Theorem 6.2]{gross2019sheaftheoretic}。
+
 \begin{align}
 \opn{PVD}^{(n-p)}_X\colon \Omega_{X}^{n-p}[n]\simeq
 \mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p})
 \end{align}
-ここで、$[X]\deq \opn{PVD}^{(n)}_X$ は
-トロピカル多様体の基本類(fundamental class)
-である。
+とくに、$[X]\deq \opn{PVD}^{(n)}_X\in H_{n,n}^{\mathrm{BM}}
+(X;\mathbb{Z})$
+はトロピカル多様体の基本類(fundamental class)
+である (cf. \cite[Definition 4.8]{MR3894860})。
 また、$\opn{PVD}^{(n-p)}_X$は、射の合成により同型
 \begin{align}
 H^{n-p,n-q}(X;\mathbb{Z})& \simeq
@@ -1210,21 +1218,28 @@ Borel--Moore ホモロジーのカップ積の構成を
 普遍性に注意しながら見ると、
 $\opn{PVD}^{(n-p)}_X$ は、
 基本類のカップ積による同型
-$\cdot \frown [X]
+\begin{align}
+\label{equation-cup-pd}
+\cdot \frown [X]
 \colon H^{n-p,n-q}(X;\mathbb{Z})\simeq
-H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$
+H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})
+\end{align}
 を与えていることがわかる。
+カップ積 $\cdot \frown [X]$
+の逆準同型を$\opn{PD}_X$ とする。
+
 ($X$ が global な面構造を持つ場合の、
 基本類のカップ積による上述の同型は、
-\cite[Theorem 5.3]{MR3894860} にて示された。)
+\cite[Theorem 5.3]{MR3894860} にて初めて示された。)
 
 次に、古典の場合に従い
 一般化された Gysin 押し出し(generalized Gysin map)
 を定義する(e.g. 
-\cite[Chapter 13]{MR2810322})。
+\cite[Chapter 13. Appendix]{MR2810322})。
 
 \begin{definition}
 $X,Y$ を pure なトロピカル多様体とし、
+$Q$を$\mathbb{R}$の部分環とする。
 $f\colon X\to Y$ を固有射とする。
 $f$ の \emph{generalized Gysin map} とは、
 次の射が可換となる射
@@ -1253,7 +1268,7 @@ $d\in H^{\bullet,\bullet}(X;Q)$
 \begin{align}
     f_!(f^{*}(c)\cdot d)=c\cdot f_!(d).
 \end{align}
-
+とくに、$f_!(f^{*}(c))=c\cdot f_!(1)$ が成り立つ。
 \end{proposition}
 
 \begin{proof}
@@ -1274,7 +1289,13 @@ f_*((f^*(c)\cdot d) \frown [X])
 よって示せた。
 \end{proof}
 
-以上の準備をもって
+\begin{example}
+$X$ をトロピカル多様体とし $D$ を余次元 $1$ の
+部分トロピカル多様体とする。
+\end{example}
+
+\begin{example}
+     
 
 まず、$\iota\colon D\to X$ に関する
 Gysin 押し出しと射影公式から
@@ -1307,6 +1328,8 @@ Todd類の性質より
 \eqref{equation-grr-divisor} は、
 Grothendieck--Riemann--Roch の定理の特殊例
 のトロピカル類似である。
+
+\end{example}
 
 以上を踏まえて、\cref{theorem-rr-euler-surface}
 を一般化する。
@@ -1387,20 +1410,86 @@ M\"obiusの反転公式より、次が成り立つ。
 \end{align}
 
 
-\subsection{boundarylessな場合}
+
 
 
 \end{proposition}
 
+\subsection{*因子の話(文中のどこかに書く話)}
 
+有理多面空間の射は、スキームとは異なり
+$\psi^{-1}\mathcal{M}_Y\to \mathcal{M}_X$
+を常に誘導する。
 
+$(X,\mathcal{O}_X^{\times})$ を有理多面空間
+とし、$\mathcal{M}_X^{\times}$ を
+$X$ 上の$\mathbb{Z}$ 係数の傾きをもつ区分
+整アフィンな関数のなす層とし、
+$\mathcal{D}iv_X\deq \mathcal{M}_X^{\times}/
+\mathcal{O}_X^{\times}$、
+$\opn{Div}(X)\deq \Gamma(X;\mathcal{M}_X^{\times}/
+\mathcal{O}_X^{\times})$
+とする\cite[Deifinition 3.10]{gross2019sheaftheoretic}。
+次に、$Z_k(X)$ を $X$ 上のトロピカル $k$-サイクルの
+なす群とする\cite[Definition 3.5]{gross2019sheaftheoretic}。
+$X$の開集合に対して$Z_k(U)$を値に持つ前層は層をなし、
+これを$\mathscr{Z}_k^{X}$と書く。
+各 $Z_k(X)$ にはサイクル写像
+$\opn{cyc}_X \colon Z_k(X)\to 
+H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
+が存在し、押し出しに関して可換である
+\cite[Definition 5.4 and Corollary 5.8]{gross2019sheaftheoretic}。
+また、次のようなペアリングが存在する
+\cite[\textsection 3.4]{gross2019sheaftheoretic}。
+\begin{align}
+\opn{Div}(X)\times Z_{k}(X)\to Z_{k-1}(X);
+(D,A) \mapsto D\cdot A
+\end{align}
+とくに次のような等式が成り立つ
+\cite[Proposition 5.12]{gross2019sheaftheoretic}。
+(\cite[Theorem 4.15]{MR3894860}もみよ。)
+\begin{align}
+\opn{cyc}_X(D\cdot A)=c_1(\mathcal{L}(D))
+\frown \opn{cyc}_X(A).
+\end{align}
 
-
-
-
-
-
-
+$X$ が純 $n$ 次元トロピカル多様体であるとき、
+$X_{\mathrm{reg}}$ 上の値を$1$とする定数関数
+$1_{X_{\mathrm{reg}}}$が、$X$上のトロピカル
+$n$-サイクルとなり、
+$\opn{cyc}_X(1_{X_{\mathrm{reg}}})=[X]$
+となる \cite[Definition 5.3]{gross2019sheaftheoretic}。
+$X$ が連結かつコンパクトな $n$ 次元トロピカル多様体とし、
+$Y$ を $X$ の余次元 $1$ の
+トロピカル部分多様体とする。
+このとき、
+$\iota_*(1_{Y_{\opn{reg}}})\in Z_{n-1}(X)$ に対して
+$D\cdot 1_{X_{\mathrm{reg}}}=\iota_*(1_{Y_{\opn{reg}}})$
+となる Cartier 因子 $D$ が存在する
+\cite[Lemma 2.23]{MR3032930}。
+この Cartier 因子が一意であることは、
+次のことからわかる。
+まず、ペアリングの定義が局所的なので
+次の層の射が誘導される。
+\begin{align}
+\opn{div}_X\colon \mathcal{D}iv_X\to 
+\mathscr{Z}_{n-1}^{X}
+\end{align}
+この層が単射であることを示せばよいため、
+$X=L_M\times \underline{\mathbb{R}}^{n}$ とし、
+$x=(0,\ldots,0,-\infty,\ldots,-\infty)$と
+仮定してよい。
+$f\colon L_M\times \underline{\mathbb{R}}^{n}\to 
+\mathbb{R}$ をZPL関数とすると
+$x$の十分に小さい近傍上では、
+$f$ は、$L_M$上のZPL関数の引き戻しで
+得られるものだとわかる。また、
+$\opn{div}_X(f)$ で定義されるサイクルも
+$L_M$上のサイクルの引き戻しである。
+よって、$X=L_M$ の場合を調べれば
+よいが、これは
+\cite[Theorem 4.5]{MR4246795}
+の証明の中でより一般的に示されている。
 \bibliography{tropical-complement}
 \bibliographystyle{amsalpha}
 
