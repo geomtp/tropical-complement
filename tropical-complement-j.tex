@@ -243,8 +243,12 @@ Riemann--Roch 数 $\opn{RR}(X;D)$ が
 次のように定義できるようになった。
 
 \begin{align}
-     \opn{RR}(X;D)\deq \int_{X}\opn{ch}(D)\opn{td}(X).
+     \opn{RR}(X;D)\deq \int_{X}\opn{ch}(\mathcal{L}(D))\opn{td}(X).
 \end{align}
+ここで、$\mathcal{L}(D)$とは、$D$が定める
+トロピカル直線束であり、
+$\opn{ch}(\mathcal{L}(D))\deq 
+\sum_{i=0}^{\infty}\frac{c_1(\mathcal{L}(D))^{i}}{i!}$
 
 古典的には、この Riemann--Roch 数は $\opn{RR}(X;D)$
 は$D$の定義する可逆層の Euler 数と対応する。
@@ -262,7 +266,8 @@ Riemann--Roch の定理の定式化および解釈を与えるうえで
 少なくとも$\opn{RR}(X;0)$の幾何学的な意味は、
 専門家の間で共通の認識が存在し、
 \cite[Conjecture 6.13]{demedrano2023chern}
-では、$\opn{RR}(X;0)=\chi_{\opn{top}}(X)$となると
+では、$\opn{RR}(X;0)$は、$X$
+の位相的 Euler 数 $\chi(X)$ と一致していると
 予想されており、
 $X$ が Delzant face 構造を持つトロピカル曲面の場合
 において\cite[Theorem 6.3]{demedrano2023chern}にて
@@ -270,8 +275,8 @@ $X$ が Delzant face 構造を持つトロピカル曲面の場合
 条件は、十分に広い範囲のトロピカル曲面で成立している
 \cite[Corollary 6.11]{demedrano2023chern}。
 
-なお、位相的 Euler 数
-$\chi_{\opn{top}}(X)$が代数多様体上の構造層の
+なお、トロピカル多様体の位相的 Euler 数
+$\chi(X)$が代数多様体上の構造層の
 コホモロジーの Euler 数のトロピカル幾何的な類似であるべき
 であることは、古くから期待されており、
 \cite[Corollary 2]{MR3961331}
@@ -325,7 +330,7 @@ $\iota\colon D\to X$を自然な閉埋め込みとする。
 $X$ をコンパクトトロピカル多様体とし、$D$を余次元$1$
 のコンパクト
 トロピカル部分多様体(tropical submanifold)
-を表現する因子とする
+とする
 \cite[Definition 2.14]{demedrano2023chern}。
 このとき、次の等式が成り立つ。
 \begin{align}
@@ -341,12 +346,12 @@ Euler 数である。
 $\dim X=1$ のときは、
 \cref{conjecture-rr-c-euler}は自明である。
 
-次に、$\dim X=2$かつ、$\opn{RR}(X;0)=\chi_{\opn{top}}(X)$
+次に、$\dim X=2$かつ、$\opn{RR}(X;0)=\chi(X)$
 が成り立っていると仮定する。
 
 \begin{align}
 \opn{RR}(X;-D)=\frac{(-D-K_X)(-D)}{2}+\opn{RR}(X;0)
-=\frac{(D+K_X)D}{2}+\chi_{\opn{top}}(X).
+=\frac{(D+K_X)D}{2}+\chi(X).
 \end{align}
 となるため、トロピカル曲線の随伴公式
 (\cite[Theorem 6]{shaw2015tropical}と
@@ -366,7 +371,7 @@ $X$ をコンパクトトロピカル多様体とし、$D$を余次元$1$
 $D$が$X$上の可容な配置
 (\cref{definition-permissible-position})にあるとき、次が成り立つ。
 \begin{align}
-\opn{RR}(X;D)=\chi_{\opn{top}}(X\setminus D).
+\opn{RR}(X;D)=\chi(X\setminus D).
 \end{align}
 \end{conjecture}
 
@@ -383,8 +388,8 @@ $D$を可容な位置にある
 余次元 $1$ のコンパクトトロピカル部分多様体
 に対して次が成り立つ。
 \begin{align}
-\chi_{\opn{top}}(X\setminus D)=\frac{([D]-K_X)[D]}{2}+
-\chi_{\opn{top}}(X).
+\chi(X\setminus D)=\frac{(D-K_X)D}{2}+
+\chi(X).
 \end{align}
 \end{theorem}
 \cite[Theorem 6.3]{demedrano2023chern}
@@ -697,10 +702,17 @@ $\iota_{x}\colon \opn{LC}_x Y\times
 \underline{\mathbb{R}}^{r_{\alpha}}
 \to \opn{LC}_x X\times \underline{\mathbb{R}}^{r_{\alpha'}}$
 
+有理多面空間 
+$(X,\mathcal{O}_X^{\times})$ が
+トロピカル多様体とは、
+$(X,\mathcal{O}_X^{\times},1_{X_{\opn{reg}}})$
+
 \begin{definition}[{\cite[Definition 2.14]{demedrano2023chern}}]
-$X$をトロピカル多様体とする。$Y$が
+$X$をトロピカル多様体とする。
+あるトロピカルサイクルの台 $Y$ が、
 トロピカル部分多様体とは、
-$Y$がトロピカル多様体かつ、
+$Y$が部分有理多面空間として
+トロピカル多様体かつ、
 任意の点$x\in Y$の
 局所錐の包含射
 $\iota_{*,x}\colon \opn{LC}_x Y\to 
@@ -709,6 +721,8 @@ $\iota_{*,x}\colon \opn{LC}_x Y\to
 Bergman 扇の射と同値
 であるものをいう。
 \end{definition}
+
+
 
 \begin{remark}
 \cite[Example 2.15]{demedrano2023chern}でも強調されているように、
@@ -724,6 +738,20 @@ Bergman 扇の射と同値
 
 なお Vigeland の例も同様の性質を持つ。
 \end{remark}
+
+\begin{remark}
+$Y$が$X$のトロピカル部分多様体のとき、
+トロピカルサイクルの台なので、$Y$は
+$X$の閉部分集合である。
+逆に、$Y$が、$X$
+の有理多面閉部分空間かつトロピカル多様体ならば、
+閉埋め込み写像 $\iota\colon Y\to X$ 
+の押し出し
+\cite[\textsection 3.2]{demedrano2023chern}
+によって、$\iota_*1_{Y_{\mathrm{reg}}}\in Z_{\bullet}(X)$
+となる。
+\end{remark}
+
 $X$がトロピカル多様体のとし、
 $\opn{sed}_X\colon 
 X\to \mathbb{Z}$ を
@@ -756,36 +784,42 @@ $X_{\infty}$が$X$の境界つき
 semiconstant な関数なので、
 
 \begin{align}
-     \opn{sed}_X(x)+\dim \opn{LC}_x X=\dim_x X
+\opn{sed}_X(x)+\dim \opn{LC}_x X=\dim_x X
 \end{align}
 
 
 $Y$ を $X$ 
-のトロピカル部分多様体としたとき、
+のトロピカル部分多様体とし、
 任意の点$x\in Y$に対して
-\begin{align}
-\opn{sed}_X(x)-\opn{sed}_Y(x)
-=\opn{codim}_x(Y/X)-\opn{codim}_x(\opn{LC}_x Y/\opn{LC}_xX),
-\end{align}
 
+\begin{align}
+\opn{codim}(Y/X)\deq \dim X -\dim Y,\quad 
+\opn{codim}_x(Y/X)\deq \dim_x X -\dim_x Y
+\end{align}
+とおくと、次が成り立つ。
+\begin{align}
+\opn{sed}_X(x)-\opn{sed}_Y(x)=
+\opn{codim}_x(Y/X)-\opn{codim}_0(\opn{LC}_x Y/\opn{LC}_xX),
+\end{align}
 \begin{align}
 \opn{codim}_x(Y/X) \geq 
 \opn{sed}_X(x)-\opn{sed}_Y(x)\geq 0
 \end{align}
+
 とくに $\opn{codim}_x(Y/X)=1$
-のときは、両者の差は高々
-$1$しかない。
-そのため
+のときは、$\opn{sed}_X(x)-\opn{sed}_Y(x)=0$ または
+$1$ である。さらに、
 $\opn{sed}_X(x)-\opn{sed}_Y(x)=1$のとき、
 $\dim \opn{LC}_x Y=\dim \opn{LC}_x X$
 なので トロピカル部分多様体の定義より
 $\opn{LC}_x Y\simeq \opn{LC}_x X$
 となる。
 
-
-
-$\dim \opn{lineal}(X,\cdot)$
-は下半連続関数である。
+点 $x\in X$ に対して
+$\opn{lineal}(X,x)$ を$\opn{LC}_x X (\subset T_x X)$
+の (maximal) lineality 空間とする。
+(\cite[\textsection 2.1]{MR4246795} と
+\cite[\textsection 3]{demedrano2023chern} を見よ。)
 
 \begin{definition}[{可容配置}]
 \label{definition-permissible-position}
@@ -819,7 +853,7 @@ $Y$が$X$の可容な位置にあるとき
 \end{remark}
 
 \begin{proposition}
-$X$ をコンパクトな整アフィン多様体とし、
+$X$ を連結かつコンパクトな整アフィン多様体とし、
 $D$ を余次元$1$のトロピカル部分多様体とする。
 このとき、\cref{conjecture-rr-c-euler}と
 \cref{conjecture-rr-euler}は同値である。
@@ -832,7 +866,7 @@ $D$ を余次元$1$のトロピカル部分多様体とする。
 \end{align}
 また、$X\setminus D$は位相多様体なので、Poincar\'e 双対性より
 \begin{align}
-\chi_c(X\setminus D)=(-1)^{\dim X}\chi_{\mathrm{top}}(X\setminus D)
+\chi_c(X\setminus D)=(-1)^{\dim X}\chi(X\setminus D)
 \end{align}
 が成り立つ。
 \end{proof}
@@ -1153,7 +1187,8 @@ $X$をトロピカル多様体とし、$D$ を余次元$1$の
 部分トロピカル多様体とする。このとき、次が成り立つ。
 \begin{align}
 \label{equation-total-adjunction}
-\iota^{*}c^{\mathrm{sm}}(X)=c^{\mathrm{sm}}(D)c(\iota^{*}[D])
+\iota^{*}c^{\mathrm{sm}}(X)=c^{\mathrm{sm}}(D)c(\iota^{*}[D]), \\ 
+\iota^{*}c^{\mathrm{sm}}_k(X)=c^{\mathrm{sm}}_k(D)+c^{\mathrm{sm}}_{k-1}(D)\iota^{*}[D]
 \end{align}
 ここで、$c(\iota^{*}[D])\deq 1+c_1(\iota^{*}[D])$である。 
 \end{conjecture}
@@ -1163,10 +1198,14 @@ $X$をトロピカル多様体とし、$D$ を余次元$1$の
 $\dim X=1,2$ のとき、
 \cref{conjecture-grr-divisor}
 は正しい。$\dim X=1$のときは、
-明らかで $\dim X=2$のときは、
+明らかである。
+$\dim X=2$のときは、
 トロピカル曲面内の
 部分トロピカル曲線の
-同伴公式そのものである\cite[Theorem 6]{shaw2015tropical}。
+同伴公式の別表現に過ぎない
+\cite[Theorem 6]{shaw2015tropical}。
+より詳しくは、\cref{example-gysin-surface}
+にて記述する。
 \cref{conjecture-grr-divisor} 
 が正しいならば、
 どのような結論を導くのか見てみる。
@@ -1236,7 +1275,9 @@ H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})
 一般化された Gysin 押し出し(generalized Gysin map)
 を定義する(e.g. 
 \cite[Chapter 13. Appendix]{MR2810322})。
-
+(なお、トロピカル多様体における
+一般化された Gysin 押し出しは
+\cite[Proposition 8.3]{} でも用いられている。)
 \begin{definition}
 $X,Y$ を pure なトロピカル多様体とし、
 $Q$を$\mathbb{R}$の部分環とする。
@@ -1400,26 +1441,26 @@ Berkovich curve の II, III型の点とこの補空間の理論は
 可縮であることからも想像できる。)
 \end{question}
 
-M\"obiusの反転公式より、次が成り立つ。
-
-\begin{proposition}[{Inclusiton-exclusion principle}]
-
-\begin{align}
-\chi(\bigcup_{i=1}^{n} X_i)=
-\sum_{k=1}^{n}(-1)^{n-k}\sum 
-\end{align}
 
 
 
-
-
-\end{proposition}
 
 \subsection{*因子の話(文中のどこかに書く話)}
+この節では、古典的な代数曲面の交点数の異なる定義
+の一致を見る。
+\begin{proposition}
+$X$ をコンパクトトロピカル曲面とし、$D_1,D_2$
+をトロピカル$1$-サイクルとする。このとき、
+次が成り立つ。
+\begin{align}
+D_1\cdot D_2=\int_X c_1(\mathcal{L}(D_1))
+\cdot c_1(\mathcal{L}(D_2))
+\end{align}
 
-有理多面空間の射は、スキームとは異なり
-$\psi^{-1}\mathcal{M}_Y\to \mathcal{M}_X$
-を常に誘導する。
+とくに右辺は、古典的なトロピカルホモロジーの
+交叉積と一致する。
+
+\end{proposition}
 
 $(X,\mathcal{O}_X^{\times})$ を有理多面空間
 とし、$\mathcal{M}_X^{\times}$ を
@@ -1427,9 +1468,18 @@ $X$ 上の$\mathbb{Z}$ 係数の傾きをもつ区分
 整アフィンな関数のなす層とし、
 $\mathcal{D}iv_X\deq \mathcal{M}_X^{\times}/
 \mathcal{O}_X^{\times}$、
-$\opn{Div}(X)\deq \Gamma(X;\mathcal{M}_X^{\times}/
+$\opn{Div}(X)^{[0]}\deq \Gamma(X;\mathcal{M}_X^{\times}/
 \mathcal{O}_X^{\times})$
 とする\cite[Deifinition 3.10]{gross2019sheaftheoretic}。
+$\opn{Div}(X)^{[0]}$ は、
+\cite{demedrano2023chern} などの意味の Cartier 
+因子のなす群 $\opn{Div}(X)$ の部分群である。
+
+\begin{example}
+$X\deq \mathbb{T}$ としたとき、$\{-\infty\}$
+は、$\opn{Div}(X)^{[0]}$ の台として得られない。
+\end{example}
+
 次に、$Z_k(X)$ を $X$ 上のトロピカル $k$-サイクルの
 なす群とする\cite[Definition 3.5]{gross2019sheaftheoretic}。
 $X$の開集合に対して$Z_k(U)$を値に持つ前層は層をなし、
@@ -1437,14 +1487,38 @@ $X$の開集合に対して$Z_k(U)$を値に持つ前層は層をなし、
 各 $Z_k(X)$ にはサイクル写像
 $\opn{cyc}_X \colon Z_k(X)\to 
 H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
-が存在し、押し出しに関して可換である
+が存在し、固有射の押し出しに関して可換である
 \cite[Definition 5.4 and Corollary 5.8]{gross2019sheaftheoretic}。
 また、次のようなペアリングが存在する
 \cite[\textsection 3.4]{gross2019sheaftheoretic}。
 \begin{align}
-\opn{Div}(X)\times Z_{k}(X)\to Z_{k-1}(X);
+\label{equation-divisor-pairing}
+\opn{Div}(X)^{[0]}\times Z_{k}(X)\to Z_{k-1}(X);
 (D,A) \mapsto D\cdot A
 \end{align}
+
+これは、次のように作られている。
+
+次に、有理凸多面空間の射$f\colon X\to Y$はスキームの場合と異なり、
+任意の因子 $D$ の引き戻し $f^{*}D$ が常に存在し、
+付随する直線束 $\mathcal{L}(D)$ の引き戻しと整合的である
+ことに注意する
+\cite[Propoisition 3.15]{gross2019sheaftheoretic}。
+よって、次のような射が定義できる。
+
+\begin{align}
+\opn{Div}(X)^{[0]}\times Z_{k}(|A|) \to 
+\opn{Div}(|A|)^{[0]} \times Z_{k}(|A|) \to
+Z_{k-1}(|A|) \to
+Z_{k-1}(X)
+\end{align}
+
+そして、$X$内のトロピカルサイクルの台となる
+部分空間の包含射による押し出し
+による余極限をとることで
+\cref{equation-divisor-pairing} が得られる。
+
+
 とくに次のような等式が成り立つ
 \cite[Proposition 5.12]{gross2019sheaftheoretic}。
 (\cite[Theorem 4.15]{MR3894860}もみよ。)
@@ -1466,7 +1540,8 @@ $Y$ を $X$ の余次元 $1$ の
 $\iota_*(1_{Y_{\opn{reg}}})\in Z_{n-1}(X)$ に対して
 $D\cdot 1_{X_{\mathrm{reg}}}=\iota_*(1_{Y_{\opn{reg}}})$
 となる Cartier 因子 $D$ が存在する
-\cite[Lemma 2.23]{MR3032930}。
+\cite[Lemma 2.23]{MR3032930}
+(\cite[Proposition 3.27]{shaw2015tropical}も見よ)。
 この Cartier 因子が一意であることは、
 次のことからわかる。
 まず、ペアリングの定義が局所的なので
@@ -1490,6 +1565,23 @@ $L_M$上のサイクルの引き戻しである。
 よいが、これは
 \cite[Theorem 4.5]{MR4246795}
 の証明の中でより一般的に示されている。
+
+以降、余次元 $1$ の部分トロピカル多様体と
+それに付随する Cartier 因子は同一視する。
+
+\begin{align}
+\iota_*[D]=c_1(\mathcal{L}(D))\frown [X], \quad
+\opn{PD}_X(\iota_*[D])=c_1(\mathcal{L}(D)).
+\end{align}
+
+ここで
+
+\begin{align}
+(\opn{PD}_X(\iota_*[D])\cdot \opn{PD}_X(\iota_*'[D']))\frown [X]=
+c_1(\mathcal{L}(D'))\frown \iota_*[D]
+\end{align}
+
+
 \bibliography{tropical-complement}
 \bibliographystyle{amsalpha}
 
