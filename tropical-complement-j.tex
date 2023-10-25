@@ -238,7 +238,8 @@ Tokyo, 153-8914, Japan}
 \cite{demedrano2023chern}の理論によって
 トロピカル多様体の Todd 類 が定義可能となった。
 特に、
-コンパクトトロピカル多様体$X$上の因子$D$ の
+コンパクトトロピカル多様体$X$上の因子
+$D$ の
 Riemann--Roch 数 $\opn{RR}(X;D)$ が
 次のように定義できるようになった。
 
@@ -249,7 +250,8 @@ Riemann--Roch 数 $\opn{RR}(X;D)$ が
 トロピカル直線束であり、
 $\opn{ch}(\mathcal{L}(D))\deq 
 \sum_{i=0}^{\infty}\frac{c_1(\mathcal{L}(D))^{i}}{i!}$
-
+は、$\mathcal{L}(D)$ の Chern 指標であり、
+$\int_X$ はトレース写像である。
 古典的には、この Riemann--Roch 数は $\opn{RR}(X;D)$
 は$D$の定義する可逆層の Euler 数と対応する。
 しかし、トロピカル幾何では、
@@ -327,10 +329,12 @@ $\iota\colon D\to X$を自然な閉埋め込みとする。
 
 \begin{conjecture}[{Folklore?}]
 \label{conjecture-rr-c-euler}
-$X$ をコンパクトトロピカル多様体とし、$D$を余次元$1$
+$X$ をコンパクトトロピカル多様体とし、$D$を
+付随するサイクル $\opn{div}_X(D)$ が
+余次元 $1$
 のコンパクト
 トロピカル部分多様体(tropical submanifold)
-とする
+となる Cartier 因子とする
 \cite[Definition 2.14]{demedrano2023chern}。
 このとき、次の等式が成り立つ。
 \begin{align}
@@ -350,13 +354,17 @@ $\dim X=1$ のときは、
 が成り立っていると仮定する。
 
 \begin{align}
-\opn{RR}(X;-D)=\frac{(-D-K_X)(-D)}{2}+\opn{RR}(X;0)
-=\frac{(D+K_X)D}{2}+\chi(X).
+\opn{RR}(X;-D)=\frac{(-D-K_X).(-D)}{2}+\opn{RR}(X;0)
+=\frac{(D+K_X).D}{2}+\chi(X).
 \end{align}
+ここで、$\opn{div}_X(D)$を単に$D$と書いている。
 となるため、トロピカル曲線の随伴公式
 (\cite[Theorem 6]{shaw2015tropical}と
 \cite[Theorem 5.2]{demedrano2023chern}を参照)より、
 同様に \cref{conjecture-rr-c-euler}は直ちに成立する。
+なお、ここではサイクルの交点数と付随する Chern 類の
+交点数が一致することを用いている
+(\cref{proposition-cycle-chern})。
 \end{example}
 本論文の主役は、$\opn{RR}(X;-D)$の双対である
 $\opn{RR}(X;D)$の幾何学的意味を与える次の予想である。
@@ -388,7 +396,7 @@ $D$を可容な位置にある
 余次元 $1$ のコンパクトトロピカル部分多様体
 に対して次が成り立つ。
 \begin{align}
-\chi(X\setminus D)=\frac{(D-K_X)D}{2}+
+\chi(X\setminus D)=\frac{(D-K_X). D}{2}+
 \chi(X).
 \end{align}
 \end{theorem}
@@ -896,7 +904,7 @@ $Y$ が可容な位置にあるとき、そのような点は
 $S$をトロピカル曲面とし、$C$を$S$の部分トロピカル曲線とする。
 $C$が可容な位置にあるとき、次の等式が成り立つ。
 \begin{align}
-     C\cdot C=\sharp (C\cap S_{\mathrm{reg}})_{\mathrm{sing}}
+     C.C=\sharp (C\cap S_{\mathrm{reg}})_{\mathrm{sing}}
 \end{align}
 \end{proposition}
 \begin{proof}
@@ -914,7 +922,7 @@ $\Gamma_{n}\subset \Gamma_m\times \mathbb{R}$
 包含写像を与える線形写像を考えると
 $p\circ f$はユニモジュラであることがわかる。
 \begin{align}
-C\cdot C=&\opn{deg}(K_C)-K_S\cdot C \\
+C . C=&\opn{deg}(K_C)-K_S . C \\
 =& \sum_{p\in C_{\mathrm{sing}}}(\opn{val}(p)-2)
 - \sum_{p\in C_{\mathrm{sing}}\cap S_{\mathrm{sing}}}
 (\opn{val}(p)-2) \\
@@ -1269,7 +1277,14 @@ H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})
 
 ($X$ が global な面構造を持つ場合の、
 基本類のカップ積による上述の同型は、
-\cite[Theorem 5.3]{MR3894860} にて初めて示された。)
+\cite[Theorem 5.3]{MR3894860} にて初めて示された。
+また Poincar\'e 双対性は
+\cite[Theorem 1.2]{amini2021homology}によって、
+より広いクラス(彼らの意味での smooth の定義)
+に一般化された。なお、トロピカル多様体(tropical variety)
+が、Verdier--Poincar\'e 双対性を持つときの
+必要十分条件は、\cite[Theorem 6.7]{MR4637248}
+を見よ。)
 
 次に、古典の場合に従い
 一般化された Gysin 押し出し(generalized Gysin map)
@@ -1383,7 +1398,7 @@ $X$を
 
 \begin{align}
 \chi(X\setminus D')-\chi(D\setminus (D'\cap D))
-=\frac{(D'-D)(D'-D-K_X)}{2}+\chi(X).
+=\frac{(D'-D).(D'-D-K_X)}{2}+\chi(X).
 \end{align}
 特に $X$ が Delzant 面構造をもつとき、
 \cref{conjecture-rr-bertini} は正しい。
@@ -1409,7 +1424,7 @@ $\dim X=2$なので、
 \cref{theorem-rr-euler-surface}と
 \eqref{equation-rr-number-divisor}より、
 \begin{align}
-\frac{(D'-D)(D'-D-K_X)}{2}=&
+\frac{(D'-D).(D'-D-K_X)}{2}=&
 \opn{RR}(X;D')-\opn{RR}(X;0)-
 \opn{RR}(D;D'\cap D) \\
 =&\chi(X\setminus D')-\chi(X)-\chi(D\setminus (D'\cap D)).
@@ -1449,11 +1464,12 @@ Berkovich curve の II, III型の点とこの補空間の理論は
 この節では、古典的な代数曲面の交点数の異なる定義
 の一致を見る。
 \begin{proposition}
+\label{proposition-cycle-chern}
 $X$ をコンパクトトロピカル曲面とし、$D_1,D_2$
 をトロピカル$1$-サイクルとする。このとき、
 次が成り立つ。
 \begin{align}
-D_1\cdot D_2=\int_X c_1(\mathcal{L}(D_1))
+D_1 . D_2=\int_X c_1(\mathcal{L}(D_1))
 \cdot c_1(\mathcal{L}(D_2))
 \end{align}
 
@@ -1462,10 +1478,27 @@ D_1\cdot D_2=\int_X c_1(\mathcal{L}(D_1))
 
 \end{proposition}
 
+まず、トロピカル多様体の余次元 $1$ のトロピカルサイクル
+は、Cartier 因子による表現を持つ
+\cite[Proposition 3.27]{shaw2015tropical}。
+なお、本文書でのトロピカル多様体上の 
+Cartier 因子の定義は、
+\cite{shaw2015tropical} や
+\cite{demedrano2023chern} などで用いられる
+ものである点に注意せよ。(Mikhalkin の定義に遡る。)
+また、Cartier 因子から直線束
+$\mathcal{L}(D)\in H^{1}(X;\mathcal{O}_X^{\times})$
+が定義される。
+
 $(X,\mathcal{O}_X^{\times})$ を有理多面空間
 とし、$\mathcal{M}_X^{\times}$ を
 $X$ 上の$\mathbb{Z}$ 係数の傾きをもつ区分
-整アフィンな関数のなす層とし、
+整アフィンな関数のなす層とする。
+さらに $(X,\mathcal{O}_X^{\times})$ がトロピカル
+多様体のとき、
+$\mathcal{K}_{X}^{\times}
+\deq \iota_*\mathcal{M}_{X^{[0]}}^{\times}$
+とする。
 $\mathcal{D}iv_X\deq \mathcal{M}_X^{\times}/
 \mathcal{O}_X^{\times}$、
 $\opn{Div}(X)^{[0]}\deq \Gamma(X;\mathcal{M}_X^{\times}/
@@ -1539,9 +1572,7 @@ $Y$ を $X$ の余次元 $1$ の
 このとき、
 $\iota_*(1_{Y_{\opn{reg}}})\in Z_{n-1}(X)$ に対して
 $D\cdot 1_{X_{\mathrm{reg}}}=\iota_*(1_{Y_{\opn{reg}}})$
-となる Cartier 因子 $D$ が存在する
-\cite[Lemma 2.23]{MR3032930}
-(\cite[Proposition 3.27]{shaw2015tropical}も見よ)。
+となる Cartier 因子 $D$ が存在する。
 この Cartier 因子が一意であることは、
 次のことからわかる。
 まず、ペアリングの定義が局所的なので
@@ -1580,6 +1611,44 @@ $L_M$上のサイクルの引き戻しである。
 (\opn{PD}_X(\iota_*[D])\cdot \opn{PD}_X(\iota_*'[D']))\frown [X]=
 c_1(\mathcal{L}(D'))\frown \iota_*[D]
 \end{align}
+
+\begin{proof}[{Proof of \cref{proposition-cycle-chern}}]
+
+$D_1,D_2$ は、 sedentary 0 であると仮定してよい。
+
+$D_i'$ ($i=1,2$) を $D_i$を表す Cartier 因子とすると、
+
+\begin{align}
+\opn{cyc}_X(D_i)=c_1(\mathcal{L}(D_i'))\frown [X], \quad
+\opn{PD}_X(\opn{cyc}_X(D_i))=c_1(\mathcal{L}(D'_i)).
+\end{align}
+となる。
+
+\begin{align}
+D_1\cdot_{\opn{PD}} D_2
+\deq \int_X \opn{PD}_X(\opn{cyc}_X(D_1))\cdot \opn{PD}_X(\opn{cyc}_X(D_2))\\
+=\int_X c_1(\mathcal{L}(D'_1))\cdot c_1(\mathcal{L}(D'_2))
+\end{align}
+
+また、
+
+\begin{align}
+\int_X \opn{PD}_X(\opn{cyc}_X(D_1))\cdot 
+\opn{PD}_X(\opn{cyc}_X(D_2))& =
+a_{X*} (c_1(\mathcal{L}(D_1')) \frown \opn{cyc}_X(D_2)) \\
+& =a_{X*}(\opn{cyc}_X(D_1'\cdot D_2)) 
+\label{equation-cartier-weil-intersection}
+\end{align}
+$D_1,D_2$ は、sedentary 0 であると仮定したので、
+\cref{equation-cartier-weil-intersection}
+は、\cite{shaw2015tropical,demedrano2023chern}
+で言及されているように$D_1$と$D_2$の交点数となる。
+
+\begin{align}
+\opn{cyc}_X(D_1'\cdot D_2')=c_1(\mathcal{L}(D_1'))
+\end{align}
+となる。
+\end{proof}
 
 
 \bibliography{tropical-complement}
