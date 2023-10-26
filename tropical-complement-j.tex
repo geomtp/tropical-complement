@@ -452,7 +452,7 @@ $c_1(V_{\mathbb{T}}(F))=d\in H^{1,1}(\mathbb{T}P^{n};
 \begin{align}
 \opn{RR}(\mathbb{T}P^{n};V_{\mathbb{T}}(F))=
 \sharp d\Delta_n(\mathbb{Z})=
-\chi_{\mathrm{top}}(\mathbb{T}P^{n}\setminus
+\chi(\mathbb{T}P^{n}\setminus
 V_{\mathbb{T}}(F))
 \end{align}
 なお、同様にして次の等式も得られる。
@@ -464,7 +464,7 @@ V_{\mathbb{T}}(F))
 \end{align}
 二番目の等式は、
 $\chi_{c}(\mathbb{T}P^{n}\setminus
-V_{\mathbb{T}}(F))=1-\chi_{\opn{top}}(V_{\mathbb{T}}(F))$
+V_{\mathbb{T}}(F))=1-\chi (V_{\mathbb{T}}(F))$
 と$V_{\mathbb{T}}(F)$が、$(n-1)$次元球面
 $S^{n-1}$ 
 の$\sharp \opn{int}(d\Delta_n(\mathbb{Z}))$
@@ -482,7 +482,7 @@ $B$ の因子の定義は一般には定義されているわけではないが�
 Poincar\'e 双対性より、
 \begin{align}
 \label{equation-p-dual}
-\chi_{\mathrm{top}}(B\setminus D)=(-1)^{\dim B}
+\chi(B\setminus D)=(-1)^{\dim B}
 \chi_c(B\setminus D)
 \end{align}
 
@@ -571,8 +571,8 @@ $D\cap D'$が$D$の(重みづけも含めて)
 空集合であり、$D\cap D'$ が$D$上可容な位置にあると仮定する。
 このとき、次の等式が成り立つ。
 \begin{align}
-\opn{RR}(X;D'-D)=\chi_{\opn{top}}(X\setminus D')-
-\chi_{\opn{top}}(D\setminus (D'\cap D))
+\opn{RR}(X;D'-D)=\chi (X\setminus D')-
+\chi(D\setminus (D'\cap D))
 \end{align}
 
 \end{conjecture}
@@ -605,7 +605,7 @@ $D,D'$が存在する。
 \end{example}
 
 なお後述するが\cref{conjecture-rr-bertini}は、
-\cref{conjecture-rr-euler}とTodd類に関する
+\cref{conjecture-rr-euler}と Todd 類に関する
 満たすべき性質との組み合わせから帰結することが
 できる。
 
@@ -615,7 +615,7 @@ $C^{\infty}$因子の局所Morseデータと
 関連付けることが可能である。
 局所 Morse データ(の一般化論)を用いることで
 $\chi_c(X\setminus D)$ と
-$\chi_{\mathrm{top}}(X\setminus D)$
+$\chi (X\setminus D)$
 は統一的に管理することができる。
 論文の最後にこのことを曲面の場合に説明する。
 
@@ -655,6 +655,25 @@ $\dim X=\dim_x X$ であることをいう。
 $\chi_{\opn{top}}(X)$は、単に
 $\chi(X)$ と書く。
 \end{notation}
+
+\begin{remark}
+有理多面空間は局所可縮である。
+特に、定数層のコホモロジーと
+特異コホモロジーが同型である。
+有理多面空間がトロピカル多様体であるときは自明である。
+(感覚的には明らかではあるものの)
+一般の場合の初等的な証明を
+筆者は知らないが、
+$\mathbb{T}^{n}$ 内の有理多面集合 $P$ の指数写像
+$\opn{exp}\colon \mathbb{T}^{n}\to 
+\mathbb{R}^{n}_{\geq 0}$ の像が $\mathbb{R}^{n}$
+内の subanalytic set であることと、
+subanalytic set に三角形分割が存在することから
+示すことができる。
+(余裕があれば書く。)
+なお、subalgebraic set の三角形分割の
+存在定理は、$o$-極小構造の理論によってより一般化されている。
+\end{remark}
 
 \cite{demedrano2023chern}に倣い、全体を被覆するチャートの集まり
 $\{(U_i,\psi_i)\}_{i\in I}$を
@@ -970,6 +989,50 @@ Todd 類が持つべき性質を仮定した場合に、
 が\cite[Conjecture 6.13]{demedrano2023chern}
 と\cref{conjecture-rr-euler} より
 帰結されることを見る。
+
+
+
+\subsection{トロピカルホモロジー側の準備}
+
+ここでは、トロピカル多様体 
+(より一般的には、滑らかな有理多面空間
+\cite[Definition 6.1]{MR4637248})
+の層理論的なトロピカルホモロジー論について、
+必要な部分を \cite{MR4637248} から
+復習する。
+
+$(X,\mathcal{O}_X^{\times})$ を有理多面空間
+とし、$\mathcal{M}_X^{\times}$ を
+$X$ 上の$\mathbb{Z}$ 係数の傾きをもつ区分
+整アフィンな関数のなす層とする
+(\cite[Definition 4.1]{MR3894860}
+や\cite[Definition 3.8 and Remark
+3.9]{MR4246795}を見よ)。
+
+\begin{remark}
+トロピカル多様体上の有理関数の定義は、著者によって
+異なる。とくにそれに応じて、
+トロピカル多様体上の Cartier 因子の定義も異なってくる。
+例えば、\cite{MR3894860,MR4637248}
+における Cartier 因子の台は、
+すべてのトロピカルサイクルの台を表現するとは限らない。
+$X\deq \mathbb{T}$ としたとき、$\{-\infty\}$
+は、\cite{MR3894860,MR4637248} の意味での
+Cartier 因子の台にはならない。
+\end{remark}
+
+
+$n$ 次元有理多面空間
+$(X,\mathcal{O}_X^{\times})$ が、
+基本類を許す
+(admits a fundamental class)
+とは、$X$ が純次元的であり、
+$X$ 上の$1$を値にもつ定数関数が
+$Z_n(X)$ の元を定義することである
+\cite[\textsection 6.1]{MR4246795}。
+
+
+\subsection{トロピカル多様体の Todd 類}
 
 古典的には、複素多様体 $M$ 上の偶コホモロジー環
 $H^{\mathrm{even}}(M;\mathbb{Q})$
@@ -1462,7 +1525,7 @@ Berkovich curve の II, III型の点とこの補空間の理論は
 
 \subsection{*因子の話(文中のどこかに書く話)}
 この節では、古典的な代数曲面の交点数の異なる定義
-の一致を見る。
+の一致をトロピカル曲面の場合で見る。
 \begin{proposition}
 \label{proposition-cycle-chern}
 $X$ をコンパクトトロピカル曲面とし、$D_1,D_2$
@@ -1503,27 +1566,22 @@ $\mathcal{D}iv_X\deq \mathcal{M}_X^{\times}/
 \mathcal{O}_X^{\times}$、
 $\opn{Div}(X)^{[0]}\deq \Gamma(X;\mathcal{M}_X^{\times}/
 \mathcal{O}_X^{\times})$
-とする\cite[Deifinition 3.10]{gross2019sheaftheoretic}。
+とする\cite[Deifinition 3.10]{MR4637248}。
 $\opn{Div}(X)^{[0]}$ は、
 \cite{demedrano2023chern} などの意味の Cartier 
 因子のなす群 $\opn{Div}(X)$ の部分群である。
 
-\begin{example}
-$X\deq \mathbb{T}$ としたとき、$\{-\infty\}$
-は、$\opn{Div}(X)^{[0]}$ の台として得られない。
-\end{example}
-
 次に、$Z_k(X)$ を $X$ 上のトロピカル $k$-サイクルの
-なす群とする\cite[Definition 3.5]{gross2019sheaftheoretic}。
+なす群とする\cite[Definition 3.5]{MR4637248}。
 $X$の開集合に対して$Z_k(U)$を値に持つ前層は層をなし、
 これを$\mathscr{Z}_k^{X}$と書く。
 各 $Z_k(X)$ にはサイクル写像
 $\opn{cyc}_X \colon Z_k(X)\to 
 H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
 が存在し、固有射の押し出しに関して可換である
-\cite[Definition 5.4 and Corollary 5.8]{gross2019sheaftheoretic}。
+\cite[Definition 5.4 and Corollary 5.8]{MR4637248}。
 また、次のようなペアリングが存在する
-\cite[\textsection 3.4]{gross2019sheaftheoretic}。
+\cite[\textsection 3.4]{MR4637248}。
 \begin{align}
 \label{equation-divisor-pairing}
 \opn{Div}(X)^{[0]}\times Z_{k}(X)\to Z_{k-1}(X);
@@ -1553,7 +1611,7 @@ Z_{k-1}(X)
 
 
 とくに次のような等式が成り立つ
-\cite[Proposition 5.12]{gross2019sheaftheoretic}。
+\cite[Proposition 5.12]{MR4637248}。
 (\cite[Theorem 4.15]{MR3894860}もみよ。)
 \begin{align}
 \opn{cyc}_X(D\cdot A)=c_1(\mathcal{L}(D))
@@ -1565,7 +1623,7 @@ $X_{\mathrm{reg}}$ 上の値を$1$とする定数関数
 $1_{X_{\mathrm{reg}}}$が、$X$上のトロピカル
 $n$-サイクルとなり、
 $\opn{cyc}_X(1_{X_{\mathrm{reg}}})=[X]$
-となる \cite[Definition 5.3]{gross2019sheaftheoretic}。
+となる \cite[\textsection 6.1]{MR4637248}。
 $X$ が連結かつコンパクトな $n$ 次元トロピカル多様体とし、
 $Y$ を $X$ の余次元 $1$ の
 トロピカル部分多様体とする。
