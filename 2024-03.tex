@@ -1,0 +1,259 @@
+\documentclass[dvipdfmx,12pt]{beamer}%handoutを付け加えることでスライドのアニメを消せる
+
+% \usepackage{tikz-cd}
+
+\usepackage{hyperref}
+\usepackage{bm}%斜体ボルド(太字)用 \bm{}を用いればよい
+%\usepackage{mathabx}%大型演算子補強
+\usepackage{makecell}%表のセル内で改行するためのコマンド
+\usepackage{bxdpx-beamer}
+\usepackage{pxjahyper}
+\usepackage{layout}
+\usepackage{amstext,amsfonts,amssymb,amscd,
+amsbsy,amsmath}
+
+\usepackage{mathrsfs}
+\usepackage{bookmark}
+\usepackage[T1]{fontenc}
+\usepackage{tikz-cd}
+\usepackage{latexsym}%数式用
+\usepackage{mathtools}%coloneqqを使うため
+
+ \usetikzlibrary{cd}
+ \usetikzlibrary{calc}
+
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\renewcommand{\kanjifamilydefault}{\gtdefault}% 既定をゴシック体に
+\setbeamertemplate{navigation symbols}{}%下の方にある変なのを消すために必要
+\setbeamercovered{transparent}%隠している文章を半透明化
+%\usepackage{minjis}%min10をなくせるらしい?
+
+\usetheme{Berlin}
+\usecolortheme{rose}
+%\usetheme{Darmstadt}%自分の基本型
+%\usetheme{Berlin}%基本型の一種
+%\usetheme{boxes}
+\usepackage{adjustbox}
+\setbeamerfont{frametitle}{size=\normalsize}
+\setbeamertemplate{frametitle}{%
+    \nointerlineskip%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.0ex]{frametitle}
+        \hspace*{1ex}\insertframetitle%
+    \end{beamercolorbox}%
+}
+%フラットデザイン化
+\setbeamertemplate{blocks}[rounded] % Blockの影を消す
+\useinnertheme{rectangles} % 箇条書きをシンプルに
+\setbeamertemplate{headline}
+{
+    \begin{beamercolorbox}[ht=2.25ex,dp=1ex,center]{author in head/foot}%
+      \end{beamercolorbox}   
+}
+%\setbeamertemplate{footline}[frame number] % フッターはスライド番号のみ
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.5ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.5ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}\insertframenumber/\inserttotalframenumber
+\hspace*{2em}
+      \usebeamertemplate{page number in head/foot}\hspace*{2ex} 
+    \end{beamercolorbox}
+  }%
+  \vskip0pt%
+}
+
+%Beamer色設定
+\definecolor{UniBlue}{RGB}{0,150,200} 
+\definecolor{AlertOrange}{RGB}{255,76,0}
+\definecolor{AlmostBlack}{RGB}{38,38,38}
+\colorlet{myblue}{blue!70!black} %
+\setbeamercolor{normal text}{fg=AlmostBlack}  % 本文カラー
+\setbeamercolor{structure}{fg=UniBlue} % 見出しカラー
+\setbeamercolor{block title}{fg=UniBlue!50!black} % ブロック部分タイトルカラー
+\setbeamercolor{alerted text}{fg=AlertOrange} % \alert 文字カラー
+
+\mode<beamer>{
+    \definecolor{BackGroundGray}{RGB}{254,254,254}
+    \setbeamercolor{background canvas}{bg=BackGroundGray} % スライドモードのみ背景をわずかにグレーにする
+}
+
+\setbeamertemplate{theorems}[numbered]
+
+% \newcommand{\deq}{\coloneqq}
+% \newcommand{\textalert}[1]{{\normalsize \color{blue!70!black} {#1}}}
+\usepackage{relsize}
+% \newcommand{\mathalert}[1]{{\color{blue!70!black}\mathlarger{#1}}}
+
+% \newcommand{\simto}{ 
+% \mathrel{\raisebox{0.13em}{${\sim}$}}
+% \kern -0.75em \mathrel{\raisebox{-0.11em}{${\scriptstyle \to}$}}  
+% }
+%\renewcommand{\kanjifamilydefault}{\gtdefault}
+\usepackage[deluxe, expert, uplatex]{otf}% textbfを太くする.
+
+\newcommand{\opn}[1]{\operatorname{#1}}
+\newcommand{\deq}{\coloneqq}
+
+\title[{The complement of a tropical 
+hypersurface}]{The complement of a tropical 
+hypersurface in permissible position (in progress)} 
+\author[Y. Tsutsui]{Yuki Tsutsui}
+\institute[UT]{Graduate School of Mathematical Sciences \and University of Tokyo}
+\date{6th Tropical Geometry Workshop,\\
+
+2024-03-14}
+
+\begin{document}
+
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+
+\maketitle
+
+\begin{frame}
+\frametitle{Preliminary}
+\end{frame}
+
+\begin{frame}
+
+
+\begin{conjecture}[{de Medrano--Rinc\'on--Shaw'23}]
+For any cpt tropical mfd $S$, 
+\begin{align}
+\chi_{\opn{top}}(S)=\int_{S}\opn{td}(S)=\opn{RR}(S;0).
+\end{align}
+\end{conjecture}
+
+\begin{theorem}[{de Medrano--Rinc\'on--Shaw'23}]
+If $S$ is a cpt tropical 
+surface admitting a
+Delzant face structure, then
+\begin{align}
+\chi_{\opn{top}}(S)=\opn{RR}(S;D)=\frac{c_1(S)^2+c_2(S)}{12}.
+\end{align}
+
+\end{theorem}
+
+\begin{question}
+What is a geometrical meaning of $\opn{RR}(S;D)$ for 
+a divisor $D$ on $S$ ?
+\end{question}
+
+\end{frame}
+
+\begin{frame}
+
+$X$: a complete (nonsingular) algebraic variety,
+
+$D$: an (nonsingular) effective divisor on $X$.
+
+The exact sequence
+\begin{align}
+0 \to \mathcal{O}_X(-D)\to
+\mathcal{O}_X
+\to \iota_{*}\mathcal{O}_D \to 0 \notag
+\end{align}
+gives 
+\begin{align}
+\chi (H^\bullet(X;\mathcal{O}_X(-D)))=
+\chi (H^\bullet(X;\mathcal{O}_X))-
+\chi (H^\bullet(D;\mathcal{O}_D))
+\end{align}
+
+We can easily pose the following conjecture:
+\begin{conjecture}[Folklore?]
+Let $D$ be a tropical submanifold of codimension $1$ on
+a cpt tropical manifold $X$. Then,
+\begin{align}
+\opn{RR}(X;-D)&=\chi_{c}(X\setminus D) \\
+&=\chi(X)-\chi(D) \notag
+\end{align}
+where $\chi_{c}(X\setminus D)$
+is the compactly supported Euler 
+characteristic of $X\setminus D$. 
+ 
+\end{conjecture}
+
+\end{frame}
+
+\begin{frame}
+
+$X$: a tropical manifold,
+$\opn{LC}_x X$: the local cone of $X$ at $x$.
+
+\begin{definition}[{e.g. Gross--Shokrieh'21, dM--R--S'23}]
+
+The (maximal) \emph{lineality space} 
+$\opn{lin}(X,x)$ of $X$ at $x$ is
+the maximal subspace $L$ of $T_x X$ s.t.
+\begin{align}
+L+\opn{LC}_x X =\opn{LC}_x X.
+\end{align}
+
+\end{definition}
+
+
+
+\begin{definition}
+A tropical submanifold $D$ of $X$ is in 
+\emph{permissible position} if for any $x\in D$
+\begin{align}
+\opn{lineal}(D,x) \subsetneq
+ \opn{lineal}(X,x).
+\end{align}
+
+\end{definition}
+
+
+
+
+\end{frame}
+
+
+\begin{frame}
+\begin{example}
+A point $p$ in a tropical curve $C$ is in permissible 
+position iff $\opn{val}(p)=2$.
+\end{example}
+\end{frame}
+
+\begin{frame}
+\begin{conjecture}
+Let $D$ be a tropical submanifold of codimension $1$ on
+a cpt tropical manifold $X$. 
+If $D$ is in permissible position, then 
+\begin{align}
+\opn{RR}(X;D)&=\chi(X\setminus D).
+\end{align}
+\end{conjecture}
+
+\begin{example}
+If $X$ is a connected and cpt integral affine manifold,
+then
+\begin{align}
+\chi (X\setminus D)&=(-1)^{\dim X}\chi_c(X\setminus D), \\
+\opn{RR}(X;D)&=(-1)^{\dim X}\opn{RR}(X;-D).
+\end{align}
+
+\end{example}
+
+\end{frame}
+
+\begin{frame}
+	
+\end{frame}
+
+\end{document}

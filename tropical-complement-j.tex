@@ -364,7 +364,8 @@ $\dim X=1$ のときは、
 =\chi(D)+\opn{RR}(X;0).
 \end{align}
 
-同様に \cref{conjecture-rr-c-euler}は直ちに成立する。
+よって、$X$ が Delzant face 構造を持つとき、
+\cref{conjecture-rr-c-euler} が成立する。
 なお、ここではサイクルの交点数と付随する Chern 類の
 交点数が一致することを用いている
 (\cref{proposition-cycle-chern})。
@@ -390,8 +391,27 @@ $D$が$X$上の可容な配置
 成立する条件である一方で、満たさないものも簡単に作れる条件である。
 (\cref{example-permissible-point}などを参照。)
 
-この予想が成り立つと期待される理由となる例は、
-\cref{example-} などを見よ。
+\begin{example}
+\label{example-permissible-point}
+$C$をコンパクトトロピカル曲線とする。点 $p\in C$ が
+可容な(permissible)位置にあることは、
+$p\in C_{\opn{reg}}$ であることと同値である。
+当然、有限個の点集合の場合に一般化できる。
+簡単な計算から、可容な位置にある部分トロピカル多様体
+$D$に対して、
+\begin{align}
+\opn{RR}(C;D)=\sharp (\opn{supp}(D))+ \chi_{\opn{top}}(C)
+=\chi_{\opn{top}}(C\setminus D).
+\end{align}
+よって、$\dim X=1$のとき、
+\cref{conjecture-rr-euler}
+は正しい。
+\end{example}
+
+\cref{conjecture-rr-euler}
+が成り立つと期待される根拠となるその他の例は、
+\cref{example-TPn} や
+\cref{remark-iass}
 
 本論文の主定理の一つは次のようになる。
 証明は難しくない。
@@ -412,72 +432,6 @@ $D$を可容な位置にある
 $X$が Delzant face 構造をもつコンパクトトロピカル
 曲面のとき、 \cref{conjecture-rr-euler}は正しい。
 \end{corollary}
-
-また、Main theorem はいくつかの拡張を行う。
-
-\begin{example}
-\label{example-permissible-point}
-$C$をコンパクトトロピカル曲線とする。点$p$が可容な(permissible)位置にあることは、
-$p\in C_{\opn{reg}}$ であることと同値である。
-当然、有限個の点集合の場合に一般化できる。
-簡単な計算から、可容な位置にある部分トロピカル多様体
-$D$に対して、
-\begin{align}
-\opn{RR}(C;D)=\sharp (\opn{supp}(D))+ \chi_{\opn{top}}(C)
-=\chi_{\opn{top}}(C\setminus D).
-\end{align}
-よって、$\dim X=1$のとき、
-\cref{conjecture-rr-euler}
-は正しい。
-\end{example}
-
-\begin{example}[{トロピカル射影空間}]
-
-$\mathbb{T}P^{n}$ をトロピカル射影空間とし、
-$F$を$d\Delta_{n}$をNewton多面体とするトロピカル
-多項式とする。トロピカル超曲面 
-$V_{\mathbb{T}}(F)$ が滑らかとは、$F$ が定義する正則
-多面体分割が、unimodularな三角形分割になることであった。
-(例えば、\cite[\textsection 4.5]{MR3287221} を
-参照。)
-このとき、
-$\mathbb{T}P^{n}\setminus
-V_{\mathbb{T}}(F)$の各連結成分が$d\Delta_n$内の格子点集合と
-全単射になっていることは有名である
-(例えば、\cite[Proposition 3.1.6]{MR3287221})。各連結成分は、
-$\mathbb{T}P^{n}$内の凸多面体であるため、位相空間的には
-すべて可縮である。また、
-トーリック多様体における Chern 類の表現と
-CSM サイクルによる Chern 類の定義は整合的である
-\cite[Proposition 13.1.2]{MR2810322}。
-よって、Todd類も同等のものとなる
-(\cite[Theorem 13.1.6]{MR2810322} も参照)。よって、
-$c_1(V_{\mathbb{T}}(F))=d\in H^{1,1}(\mathbb{T}P^{n};
-\mathbb{Z})
-\simeq \mathbb{Z}$であることから次の等式が得られる。
-\begin{align}
-\opn{RR}(\mathbb{T}P^{n};V_{\mathbb{T}}(F))=
-\sharp d\Delta_n(\mathbb{Z})=
-\chi(\mathbb{T}P^{n}\setminus
-V_{\mathbb{T}}(F))
-\end{align}
-なお、同様にして次の等式も得られる。
-\begin{align}
-\opn{RR}(\mathbb{T}P^{n};-V_{\mathbb{T}}(F))=
-(-1)^{n}\sharp \opn{int}(d\Delta_n(\mathbb{Z}))=
-\chi_{c}(\mathbb{T}P^{n}\setminus
-V_{\mathbb{T}}(F))   
-\end{align}
-二番目の等式は、
-$\chi_{c}(\mathbb{T}P^{n}\setminus
-V_{\mathbb{T}}(F))=1-\chi (V_{\mathbb{T}}(F))$
-と$V_{\mathbb{T}}(F)$が、$(n-1)$次元球面
-$S^{n-1}$ 
-の$\sharp \opn{int}(d\Delta_n(\mathbb{Z}))$
-個の wedge 和とホモトピー同値であることから従う。
-\end{example}
-
-
 
 もう少しだけ踏み込んだ話をする。
 トロピカル多様体$X$の
@@ -596,19 +550,24 @@ $\chi (X\setminus D)$
 は統一的に管理することができる。
 論文の最後にこのことを曲面の場合に説明する。
 
+\subsection{本論文のアウトライン}
+
+
+
 \section{証明の準備}
 
 ここでは、本論文で必要な
 トロピカル多様体の
 前提知識を
-\cite{mikhalkin2018tropical,gross2019sheaftheoretic,demedrano2023chern}
+\cite{mikhalkin2018tropical,MR4637248,demedrano2023chern}
 を参考に整理する。
 (必要に応じて、別の文献も引用する。)
 本論文の後半を記述する上での事情から、
-\cite{gross2019sheaftheoretic}による
+\cite{MR4637248}による
 層理論的な定式化を主に採用することとする。
-また、本論文でのトロピカル多様体では
-finite typeに関する条件
+特に、本論文でのトロピカル多様体の定義は
+\cite[Definition 6.1]{gross2019sheaftheoretic}
+を採用し、finite type に関する条件
 (e.g. \cite[Definition 7.1.14]{mikhalkin2018tropical} や
 \cite[Definition 2.3 (4)]{demedrano2023chern})
 は課さないこととする。トロピカル多様体がコンパクト
@@ -616,7 +575,8 @@ finite typeに関する条件
 
 \begin{notation}
 本文書での
-有理多面空間 $(X,\mathcal{O}_X^{\times})$ の
+有理多面空間 $(X,\mathcal{O}_X^{\times})$ 
+\cite[Definition 2.2]{MR4246795} の
 次元$\dim X$とは、$X$の局所コンパクト Hausdorff 空間
 の次元\cite[Chapter III. Definition 9.4]{MR842190}
 のことであり、点 $x\in X$ に対して
@@ -639,18 +599,28 @@ $\dim X=\dim_x X$ であることをいう。
 有理多面空間が
 boundaryless もしくは
 トロピカル多様体であるときは自明である。
-(感覚的には明らかではあるものの)
-一般の有理多面空間が局所可縮であることの
-初等的な証明を筆者は知らないが、
+一般の有理多面空間が局所可縮であることは、
+$\mathbb{T}^{n}$ 内の凸多面体 $P$ が
+局所可縮であることと、
+$\mathbb{R}^{n}$ 内の コンパクト集合 $K$ が Euclid 
+neighborhood retract であることと
+$K$が局所可縮であることが同値であること、
+Euclid neighborhood retract な距離空間は
+absolute neighborhood retract であること、
+そして Borsuk's pasting theorem から示される。
+(\href{https://eudml.org/doc/212574}{EUDML | Über eine Klasse von lokal zusammenhängenden Räumen}
+の p.226 で初めて示されたらしい。
+)
+
+もしくは、
 $\mathbb{T}^{n}$ 内の有理多面集合 $P$ の指数写像
 $\opn{exp}\colon \mathbb{T}^{n}\to 
 \mathbb{R}^{n}_{\geq 0}$ の像が $\mathbb{R}^{n}$
 内の subanalytic set であることと、
 $\mathbb{R}^{n}$ 内の局所閉な
 subanalytic set に三角形分割が存在すること
-\cite{MR760983} から
+\cite{MR760983} からも
 示すことができる。
-(余裕があれば詳細を書く。)
 なお、subamalytic set の三角形分割の
 存在定理は、$o$-極小構造の理論によってより一般化されている。
 (詳しくは、\cite[Theorem II]{MR1463945} などを見よ。)
@@ -661,10 +631,9 @@ subanalytic set に三角形分割が存在すること
 全体を被覆するチャートの集まり
 $\{(U_i,\psi_i)\}_{i\in I}$を
 $(X,\mathcal{O}_X^{\times})$のアトラスと呼ぶこととする。
-
-有理多面空間$(X,\mathcal{O}_X^{\times})$が
-\cite[Definition 6.1]{gross2019sheaftheoretic}の意味でトロピカル多様体
-であるとき、各チャート
+有理多面空間$(X,\mathcal{O}_X^{\times})$ が
+\cite[Definition 6.1]{gross2019sheaftheoretic}
+の意味でトロピカル多様体であるとき、各チャート
 $\psi_i\colon U_i\to V_i(\subset \underline{\mathbb{R}}^{n_i})$
 の$V_i$が$L_M\times \underline{\mathbb{R}}^{r_i}$の開集合
 となるようなアトラス$\{(U_i,\psi_i)\}_{i\in I}$を
@@ -683,39 +652,36 @@ $Y$を部分空間とし,
 $\mathcal{O}^{\times}_{Y}\deq 
 \opn{Im}(i^{-1}\mathcal{O}_X^{\times}\to \mathcal{C}_{Y}^{0})$
 とする。
-各点 $x\in Y$ に対して$X$のチャート
-$\psi\colon U\to V(\subset \mathbb{T}^{n})$
-の制限$\psi|_{U\cap Y}\colon U\cap Y\to 
-V\cap \psi(U\cap Y)(\subset \mathbb{T}^{n})$が
-$(Y,\mathcal{O}_Y^{\times})$のチャートとなるものが存在するとき、
-$(Y,\mathcal{O}_Y^{\times})$
-は、$(X,\mathcal{O}^{\times}_X)$
-の部分有理多面空間と呼ぶ。
+$(Y,\mathcal{O}_Y^{\times})$ が有理多面空間となり、
+$Y$ のアトラスが、
+$(X,\mathcal{O}^{\times}_X)$
+のアトラスの $Y$ への制限として得られるとき、
+$(Y,\mathcal{O}_Y^{\times})$ を
+$X$ の部分有理多面空間と呼ぶ。
 \end{definition}
 
 $X$が第二可算 Hausdorff なので
 $Y$もまた第二可算 Hausdorff である。
 よって、整合的なチャートが存在することさえ確認すればよい。
 
-$\psi_i|_{Y}\colon U_i\cap Y \to \psi_i(U_i\cap Y)(\subset 
-\underline{\mathbb{R}}^{n_i})$
-
+$(X,\mathcal{O}_X^{\times})$ を有理多面空間
+$(Y,\mathcal{O}_Y^{\times})$ を $X$ の
+部分有理多面空間とする。
 $\iota\colon Y \to X$ を包含写像としたとき、
-
-局所錐の包含射
+各点 $x\in Y$ ごとに局所錐の包含射
 $\iota_{*,x}\colon \opn{LC}_x Y\to \opn{LC}_x X$
 が自然と誘導される。
-
-
-
+さらに、$(X,\mathcal{O}_X^{\times})$ と
+$(Y,\mathcal{O}_Y^{\times})$ が
+regular at infinity 
+(\cite[\textsection 6.1]{MR4637248} や
+\cite[Definition 1.2]{MR3330789} を見よ) 
+であるとき、各点 $x$ の近傍の射はある射
 $\iota_{x}\colon \opn{LC}_x Y\times 
 \underline{\mathbb{R}}^{r_{\alpha}}
 \to \opn{LC}_x X\times \underline{\mathbb{R}}^{r_{\alpha'}}$
+の制限として得られる。
 
-有理多面空間 
-$(X,\mathcal{O}_X^{\times})$ が
-トロピカル多様体とは、
-$(X,\mathcal{O}_X^{\times},1_{X_{\opn{reg}}})$
 
 \begin{definition}[{\cite[Definition 2.14]{demedrano2023chern}}]
 $X$をトロピカル多様体とする。
@@ -733,20 +699,23 @@ Bergman 扇の射と同値
 \end{definition}
 
 
+トロピカルサイクルの台は、閉部分集合なので
+部分トロピカル多様体は常に閉集合である。
 
 \begin{remark}
 \cite[Example 2.15]{demedrano2023chern}でも強調されているように、
 トロピカル多様体の閉部分多面空間がトロピカル多様体だとしても
 トロピカル部分多様体であるとは限らない。
-典型例に Brugall\'e--Shaw による例が存在する。
---------
+例えば、
+\cite[Example 2.21]{shaw2015tropical}
+における $C$ は、 valent が $3$ のトロピカル曲線
+であるが、$P$ の部分トロピカル多様体ではない。
+その他の例については、
+\cite{MR2594592} や \cite{MR3339531}
+などを参照せよ。
 この埋め込みは、台集合を同じとするマトロイドに対する
 包含関係$L_M\subset L_N$に由来しない。
 
-この例について少し説明する。(なお、この例は
-()にて知った。)
-
-なお Vigeland の例も同様の性質を持つ。
 \end{remark}
 
 \begin{remark}
@@ -762,7 +731,7 @@ $X$の閉部分集合である。
 となる。
 \end{remark}
 
-$X$がトロピカル多様体のとし、
+$X$をトロピカル多様体のとし、
 $\opn{sed}_X\colon 
 X\to \mathbb{Z}$ を
 $X$ 上の sedentarity 関数
@@ -770,7 +739,12 @@ $X$ 上の sedentarity 関数
 とする。
 (\cite[Definition 2.4]{demedrano2023chern}
 もみよ。)
-$\opn{sed}_X$ は、
+定義より、任意の点 $x\in X$ に対して
+次の等式が成り立つ。
+\begin{align}
+\opn{sed}_X(x)+\dim \opn{LC}_x X=\dim_x X.
+\end{align}
+また $\opn{sed}_X$ は、
 上半連続関数である。
 特に次の集合たちは、
 $X$の閉部分集合である
@@ -793,9 +767,7 @@ $X_{\infty}$が$X$の境界つき
 さらに言えば、$\opn{sed}_X$ は
 semiconstant な関数なので、
 
-\begin{align}
-\opn{sed}_X(x)+\dim \opn{LC}_x X=\dim_x X
-\end{align}
+
 
 
 $Y$ を $X$ 
@@ -883,6 +855,7 @@ $D$ を余次元$1$のトロピカル部分多様体とする。
 \end{proof}
 
 \begin{remark}[{特異点つき整アフィン多様体の場合}]
+\label{remark-iass}
 この Remark の説明は、少々ヒューリスティックなものであるが、
 理解の助けとなるため記述する。
 \cref{proposition-divisor-poincare}
@@ -912,9 +885,51 @@ Serre 双対性を考えると任意の因子$D$に対して
 \cref{equation-p-dual}の性質は非常にもっともらしく見える。
 \end{remark}
 
-\begin{remark}
-
-\end{remark}
+\begin{example}[{トロピカル射影空間}]
+\label{example-TPn}
+$\mathbb{T}P^{n}$ をトロピカル射影空間とし、
+$F$を$d\Delta_{n}$をNewton多面体とするトロピカル
+多項式とする。トロピカル超曲面 
+$V_{\mathbb{T}}(F)$ が滑らかとは、$F$ が定義する正則
+多面体分割が、unimodularな三角形分割になることであった。
+(例えば、\cite[\textsection 4.5]{MR3287221} を
+参照。)
+このとき、
+$\mathbb{T}P^{n}\setminus
+V_{\mathbb{T}}(F)$の各連結成分が$d\Delta_n$内の格子点集合と
+全単射になっていることは有名である
+(例えば、\cite[Proposition 3.1.6]{MR3287221})。各連結成分は、
+$\mathbb{T}P^{n}$内の凸多面体であるため、位相空間的には
+すべて可縮である。また、
+トーリック多様体における Chern 類の表現と
+CSM サイクルによる Chern 類の定義は整合的である
+\cite[Proposition 13.1.2]{MR2810322}。
+よって、Todd 類も同等のものとなる
+(\cite[Theorem 13.1.6]{MR2810322} も参照)。よって、
+$c_1(V_{\mathbb{T}}(F))=d\in H^{1,1}(\mathbb{T}P^{n};
+\mathbb{Z})
+\simeq \mathbb{Z}$であることから次の等式が得られる。
+\begin{align}
+\opn{RR}(\mathbb{T}P^{n};V_{\mathbb{T}}(F))=
+\sharp d\Delta_n(\mathbb{Z})=
+\chi(\mathbb{T}P^{n}\setminus
+V_{\mathbb{T}}(F))
+\end{align}
+なお、同様にして次の等式も得られる。
+\begin{align}
+\opn{RR}(\mathbb{T}P^{n};-V_{\mathbb{T}}(F))=
+(-1)^{n}\sharp \opn{int}(d\Delta_n(\mathbb{Z}))=
+\chi_{c}(\mathbb{T}P^{n}\setminus
+V_{\mathbb{T}}(F))   
+\end{align}
+二番目の等式は、
+$\chi_{c}(\mathbb{T}P^{n}\setminus
+V_{\mathbb{T}}(F))=1-\chi (V_{\mathbb{T}}(F))$
+と$V_{\mathbb{T}}(F)$が、$(n-1)$次元球面
+$S^{n-1}$ 
+の$\sharp \opn{int}(d\Delta_n(\mathbb{Z}))$
+個の wedge 和とホモトピー同値であることから従う。
+\end{example}
 
 \begin{proposition}
 $X$ をトロピカル多様体とし、$Y$ を
@@ -966,9 +981,7 @@ C . C=&\opn{deg}(K_C)-K_S . C \\
 
 \end{proof}
 
-\begin{remark}
-     
-\end{remark}
+
 
 \begin{proof}[{Proof of \cref{theorem-rr-euler-surface}}]
 
