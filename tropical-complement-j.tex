@@ -296,7 +296,7 @@ $\chi(X)$が代数多様体上の構造層の
 一致するという予想\cite[Conjecture 1.2]{tsutsui2023graded}を
 提案し、トロピカル多様体がトロピカル曲線や Hesse 計量を
 許容する整アフィン多様体に対して成立することを示した。
-$C^{\infty}$因子のコホモロジカル
+$C^{\infty}$ 因子のコホモロジカル
 局所 Morse データはSYZ変換のトロピカル類似によって
 古典的な複素直線束の Riemann--Roch 数
 と関連付けることができると期待している。
@@ -380,24 +380,24 @@ $X$ をコンパクトトロピカル多様体とし、$D$を余次元$1$
 のコンパクト
 トロピカル部分多様体(tropical submanifold)とする
 \cite[Definition 2.14]{demedrano2023chern}。
-$D$が$X$上の可容な配置
+$D$が$X$上の中庸な配置
 (\cref{definition-permissible-position})にあるとき、次が成り立つ。
 \begin{align}
 \opn{RR}(X;D)=\chi(X\setminus D).
 \end{align}
 \end{conjecture}
 
-可容な配置の条件は、十分に一般的なトロピカル部分多様体に対して
+中庸な配置の条件は、十分に一般的なトロピカル部分多様体に対して
 成立する条件である一方で、満たさないものも簡単に作れる条件である。
 (\cref{example-permissible-point}などを参照。)
 
 \begin{example}
 \label{example-permissible-point}
 $C$をコンパクトトロピカル曲線とする。点 $p\in C$ が
-可容な(permissible)位置にあることは、
+中庸な(permissible)位置にあることは、
 $p\in C_{\opn{reg}}$ であることと同値である。
 当然、有限個の点集合の場合に一般化できる。
-簡単な計算から、可容な位置にある部分トロピカル多様体
+簡単な計算から、中庸な位置にある部分トロピカル多様体
 $D$に対して、
 \begin{align}
 \opn{RR}(C;D)=\sharp (\opn{supp}(D))+ \chi_{\opn{top}}(C)
@@ -418,7 +418,7 @@ $D$に対して、
 \begin{theorem}[{Main theorem}]
 \label{theorem-rr-euler-surface}
 $X$ をコンパクトトロピカル曲面とし、
-$D$を可容な位置にある
+$D$を中庸な位置にある
 余次元 $1$ のコンパクトトロピカル部分多様体
 に対して次が成り立つ。
 \begin{align}
@@ -487,19 +487,19 @@ $D,D'$を余次元$1$のトロピカル部分多様体または
 空集合とする。
 $D$ と $D'$ は次の条件を満たしているとする。
 \begin{enumerate}
-\item $D'$が$X$上可容な位置にある。
+\item $D'$が$X$上中庸な位置にある。
 \item $D$ と $D'$ は横断的かつ局所マトロイド的に
 交わる。
 \item[(2)'] $D\cap D'$が$D$の(重みづけも含めて)
 余次元$1$のトロピカル部分多様体または
 空集合である。
-\item $D\cap D'$ が $D$ 上可容な位置にある。
+\item $D\cap D'$ が $D$ 上中庸な位置にある。
 \end{enumerate}
 
-$D'$が$X$上可容な位置にあるとし、
+$D'$が$X$上中庸な位置にあるとし、
 $D\cap D'$が$D$の(重みづけも含めて)
 余次元$1$のトロピカル部分多様体または
-空集合であり、$D\cap D'$ が$D$上可容な位置にあると仮定する。
+空集合であり、$D\cap D'$ が$D$上中庸な位置にあると仮定する。
 このとき、次の等式が成り立つ。
 \begin{align}
 \opn{RR}(X;D'-D)=\chi (X\setminus D')-
@@ -541,7 +541,7 @@ $D,D'$が存在する。
 できる。
 
 右辺の量は随分具体的な量であるが、実は
-$D$も$X$上の可容な位置にあるとき、
+$D$も$X$上の中庸な位置にあるとき、
 $C^{\infty}$因子の局所Morseデータと
 関連付けることが可能である。
 局所 Morse データ(の一般化論)を用いることで
@@ -803,34 +803,57 @@ $\opn{lineal}(X,x)$ を$\opn{LC}_x X (\subset T_x X)$
 (\cite[\textsection 2.1]{MR4246795} と
 \cite[\textsection 3]{demedrano2023chern} を見よ。)
 
-\begin{definition}[{可容配置}]
+
+
+\begin{remark}
+注意点として
+\cite{}の意味での
+錐的多面集合の lineality 空間
+は、
+\cite[\textsection 2.1]{MR4246795}の意味でのものと一致する。
+一致することを見るには、錐的多面集合が常に扇構造を持つことを
+みれば十分である。これは、
+$\mathbb{R}^{n}$ 内の凸多面集合の三角形分割を与える証明と
+ほぼ同様にして証明することができる。
+まず、錐的多面集合$C$は幾つかの有理凸多面錐の有限和
+$C=\bigcup_{i\in I}\sigma_i$として
+得ることができる。各 $\sigma_i$ に対して$\sigma_i$を面に持つ
+完備扇 $\Sigma_i$ が存在する。
+(これは隅広の同変コンパクト化定理
+\cite[Theorem 3]{MR337963} から求まる。)
+この共細 $\bigwedge_{i\in I}\Sigma_i$が、
+$C$の多面体的錐の扇構造を与える。
+\end{remark}
+
+\begin{definition}[{中庸な位置}]
 \label{definition-permissible-position}
 $X$をトロピカル多様体とし、$Y$を$X$
 トロピカル部分多様体(tropical submanifold)とする。
-$Y$ が \emph{可容(permissible)} な配置にあるとは、
+$Y$ が \emph{中庸な位置(moderate position)}にあるとは、
 任意の$x\in Y$に対して
 \begin{align}
-     \opn{lineal}(Y,x)\not \supset \opn{lineal}(X,x)
+     \opn{lineal}(Y,x) \subsetneq
+ \opn{lineal}(X,x)
 \end{align}
 となることである。
 \end{definition}
 
 \begin{example}
 \begin{enumerate}
-\item $Y$が$X$上の可容な位置にあるとき、
+\item $Y$が$X$上の中庸な位置にあるとき、
 $Y$は$\opn{lineal}(X,x)$
 が自明となる点集合上には存在しない。
 \item $Y\cap X_{\mathrm{reg}}$ は、
-$X_{\mathrm{reg}}$ 上の可容な位置にある。
+$X_{\mathrm{reg}}$ 上の中庸な位置にある。
 特に $X$ が整アフィン多様体のとき、$Y$は
-常に可容な位置にある。
+常に中庸な位置にある。
 \end{enumerate}
 
 \end{example}
 
 \begin{remark}
-$Y$が$X$の可容な位置にあるとき
-補集合 $X\setminus Y$ は、大抵 finite typeの条件を
+$Y$が$X$の中庸な位置にあるとき
+補集合 $X\setminus Y$ は、大抵 finite type の条件を
 満たさない。
 \end{remark}
 
@@ -842,7 +865,7 @@ $D$ を余次元$1$のトロピカル部分多様体とする。
 \cref{conjecture-rr-euler}は同値である。
 \end{proposition}
 \begin{proof}
-定義より、$D$は常に$X$上の可容な位置にある。
+定義より、$D$は常に$X$上の中庸な位置にある。
 また、$\opn{td}(X)=1$なので、
 \begin{align}
 \opn{RR}(X;-D)=(-1)^{\dim X}\opn{RR}(X;D)
@@ -872,6 +895,9 @@ Poincar\'e 双対性より、
 一般に(境界を持たない)向き付け可能な
 特異点つき整アフィン多様体は、Calabi--Yau 多様体
 $X$の類似物と考えられている。
+
+(非アルキメデス幾何的な観点の説明を追加?)
+
 Calabi--Yau 多様体の標準束は自明なので
 Serre 双対性を考えると任意の因子$D$に対して
 \begin{align}
@@ -935,32 +961,61 @@ $S^{n-1}$
 $X$ をトロピカル多様体とし、$Y$ を
 $X$ の余次元 $1$
 のトロピカル部分多様体とする。
-$Y$ が可容な位置にあるとき、
+$Y$ が中庸な位置にあるとき、
 $Y$ は sedentary 0 なトロピカル部分多様体である。
 \end{proposition}
 \begin{proof}
 点 $x\in Y$ に対して
 $\opn{sed}_X(x)-\opn{sed}_Y(x)=1$ ならば、
 $\opn{LC}_xY\simeq \opn{LC}_x X$ なので
-$Y$ が可容な位置にあるとき、そのような点は
+$Y$ が中庸な位置にあるとき、そのような点は
 存在しない。
 \end{proof}
+
+証明には、
+次のよく知られた命題を用いる。
+\begin{proposition}[{Well-known}]
+
+
+特に、階数 $2$ のマトロイドが定義する
+Bergman 扇が $\Gamma_n$ のいずれかと同型である。
+\end{proposition}
+\begin{proof}
+$M$ の
+Lattice of flats から単純マトロイド
+$M'$ が定義される。Lattice of flats が同型ならば、
+Bergman 扇の台としても同型となる。
+階数 $2$ の単純マトロイドは、
+\end{proof}
+
 
 トロピカル曲面上の各点の局所錐の構造は、
 \cite[Corollary 2.4]{shaw2015tropical}
 によって分類されている。
+
+
+
+
 これを念頭に次の命題を解く。
+
 \begin{proposition}
 $S$をトロピカル曲面とし、$C$を$S$の部分トロピカル曲線とする。
-$C$が可容な位置にあるとき、次の等式が成り立つ。
+$C$が中庸な位置にあるとき、次の等式が成り立つ。
 \begin{align}
      C.C=\sharp (C\cap S_{\mathrm{reg}})_{\mathrm{sing}}
 \end{align}
 \end{proposition}
 \begin{proof}
-$\opn{LC}_x C\subset \opn{LC}_x S$が、可容な位置にあるとき、
+$C$が$S$上中庸な位置にあるとき、
+$\dim \opn{lineal}(S,x)=1,2$ のみである。
+$\dim \opn{lineal}(S,x)=2$ のとき、
+$\opn{LC}_x C$ は、ある
+$\{0,1,2\}$上の階数$2$
+のマトロイドの
+Bergman 扇の台と同型でなくてはならないので、
+
 $x$の近傍は$\Gamma_m\times \mathbb{R}$の
-$(m\geq 3)$の場合のみを考えればよい。
+$(m\geq 3)$の開集合の場合のみを考えればよい。
 このとき、$\Gamma_m$は任意の直線を部分集合として含まないため、
 $\dim \opn{lineal}(C,x)=0$である。
 また$\opn{LC}_x C\cap \opn{lineal}(S,x)=\{0\}$である。
@@ -985,7 +1040,7 @@ C . C=&\opn{deg}(K_C)-K_S . C \\
 
 \begin{proof}[{Proof of \cref{theorem-rr-euler-surface}}]
 
-$C$ は $S$ 上可容な位置にあるので、$x\in C$
+$C$ は $S$ 上中庸な位置にあるので、$x\in C$
 に対して $\dim \opn{lineal}(S,x)=1,2$
 
 $S\setminus C$ のレトラクトとなるような多面体空間
@@ -1244,7 +1299,7 @@ Todd $m$-列の乗法性より次が成り立つ。
 
 \begin{example}
 $X_1,X_2$ をトロピカル多様体とし 
-$D_1,D_2$ を可容な位置にある
+$D_1,D_2$ を中庸な位置にある
 余次元$1$のトロピカル部分多様体とする。
 このとき、
 \begin{align}
