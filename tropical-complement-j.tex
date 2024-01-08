@@ -411,7 +411,7 @@ $D$に対して、
 \cref{conjecture-rr-euler}
 が成り立つと期待される根拠となるその他の例は、
 \cref{example-TPn} や
-\cref{remark-iass}
+\cref{remark-iass} で説明する。
 
 本論文の主定理の一つは次のようになる。
 証明は難しくない。
@@ -490,9 +490,6 @@ $D$ と $D'$ は次の条件を満たしているとする。
 \item $D'$が$X$上中庸な位置にある。
 \item $D$ と $D'$ は横断的かつ局所マトロイド的に
 交わる。
-\item[(2)'] $D\cap D'$が$D$の(重みづけも含めて)
-余次元$1$のトロピカル部分多様体または
-空集合である。
 \item $D\cap D'$ が $D$ 上中庸な位置にある。
 \end{enumerate}
 
@@ -531,9 +528,7 @@ $X$をトロピカル射影空間の部分トロピカル多様体とする。
 $D,D'$が存在する。
 \end{conjecture}
 
-\begin{example}
-     
-\end{example}
+
 
 なお後述するが\cref{conjecture-rr-bertini}は、
 \cref{conjecture-rr-euler}と Todd 類に関する
@@ -682,6 +677,21 @@ $\iota_{x}\colon \opn{LC}_x Y\times
 \to \opn{LC}_x X\times \underline{\mathbb{R}}^{r_{\alpha'}}$
 の制限として得られる。
 
+特に、十分に小さい近傍において$\opn{Aff}_X(U)$は、
+$T_x X\times \underline{\mathbb{R}}^{r_{\alpha}}$
+上の大域的な$\mathbb{Z}$-アフィン関数と全単射である。
+(\cite[Example 2.1]{MR4637248} でも説明されているように、
+大域的ではない局所$\mathbb{Z}$-アフィン関数も存在する。)
+特に、$(X,\mathcal{O}_X^{\times})$が regular at infinity
+ならば、座標変換は
+extended integer affine map \cite[Definition 2.2]{demedrano2023chern}
+となることがこれよりわかる。よって
+$(X,\mathcal{O}_X^{\times})$ 
+が\cite[Definition 6.1]{gross2019sheaftheoretic}の意味での
+コンパクトトロピカル多様体であるとき、
+\cite[Definition 2.3]{demedrano2023chern}
+の意味でのトロピカル多様体の構造を与えるアトラスを持つ。
+
 
 \begin{definition}[{\cite[Definition 2.14]{demedrano2023chern}}]
 $X$をトロピカル多様体とする。
@@ -693,8 +703,8 @@ $Y$が部分有理多面空間として
 局所錐の包含射
 $\iota_{*,x}\colon \opn{LC}_x Y\to 
 \opn{LC}_x X$
-がマトロイドの射から誘導される
-Bergman 扇の射と同値
+がマトロイド商から誘導される
+Bergman 扇の包含射と同値
 であるものをいう。
 \end{definition}
 
@@ -710,11 +720,12 @@ Bergman 扇の射と同値
 \cite[Example 2.21]{shaw2015tropical}
 における $C$ は、 valent が $3$ のトロピカル曲線
 であるが、$P$ の部分トロピカル多様体ではない。
+実際にこの埋め込みは、台集合を同じとするマトロイドに対する
+包含関係$L_M\subset L_N$に由来しない。
 その他の例については、
 \cite{MR2594592} や \cite{MR3339531}
 などを参照せよ。
-この埋め込みは、台集合を同じとするマトロイドに対する
-包含関係$L_M\subset L_N$に由来しない。
+
 
 \end{remark}
 
@@ -807,22 +818,30 @@ $\opn{lineal}(X,x)$ を$\opn{LC}_x X (\subset T_x X)$
 
 \begin{remark}
 注意点として
-\cite{}の意味での
+\cite[\textsection 5]{MR3041763}の意味での
 錐的多面集合の lineality 空間
 は、
-\cite[\textsection 2.1]{MR4246795}の意味でのものと一致する。
+\cite[\textsection 2.1]{MR4246795}の意味での
+極大 lineality 空間と一致する。
 一致することを見るには、錐的多面集合が常に扇構造を持つことを
 みれば十分である。これは、
 $\mathbb{R}^{n}$ 内の凸多面集合の三角形分割を与える証明と
 ほぼ同様にして証明することができる。
 まず、錐的多面集合$C$は幾つかの有理凸多面錐の有限和
 $C=\bigcup_{i\in I}\sigma_i$として
-得ることができる。各 $\sigma_i$ に対して$\sigma_i$を面に持つ
+得ることができる。また、各有理凸多面錐は強凸と仮定して
+よい。
+各 $\sigma_i$ に対して$\sigma_i$を面に持つ
 完備扇 $\Sigma_i$ が存在する。
 (これは隅広の同変コンパクト化定理
-\cite[Theorem 3]{MR337963} から求まる。)
+\cite[Theorem 3]{MR337963}をトーリック幾何に適用
+することで求まる。)
 この共細 $\bigwedge_{i\in I}\Sigma_i$が、
 $C$の多面体的錐の扇構造を与える。
+この論法はコンパクトな polyhedron の
+単体分割と実質的に同じである。
+(例えば\cite[Theorem 2.11]{MR665919}
+を見よ。)
 \end{remark}
 
 \begin{definition}[{中庸な位置}]
@@ -977,7 +996,7 @@ $Y$ が中庸な位置にあるとき、そのような点は
 \begin{proposition}[{Well-known}]
 
 
-特に、階数 $2$ のマトロイドが定義する
+特に、階数 $2$ のループをもたないマトロイドが定義する
 Bergman 扇が $\Gamma_n$ のいずれかと同型である。
 \end{proposition}
 \begin{proof}
@@ -985,21 +1004,20 @@ $M$ の
 Lattice of flats から単純マトロイド
 $M'$ が定義される。Lattice of flats が同型ならば、
 Bergman 扇の台としても同型となる。
-階数 $2$ の単純マトロイドは、
+階数 $2$ の連結な
+単純マトロイドは、皆一様マトロイドである。
 \end{proof}
 
 
 トロピカル曲面上の各点の局所錐の構造は、
 \cite[Corollary 2.4]{shaw2015tropical}
 によって分類されている。
-
-
-
-
 これを念頭に次の命題を解く。
 
 \begin{proposition}
-$S$をトロピカル曲面とし、$C$を$S$の部分トロピカル曲線とする。
+\label{proposition-self-intersection}
+$S$をコンパクトトロピカル曲面とし、
+$C$を$S$の部分トロピカル曲線とする。
 $C$が中庸な位置にあるとき、次の等式が成り立つ。
 \begin{align}
      C.C=\sharp (C\cap S_{\mathrm{reg}})_{\mathrm{sing}}
@@ -1011,21 +1029,32 @@ $\dim \opn{lineal}(S,x)=1,2$ のみである。
 $\dim \opn{lineal}(S,x)=2$ のとき、
 $\opn{LC}_x C$ は、ある
 $\{0,1,2\}$上の階数$2$
-のマトロイドの
+の単純マトロイドの
 Bergman 扇の台と同型でなくてはならないので、
-
+$\opn{val}_C(x)=2,3$ である。
+次に、$\dim \opn{lineal}(S,x)=1$ のときを
+考える。このとき、
+$\dim \opn{lineal}(C,x)=0$である。
+特に、$\opn{LC}_x C$ は、次数 $3$ 以上の木となる。
+\cite[Corollary 2.4]{shaw2015tropical} 
+より、
 $x$の近傍は$\Gamma_m\times \mathbb{R}$の
 $(m\geq 3)$の開集合の場合のみを考えればよい。
-このとき、$\Gamma_m$は任意の直線を部分集合として含まないため、
-$\dim \opn{lineal}(C,x)=0$である。
+
 また$\opn{LC}_x C\cap \opn{lineal}(S,x)=\{0\}$である。
-ゆえに$T_x C\cap \opn{lineal}(S,x)=\{0\}$である。
-さて、局所錐の包含写像は
-$\Gamma_{n}\subset \Gamma_m\times \mathbb{R}$
-で表現される。射影 $p\circ f\Gamma_n\to \Gamma_m$は単射となるが、
-バランス条件から$n=m$となる。
-包含写像を与える線形写像を考えると
-$p\circ f$はユニモジュラであることがわかる。
+実際に、$\opn{LC}_x C\cap \opn{lineal}(S,x)\ne \{0\}$
+ならば、$T_x C \cap \opn{LC}_x S$ は、
+$\Gamma_m$と真の部分線形空間との交叉と $\mathbb{R}$
+の直積となる。この凸包は $T_x C$ の全体を張らないこととなり
+矛盾する。
+同じ理由から、$T_x C\cap \opn{lineal}(S,x)=\{0\}$である。
+このとき、$T_x C\cap \opn{LC}_x S\simeq \Gamma_m$
+である。よって、バランス条件から
+$\opn{LC}_x C\simeq \Gamma_m$ である。
+$\opn{LC}_x C$ と $\opn{lineal}(S,x)$ はマトロイドの交叉
+とみなせるので、\cite[Theorem 4.2]{MR3032930}
+と随伴公式\cite[Theorem 4.11]{shaw2015tropical} より、
+$C$ の自己交点数は次のように書かれる。
 \begin{align}
 C . C=&\opn{deg}(K_C)-K_S . C \\
 =& \sum_{p\in C_{\mathrm{sing}}}(\opn{val}(p)-2)
@@ -1039,17 +1068,79 @@ C . C=&\opn{deg}(K_C)-K_S . C \\
 
 
 \begin{proof}[{Proof of \cref{theorem-rr-euler-surface}}]
+$S$の各点$x\in S$ に対して、コンパクト近傍
+$U_x\cap C$ が空ではないことが、$x\in C$と必要十分条件
+になるようにとる。$C$は$S$の閉部分集合
+なのでそのような取り方は可能である。
+さらに、$C_{\mathrm{sing}}$を含む $U_x$ が一つのみになるように
+することもできる。
+点 $x\in S$ を$\opn{sed}_S(x)=0$ な点とする。
+このとき、
+\begin{align}
+\chi(S\setminus C)=\sum_{\sigma \in I}\opn{sgn}(\sigma)\chi(U_{\sigma}\setminus C)
+\end{align}
+と書くことができる。ここで、$U_{\sigma}$が$C$の元
+を持たないとき、
+$\chi_c(U_{\sigma}\setminus C)=\chi(U_{\sigma}\setminus C)$
+となる。
 
-$C$ は $S$ 上中庸な位置にあるので、$x\in C$
-に対して $\dim \opn{lineal}(S,x)=1,2$
+\begin{align}
+\chi(S\setminus C)-\chi_c(S\setminus C)
+=\sum_{x\in C,U_x\in \mathcal{C}}
+\chi(U_x\setminus C)-\chi_c(U_x\setminus C)
+\end{align}
 
-$S\setminus C$ のレトラクトとなるような多面体空間
-$K$ を以下のように作る。
+さらに、$U_x$ は、十分小さい閉球
+の$S$への制限に取り換えてもよい。
+そうすることで個別に計算を施すことによって、
 
+\begin{align}
+\chi (U_x\setminus C)-\chi_c(U_x\setminus C)=
+\end{align}
 
-$\opn{LC}_x S\simeq \mathbb{R}^{2}$
+\begin{align}
+\chi(S\setminus C)-\chi_c(S\setminus C)
+=-\sum_{p\in C_{\mathrm{sing}}}(\opn{val}(p)-2)=-K_S.C
+\end{align}
 
 \end{proof}
+
+\begin{remark}
+この証明は Euler calculus によって説明できる。
+\begin{align}
+\chi(S\setminus C)=\chi(Ra_{S*}Rj_*j^{-1}\mathbb{Q}_{S}) 
+\end{align}
+となる。ここで、次のような $S$ 上の関数を考える。
+\begin{align}
+\chi(S\setminus C)(x)\deq \chi(Rj_*j^{-1}\mathbb{Q}_{S})_x 
+\simeq \chi(\varinjlim_{U\ni x} H^{\bullet}((S\setminus C)
+\cap U;\mathbb{Q}))   
+\end{align}
+これは、$S$上の構成可能関数となる。
+$C$が$S$上中庸な位置にあるとき、
+\cref{proposition-self-intersection}
+の証明と同じ分類より、
+\begin{align}
+(Rj_*j^{-1}\mathbb{Q}_{S})_x
+\simeq
+\begin{cases}
+\mathbb{Q}[0], \text{ if } x\in S\setminus C \\
+\mathbb{Q}^3[0] \text{ if } C_{\mathrm{sing}}
+\cap S_{\mathrm{reg}} \\
+\mathbb{Q}^2[0] \text{ if otherwise}.  
+\end{cases}  
+\end{align}
+となっている。
+\end{remark}
+
+\begin{example}
+$\opn{deg}(f)=e$, $\opn{deg}(g)=d$とする。
+\begin{align}
+(V(g)|_{V(f)})^{2}+K_{V(f)}.(V(g)|_{V(f)})
+=d^2e+(e-4)ed=d^2e+de^2-4ed
+\end{align}
+
+\end{example}
 
 \section{その他の例}
 
