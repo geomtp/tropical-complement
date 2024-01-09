@@ -273,17 +273,17 @@ Riemann--Roch の定理の定式化および解釈を与えるうえで
 予想されており、
 $X$ が Delzant face 構造を持つトロピカル曲面の場合
 において\cite[Theorem 6.3]{demedrano2023chern}にて
-証明された。なお Delzant face 構造を持つという
+証明された。なお、Delzant face 構造を持つという
 条件は、十分に広い範囲のトロピカル曲面で成立している
 \cite[Corollary 6.11]{demedrano2023chern}。
-
-なお、トロピカル多様体の位相的 Euler 数
+トロピカル多様体の位相的 Euler 数
 $\chi(X)$が代数多様体上の構造層の
 コホモロジーの Euler 数のトロピカル幾何的な類似であるべき
 であることは、古くから期待されており、
 \cite[Corollary 2]{MR3961331}
 などで実際に対応していることが示されている。
-本論文では $\opn{RR}(X;D)$ のトロピカル幾何学的な
+本論文では、$D$ が自明ではないいくつかのケースにおける、
+$\opn{RR}(X;D)$ のトロピカル幾何学的な
 意味について考察することが主目的である。
 
 --------イントロには要らないかも(はじまり)
@@ -303,6 +303,7 @@ $C^{\infty}$ 因子のコホモロジカル
 さらに、理想的には$C^{\infty}$-因子に対して
 Floer コホモロジーが定義されると期待している。
 本文書では、前述の組み合わせ版を考察する。
+
 ---------イントロには要らないかも(おわり)
 
 
@@ -397,8 +398,9 @@ $C$をコンパクトトロピカル曲線とする。点 $p\in C$ が
 中庸な(permissible)位置にあることは、
 $p\in C_{\opn{reg}}$ であることと同値である。
 当然、有限個の点集合の場合に一般化できる。
-簡単な計算から、中庸な位置にある部分トロピカル多様体
-$D$に対して、
+簡単な計算から、中庸な位置にある
+余次元 $1$ のトロピカル部分多様体
+$D$ に対して、
 \begin{align}
 \opn{RR}(C;D)=\sharp (\opn{supp}(D))+ \chi_{\opn{top}}(C)
 =\chi_{\opn{top}}(C\setminus D).
@@ -523,7 +525,7 @@ $D$が空集合で$D'$が空ではないとき、
 $X$をトロピカル射影空間の部分トロピカル多様体とする。
 このとき、任意の因子$D_0$に対して
 \cref{conjecture-rr-bertini}において課した
-条件をみたし、$D_0=D'-D$となる
+条件をみたし、$D'-D$ が $D_0$ と線形同値になる
 余次元$1$の部分トロピカル多様体の組
 $D,D'$が存在する。
 \end{conjecture}
@@ -993,10 +995,10 @@ $Y$ が中庸な位置にあるとき、そのような点は
 
 
 特に、階数 $2$ のループをもたないマトロイドが定義する
-Bergman 扇が $\Gamma_n$ のいずれかと同型である。
+Bergman 扇は $\Gamma_n$ のいずれかと同型である。
 \end{proposition}
 \begin{proof}
-$M$ の
+$M$ を階数 $2$ のマトロイドとする。このとき、
 Lattice of flats から単純マトロイド
 $M'$ が定義される。Lattice of flats が同型ならば、
 Bergman 扇の台としても同型となる。
@@ -1135,32 +1137,36 @@ $C_{\opn{reg}}$ 上では、$\mathbb{Q}^2$
 証明において、$S\setminus C$ の Euler 数を
 計算するために、$Rj_*\mathbb{Q}_{S\setminus C}$
 を定数層に分割して証明を行ったが、これは
-Euler calculus と密接に関係している。
+Euler calculus と密接に関係している\cite{MR970076,MR1115569}。
 Euler calculus は構成可能層の Euler 数を計算する
 上で有効な考え方であり、
 \cref{equation-euler-calculus} は、
-Euler 標数を測度の一種とみなし、その上で次の単調関数を
+コンパクト台 Euler 標数を測度の一種とみなし、
+その上で次の$S$上の単調関数を
 積分していると解釈することができる。
 \begin{align}
 \chi(S\setminus C)(x)\deq \chi(Rj_*\mathbb{Q}_{S\setminus C})_x 
 \simeq \chi(\varinjlim_{U\ni x} H^{\bullet}((S\setminus C)
 \cap U;\mathbb{Q}))   
 \end{align}
-Euler calculus については、例えば\cite{}などを見よ。
+解析多様体上の構成可能層の Euler 数が構成可能関数に
+よって計算可能であることは、\cite[Theorem 9.7.1]{MR1299726}
+などを見よ。より一般の場合の構成可能層については
+\cite[Chapter 2]{MR2031639} などで解説されている。
 \end{remark}
 
 \begin{example}
-$\opn{deg}(f)=e$, $\opn{deg}(g)=d$とする。
+$\opn{deg}(F)=d$, $\opn{deg}(G)=e$とする。
 \begin{align}
-(V(g)|_{V(f)})^{2}+K_{V(f)}.(V(g)|_{V(f)})
-=d^2e+(e-4)ed=d^2e+de^2-4ed
+(V(G)|_{V(F)})^{2}+K_{V(G)}.(V(G)|_{V(F)})
+=e^2d+(d-4)ed=e^2d+d^2e-4de
 \end{align}
 
 \end{example}
 
 \section{その他の例}
 
-ここでは、トロピカル多様体のTodd類が
+ここでは、トロピカル多様体の Todd 類が
 満たすべき性質を持っている場合
 いくつかの初等的な例で予想が成立している
 ことを示す。
@@ -1168,7 +1174,7 @@ $\opn{deg}(f)=e$, $\opn{deg}(g)=d$とする。
 理論の直接的な類似として定義されていないため、
 現時点では多くのことはわかっていない。
 例えば、全 Chern 類に関する
-分裂原理(splitting principle)周りの
+分裂原理 (splitting principle) 周りの
 議論のトロピカル類似がよくわかっていない。
 一方で乗法列\cite[\textsection 1]{MR1335917}の
 定義および
@@ -1225,25 +1231,8 @@ $Z_n(X)$ の元を定義することである
 
 \subsection{トロピカル多様体の Todd 類}
 
-古典的には、複素多様体 $M$ 上の偶コホモロジー環
-$H^{\mathrm{even}}(M;\mathbb{Q})$
-と接束 $TM$の全 Chern 類 
-$c(TM)\deq \sum_{i=0}^{\infty}c_i(TM)\in 
-H^{\mathrm{even}}(X;\mathbb{Q})$
-に対して
-Todd $m$-列 $(\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
-を適用させることで Todd 類
-$\opn{td}(X)\deq \sum_{j=0}^{\infty}
-\opn{Todd}_j(c_1(TM),\ldots,c_j(TM))\in 
-H^{\mathrm{even}}(M;\mathbb{Q})$
-が定義されるのであった
-\cite[\textsection 10]{MR1335917}。
+トロピカル多様体 $X$ には、同様にサイクル写像
 
-上述の$H^{\mathrm{even}}(M;\mathbb{Q})$を
-$\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$
-に置き換えるだけで同様の議論ができる。
-
-トロピカル多様体$X$にも同様に
 $\opn{cyc}_k\colon Z_k(X)\to H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
 が存在する
 \cite{gross2019sheaftheoretic}。
@@ -1266,13 +1255,30 @@ c_{k}^{\mathrm{sm}}(X)\deq
 \end{align}
 なお、$c_{k}^{\mathrm{sm}}(X)$と書いたのは、
 因子類の Chern 類との混同を避けるためである。
-同様に$X$の全Chern類を
+同様に$X$の全 Chern 類を
 $c^{\mathrm{sm}}(X)=\sum_{k=0}^{n} c_{k}^{\mathrm{sm}}(X)$
 とする。
 \end{notation}
-\cite{demedrano2023chern}に従いTodd類を次のように
-定義する。
+
+古典的には、複素多様体 $M$ 上の偶コホモロジー環
+$H^{\mathrm{even}}(M;\mathbb{Q})$
+と接束 $TM$の全 Chern 類 
+$c(TM)\deq \sum_{i=0}^{\infty}c_i(TM)\in 
+H^{\mathrm{even}}(X;\mathbb{Q})$
+に対して
+Todd $m$-列 $(\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
+を適用させることで $M$ の Todd 類
+$\opn{td}(M)$
+が定義されるのであった
+\cite[\textsection 10]{MR1335917}。
+トロピカル多様体 $X$ の Todd 類は
+$H^{\mathrm{even}}(M;\mathbb{Q})$ を
+$\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$
+に置き換えるだけで同様に定義することができる
+(\cref{definition-tropical-todd})。
+
 \begin{definition}[{\cite{demedrano2023chern}}]
+\label{definition-tropical-todd}
 $X$をトロピカル多様体とする。
 第 $j$ 次 Todd 類を
 $\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$に
@@ -1291,14 +1297,11 @@ $c^{\mathrm{sm}}(X)$を代入することで得られるものとする。
 
 \end{definition}
 
-$\pi_1\colon X_1\times X_2 \to X_1$
-
-\begin{align}
-Ra_{X*}
-\end{align}
-
 \begin{proposition}
 $X_1,X_2$ をトロピカル多様体とし、
+$\pi_1\colon X_1\times X_2 \to X_1$, 
+$\pi_2\colon X_1\times X_2 \to X_2$
+をそれぞれ射影とする。このとき、次が成り立つ。
 \begin{align}
 c^{\mathrm{sm}}(X_1\times X_2)=
 \pi^{*}_1(c^{\mathrm{sm}}(X_1))\cdot 
@@ -1700,10 +1703,10 @@ $\dim X=2$なので、
 \section{補集合と局所 Morse データ}
 
 \begin{question}
-Berkovich curve の II, III型の点とこの補空間の理論は
+Berkovich curve の II, III 型の点とこの補空間の理論は
 関係があるのではなかろうか? 
-(type Iの点とはおそらく相性が悪い。超平面配置の解析化が
-可縮であることからも想像できる。)
+(type Iの点とはおそらく相性が悪い。超平面配置の補集合の
+解析化が可縮であることからも想像できる。)
 \end{question}
 
 
