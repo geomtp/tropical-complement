@@ -898,36 +898,32 @@ $D$ を余次元$1$のトロピカル部分多様体とする。
 
 \begin{remark}[{特異点つき整アフィン多様体の場合}]
 \label{remark-iass}
-この Remark の説明は、少々ヒューリスティックなものであるが、
-理解の助けとなるため記述する。
+\cref{conjecture-rr-euler}や
 \cref{proposition-divisor-poincare}
-は、特異点つき整アフィン多様体に対して成立すると期待される。
-$B$ を(境界をもたない)特異点つき整アフィン多様体とする。
-$B$ の因子の定義は一般には定義されているわけではないが、
-少なくとも$B$のある真の閉部分集合$D$
-として定義されると期待される。
-このとき、$B\setminus D$は位相多様体なので
-Poincar\'e 双対性より、
-\cref{proposition-divisor-poincare}
-が性質すると期待できる。
-
-一般に(境界を持たない)向き付け可能な
-特異点つき整アフィン多様体は、Calabi--Yau 多様体
-$X$の類似物と考えられている。
-
-(非アルキメデス幾何的な観点の説明を追加?)
-
-Calabi--Yau 多様体の標準束は自明なので
-Serre 双対性を考えると任意の因子$D$に対して
+は、特異点つき整アフィン多様体に対して一般化できる
+と期待できる。
+一般に (境界を持たない) 向き付け可能な
+特異点つき整アフィン多様体は、
+Calabi--Yau 多様体の類似物と考えられている。
+コンパクト Calabi--Yau 多様体 $M$ の標準束
+$K_M$ は自明なので
+Serre 双対性を考えると$M$上の因子$D$に対して
 \begin{align}
-\chi(X;\mathcal{O}_X(D))=(-1)^{\dim X}
-\chi(X;\mathcal{O}_{X}(-D))
+\label{equation-calabi-yau-euler}
+\chi(M;\mathcal{O}_M(D))=(-1)^{\dim M}
+\chi(M;\mathcal{O}_{M}(-D))
 \end{align}
 となる。
-よって、もし \cref{conjecture-rr-c-euler}
-および \cref{conjecture-rr-euler} が特異点つき整アフィン多様体に対して
-成立するとき、
-\cref{equation-p-dual}の性質は非常にもっともらしく見える。
+これまでの議論を踏まえると、
+\cref{equation-calabi-yau-euler} は
+整アフィン多様体の場合に示した
+\cref{proposition-divisor-poincare} と類似した
+性質であり、\cref{proposition-divisor-poincare}
+の証明は $X\setminus D$ が位相多様体であることが
+本質的であるため、
+\cref{proposition-divisor-poincare}
+は特異点つき整アフィン多様体に一般化できると
+期待できる。
 \end{remark}
 
 \begin{example}[{トロピカル射影空間}]
@@ -1020,7 +1016,7 @@ $S$をコンパクトトロピカル曲面とし、
 $C$を$S$の部分トロピカル曲線とする。
 $C$が中庸な位置にあるとき、次の等式が成り立つ。
 \begin{align}
-     C.C=\sharp (C\cap S_{\mathrm{reg}})_{\mathrm{sing}}
+     C.C=\sharp (C_{\mathrm{sing}}\cap S_{\mathrm{reg}})
 \end{align}
 \end{proposition}
 \begin{proof}
@@ -1060,7 +1056,7 @@ C . C=&\opn{deg}(K_C)-K_S . C \\
 =& \sum_{p\in C_{\mathrm{sing}}}(\opn{val}(p)-2)
 - \sum_{p\in C_{\mathrm{sing}}\cap S_{\mathrm{sing}}}
 (\opn{val}(p)-2) \\
-=& \sharp (C\cap S_{\mathrm{reg}})_{\mathrm{sing}}
+=& \sharp (C_{\mathrm{sing}}\cap S_{\mathrm{reg}})
 \end{align}
 
 \end{proof}
@@ -1068,69 +1064,89 @@ C . C=&\opn{deg}(K_C)-K_S . C \\
 
 
 \begin{proof}[{Proof of \cref{theorem-rr-euler-surface}}]
-$S$の各点$x\in S$ に対して、コンパクト近傍
-$U_x\cap C$ が空ではないことが、$x\in C$と必要十分条件
-になるようにとる。$C$は$S$の閉部分集合
-なのでそのような取り方は可能である。
-さらに、$C_{\mathrm{sing}}$を含む $U_x$ が一つのみになるように
-することもできる。
-点 $x\in S$ を$\opn{sed}_S(x)=0$ な点とする。
-このとき、
-\begin{align}
-\chi(S\setminus C)=\sum_{\sigma \in I}\opn{sgn}(\sigma)\chi(U_{\sigma}\setminus C)
-\end{align}
-と書くことができる。ここで、$U_{\sigma}$が$C$の元
-を持たないとき、
-$\chi_c(U_{\sigma}\setminus C)=\chi(U_{\sigma}\setminus C)$
-となる。
 
+$j\colon S\setminus C\to S$ を包含写像とし、
+$a_S$ を $S$ から一点空間への連続写像とする。
+このとき、次の等式が成り立つ。
 \begin{align}
-\chi(S\setminus C)-\chi_c(S\setminus C)
-=\sum_{x\in C,U_x\in \mathcal{C}}
-\chi(U_x\setminus C)-\chi_c(U_x\setminus C)
-\end{align}
-
-さらに、$U_x$ は、十分小さい閉球
-の$S$への制限に取り換えてもよい。
-そうすることで個別に計算を施すことによって、
-
-\begin{align}
-\chi (U_x\setminus C)-\chi_c(U_x\setminus C)=
-\end{align}
-
-\begin{align}
-\chi(S\setminus C)-\chi_c(S\setminus C)
-=-\sum_{p\in C_{\mathrm{sing}}}(\opn{val}(p)-2)=-K_S.C
-\end{align}
-
-\end{proof}
-
-\begin{remark}
-この証明は Euler calculus によって説明できる。
-\begin{align}
-\chi(S\setminus C)=\chi(Ra_{S*}Rj_*j^{-1}\mathbb{Q}_{S}) 
-\end{align}
-となる。ここで、次のような $S$ 上の関数を考える。
-\begin{align}
-\chi(S\setminus C)(x)\deq \chi(Rj_*j^{-1}\mathbb{Q}_{S})_x 
-\simeq \chi(\varinjlim_{U\ni x} H^{\bullet}((S\setminus C)
-\cap U;\mathbb{Q}))   
+\chi(S\setminus C)=\chi(Ra_{S*}Rj_*\mathbb{Q}_{S\setminus C}) 
 \end{align}
 これは、$S$上の構成可能関数となる。
 $C$が$S$上中庸な位置にあるとき、
 \cref{proposition-self-intersection}
-の証明と同じ分類より、
+の証明で見た局所錐の構造の分類より、
 \begin{align}
-(Rj_*j^{-1}\mathbb{Q}_{S})_x
+(Rj_*\mathbb{Q}_{S\setminus C})_x
 \simeq
 \begin{cases}
-\mathbb{Q}[0], \text{ if } x\in S\setminus C \\
-\mathbb{Q}^3[0] \text{ if } C_{\mathrm{sing}}
-\cap S_{\mathrm{reg}} \\
-\mathbb{Q}^2[0] \text{ if otherwise}.  
+\mathbb{Q}[0], \text{ if } x\in S\setminus C, \\
+\mathbb{Q}^3[0], \text{ if } x\in C_{\mathrm{sing}}
+\cap S_{\mathrm{reg}}, \\
+\mathbb{Q}^2[0], \text{ otherwise.}  
 \end{cases}  
 \end{align}
 となっている。
+とくに、$Rj_*\mathbb{Q}_{S\setminus C}\simeq
+j_*\mathbb{Q}_{S\setminus C}$ である。
+$j^{-1}j_*=\opn{id}$ なので、
+\begin{align}
+0\to j_!\mathbb{Q}_{S\setminus C} 
+\to j_* \mathbb{Q}_{S\setminus C}
+\to (j_*\mathbb{Q}_{S\setminus C})_{C} \to 0
+\end{align}
+という層単完全列を持つ。
+特に、
+\begin{align}
+\chi(S\setminus C)=
+\chi_c(S\setminus C)+\chi((j_*\mathbb{Q}_{S\setminus C})|_C)
+\end{align}
+となる。
+層の押し出しの定義より
+$(j_*\mathbb{Q}_{S\setminus C})|_C$は、
+$C_{\opn{reg}}$ 上では、$\mathbb{Q}^2$
+を茎とする局所定数層である。
+よって、
+\begin{align}
+\chi((j_*\mathbb{Q}_{S\setminus C})|_C)=
+2\chi_c(C_{\mathrm{reg}})+
+3\chi_c(C_{\mathrm{sing}}\cap S_{\mathrm{reg}})+
+2\chi_c(C_{\mathrm{sing}}\cap S_{\mathrm{sing}})
+\end{align}
+と書かれるため、$\chi(S\setminus C)$
+は次のように書くことができる。
+\begin{align}
+\label{equation-euler-calculus}
+\chi(S\setminus C)&=
+\chi_c(S\setminus C)+
+3\chi_c(C_{\mathrm{sing}}
+\cap S_{\mathrm{reg}})+
+2\chi_c(C\setminus (C_{\mathrm{sing}}
+\cap S_{\mathrm{reg}}))\\
+&=\chi_c(S\setminus C)+2\chi_c(C)+
+\chi_c(C_{\mathrm{sing}}
+\cap S_{\mathrm{reg}}) \\
+&=\chi(S)+C.C+\chi(C)
+=\frac{C.(C-K_S)}{2}+\chi(S).
+\end{align}
+\end{proof}
+
+\begin{remark}
+\cref{theorem-rr-euler-surface} の
+証明において、$S\setminus C$ の Euler 数を
+計算するために、$Rj_*\mathbb{Q}_{S\setminus C}$
+を定数層に分割して証明を行ったが、これは
+Euler calculus と密接に関係している。
+Euler calculus は構成可能層の Euler 数を計算する
+上で有効な考え方であり、
+\cref{equation-euler-calculus} は、
+Euler 標数を測度の一種とみなし、その上で次の単調関数を
+積分していると解釈することができる。
+\begin{align}
+\chi(S\setminus C)(x)\deq \chi(Rj_*\mathbb{Q}_{S\setminus C})_x 
+\simeq \chi(\varinjlim_{U\ni x} H^{\bullet}((S\setminus C)
+\cap U;\mathbb{Q}))   
+\end{align}
+Euler calculus については、例えば\cite{}などを見よ。
 \end{remark}
 
 \begin{example}
