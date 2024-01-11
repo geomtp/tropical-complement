@@ -1144,8 +1144,8 @@ $Rj_*\mathbb{Q}_{S\setminus C}$
 Euler calculus はトロピカル多様体上の基本的な
 構成可能層を調べる上でも有効な手段であり、
 tropical Poincar\'e--Hopf の定理
-\cite[Theorem 4.7]{} の最初の等式は、
-\cite[Remark 4.8]{} でも強調されているように
+\cite[Theorem 4.7]{MR4540954} の最初の等式は、
+\cite[Remark 4.8]{MR4540954} でも強調されているように
 トロピカル $p$-form のなす層の全複体 
 $\Omega^{\bullet}_{\mathbb{Z},X}$ に対する Euler integration 
 だと解釈できる。
@@ -1155,7 +1155,6 @@ $\Omega^{\bullet}_{\mathbb{Z},X}$ に対する Euler integration
 などを見よ。より一般の場合の構成可能層については
 \cite[Chapter 2]{MR2031639} などで解説されている。
 \end{remark}
-
 \begin{example}
 $\opn{deg}(F)=d$, $\opn{deg}(G)=e$とする。
 \begin{align}
@@ -1167,8 +1166,12 @@ $\opn{deg}(F)=d$, $\opn{deg}(G)=e$とする。
 
 \begin{remark}
 \label{remark-c-infinity-divisor}
-ここでは、\cref{conjecture-rr-euler} と代数幾何との
-関係についてもう少し詳細に述べる。
+ここでは、\cref{conjecture-rr-euler} と
+\cite{tsutsui2023graded}との関係について少し述べる。
+なお、ここに書かれている内容は
+\cite{tsutsui2023graded}に大きく依存しており、
+本論文の主定理の証明を理解するには不要なので飛ばしても
+構わない。
 イントロで説明したように、コンパクトトロピカル多様体 $X$
 とその部分
 $\chi_c(X\setminus D)=\chi(X)-\chi(D)$ は、
@@ -1183,54 +1186,134 @@ $\chi_c(X\setminus D)=\chi(X)-\chi(D)$ は、
 は Berkovich 幾何とも深く関係していると期待されるが、
 筆者は現時点ではよくわかっていない。
 一方で、\cite{tsutsui2023graded} での研究を踏まえると
-$\chi(X\setminus D)$ は、Floer 複体との密接な関係が
-あると期待される。以下よりこれを軽く説明する。
+$H^{\bullet}(X\setminus D)$ は、Floer 複体との密接な関係が
+あると期待でき、ミラー対称性を通じて
+複素多様体上の直線束の Euler 数と関連付ける
+ことができると期待できる。以下よりこれを軽く説明する。
 
 簡単のために、$X$ を $\mathbb{R}/\mathbb{Z}$ とし、$D$ を有限個の
 点集合とする。
 このとき、次の等式が成り立つ。
 \begin{align}
-\chi(X\setminus D) &=\sum_{E\in \pi_0(X\setminus D)} 
-\chi(H^{\bullet}(E;\mathbb{Z}))=\sharp D, \\
-\chi_c(X\setminus D) &=\sum_{E\in \pi_0(X\setminus D)} 
-\chi(H^{\bullet}_c(E;\mathbb{Z}))=-\sharp D.
+H^{\bullet}(X\setminus D;\mathbb{Z}) 
+&\simeq \bigoplus_{E\in \pi_0(X\setminus D)} 
+H^{\bullet}(E;\mathbb{Z})
+\simeq \bigoplus_{E\in \pi_0(X\setminus D)} \mathbb{Z}[0], \\
+H_c(X\setminus D;\mathbb{Z}) 
+&\simeq \bigoplus_{E\in \pi_0(X\setminus D)} 
+H^{\bullet}_c(E;\mathbb{Z})
+\simeq \bigoplus_{E\in \pi_0(X\setminus D)} \mathbb{Z}[-1].
 \end{align}
 
-このとき、$D$ を台とする Cartier 因子
-$s\in \opn{CDiv}(X)$ が存在し、
+一方で、$D$ を台とする Cartier 因子
+$s_D\in \opn{CDiv}(X)$ が存在し、
 それは $D$の近傍のみ位数$1$で折れている
 $\mathbb{Z}$-affine な関数を局所的に貼り合わせたものとなっており、
 普遍被覆 $\pi\colon \mathbb{R}\to \mathbb{R}/\mathbb{Z}$ 
-による引き戻し $\pi^{*}s$ は $\mathbb{R}$ 上の単調増加な
+による引き戻し $\pi^{*}s_D$ は $\mathbb{R}$ 上の単調増加な
 $\mathbb{Z}$-affine 関数 $f$ の主因子となっている。
+当然であるが、$\opn{deg}(s_D)=\sharp D$ である。
 
 筆者は \cite{tsutsui2023graded} にて、
 ミラー対称性と超局所層理論のアイデアから代数多様体上の直線束の
-
+Euler 数の類似を考察する上で次の手法を提案した。
 $\mathcal{A}^{0,0}_X$ を $X$ 上の
-$(0,0)$-superform のなす層とすると、
+$(0,0)$-superform のなす層
+\cite{MR3903579} とすると、
 次の層完全列が存在する。
 \begin{align}
 0\to \mathcal{O}_X^{\times} \to \mathcal{A}^{0,0}_X
 \to \mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times} \to 0
 \end{align}
 
-筆者は \cite{tsutsui2023graded} にて、
-ミラー対称性と超局所層理論のアイデアから
-コンパクトトロピカル多様体上の
-直線束を表現する$C^{\infty}$因子に対して
-次数付き加群を定義し、それが Riemann--Roch 数と
-一致するという予想\cite[Conjecture 1.2]{tsutsui2023graded}を
-提案し、トロピカル多様体がトロピカル曲線や Hesse 計量を
-許容する整アフィン多様体に対して成立することを示した。
-$C^{\infty}$ 因子のコホモロジカル
-局所 Morse データは SYZ 変換のトロピカル類似によって
-古典的な複素直線束の Riemann--Roch 数
-と関連付けることができると期待している。
-さらに、理想的には$C^{\infty}$-因子に対して
-Floer コホモロジーが定義されると期待している。
-本文書では、前述の組み合わせ版を考察する。
+$\mathcal{A}^{0,0}_X$ は acyclic なので、
+連結準同型
+$H^{0}(X;\mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times})
+\to H^{1}(X;\mathcal{O}_X^{\times})$ は全射である。
+Abel 群 
+$\opn{Div}^{\infty}(X)\deq 
+H^{0}(X;\mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times})$
+は、Cartier 因子のなす群の類似物であり
+\cite{tsutsui2023graded} では、
+$\opn{Div}^{\infty}(X)$の元を
+$X$ 上の \emph{$C^{\infty}$-divisor} と呼んでいる。
+とくに、$\mathcal{L}$ を $D$ が定義する直線束とすると、
+上述の連結準同型によって $\mathcal{L}$ に移る
+$C^{\infty}$-因子を一つとることができる。
+今回の場合は、上で定義した $s_D$ の折れているところを
+適当な単調関数で滑らかに置き換えることで同じ
+$H^{1}(X;\mathcal{O}_X^{\times})$ の元を与える
+$C^{\infty}$-因子 $s_{\mathcal{L}}$ を得ることができる。
+特に、$s_0\cap s_{\mathcal{L}}$が、$X\setminus D$ の中に
+含まれ、任意の
+$E\in\pi_0(X\setminus D)$ に対して
+$(s_0\cap s_{\mathcal{L}})\cap E$ が一点 $p_{E}$ となるように
+とることができる。このとき、$s_{\mathcal{L}}$ は、
+\emph{permissible} な因子であり、
+$\pi^{*}s_{\mathcal{L}}$は、strictly convex な
+$C^{\infty}$-関数の
+主因子となっている。
+\cite{tsutsui2023graded}では、
+コンパクトトロピカル多様体上の permissible な
+$C^{\infty}$-因子 $s_{\mathcal{L}}$に対して、次数付き$\mathbb{Z}$加群
+$\opn{LMD}^{\bullet}(X;s_{\mathcal{L}})$
+を定義し、それが$s_{\mathcal{L}}$の因子類の
+Riemann--Roch 数と等しいことを予想した
+\cite[Conjecture 1.2]{tsutsui2023graded}。
+(ただし、\cite[Conjecture 1.2]{tsutsui2023graded}
+は、\cite{demedrano2023chern}が公開されるより前で
+あったため Todd 類の明示的な定義はされていない。)
+$X$ は整アフィン多様体なので、
+このとき、$s_{\mathcal{L}}$ が定義する次数付き加群
+$\opn{LMD}^{\bullet}(X;s_{\mathcal{L}})$ は、
+$s_{\mathcal{L}}$ が定義する Lagrangian 切断の
+Floer 複体\cite[Remark 13]{MR1882331} と
+次数付き加群として同型であり、今回の場合は次のように
+書くことができる
+(より詳しくは\cite[\textsection 4.4]{tsutsui2023graded}
+を見よ)。
+\begin{align}
+\opn{LMD}^{\bullet}(X;s_{\mathcal{L}}) &\simeq 
+\bigoplus_{p_E\in s_0\cap s_{\mathcal{L}}}\mathbb{Z}[0]
+\simeq H^{\bullet}(X\setminus D;\mathbb{Z}), \\
+\opn{LMD}^{\bullet}(X;-s_{\mathcal{L}}) &\simeq
+\bigoplus_{p_E\in s_0\cap s_{\mathcal{L}}}\mathbb{Z}[-1]
+\simeq H^{\bullet}_c(X\setminus D;\mathbb{Z}).
+\end{align}
+これはただの偶然ではない。
+実際に同様の論法が、$X$を
+$\mathbb{Z}^{n}$内の top dimensional 格子多面体
+$P$の射影的トロピカルトーリック多様体 $X_P$ に、
+$D$ をトーリック幾何的な意味で豊富な因子$D_P$
+と線形同値な因子を与える滑らかなトロピカル超曲面に
+置き換えても似たような議論が成立し、その場合は
+次のような同型を与える permissible な 
+$C^{\infty}$-divisor 
+$s_{P}$ が得られる:
+\begin{align}
+\opn{LMD}^{\bullet}(X_P;s_{P})
+&\simeq \bigoplus_{p\in P\cap \mathbb{Z}^{n}}\mathbb{Z}[0]
+\simeq \bigoplus_{W\in \pi_0(X_P\setminus D)}
+H^{\bullet}(W;\mathbb{Z})\simeq 
+H^{\bullet}(X_P\setminus D;\mathbb{Z}), \\
+\opn{LMD}^{\bullet}(X_P;-s_{P})
+&\simeq \bigoplus_{p\in \opn{int}(P)\cap \mathbb{Z}^{n}}
+\mathbb{Z}[-\dim X_P]
+\simeq \bigoplus_{W\in \pi_0(X_P\setminus D)}
+H^{\bullet}_c(W;\mathbb{Z}) \\
+&\simeq H^{\bullet}_c(X_P\setminus D;\mathbb{Z}).
+\end{align}
 
+こういった対応は、
+$H^{\bullet}(X\setminus D)$ や
+$H^{\bullet}_c(X\setminus D)$ に対して、
+"Floer differential" が定義できるならば、
+$H^{\bullet}(X\setminus D)$ や
+$H^{\bullet}_c(X\setminus D)$ から
+$D$ のホモロジカルな不変量を取り出す
+ことができる可能性も示唆している。
+このことについては、\cref{remark-}
+にてもう少し説明する。
 \end{remark}
 
 \section{その他の例}
