@@ -286,25 +286,7 @@ $\chi(X)$が代数多様体上の構造層の
 $\opn{RR}(X;D)$ のトロピカル幾何学的な
 意味について考察することが主目的である。
 
---------イントロには要らないかも(はじまり)
 
-筆者は\cite{tsutsui2023graded}にて、
-ミラー対称性と超局所層理論のアイデアから
-コンパクトトロピカル多様体上の
-直線束を表現する$C^{\infty}$因子に対して
-次数付き加群を定義し、それが Riemann--Roch 数と
-一致するという予想\cite[Conjecture 1.2]{tsutsui2023graded}を
-提案し、トロピカル多様体がトロピカル曲線や Hesse 計量を
-許容する整アフィン多様体に対して成立することを示した。
-$C^{\infty}$ 因子のコホモロジカル
-局所 Morse データはSYZ変換のトロピカル類似によって
-古典的な複素直線束の Riemann--Roch 数
-と関連付けることができると期待している。
-さらに、理想的には$C^{\infty}$-因子に対して
-Floer コホモロジーが定義されると期待している。
-本文書では、前述の組み合わせ版を考察する。
-
----------イントロには要らないかも(おわり)
 
 
 特に本文書では、トロピカル曲面の場合が中心的な
@@ -321,6 +303,7 @@ $\iota\colon D\to X$を自然な閉埋め込みとする。
 \end{align}
 これより、次の等式が成り立つ。
 \begin{align}
+\label{equation-anti-effective-divisor}
 \chi(X;\mathcal{O}_X(-D))=\chi(X;\mathcal{O}_X)
 -\chi(D;\mathcal{O}_D)
 \end{align}
@@ -381,23 +364,23 @@ $X$ をコンパクトトロピカル多様体とし、$D$を余次元$1$
 のコンパクト
 トロピカル部分多様体(tropical submanifold)とする
 \cite[Definition 2.14]{demedrano2023chern}。
-$D$が$X$上の中庸な配置
-(\cref{definition-permissible-position})にあるとき、次が成り立つ。
+$D$が$X$上の中庸な位置
+(\cref{definition-permissible-position})
+にあるとき、次が成り立つ。
 \begin{align}
 \opn{RR}(X;D)=\chi(X\setminus D).
 \end{align}
 \end{conjecture}
 
-中庸な配置の条件は、十分に一般的なトロピカル部分多様体に対して
+中庸な位置の条件は、十分に一般的なトロピカル部分多様体に対して
 成立する条件である一方で、満たさないものも簡単に作れる条件である。
 (\cref{example-permissible-point}などを参照。)
 
 \begin{example}
 \label{example-permissible-point}
 $C$をコンパクトトロピカル曲線とする。点 $p\in C$ が
-中庸な(permissible)位置にあることは、
+中庸な位置にあることは、
 $p\in C_{\opn{reg}}$ であることと同値である。
-当然、有限個の点集合の場合に一般化できる。
 簡単な計算から、中庸な位置にある
 余次元 $1$ のトロピカル部分多様体
 $D$ に対して、
@@ -414,6 +397,12 @@ $D$ に対して、
 が成り立つと期待される根拠となるその他の例は、
 \cref{example-TPn} や
 \cref{remark-iass} で説明する。
+また、私は \cite{tsutsui2023graded} 
+の派生として \cref{conjecture-rr-euler}
+を予想するに至った。
+本論文と \cite{tsutsui2023graded}
+との関係は \cref{remark-c-infinity-divisor}
+にて述べる。
 
 本論文の主定理の一つは次のようになる。
 証明は難しくない。
@@ -912,8 +901,8 @@ $K_M$ は自明なので
 Serre 双対性を考えると$M$上の因子$D$に対して
 \begin{align}
 \label{equation-calabi-yau-euler}
-\chi(M;\mathcal{O}_M(D))=(-1)^{\dim M}
-\chi(M;\mathcal{O}_{M}(-D))
+\chi(M;\mathcal{O}_M(-D))=(-1)^{\dim M}
+\chi(M;\mathcal{O}_{M}(D))
 \end{align}
 となる。
 これまでの議論を踏まえると、
@@ -1073,7 +1062,6 @@ $a_S$ を $S$ から一点空間への連続写像とする。
 \begin{align}
 \chi(S\setminus C)=\chi(Ra_{S*}Rj_*\mathbb{Q}_{S\setminus C}) 
 \end{align}
-これは、$S$上の構成可能関数となる。
 $C$が$S$上中庸な位置にあるとき、
 \cref{proposition-self-intersection}
 の証明で見た局所錐の構造の分類より、
@@ -1140,16 +1128,29 @@ $C_{\opn{reg}}$ 上では、$\mathbb{Q}^2$
 Euler calculus と密接に関係している\cite{MR970076,MR1115569}。
 Euler calculus は構成可能層の Euler 数を計算する
 上で有効な考え方であり、
-\cref{equation-euler-calculus} は、
-コンパクト台 Euler 標数を測度の一種とみなし、
-その上で次の$S$上の単調関数を
+\cref{equation-euler-calculus} の右辺は、
+コンパクト台 Euler 標数を符号付き測度の一種とみなし、
+その上で次の$S$上の単関数を
 積分していると解釈することができる。
 \begin{align}
-\chi(S\setminus C)(x)\deq \chi(Rj_*\mathbb{Q}_{S\setminus C})_x 
+\chi(Rj_*\mathbb{Q}_{S\setminus C})(x)\deq \chi((Rj_*\mathbb{Q}_{S\setminus C})_x) 
 \simeq \chi(\varinjlim_{U\ni x} H^{\bullet}((S\setminus C)
 \cap U;\mathbb{Q}))   
 \end{align}
-解析多様体上の構成可能層の Euler 数が構成可能関数に
+この構成可能関数の $x\in S$ での値を
+$Rj_*\mathbb{Q}_{S\setminus C}$
+の局所 Euler--Poincar\'e 指数と呼ぶ。
+
+Euler calculus はトロピカル多様体上の基本的な
+構成可能層を調べる上でも有効な手段であり、
+tropical Poincar\'e--Hopf の定理
+\cite[Theorem 4.7]{} の最初の等式は、
+\cite[Remark 4.8]{} でも強調されているように
+トロピカル $p$-form のなす層の全複体 
+$\Omega^{\bullet}_{\mathbb{Z},X}$ に対する Euler integration 
+だと解釈できる。
+解析多様体上の構成可能層の Euler 数が
+付随する構成可能関数の Euler integration に
 よって計算可能であることは、\cite[Theorem 9.7.1]{MR1299726}
 などを見よ。より一般の場合の構成可能層については
 \cite[Chapter 2]{MR2031639} などで解説されている。
@@ -1163,6 +1164,74 @@ $\opn{deg}(F)=d$, $\opn{deg}(G)=e$とする。
 \end{align}
 
 \end{example}
+
+\begin{remark}
+\label{remark-c-infinity-divisor}
+ここでは、\cref{conjecture-rr-euler} と代数幾何との
+関係についてもう少し詳細に述べる。
+イントロで説明したように、コンパクトトロピカル多様体 $X$
+とその部分
+$\chi_c(X\setminus D)=\chi(X)-\chi(D)$ は、
+\cref{equation-anti-effective-divisor} の類似だと
+考えられるため、\cref{conjecture-rr-c-euler} を予想することは
+想像に難くない。
+一方で、\cref{conjecture-rr-euler} を直接示唆する
+代数幾何的な事実を (トーリック多様体などの特殊な場合を除いて)
+筆者は知らない。
+トロピカル多様体のトポロジーが Berkovich 空間と関係が
+深いため、\cref{conjecture-rr-c-euler,conjecture-rr-euler}
+は Berkovich 幾何とも深く関係していると期待されるが、
+筆者は現時点ではよくわかっていない。
+一方で、\cite{tsutsui2023graded} での研究を踏まえると
+$\chi(X\setminus D)$ は、Floer 複体との密接な関係が
+あると期待される。以下よりこれを軽く説明する。
+
+簡単のために、$X$ を $\mathbb{R}/\mathbb{Z}$ とし、$D$ を有限個の
+点集合とする。
+このとき、次の等式が成り立つ。
+\begin{align}
+\chi(X\setminus D) &=\sum_{E\in \pi_0(X\setminus D)} 
+\chi(H^{\bullet}(E;\mathbb{Z}))=\sharp D, \\
+\chi_c(X\setminus D) &=\sum_{E\in \pi_0(X\setminus D)} 
+\chi(H^{\bullet}_c(E;\mathbb{Z}))=-\sharp D.
+\end{align}
+
+このとき、$D$ を台とする Cartier 因子
+$s\in \opn{CDiv}(X)$ が存在し、
+それは $D$の近傍のみ位数$1$で折れている
+$\mathbb{Z}$-affine な関数を局所的に貼り合わせたものとなっており、
+普遍被覆 $\pi\colon \mathbb{R}\to \mathbb{R}/\mathbb{Z}$ 
+による引き戻し $\pi^{*}s$ は $\mathbb{R}$ 上の単調増加な
+$\mathbb{Z}$-affine 関数 $f$ の主因子となっている。
+
+筆者は \cite{tsutsui2023graded} にて、
+ミラー対称性と超局所層理論のアイデアから代数多様体上の直線束の
+
+$\mathcal{A}^{0,0}_X$ を $X$ 上の
+$(0,0)$-superform のなす層とすると、
+次の層完全列が存在する。
+\begin{align}
+0\to \mathcal{O}_X^{\times} \to \mathcal{A}^{0,0}_X
+\to \mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times} \to 0
+\end{align}
+
+筆者は \cite{tsutsui2023graded} にて、
+ミラー対称性と超局所層理論のアイデアから
+コンパクトトロピカル多様体上の
+直線束を表現する$C^{\infty}$因子に対して
+次数付き加群を定義し、それが Riemann--Roch 数と
+一致するという予想\cite[Conjecture 1.2]{tsutsui2023graded}を
+提案し、トロピカル多様体がトロピカル曲線や Hesse 計量を
+許容する整アフィン多様体に対して成立することを示した。
+$C^{\infty}$ 因子のコホモロジカル
+局所 Morse データは SYZ 変換のトロピカル類似によって
+古典的な複素直線束の Riemann--Roch 数
+と関連付けることができると期待している。
+さらに、理想的には$C^{\infty}$-因子に対して
+Floer コホモロジーが定義されると期待している。
+本文書では、前述の組み合わせ版を考察する。
+
+\end{remark}
 
 \section{その他の例}
 
@@ -1199,7 +1268,7 @@ Todd 類が持つべき性質を仮定した場合に、
 復習する。
 
 $(X,\mathcal{O}_X^{\times})$ を有理多面空間
-とし、$\mathcal{M}_X^{\times}$ を
+とし、$\opn{PAff}_{\mathbb{Z},X}$ を
 $X$ 上の$\mathbb{Z}$ 係数の傾きをもつ区分
 整アフィンな関数のなす層とする
 (\cite[Definition 4.1]{MR3894860}
@@ -1685,6 +1754,7 @@ $\dim X=2$なので、
 \end{proof}
 
 \begin{remark}
+
 \cite[Conjecture 6.13]{demedrano2023chern},
 \cref{conjecture-grr-divisor,conjecture-rr-euler}
 が正しいなら、\cref{conjecture-rr-bertini}も正しい。  
@@ -1698,17 +1768,69 @@ $\dim X=2$なので、
 
 \end{proof}
 
+\begin{remark}
 
+\cref{theorem-rr-euler-surface} 
+の証明では、Euler calculus の視点から
+トロピカル多様体 $X$ の余次元 $1$ のトロピカル部分多様体
+の補集合の Euler 数 $\chi(X\setminus D)$ を計算するために
+$R\Gamma_{X\setminus D}\mathbb{Q}_X$ を計算するという
+手法をとった。このテクニックは Bertini 対 $(D,D')$ に
+対しても有効であるが、注意も必要である。
+ここでは、ここまで明記していなかった話も含めてトロピカル
+
+\begin{align}
+0 \to (\mathbb{Q}_X)_{X\setminus D}
+\to \mathbb{Q}_X \to (\mathbb{Q}_X)_{D} \to 0
+\end{align}
+
+
+\begin{align}
+R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_{X\setminus D})
+\to  R\Gamma_{X\setminus D'}(\mathbb{Q}_X)
+\to R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_D)
+\to R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_{X\setminus D})[1]
+\end{align}
+
+さらに、$i\colon D\to X$ を包含写像とすると
+\cite[(2.3.20)]{MR1299726} より
+\begin{align}
+R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_D)
+\simeq i_* R\Gamma_{D\setminus D'}\mathbb{Q}_D
+\end{align}
+となるので、次の等式が成り立つ。
+\begin{align}
+\chi(\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_{X\setminus D})))
+= \chi(X\setminus D')
+- \chi(D\setminus (D'\cap D)).
+\end{align}
+
+ここで注意しなければならないのは、
+直線束のテンソル積とは異なり、
+$(\cdot )_{X\setminus D}$
+と $R\Gamma_{X\setminus D}$ は可換ではない。
+実際に任意の層 $\mathcal{F}$ に対して
+\begin{align}
+(R\Gamma_{X\setminus D}(\mathcal{F}))_{X\setminus D}
+\simeq 
+\mathcal{F}_{X\setminus D}, \quad
+R\Gamma_{X\setminus D}((\mathcal{F})_{X\setminus D})
+\simeq R\Gamma_{X\setminus D}(\mathcal{F})
+\end{align}
+となる。一方で次の
+\begin{align}
+R\Gamma_{X\setminus D'}
+(R\Gamma_{X\setminus D}(\mathcal{F}))
+\simeq R\Gamma_{X\setminus (D\cup D')}(\mathcal{F}), \quad
+((\mathcal{F})_{X\setminus D})_{X\setminus D'}
+\simeq (\mathcal{F})_{X\setminus (D \cup D')}
+\end{align}
+ゆえに、$D=D_1+\cdots + D_n-D_{n+1}-\cdots-D_{n+m}$ 
+という因子が存在するとき、各 $D_i$ 
+の交わりが十分に良い場合、
+\end{remark}
 
 \section{補集合と局所 Morse データ}
-
-\begin{question}
-Berkovich curve の II, III 型の点とこの補空間の理論は
-関係があるのではなかろうか? 
-(type Iの点とはおそらく相性が悪い。超平面配置の補集合の
-解析化が可縮であることからも想像できる。)
-\end{question}
-
 
 
 
