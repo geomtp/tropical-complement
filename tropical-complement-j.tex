@@ -233,6 +233,9 @@ Tokyo, 153-8914, Japan}
 
 \maketitle
 
+\begin{abstract}
+     
+\end{abstract}
 \section{イントロダクション}
 
 \cite{demedrano2023chern}の理論によって
@@ -244,13 +247,13 @@ Riemann--Roch 数 $\opn{RR}(X;D)$ が
 次のように定義できるようになった。
 
 \begin{align}
-     \opn{RR}(X;D)\deq \int_{X}\opn{ch}(\mathcal{L}(D))\opn{td}(X).
+     \opn{RR}(X;D)\deq \int_{X}\opn{ch}(\mathcal{L}_{D})\opn{td}(X).
 \end{align}
-ここで、$\mathcal{L}(D)$とは、$D$が定める
+ここで、$\mathcal{L}_{D}$とは、$D$が定める
 トロピカル直線束であり、
-$\opn{ch}(\mathcal{L}(D))\deq 
-\sum_{i=0}^{\infty}\frac{c_1(\mathcal{L}(D))^{i}}{i!}$
-は、$\mathcal{L}(D)$ の Chern 指標であり、
+$\opn{ch}(\mathcal{L}_{D})\deq 
+\sum_{i=0}^{\infty}\frac{c_1(\mathcal{L}_{D})^{i}}{i!}$
+は、$\mathcal{L}_{D}$ の Chern 指標であり、
 $\int_X$ はトレース写像である。
 古典的には、この Riemann--Roch 数は $\opn{RR}(X;D)$
 は$D$の定義する可逆層の Euler 数と対応する。
@@ -258,6 +261,11 @@ $\int_X$ はトレース写像である。
 可逆層とくに構造層は Abel 群のなす層では
 ないため、可逆層の層コホモロジーの Euler 数と
 Riemann--Roch 数を比較することができない。
+トロピカル幾何における Riemann--Roch の定理は、
+Baker--Norine によるグラフの Riemann--Roch の定理
+の一般化という形で発展していったが、彼らの定理の
+直接的な一般化として、より高次のトロピカル多様体の
+Riemann--Roch の定理の定式化はまだなされていない。
 いづれにせよ、
 $\opn{RR}(X;D)$ がトロピカル幾何的にどういう意味を持った
 量であるのかということの理解は、
@@ -285,10 +293,6 @@ $\chi(X)$が代数多様体上の構造層の
 本論文では、$D$ が自明ではないいくつかのケースにおける、
 $\opn{RR}(X;D)$ のトロピカル幾何学的な
 意味について考察することが主目的である。
-
-
-
-
 特に本文書では、トロピカル曲面の場合が中心的な
 話題であるが、これらの内容は高次元に一般化できると
 期待している。
@@ -301,7 +305,7 @@ $\iota\colon D\to X$を自然な閉埋め込みとする。
      0\to \mathcal{O}_X(-D)\to 
 \mathcal{O}_X\to \iota_*\mathcal{O}_D\to 0
 \end{align}
-これより、次の等式が成り立つ。
+これより、層コホモロジーの Euler 数について次の等式が成り立つ。
 \begin{align}
 \label{equation-anti-effective-divisor}
 \chi(X;\mathcal{O}_X(-D))=\chi(X;\mathcal{O}_X)
@@ -397,7 +401,7 @@ $D$ に対して、
 が成り立つと期待される根拠となるその他の例は、
 \cref{example-TPn} や
 \cref{remark-iass} で説明する。
-また、私は \cite{tsutsui2023graded} 
+また、筆者は \cite{tsutsui2023graded} 
 の派生として \cref{conjecture-rr-euler}
 を予想するに至った。
 本論文と \cite{tsutsui2023graded}
@@ -454,7 +458,7 @@ $\iota\colon D\to X$ を埋め込み写像とする。
 \chi(D;\iota^{*}\mathcal{O}_X(D'))=\chi(D;\mathcal{O}_D(D'\cap D))
 \end{align}
 
-上述の条件を満たす $D,D'$ への条件は厳しいように見えるが
+上述で 因子のペア $(D,D')$ に課した条件は厳しいように見えるが
 Bertiniの定理の応用から射影多様体の任意の因子$D_0$に対して
 $D_0=D'-D$かつ
 $D,D',D\cap D'$ が非特異部分多様体になるように$D,D'$
@@ -463,14 +467,13 @@ $D,D',D\cap D'$ が非特異部分多様体になるように$D,D'$
 \begin{align}
 \chi(X;\mathcal{O}_X(D'-D))=
 \chi(X;\mathcal{O}_X(D'))-
-\chi(D;\mathcal{O}_D(D'\cap D))
+\chi(D;\mathcal{O}_D(D'\cap D)).
 \end{align}
 
-当然ではあるが、Grothendieck--Riemann--Rochの定理からも
+当然ではあるが、Grothendieck--Riemann--Roch の定理からも
 同様の公式が導出される。これと補集合に関する前述の予想を融合させると
 次のことも期待できる。
-本文書ではこの予想についても、
-Noetherの公式を満たすトロピカル曲面の場合において示す。
+
 \begin{conjecture}
 \label{conjecture-rr-bertini}
 $X$をコンパクトトロピカル多様体とし, 
@@ -479,19 +482,14 @@ $D,D'$を余次元$1$のトロピカル部分多様体または
 $D$ と $D'$ は次の条件を満たしているとする。
 \begin{enumerate}
 \item $D'$が$X$上中庸な位置にある。
-\item $D$ と $D'$ は横断的かつ局所マトロイド的に
-交わる。
-\item $D\cap D'$ が $D$ 上中庸な位置にある。
+\item $D'$ の $D$ への制限 $D'|_{D}$ は 
+$D'\cap D$ を台空間とした $D$ のトロピカル部分多様体である。
+\item $D'\cap D$ が $D$ 上中庸な位置にある。
 \end{enumerate}
-
-$D'$が$X$上中庸な位置にあるとし、
-$D\cap D'$が$D$の(重みづけも含めて)
-余次元$1$のトロピカル部分多様体または
-空集合であり、$D\cap D'$ が$D$上中庸な位置にあると仮定する。
 このとき、次の等式が成り立つ。
 \begin{align}
 \opn{RR}(X;D'-D)=\chi (X\setminus D')-
-\chi(D\setminus (D'\cap D))
+\chi(D\setminus (D'\cap D)).
 \end{align}
 
 \end{conjecture}
@@ -521,20 +519,12 @@ $D,D'$が存在する。
 
 
 
-なお後述するが\cref{conjecture-rr-bertini}は、
+なお、\cref{conjecture-rr-bertini}は、
 \cref{conjecture-rr-euler}と Todd 類に関する
-満たすべき性質との組み合わせから帰結することが
-できる。
+満たすべき性質(\cref{conjecture-grr-divisor})
+との組み合わせから帰結することができる。
 
-右辺の量は随分具体的な量であるが、実は
-$D$も$X$上の中庸な位置にあるとき、
-$C^{\infty}$因子の局所Morseデータと
-関連付けることが可能である。
-局所 Morse データ(の一般化論)を用いることで
-$\chi_c(X\setminus D)$ と
-$\chi (X\setminus D)$
-は統一的に管理することができる。
-論文の最後にこのことを曲面の場合に説明する。
+右辺の量は随分具体的な量であるが、
 
 \subsection{本論文のアウトライン}
 
@@ -1079,6 +1069,7 @@ $C$が$S$上中庸な位置にあるとき、
 とくに、$Rj_*\mathbb{Q}_{S\setminus C}\simeq
 j_*\mathbb{Q}_{S\setminus C}$ である。
 $j^{-1}j_*=\opn{id}$ なので、
+\cite[Proposition 2.3.6 (v)]{MR1299726} より、
 \begin{align}
 0\to j_!\mathbb{Q}_{S\setminus C} 
 \to j_* \mathbb{Q}_{S\setminus C}
@@ -1095,7 +1086,7 @@ $j^{-1}j_*=\opn{id}$ なので、
 $(j_*\mathbb{Q}_{S\setminus C})|_C$は、
 $C_{\opn{reg}}$ 上では、$\mathbb{Q}^2$
 を茎とする局所定数層である。
-よって、
+よって、同様の議論で
 \begin{align}
 \chi((j_*\mathbb{Q}_{S\setminus C})|_C)=
 2\chi_c(C_{\mathrm{reg}})+
@@ -1155,14 +1146,14 @@ $\Omega^{\bullet}_{\mathbb{Z},X}$ に対する Euler integration
 などを見よ。より一般の場合の構成可能層については
 \cite[Chapter 2]{MR2031639} などで解説されている。
 \end{remark}
-\begin{example}
-$\opn{deg}(F)=d$, $\opn{deg}(G)=e$とする。
-\begin{align}
-(V(G)|_{V(F)})^{2}+K_{V(G)}.(V(G)|_{V(F)})
-=e^2d+(d-4)ed=e^2d+d^2e-4de
-\end{align}
+% \begin{example}
+% $\opn{deg}(F)=d$, $\opn{deg}(G)=e$とする。
+% \begin{align}
+% (V(G)|_{V(F)})^{2}+K_{V(G)}.(V(G)|_{V(F)})
+% =e^2d+(d-4)ed=e^2d+d^2e-4de
+% \end{align}
 
-\end{example}
+% \end{example}
 
 \begin{remark}
 \label{remark-c-infinity-divisor}
@@ -1189,7 +1180,8 @@ $\chi_c(X\setminus D)=\chi(X)-\chi(D)$ は、
 $H^{\bullet}(X\setminus D)$ は、Floer 複体との密接な関係が
 あると期待でき、ミラー対称性を通じて
 複素多様体上の直線束の Euler 数と関連付ける
-ことができると期待できる。以下よりこれを軽く説明する。
+ことができると期待できる。以下よりこれを例を用いて
+軽く説明する。
 
 簡単のために、$X$ を $\mathbb{R}/\mathbb{Z}$ とし、$D$ を有限個の
 点集合とする。
@@ -1303,17 +1295,22 @@ H^{\bullet}(X_P\setminus D;\mathbb{Z}), \\
 H^{\bullet}_c(W;\mathbb{Z}) \\
 &\simeq H^{\bullet}_c(X_P\setminus D;\mathbb{Z}).
 \end{align}
-
+$s_P$ については、\cite[Appendix D]{tsutsui2023graded}
+にて実質的に説明している。
 こういった対応は、
-$H^{\bullet}(X\setminus D)$ や
-$H^{\bullet}_c(X\setminus D)$ に対して、
+$H^{\bullet}(X\setminus D)$ に対して、
 "Floer differential" が定義できるならば、
-$H^{\bullet}(X\setminus D)$ や
-$H^{\bullet}_c(X\setminus D)$ から
+$H^{\bullet}(X\setminus D)$ から
 $D$ のホモロジカルな不変量を取り出す
 ことができる可能性も示唆している。
-このことについては、\cref{remark-}
+このことについては、\cref{remark-floer-differential}
 にてもう少し説明する。
+
+最後に、この Remark にて
+言及したことと深い関係があることが示唆される話題の
+一つに
+Demazure's theorem \cite{MR284446} があることも
+述べておく(\cite[\textsection 9.1]{MR2810322} も見よ)。
 \end{remark}
 
 \section{その他の例}
@@ -1332,8 +1329,9 @@ $D$ のホモロジカルな不変量を取り出す
 定義および
 形式的な議論のみで完了する内容はうまくいく
 部分がある。
-ここでは形式的な議論でうまくいく部分と
-Todd 類が持つべき性質を仮定した場合に、
+ここでは Todd 類が持つべき性質
+(\cref{conjecture-grr-divisor})
+を仮定した場合に、
 \cref{conjecture-rr-bertini} 
 が\cite[Conjecture 6.13]{demedrano2023chern}
 と\cref{conjecture-rr-euler} より
@@ -1344,31 +1342,13 @@ Todd 類が持つべき性質を仮定した場合に、
 \subsection{トロピカルホモロジー側の準備}
 
 ここでは、トロピカル多様体 
-(より一般的には、滑らかな有理多面空間
+(より一般的に滑らかな有理多面空間
 \cite[Definition 6.1]{MR4637248})
 の層理論的なトロピカルホモロジー論について、
 必要な部分を \cite{MR4637248} から
 復習する。
 
-$(X,\mathcal{O}_X^{\times})$ を有理多面空間
-とし、$\opn{PAff}_{\mathbb{Z},X}$ を
-$X$ 上の$\mathbb{Z}$ 係数の傾きをもつ区分
-整アフィンな関数のなす層とする
-(\cite[Definition 4.1]{MR3894860}
-や\cite[Definition 3.8 and Remark
-3.9]{MR4246795}を見よ)。
 
-\begin{remark}
-トロピカル多様体上の有理関数の定義は、著者によって
-異なる。とくにそれに応じて、
-トロピカル多様体上の Cartier 因子の定義も異なってくる。
-例えば、\cite{MR3894860,MR4637248}
-における Cartier 因子の台は、
-すべてのトロピカルサイクルの台を表現するとは限らない。
-$X\deq \mathbb{T}$ としたとき、$\{-\infty\}$
-は、\cite{MR3894860,MR4637248} の意味での
-Cartier 因子の台にはならない。
-\end{remark}
 
 
 $n$ 次元有理多面空間
@@ -1378,16 +1358,138 @@ $(X,\mathcal{O}_X^{\times})$ が、
 とは、$X$ が純次元的であり、
 $X$ 上の$1$を値にもつ定数関数が
 $Z_n(X)$ の元を定義することである
-\cite[\textsection 6.1]{MR4246795}。
+\cite[\textsection 6.1]{MR4637248}。
 
 
-\subsection{トロピカル多様体の Todd 類}
+\subsection{トロピカルサイクル側の準備}
 
 トロピカル多様体 $X$ には、同様にサイクル写像
 
 $\opn{cyc}_k\colon Z_k(X)\to H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
-が存在する
-\cite{gross2019sheaftheoretic}。
+が存在する。
+\subsection{}
+
+$(X,\mathcal{O}_X^{\times})$ を有理多面空間
+とし、$\opn{PAff}_{\mathbb{Z},X}$ を
+$X$ 上の$\mathbb{Z}$ 係数の傾きをもつ区分
+整アフィンな関数のなす層とする
+(\cite[Definition 4.1]{MR3894860}
+や\cite[Definition 3.8 and Remark
+3.9]{MR4246795}を見よ)。
+
+ここで、
+$\opn{Div}(X)^{[0]}\deq H^{0}(X;
+\opn{PAff}_{\mathbb{Z},X}/\mathcal{O}_X^{\times})$
+とおく。
+
+\begin{remark}
+トロピカル多様体上の有理関数の定義は、著者によって
+異なる。とくにそれに応じて、
+トロピカル多様体上の Cartier 因子の定義も異なってくる。
+例えば、\cite{MR3894860,MR4637248}
+では、前述の $\opn{Div}(X)^{[0]}$ を
+トロピカル多様体上の Cartier 因子のなす群と呼んでいるが、
+これは \cite{demedrano2023chern} らの意味とは異なる。
+$\opn{Div}(X)^{[0]}$ の元の台が、
+すべてのトロピカルサイクルの台を表現するとは限らない。
+実際に、$X\deq \mathbb{T}$ としたとき、$\{-\infty\}$
+は、\cite{MR3894860,MR4637248} の意味での
+Cartier 因子の台にはならない。
+この観点から考えると \cite{demedrano2023chern} などの
+意味での Cartier 因子の方が、
+代数多様体上の Cartier 因子の類似としては適当である。
+一方で、\cite{MR3894860,MR4637248} らの意味の Cartier 
+因子の定義にもご利益が存在する。その中の一つが、
+有理多面空間の射 $f\colon X\to Y$ は、引き戻し
+$f^{*}\colon \opn{Div}(Y)^{[0]} \to \opn{Div}(X)^{[0]}$
+が常に存在し、有理多面空間の Picard 群の
+引き戻しと整合的な点である
+\cite[Propoisition 3.15]{MR4637248}。
+\end{remark}
+
+\begin{proposition}
+$X$ をトロピカル多様体とする。このとき、
+\begin{align}
+\opn{div}_X\colon
+\opn{Div}(X)^{[0]}\to Z_{n-1}(X); D\mapsto D\cdot [X]    
+\end{align}
+は単射である。
+\end{proposition}
+\begin{proof}
+
+
+また、ペアリングの定義が局所的なので
+次の層の射が誘導される。
+\begin{align}
+\opn{div}_X\colon \mathcal{D}iv_X\to 
+\mathscr{Z}_{n-1}^{X}
+\end{align}
+よって、この層の射が単射であることを示せばよい。
+$\mathcal{B}$ を $X$ の開基とすると、
+$\mathcal{B}$ 上の層のなす圏
+(\cite[p.49-50]{MR2675155})
+は、$X$ 上の層のなす圏と
+圏同値なので、任意の開基の元 $U$ について射
+$\mathcal{D}iv_X(U)\to Z_{n-1}(U)$
+が単射であることを示せばよい。
+$X$ はトロピカル多様体であるため、
+$U$ を 
+$\opn{LC}_x X\times \underline{\mathbb{R}}^{n}$
+の開集合と仮定してよい。ここで、
+$(\Omega_{\mathbb{Z},X}^{1})_{x}
+\simeq \opn{Hom}_{\mathbb{Z}}
+(T^{\mathbb{Z}}_0 (\opn{LC}_x X),\mathbb{Z})$
+なので、$\mathbb{Z}$-piecewise affine 関数
+$f\colon U\to \mathbb{R}$ は、
+$\opn{LC}_x X$ 上の$\mathbb{Z}$-piecewise affine 関数の
+$\opn{LC}_x X\times \underline{\mathbb{R}}^{n}$の
+引き戻しとして得られると考えられる。
+$X$ が boundaryless なとき、より一般の結果として
+\cite[Theorem 4.5]{MR4246795} にて示されているので、
+これより示された。
+\end{proof}
+
+最後に因子の
+
+古典的な代数曲面の交点数の異なる定義
+の一致をトロピカル曲面の場合で見る。
+\begin{proposition}
+\label{proposition-cycle-chern}
+$X$ をコンパクトトロピカル曲面とし、$D_1,D_2$
+をトロピカル$1$-サイクルとする。このとき、
+次が成り立つ。
+\begin{align}
+D_1 . D_2=\int_X c_1(\mathcal{L}(D_1))
+\cdot c_1(\mathcal{L}(D_2))
+=\int_X 
+\end{align}
+とくに右辺は、古典的なトロピカルホモロジーの
+交叉積と一致する。
+\end{proposition}
+\begin{proof}
+$D_1',D_2'$ をそれぞれ $\mathcal{L}(D_1),\mathcal{L}(D_2)$
+を表現する $\opn{Div}(X)^{[0]}$ に属す因子とする。
+得られた因子は、
+\cite[\textsection 2.4]{demedrano2023chern}
+でも言及している通り
+それぞれ $D_1$, $D_2$ と rationally
+equivalent である。このとき、
+\cite[Corollary 3.37]{shaw2015tropical} より
+$D_1.D_2=D_1'. D_2'$ である。
+よって、$D_1,D_2$ はともに$\opn{Div}(X)^{[0]}$ に属している
+と仮定してよい。さらに、
+\begin{align}
+\opn{cyc}_X(D_i')=c_1(\mathcal{L}(D_i'))\frown [X], \quad
+\opn{PD}_X(\opn{cyc}_X(D_i))=c_1(\mathcal{L}(D'_i)).
+\end{align}
+となる。
+
+\end{proof}
+
+\subsection{トロピカル多様体の Todd 類}
+
+
+\cite[Definition 5.4]{MR4637248}。
 (\cite[Definition 4.13]{MR3894860}もみよ。)
 また、$X$が純 $n$ 次元トロピカル多様体のとき、
 Poincar\'e 双対
@@ -1449,128 +1551,6 @@ $c^{\mathrm{sm}}(X)$を代入することで得られるものとする。
 
 \end{definition}
 
-\begin{proposition}
-$X_1,X_2$ をトロピカル多様体とし、
-$\pi_1\colon X_1\times X_2 \to X_1$, 
-$\pi_2\colon X_1\times X_2 \to X_2$
-をそれぞれ射影とする。このとき、次が成り立つ。
-\begin{align}
-c^{\mathrm{sm}}(X_1\times X_2)=
-\pi^{*}_1(c^{\mathrm{sm}}(X_1))\cdot 
-\pi^{*}_2(c^{\mathrm{sm}}(X_2))
-\end{align}
-
-\end{proposition}
-
-\begin{proof}
-トロピカルサイクルと
-トロピカル
-Borel--Moore ホモロジーの
-クロス積の定義
-\cite[Definition 3.7, 
-Definition 4.15]{gross2019sheaftheoretic}
-とその整合性
-\cite[Proposition 5.9]{gross2019sheaftheoretic}
-および Poincar\'e 双対性より
-Chern--Schwartz--Macpherson cycleに関する
-次の等式を示せばよい。
-\begin{align}
-\opn{csm}_k(X_1\times X_2)=\sum_{i+j=k}
-\opn{csm}_{i}(X_1)\times \opn{csm}_{j}(X_2)
-\end{align}
-これは、
-$\pi_1^{*}\mathcal{F}^{\bullet}_{\mathbb{Z},X_1}\otimes
-\pi_2^{*}\mathcal{F}^{\bullet}_{\mathbb{Z},X_2}
-\simeq \mathcal{F}^{\bullet}_{\mathbb{Z},X_1\times X_2}$
-であること\cite[Lemma 4.14]{gross2019sheaftheoretic}
-と
-$X^{[*,k]}\deq \{x\in X\mid \dim \opn{lineal}(X,x)=k\}$
-に関する次の公式からわかる。
-\begin{align}
-(X_1\times X_2)^{[*,k]}=\bigsqcup_{i+j=k}
-X_1^{[*,i]}\times X_2^{[*,j]}
-\end{align}
-
-\end{proof}
-
-\begin{remark}上述の命題は
-\cite[Proposition 5.1]{demedrano2023chern}
-からも証明できる。
-\end{remark}
-
-よって、次の Todd 類の乗法性と
-因子$D$の Riemann--Roch 数に対する
- K\"unneth の公式が成り立つ。
-
-\begin{proposition}
-$X_1,X_2$をトロピカル多様体とする。
-\begin{align}
-\opn{td}(X_1\times X_2)=\pi_{1}^{*}\opn{td}(X_1)\cdot 
-\pi_{2}^{*}\opn{td}(X_2)
-\end{align}
-とくに、任意の因子$D_i\in \opn{CDiv}(X_i)$ ($i=1,2$)
-に対して次が成り立つ。
-\begin{align}
-\opn{RR}(X_1\times X_2;D_1\boxtimes D_2)
-=\opn{RR}(X_1;D_1)\opn{RR}(X_2;D_2)
-\end{align}
-
-\end{proposition}
-
-\begin{proof}
-Todd $m$-列の乗法性より次が成り立つ。
-\begin{align}
-\opn{td}(X_1\times X_2)
-&=\opn{Todd}(\pi^{*}_1(c^{\mathrm{sm}}(X_1)))
-\cdot \opn{Todd}(\pi^{*}_2(c^{\mathrm{sm}}(X_2))) \\
-&=\pi^{*}_1\opn{td}(X_1)\cdot 
-\pi^{*}_2\opn{td}(X_2).
-\end{align}
-よって、$\opn{ch}(\pi_1^{*}D_1+\pi_2^{*}D_2)=
-\opn{ch}(\pi_1^{*}D_1)\cdot \opn{ch}(\pi_2^{*}D_2)$
-より、
-\begin{align}
-\opn{ch}(\pi_1^{*}D_1+\pi_2^{*}D_2)
-\pi^{*}_1\opn{td}(X_1)\cdot 
-\pi^{*}_2\opn{td}(X_2)=
-\pi_1^{*}(\opn{ch}(D_1)\opn{td}(X_1))\cdot
-\pi_2^{*}(\opn{ch}(D_2)\opn{td}(X_2)).
-\end{align}
-
-\end{proof}
-
-\begin{proposition}
-
-\end{proposition}
-\begin{proof}
-
-\begin{align}
-\opn{RR}(X_1;D_1)
-\opn{RR}(X_2;-D_2)
-= &\chi(X_1\setminus D_1)\chi_c(X_2\setminus D_2) \\
-= &\chi(X_1\setminus D_1)
-(\chi(X_2)-\chi(D_2)) \\
-= &\chi(X_1\times X_2\setminus D_1\times X_2)
--\chi(D_1\times X_2\setminus D_1\times D_2)
-\end{align}
-
-\end{proof}
-
-
-
-
-\begin{example}
-$X_1,X_2$ をトロピカル多様体とし 
-$D_1,D_2$ を中庸な位置にある
-余次元$1$のトロピカル部分多様体とする。
-このとき、
-\begin{align}
-\chi(X_1\setminus D_1)\chi(X_2\setminus D_2)
-=\chi(X_1\times X_2 \setminus (D_1\times X_2\cup X_1\times D_2)) \\
-=\chi(X_1\times X_2 \setminus (\pi_1^{*}D_1+\pi_2^{*}D_2))
-\end{align}
-
-\end{example}
 
 ここで代数多様体 $X$ の接束を$\mathcal{T}_X$とすると、
 非特異因子 $D$ に対して、次の層短完全列が存在する。
@@ -1601,13 +1581,16 @@ c_{k-1}(\mathcal{T}_{D})c_1(\iota^{*}\mathcal{O}_X(D))
 \begin{conjecture}
 \label{conjecture-grr-divisor}
 $X$をトロピカル多様体とし、$D$ を余次元$1$の
-部分トロピカル多様体とする。このとき、次が成り立つ。
+部分トロピカル多様体とする。このとき、包含写像
+$\iota\colon D \to X$ に対して次が成り立つ。
 \begin{align}
 \label{equation-total-adjunction}
-\iota^{*}c^{\mathrm{sm}}(X)=c^{\mathrm{sm}}(D)c(\iota^{*}[D]), \\ 
-\iota^{*}c^{\mathrm{sm}}_k(X)=c^{\mathrm{sm}}_k(D)+c^{\mathrm{sm}}_{k-1}(D)\iota^{*}[D]
+\iota^{*}c^{\mathrm{sm}}(X)=c^{\mathrm{sm}}(D)c(\iota^{*}\mathcal{L}_{D}), \\ 
+\iota^{*}c^{\mathrm{sm}}_k(X)=c^{\mathrm{sm}}_k(D)+
+c^{\mathrm{sm}}_{k-1}(D)c_1(\iota^{*}\mathcal{L}_{D})
 \end{align}
-ここで、$c(\iota^{*}[D])\deq 1+c_1(\iota^{*}[D])$である。 
+ここで、$c(\iota^{*}\mathcal{L}_{D})\deq 1+c_1(\iota^{*}\mathcal{L}_{D})
+=\iota^{*}(1+c_1(\mathcal{L}_{D}))$である。 
 \end{conjecture}
 \cref{conjecture-grr-divisor}では、簡単のために
 トロピカルコホモロジーの元に対するものとしたが、
@@ -1621,8 +1604,6 @@ $\dim X=2$のときは、
 部分トロピカル曲線の
 同伴公式の別表現に過ぎない
 \cite[Theorem 6]{shaw2015tropical}。
-より詳しくは、\cref{example-gysin-surface}
-にて記述する。
 \cref{conjecture-grr-divisor} 
 が正しいならば、
 どのような結論を導くのか見てみる。
@@ -1758,10 +1739,12 @@ f_*((f^*(c)\cdot d) \frown [X])
      
 $X$ をトロピカル多様体とし $D$ を余次元 $1$ の
 部分トロピカル多様体とする。
-まず、$\iota\colon D\to X$ に関する
+まず、包含写像
+$\iota\colon D\to X$ に関する
 Gysin 押し出しと射影公式から
 \begin{align}
-c^{\mathrm{sm}}(X)\cdot [D]=\iota_!c^{\mathrm{sm}}(D)c([D]).
+c^{\mathrm{sm}}(X)\cdot [D]=\iota_!c^{\mathrm{sm}}(D)
+c(\mathcal{L}_{D}).
 \end{align}
 
 この等式は、第一次数部分に着目すれば、
@@ -1772,21 +1755,23 @@ c^{\mathrm{sm}}(X)\cdot [D]=\iota_!c^{\mathrm{sm}}(D)c([D]).
 Todd類の性質より
 \begin{align}
 \iota^{*}\opn{td}(X)=
-\opn{td}(D)\frac{\iota^{*}[D]}{1-\opn{exp}(\iota^{*}[D])}.
+\opn{td}(D)\frac{c_1(\iota^{*}\mathcal{L}_{D})}
+{1-\opn{exp}(c_1(\iota^{*}\mathcal{L}_{D}))}.
 \end{align}
 これを式変形すると次のようになる。
 \begin{align}
 \opn{td}(D)
-=\iota^{*}((1-\opn{exp}([D])/[D])\opn{td}(X))
+=\iota^{*}\left(
+\frac{1-\opn{exp}(c_1(\mathcal{L}_{D}))}{
+c_1(\mathcal{L}_{D})}\opn{td}(X)\right)
 \end{align}
 また、これに射影公式
-\cite[Proposition 4.18]{gross2019sheaftheoretic}
 を当てはめると
 \begin{align}
-\label{equation-grr-divisor}
-\iota_!(\opn{td}(D))=(1-\opn{ch}(D))\opn{td}(X).
+\label{equation-grr-divisor-2}
+\iota_!(\opn{td}(D))=(1-\opn{ch}(\mathcal{L}_{D}))\opn{td}(X).
 \end{align}
-\eqref{equation-grr-divisor} は、
+\eqref{equation-grr-divisor-2} は、
 Grothendieck--Riemann--Roch の定理の特殊例
 のトロピカル類似である。
 
@@ -1812,11 +1797,11 @@ $X$を
 \begin{proof}
 $\dim X=2$なので、
 \cref{conjecture-grr-divisor}は正しい。
-そのため射影公式と\eqref{equation-grr-divisor}より、
+そのため射影公式と\eqref{equation-grr-divisor-2}より、
 \begin{align}
-\iota_!(\opn{ch}(\iota^{*}(D'))\opn{td}(D))
-=\opn{ch}(D')\iota_!(\opn{td}(D))
-=(\opn{ch}(D')-\opn{ch}(D'-D))\opn{td}(X).
+\iota_!(\opn{ch}(\iota^{*}(\mathcal{L}_{D'}))\opn{td}(D))
+=\opn{ch}(\mathcal{L}_{D'})\iota_!(\opn{td}(D))
+=(\opn{ch}(\mathcal{L}_{D'})-\opn{ch}(\mathcal{L}_{D'-D}))\opn{td}(X).
 \end{align}
 
 よって、次が成り立つ。
@@ -1856,24 +1841,44 @@ $\dim X=2$なので、
 \cref{theorem-rr-euler-surface} 
 の証明では、Euler calculus の視点から
 トロピカル多様体 $X$ の余次元 $1$ のトロピカル部分多様体
-の補集合の Euler 数 $\chi(X\setminus D)$ を計算するために
-$R\Gamma_{X\setminus D}\mathbb{Q}_X$ を計算するという
+$D$ の補集合の Euler 数 $\chi(X\setminus D)$ を計算するという
 手法をとった。このテクニックは Bertini 対 $(D,D')$ に
 対しても有効であるが、注意も必要である。
-ここでは、ここまで明記していなかった話も含めてトロピカル
+
+ここでは、\cite{MR1299726} に書かれている知識が必要であるため
+それを整理する。
+$A$ を $\mathbb{R}$ の部分環とし、$A_X$ を
+$X$ 上の定数層とし、$\catn{Mod}(A_X)$ を $A_X$加群の層の
+なす圏とする。
+$Z$ を局所閉部分集合とし、
+$j\colon Z\to X$ を包含写像とする。
+$(\cdot)_{Z}\colon \catn{Mod}(A_X) \to \catn{Mod}(A_X)$
+を \cite[Proposition 2.3.6]{MR1299726} で定義される完全
+関手とし、
+$\Gamma_{Z}\colon \catn{Mod}(A_X) \to \catn{Mod}(A_X)$
+を \cite[Definition 2.3.8]{MR1299726} で定義される関手
+とする。$X$ 上の層 $\mathcal{F}$ に対して、
+$(\mathcal{F})_{Z}\simeq j_!j^{-1}\mathcal{F}$ である。
+特に、$Z$ が開集合であるときは、
+$\Gamma_{Z}\mathcal{F}\simeq
+j_*j^{-1}\mathcal{F}$ である
+\cite[Proposition 2.3.9 (iii)]{MR1299726}。
+このとき、次の完全列が存在する。
 
 \begin{align}
+\label{equation-closed-open-exact}
 0 \to (\mathbb{Q}_X)_{X\setminus D}
-\to \mathbb{Q}_X \to (\mathbb{Q}_X)_{D} \to 0
+\to \mathbb{Q}_X \to (\mathbb{Q}_X)_{D} \to 0.
 \end{align}
 
-
+次に、導来関手 $R\Gamma_{X\setminus D'}$ を
 \begin{align}
 R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_{X\setminus D})
 \to  R\Gamma_{X\setminus D'}(\mathbb{Q}_X)
 \to R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_D)
-\to R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_{X\setminus D})[1]
+\to R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_{X\setminus D})[1].
 \end{align}
+
 
 さらに、$i\colon D\to X$ を包含写像とすると
 \cite[(2.3.20)]{MR1299726} より
@@ -1888,6 +1893,35 @@ R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_D)
 - \chi(D\setminus (D'\cap D)).
 \end{align}
 
+なお、定義からわかるように
+\begin{align}
+\mathbb{H}^{\bullet}(X;R\Gamma_{X}
+((\mathbb{Q}_X)_{X\setminus D}))
+\simeq H^{\bullet}_c(X\setminus D), \quad
+\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
+((\mathbb{Q}_X)_{X}))
+\simeq H^{\bullet}(X\setminus D')
+\end{align}
+である。
+詳細は省くが、
+$\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
+((\mathbb{Q}_X)_{X\setminus D}))$
+は \cite{tsutsui2023graded} にて定義した
+コンパクトトロピカル多様体上の
+permissible な $C^{\infty}$ 因子 $s$ が定義する
+次数付き加群 $\opn{LMD}^{\bullet}(X;s)$
+の類似物の一種であり、密接に関係している。
+(簡単な場合は\cref{remark-c-infinity-divisor}
+にて説明している。)
+
+
+
+この論文では、\cref{equation-closed-open-exact} を
+\cref{equation-anti-effective-divisor} の一種の
+類似と見立てており、
+導来関手 $R\Gamma_{X\setminus D'}$ を
+代数多様体の非特異因子が定義する直線束のテンソル積の類似
+と見立てている。
 ここで注意しなければならないのは、
 直線束のテンソル積とは異なり、
 $(\cdot )_{X\setminus D}$
@@ -1900,7 +1934,7 @@ $(\cdot )_{X\setminus D}$
 R\Gamma_{X\setminus D}((\mathcal{F})_{X\setminus D})
 \simeq R\Gamma_{X\setminus D}(\mathcal{F})
 \end{align}
-となる。一方で次の
+となる。一方で次の同型が成り立つ。
 \begin{align}
 R\Gamma_{X\setminus D'}
 (R\Gamma_{X\setminus D}(\mathcal{F}))
@@ -1908,10 +1942,18 @@ R\Gamma_{X\setminus D'}
 ((\mathcal{F})_{X\setminus D})_{X\setminus D'}
 \simeq (\mathcal{F})_{X\setminus (D \cup D')}
 \end{align}
-ゆえに、$D=D_1+\cdots + D_n-D_{n+1}-\cdots-D_{n+m}$ 
-という因子が存在するとき、各 $D_i$ 
-の交わりが十分に良い場合、
+ゆえに、トロピカル部分多様体の Bertini 対 $(D,D')$ の定義を
+トロピカル部分多様体の良い交わりをする有限和の対に弱める
+ことができると期待できる。
+
 \end{remark}
+
+\begin{remark}
+\label{remark-floer-differential}
+\cref{remark-c-infinity-divisor}
+を読んでいないならば、読み飛ばして問題ない。
+\end{remark}
+
 
 \section{補集合と局所 Morse データ}
 
@@ -1919,22 +1961,7 @@ R\Gamma_{X\setminus D'}
 
 
 \subsection{*因子の話(文中のどこかに書く話)}
-この節では、古典的な代数曲面の交点数の異なる定義
-の一致をトロピカル曲面の場合で見る。
-\begin{proposition}
-\label{proposition-cycle-chern}
-$X$ をコンパクトトロピカル曲面とし、$D_1,D_2$
-をトロピカル$1$-サイクルとする。このとき、
-次が成り立つ。
-\begin{align}
-D_1 . D_2=\int_X c_1(\mathcal{L}(D_1))
-\cdot c_1(\mathcal{L}(D_2))
-\end{align}
-
-とくに右辺は、古典的なトロピカルホモロジーの
-交叉積と一致する。
-
-\end{proposition}
+この節では、
 
 まず、トロピカル多様体の余次元 $1$ のトロピカルサイクル
 は、Cartier 因子による表現を持つ
@@ -1945,26 +1972,12 @@ Cartier 因子の定義は、
 \cite{demedrano2023chern} などで用いられる
 ものである点に注意せよ。(Mikhalkin の定義に遡る。)
 また、Cartier 因子から直線束
-$\mathcal{L}(D)\in H^{1}(X;\mathcal{O}_X^{\times})$
+$\mathcal{L}_{D}\in H^{1}(X;\mathcal{O}_X^{\times})$
 が定義される。
 
-$(X,\mathcal{O}_X^{\times})$ を有理多面空間
-とし、$\mathcal{M}_X^{\times}$ を
-$X$ 上の$\mathbb{Z}$ 係数の傾きをもつ区分
-整アフィンな関数のなす層とする。
-さらに $(X,\mathcal{O}_X^{\times})$ がトロピカル
-多様体のとき、
-$\mathcal{K}_{X}^{\times}
-\deq \iota_*\mathcal{M}_{X^{[0]}}^{\times}$
-とする。
-$\mathcal{D}iv_X\deq \mathcal{M}_X^{\times}/
-\mathcal{O}_X^{\times}$、
-$\opn{Div}(X)^{[0]}\deq \Gamma(X;\mathcal{M}_X^{\times}/
-\mathcal{O}_X^{\times})$
+
 とする\cite[Deifinition 3.10]{MR4637248}。
-$\opn{Div}(X)^{[0]}$ は、
-\cite{demedrano2023chern} などの意味の Cartier 
-因子のなす群 $\opn{Div}(X)$ の部分群である。
+
 
 次に、$Z_k(X)$ を $X$ 上のトロピカル $k$-サイクルの
 なす群とする\cite[Definition 3.5]{MR4637248}。
@@ -1985,12 +1998,8 @@ H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
 
 これは、次のように作られている。
 
-次に、有理凸多面空間の射$f\colon X\to Y$はスキームの場合と異なり、
-任意の因子 $D$ の引き戻し $f^{*}D$ が常に存在し、
-付随する直線束 $\mathcal{L}(D)$ の引き戻しと整合的である
-ことに注意する
-\cite[Propoisition 3.15]{gross2019sheaftheoretic}。
-よって、次のような射が定義できる。
+
+
 
 \begin{align}
 \opn{Div}(X)^{[0]}\times Z_{k}(|A|) \to 
@@ -2009,7 +2018,7 @@ Z_{k-1}(X)
 \cite[Proposition 5.12]{MR4637248}。
 (\cite[Theorem 4.15]{MR3894860}もみよ。)
 \begin{align}
-\opn{cyc}_X(D\cdot A)=c_1(\mathcal{L}(D))
+\opn{cyc}_X(D\cdot A)=c_1(\mathcal{L}_{D})
 \frown \opn{cyc}_X(A).
 \end{align}
 
@@ -2026,43 +2035,17 @@ $Y$ を $X$ の余次元 $1$ の
 $\iota_*(1_{Y_{\opn{reg}}})\in Z_{n-1}(X)$ に対して
 $D\cdot 1_{X_{\mathrm{reg}}}=\iota_*(1_{Y_{\opn{reg}}})$
 となる Cartier 因子 $D$ が存在する。
-この Cartier 因子が一意であることは、
-次のことからわかる。
-まず、ペアリングの定義が局所的なので
-次の層の射が誘導される。
-\begin{align}
-\opn{div}_X\colon \mathcal{D}iv_X\to 
-\mathscr{Z}_{n-1}^{X}
-\end{align}
-この層が単射であることを示せばよいため、
-$X=L_M\times \underline{\mathbb{R}}^{n}$ とし、
-$x=(0,\ldots,0,-\infty,\ldots,-\infty)$と
-仮定してよい。
-$f\colon L_M\times \underline{\mathbb{R}}^{n}\to 
-\mathbb{R}$ をZPL関数とすると
-$x$の十分に小さい近傍上では、
-$f$ は、$L_M$上のZPL関数の引き戻しで
-得られるものだとわかる。また、
-$\opn{div}_X(f)$ で定義されるサイクルも
-$L_M$上のサイクルの引き戻しである。
-よって、$X=L_M$ の場合を調べれば
-よいが、これは
-\cite[Theorem 4.5]{MR4246795}
-の証明の中でより一般的に示されている。
-
-以降、余次元 $1$ の部分トロピカル多様体と
-それに付随する Cartier 因子は同一視する。
 
 \begin{align}
-\iota_*[D]=c_1(\mathcal{L}(D))\frown [X], \quad
-\opn{PD}_X(\iota_*[D])=c_1(\mathcal{L}(D)).
+\iota_*[D]=c_1(\mathcal{L}_{D})\frown [X], \quad
+\opn{PD}_X(\iota_*[D])=c_1(\mathcal{L}_{D}).
 \end{align}
 
 ここで
 
 \begin{align}
 (\opn{PD}_X(\iota_*[D])\cdot \opn{PD}_X(\iota_*'[D']))\frown [X]=
-c_1(\mathcal{L}(D'))\frown \iota_*[D]
+c_1(\mathcal{L}_{D'})\frown \iota_*[D]
 \end{align}
 
 \begin{proof}[{Proof of \cref{proposition-cycle-chern}}]
@@ -2097,12 +2080,134 @@ $D_1,D_2$ は、sedentary 0 であると仮定したので、
 は、\cite{shaw2015tropical,demedrano2023chern}
 で言及されているように$D_1$と$D_2$の交点数となる。
 
-\begin{align}
-\opn{cyc}_X(D_1'\cdot D_2')=c_1(\mathcal{L}(D_1'))
-\end{align}
-となる。
+
 \end{proof}
 
+\subsection{没話(次論文の一部とする)}
+
+
+\begin{proposition}
+$X_1,X_2$ をトロピカル多様体とし、
+$\pi_1\colon X_1\times X_2 \to X_1$, 
+$\pi_2\colon X_1\times X_2 \to X_2$
+をそれぞれ射影とする。このとき、次が成り立つ。
+\begin{align}
+c^{\mathrm{sm}}(X_1\times X_2)=
+\pi^{*}_1(c^{\mathrm{sm}}(X_1))\cdot 
+\pi^{*}_2(c^{\mathrm{sm}}(X_2))
+\end{align}
+
+\end{proposition}
+
+\begin{proof}
+トロピカルサイクルと
+トロピカル
+Borel--Moore ホモロジーの
+クロス積の定義
+\cite[Definition 3.7, 
+Definition 4.15]{gross2019sheaftheoretic}
+とその整合性
+\cite[Proposition 5.9]{gross2019sheaftheoretic}
+および Poincar\'e 双対性より
+Chern--Schwartz--Macpherson cycleに関する
+次の等式を示せばよい。
+\begin{align}
+\opn{csm}_k(X_1\times X_2)=\sum_{i+j=k}
+\opn{csm}_{i}(X_1)\times \opn{csm}_{j}(X_2)
+\end{align}
+これは、
+$\pi_1^{*}\mathcal{F}^{\bullet}_{\mathbb{Z},X_1}\otimes
+\pi_2^{*}\mathcal{F}^{\bullet}_{\mathbb{Z},X_2}
+\simeq \mathcal{F}^{\bullet}_{\mathbb{Z},X_1\times X_2}$
+であること\cite[Lemma 4.14]{gross2019sheaftheoretic}
+と
+$X^{[*,k]}\deq \{x\in X\mid \dim \opn{lineal}(X,x)=k\}$
+に関する次の公式からわかる。
+\begin{align}
+(X_1\times X_2)^{[*,k]}=\bigsqcup_{i+j=k}
+X_1^{[*,i]}\times X_2^{[*,j]}
+\end{align}
+
+\end{proof}
+
+\begin{remark}上述の命題は
+\cite[Proposition 5.1]{demedrano2023chern}
+からも証明できる。
+\end{remark}
+
+よって、次の Todd 類の乗法性と
+因子$D$の Riemann--Roch 数に対する
+ K\"unneth の公式が成り立つ。
+
+\begin{proposition}
+$X_1,X_2$をトロピカル多様体とする。
+\begin{align}
+\opn{td}(X_1\times X_2)=\pi_{1}^{*}\opn{td}(X_1)\cdot 
+\pi_{2}^{*}\opn{td}(X_2)
+\end{align}
+とくに、任意の因子$D_i\in \opn{CDiv}(X_i)$ ($i=1,2$)
+に対して次が成り立つ。
+\begin{align}
+\opn{RR}(X_1\times X_2;D_1\boxtimes D_2)
+=\opn{RR}(X_1;D_1)\opn{RR}(X_2;D_2)
+\end{align}
+
+\end{proposition}
+
+\begin{proof}
+Todd $m$-列の乗法性より次が成り立つ。
+\begin{align}
+\opn{td}(X_1\times X_2)
+&=\opn{Todd}(\pi^{*}_1(c^{\mathrm{sm}}(X_1)))
+\cdot \opn{Todd}(\pi^{*}_2(c^{\mathrm{sm}}(X_2))) \\
+&=\pi^{*}_1\opn{td}(X_1)\cdot 
+\pi^{*}_2\opn{td}(X_2).
+\end{align}
+よって、$\opn{ch}(\pi_1^{*}D_1+\pi_2^{*}D_2)=
+\opn{ch}(\pi_1^{*}D_1)\cdot \opn{ch}(\pi_2^{*}D_2)$
+より、
+\begin{align}
+\opn{ch}(\pi_1^{*}D_1+\pi_2^{*}D_2)
+\pi^{*}_1\opn{td}(X_1)\cdot 
+\pi^{*}_2\opn{td}(X_2)=
+\pi_1^{*}(\opn{ch}(D_1)\opn{td}(X_1))\cdot
+\pi_2^{*}(\opn{ch}(D_2)\opn{td}(X_2)).
+\end{align}
+
+\end{proof}
+
+\begin{proposition}
+
+\end{proposition}
+\begin{proof}
+
+\begin{align}
+\opn{RR}(X_1;D_1)
+\opn{RR}(X_2;-D_2)
+= &\chi(X_1\setminus D_1)\chi_c(X_2\setminus D_2) \\
+= &\chi(X_1\setminus D_1)
+(\chi(X_2)-\chi(D_2)) \\
+= &\chi(X_1\times X_2\setminus D_1\times X_2)
+-\chi(D_1\times X_2\setminus D_1\times D_2)
+\end{align}
+
+\end{proof}
+
+
+
+
+\begin{example}
+$X_1,X_2$ をトロピカル多様体とし 
+$D_1,D_2$ を中庸な位置にある
+余次元$1$のトロピカル部分多様体とする。
+このとき、
+\begin{align}
+\chi(X_1\setminus D_1)\chi(X_2\setminus D_2)
+=\chi(X_1\times X_2 \setminus (D_1\times X_2\cup X_1\times D_2)) \\
+=\chi(X_1\times X_2 \setminus (\pi_1^{*}D_1+\pi_2^{*}D_2))
+\end{align}
+
+\end{example}
 
 \bibliography{tropical-complement}
 \bibliographystyle{amsalpha}
