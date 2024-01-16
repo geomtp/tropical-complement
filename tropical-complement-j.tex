@@ -214,6 +214,7 @@
 \DeclareMathOperator{\reg}{gen}
 \DeclareMathOperator{\tform}{\Omega}
 \DeclareMathOperator{\mform}{\mathcal{F}}
+\newcommand{\PD}[1]{[#1]_{\mathrm{PD}}}
 
 \crefname{equation}{}{}
 \crefname{conjecture}{Conjecture}{Conjectures}
@@ -221,7 +222,8 @@
 \usepackage{mathrsfs}
 \usepackage{upgreek}
 \numberwithin{equation}{section}
-\title{トロピカル多様体の超曲面の補空間と Riemann--Roch 数}
+\title{The complement of moderate tropical curves in
+tropical surfaces}
 \author[Y. Tsutsui]{Yuki Tsutsui}
 \address{Graduate School of Mathematical Sciences,
 The University of Tokyo, 3-8-1 Komaba, Meguro-Ku,
@@ -240,23 +242,27 @@ Tokyo, 153-8914, Japan}
 
 \cite{demedrano2023chern}の理論によって
 トロピカル多様体の Todd 類 が定義可能となった。
-特に、
-コンパクトトロピカル多様体$X$上の因子
-$D$ の
+コンパクトトロピカル多様体
+$X$上の (sedentarity 0) な Cartier 因子 $D$ の
 Riemann--Roch 数 $\opn{RR}(X;D)$ が
-次のように定義できるようになった。
-
+次のように定義できるようになった
+(\cref{definition-rr-number})。
 \begin{align}
-     \opn{RR}(X;D)\deq \int_{X}\opn{ch}(\mathcal{L}_{D})\opn{td}(X).
+\opn{RR}(X;D)\deq 
+\int_{X}\opn{ch}(\mathcal{L}(D))\opn{td}(X).
 \end{align}
-ここで、$\mathcal{L}_{D}$とは、$D$が定める
+ここで、$\mathcal{L}(D)$ とは、$D$ が定める
 トロピカル直線束であり、
-$\opn{ch}(\mathcal{L}_{D})\deq 
-\sum_{i=0}^{\infty}\frac{c_1(\mathcal{L}_{D})^{i}}{i!}$
-は、$\mathcal{L}_{D}$ の Chern 指標であり、
+$\opn{ch}(\mathcal{L}(D))\deq 
+\sum_{i=0}^{\infty}\frac{c_1(\mathcal{L}(D))^{i}}{i!}$
+は、$\mathcal{L}(D)$ の Chern 指標であり、
 $\int_X$ はトレース写像である。
-古典的には、この Riemann--Roch 数は $\opn{RR}(X;D)$
-は$D$の定義する可逆層の Euler 数と対応する。
+この Riemann--Roch 数は Poincar\'e 双対によって
+余次元 $1$ のサイクルに対しても定義される。
+古典的には、この Riemann--Roch 数 $\opn{RR}(X;D)$
+は、Hirzebruch--Riemann--Roch の定理もしくは、
+Grothendieck--Riemann--Roch の定理より、
+$D$の定義する可逆層のコホモロジーの Euler 数と対応する。
 しかし、トロピカル幾何では、
 可逆層とくに構造層は Abel 群のなす層では
 ないため、可逆層の層コホモロジーの Euler 数と
@@ -279,7 +285,8 @@ Riemann--Roch の定理の定式化および解釈を与えるうえで
 では、$\opn{RR}(X;0)$は、$X$
 の位相的 Euler 数 $\chi(X)$ と一致していると
 予想されており、
-$X$ が Delzant face 構造を持つトロピカル曲面の場合
+$X$ が Delzant face 構造を持つ
+コンパクトトロピカル曲面の場合
 において\cite[Theorem 6.3]{demedrano2023chern}にて
 証明された。なお、Delzant face 構造を持つという
 条件は、十分に広い範囲のトロピカル曲面で成立している
@@ -298,7 +305,7 @@ $\opn{RR}(X;D)$ のトロピカル幾何学的な
 期待している。
 
 まず、代数幾何的な基本事項を整理する。
-$X$を非特異射影多様体とし、$D$をその非特異因子とし、
+$X$を非特異代数多様体とし、$D$ をその非特異因子とし、
 $\iota\colon D\to X$を自然な閉埋め込みとする。
 このとき、次の層短完全列が存在する。
 \begin{align}
@@ -429,8 +436,9 @@ $X$が Delzant face 構造をもつコンパクトトロピカル
 \end{corollary}
 
 もう少しだけ踏み込んだ話をする。
-トロピカル多様体$X$の
-余次元$1$のトロピカル部分多様体$D$
+トロピカル多様体 $X$ の
+余次元$1$のトロピカル部分多様体 $D$ の
+Riemann--Roch 数
 $\opn{RR}(X;D)$の幾何学的な意味を与えると、
 次のようなもう少し一般的な因子に対しても
 幾何学的な意味を与えることができると期待できる。
@@ -623,22 +631,27 @@ $\psi_i\colon U_i\to V_i(\subset \underline{\mathbb{R}}^{n_i})$
 
 \begin{definition}
 
-$(X,\mathcal{O}_X^{\times})$ を有理多面空間とし,
-$Y$を部分空間とし, 
-$\mathcal{O}^{\times}_{Y}\deq 
-\opn{Im}(i^{-1}\mathcal{O}_X^{\times}\to \mathcal{C}_{Y}^{0})$
-とする。
-$(Y,\mathcal{O}_Y^{\times})$ が有理多面空間となり、
-$Y$ のアトラスが、
-$(X,\mathcal{O}^{\times}_X)$
-のアトラスの $Y$ への制限として得られるとき、
-$(Y,\mathcal{O}_Y^{\times})$ を
-$X$ の部分有理多面空間と呼ぶ。
+$(X,\mathcal{O}_X^{\times})$ を有理多面空間とし、
+$Y$ を $X$ の部分空間とする。
+有理多面空間 $(Y,\mathcal{O}_Y^{\times})$ が 
+$(X,\mathcal{O}_X^{\times})$ の
+部分有理多面空間であるとは、
+任意の点 $x\in Y$ に対して、$x$ を含む
+$X$ のチャート $\psi \colon U\to \underline{\mathbb{R}}^{n}$
+が存在し、$Y$ への制限 
+$\psi|_{U\cap Y}\colon U\cap Y \to \underline{\mathbb{R}}^{n}$
+が $Y$ のチャートであることを言う。
 \end{definition}
 
-$X$が第二可算 Hausdorff なので
-$Y$もまた第二可算 Hausdorff である。
-よって、整合的なチャートが存在することさえ確認すればよい。
+$(X,\mathcal{O}_X^{\times})$ を有理多面空間とし、
+$(Y,\mathcal{O}_Y^{\times})$ を $Y=X$ かつ、
+恒等写像 $\opn{id}\colon Y\to X$ が有理多面空間としての
+射でありながら、$(Y,\mathcal{O}_Y^{\times})$ が
+$(X,\mathcal{O}_X^{\times})$ の部分有理多面空間とは
+ならない場合があることも注意せよ。(そのような例は
+Frobenious 射のトロピカル幾何的類似によって構築できる。)
+有理多面空間 $(X,\mathcal{O}_X^{\times})$ の局所多面的な
+閉集合は自然と部分有理多面空間の構造を持つ。
 
 $(X,\mathcal{O}_X^{\times})$ を有理多面空間
 $(Y,\mathcal{O}_Y^{\times})$ を $X$ の
@@ -647,18 +660,21 @@ $\iota\colon Y \to X$ を包含写像としたとき、
 各点 $x\in Y$ ごとに局所錐の包含射
 $\iota_{*,x}\colon \opn{LC}_x Y\to \opn{LC}_x X$
 が自然と誘導される。
+(局所錐の定義は\cite[\textsection 2.2]{MR4637248}
+を見よ。)
+
 さらに、$(X,\mathcal{O}_X^{\times})$ と
 $(Y,\mathcal{O}_Y^{\times})$ が
 regular at infinity 
 (\cite[\textsection 6.1]{MR4637248} や
 \cite[Definition 1.2]{MR3330789} を見よ) 
 であるとき、各点 $x$ の近傍の射はある射
-$\iota_{x}\colon \opn{LC}_x Y\times 
+$f_{x}\colon \opn{LC}_x Y\times 
 \underline{\mathbb{R}}^{r_{\alpha}}
 \to \opn{LC}_x X\times \underline{\mathbb{R}}^{r_{\alpha'}}$
 の制限として得られる。
-
-特に、十分に小さい近傍において$\opn{Aff}_X(U)$は、
+十分に小さい $x$
+の開近傍において$\mathcal{O}_X^{\times}(U)$は、
 $T_x X\times \underline{\mathbb{R}}^{r_{\alpha}}$
 上の大域的な$\mathbb{Z}$-アフィン関数と全単射である。
 (\cite[Example 2.1]{MR4637248} でも説明されているように、
@@ -674,24 +690,25 @@ $(X,\mathcal{O}_X^{\times})$
 の意味でのトロピカル多様体の構造を与えるアトラスを持つ。
 
 
+
 \begin{definition}[{\cite[Definition 2.14]{demedrano2023chern}}]
 $X$をトロピカル多様体とする。
-あるトロピカルサイクルの台 $Y$ が、
-トロピカル部分多様体とは、
-$Y$が部分有理多面空間として
+あるトロピカルサイクルの台 $Y$ が
+$X$のトロピカル部分多様体とは、
+$Y$が有理多面部分空間として
 トロピカル多様体かつ、
 任意の点$x\in Y$の
 局所錐の包含射
 $\iota_{*,x}\colon \opn{LC}_x Y\to 
 \opn{LC}_x X$
-がマトロイド商から誘導される
-Bergman 扇の包含射と同値
-であるものをいう。
+がある台集合を同じとする loopless マトロイド
+$M,N$ が与える Bergman 扇の包含写像
+$i \colon L_M\to L_N$
+と同型であるものをいう。
 \end{definition}
 
-
 トロピカルサイクルの台は、閉部分集合なので
-部分トロピカル多様体は常に閉集合である。
+トロピカル部分多様体は常に閉部分集合である。
 
 \begin{remark}
 \cite[Example 2.15]{demedrano2023chern}でも強調されているように、
@@ -708,19 +725,6 @@ Bergman 扇の包含射と同値
 などを参照せよ。
 
 
-\end{remark}
-
-\begin{remark}
-$Y$が$X$のトロピカル部分多様体のとき、
-トロピカルサイクルの台なので、$Y$は
-$X$の閉部分集合である。
-逆に、$Y$が、$X$
-の有理多面閉部分空間かつトロピカル多様体ならば、
-閉埋め込み写像 $\iota\colon Y\to X$ 
-の押し出し
-\cite[\textsection 3.2]{demedrano2023chern}
-によって、$\iota_*1_{Y_{\mathrm{reg}}}\in Z_{\bullet}(X)$
-となる。
 \end{remark}
 
 $X$をトロピカル多様体のとし、
@@ -958,7 +962,7 @@ $X$ をトロピカル多様体とし、$Y$ を
 $X$ の余次元 $1$
 のトロピカル部分多様体とする。
 $Y$ が中庸な位置にあるとき、
-$Y$ は sedentary 0 なトロピカル部分多様体である。
+$Y$ は sedentarity 0 なトロピカル部分多様体である。
 \end{proposition}
 \begin{proof}
 点 $x\in Y$ に対して
@@ -1367,7 +1371,7 @@ $Z_n(X)$ の元を定義することである
 
 $\opn{cyc}_k\colon Z_k(X)\to H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
 が存在する。
-\subsection{}
+\subsection{トロピカル Cartier 因子}
 
 $(X,\mathcal{O}_X^{\times})$ を有理多面空間
 とし、$\opn{PAff}_{\mathbb{Z},X}$ を
@@ -1411,7 +1415,7 @@ $f^{*}\colon \opn{Div}(Y)^{[0]} \to \opn{Div}(X)^{[0]}$
 $X$ をトロピカル多様体とする。このとき、
 \begin{align}
 \opn{div}_X\colon
-\opn{Div}(X)^{[0]}\to Z_{n-1}(X); D\mapsto D\cdot [X]    
+\opn{Div}(X)^{[0]}\to Z_{n-1}(X); D\mapsto D\cdot X    
 \end{align}
 は単射である。
 \end{proposition}
@@ -1444,7 +1448,7 @@ $f\colon U\to \mathbb{R}$ は、
 $\opn{LC}_x X$ 上の$\mathbb{Z}$-piecewise affine 関数の
 $\opn{LC}_x X\times \underline{\mathbb{R}}^{n}$の
 引き戻しとして得られると考えられる。
-$X$ が boundaryless なとき、より一般の結果として
+$X$ が boundaryless なとき、より一般の結果が
 \cite[Theorem 4.5]{MR4246795} にて示されているので、
 これより示された。
 \end{proof}
@@ -2050,7 +2054,7 @@ c_1(\mathcal{L}_{D'})\frown \iota_*[D]
 
 \begin{proof}[{Proof of \cref{proposition-cycle-chern}}]
 
-$D_1,D_2$ は、 sedentary 0 であると仮定してよい。
+$D_1,D_2$ は、 sedentarity 0 であると仮定してよい。
 
 $D_i'$ ($i=1,2$) を $D_i$を表す Cartier 因子とすると、
 
@@ -2075,7 +2079,7 @@ a_{X*} (c_1(\mathcal{L}(D_1')) \frown \opn{cyc}_X(D_2)) \\
 & =a_{X*}(\opn{cyc}_X(D_1'\cdot D_2)) 
 \label{equation-cartier-weil-intersection}
 \end{align}
-$D_1,D_2$ は、sedentary 0 であると仮定したので、
+$D_1,D_2$ は、sedentarity 0 であると仮定したので、
 \cref{equation-cartier-weil-intersection}
 は、\cite{shaw2015tropical,demedrano2023chern}
 で言及されているように$D_1$と$D_2$の交点数となる。
@@ -2085,6 +2089,135 @@ $D_1,D_2$ は、sedentary 0 であると仮定したので、
 
 \subsection{没話(次論文の一部とする)}
 
+\begin{proposition}
+$Y$ を $\mathbb{T}^{n}$ 内の有理多面部分集合とし、
+$\iota \colon Y\to \mathbb{T}^{n}$ を包含写像とする。
+この時、標準的な射 $\psi \colon \iota^{-1}\mathcal{O}_{\mathbb{T}^{n}}^{\times}
+\to \mathcal{C}^{0}_Y$ が存在し
+次が成り立つ。
+
+\begin{align}
+\opn{Im}(\psi) \simeq 
+\mathcal{O}_{Y}^{\times}
+\end{align}
+
+\end{proposition}
+\begin{proof}
+まず、定義から $\opn{Im}(\psi)$ と $\mathcal{O}_{Y}^{\times}$
+はともに $\mathcal{C}^{0}_Y$ の部分層である。
+
+また、$\iota^{-1}\mathcal{O}_{\mathbb{T}^{n}}^{\times}$
+は$\iota^{-1}\mathcal{C}^{0}_{\mathbb{T}^{n}}$
+の部分層であるため、
+
+
+次に、$f\in \mathcal{O}_{Y}^{\times}(U)$ とすると、
+$f$ は局所的に、ある$\mathbb{T}^{n}$ の開集合 
+$W$ 上の $\mathbb{Z}$-affine 関数 $h\in 
+\mathcal{O}_{\mathbb{T}}^{\times}(W)$ の
+$h|_{U}$ への制限となっている。
+\begin{align}
+\mathcal{O}_{Y}^{\times}(U) 
+\end{align}
+
+\end{proof}
+
+\begin{proof}
+
+$\varphi \colon \mathcal{O}_{\mathbb{T}^{n}}\to 
+\iota_*\mathcal{C}^{0}_Y$ とおくと
+次の完全列が存在する。
+\begin{align}
+0 \to \opn{Ker} \varphi \to 
+\mathcal{O}_{\mathbb{T}^{n}}^{\times} \to \iota_*\mathcal{C}^{0}_Y
+\end{align}
+引き戻しは完全関手なので次の完全列を得る。
+\begin{align}
+0 \to \iota^{-1}\opn{Ker} \varphi \to 
+\iota^{-1}\mathcal{O}_{\mathbb{T}^{n}}^{\times} \to \mathcal{C}^{0}_Y
+\end{align}
+
+よって、$\iota^{-1}\opn{Ker} \varphi\simeq \opn{Ker}\psi$
+である。さらに層の短完全列
+\begin{align}
+0 \to \opn{Ker} \varphi \to 
+\mathcal{O}_{\mathbb{T}^{n}}^{\times} \to 
+\opn{Im}(\varphi) \to 0 
+\end{align}
+に対して引き戻しを行うことで 
+$\iota^{-1}\opn{Im} \varphi \simeq \opn{Im} \psi$
+であることもわかる。
+$\opn{Im} \varphi $は、$\iota_*\mathcal{C}^{0}_Y$ の部分層
+であり、任意の $\mathbb{T}^{n}$ の開集合 $U$ に対して
+以下の表示を持つ。
+\begin{align}
+(\opn{Im} \varphi)(U)
+=\{ f\in C^{0}(U\cap Y)\mid f=g|_{U\cap Y}
+\text{ for some } g\in \mathcal{O}^{\times}_{\mathbb{T}^{n}}(U) \}     
+\end{align}
+このような表示を持つ $\opn{Im} \varphi$ の逆像 
+$\iota^{-1}\opn{Im} \varphi$ は 
+$\mathcal{O}^{\times}_{Y}$ の定義そのものである。
+
+\end{proof}
+
+\begin{proposition}
+$Z$ を $Y$ に含まれる $\mathbb{T}^{n}$ の有理多面集合とする。
+このとき、次の標準的な射 
+$\psi' \colon i^{-1}\mathcal{O}^{\times}_{Y} \to 
+\mathcal{C}_{Z}^{0}$
+に対して次の同型が成り立つ。
+\begin{align}
+\opn{Im}\psi' \simeq \mathcal{O}^{\times}_{Z}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+
+\begin{align}
+i^{-1}\mathcal{O}^{\times}_{Y}
+\simeq \opn{Im}(i^{-1}\psi\colon i^{-1}(\iota^{-1}\mathcal{O}^{\times}_{\mathbb{T}^{n}})
+\to i^{-1} \mathcal{C}_Y^{0}) 
+\end{align}
+であることと
+\begin{align}
+\opn{Im}(i^{-1}(\iota^{-1}\mathcal{O}^{\times}_{\mathbb{T}^{n}})
+\to i^{-1} \mathcal{C}_Y^{0}
+\to \mathcal{C}_Z^{0})\simeq \mathcal{O}_Z^{\times}
+\end{align}
+であることから示される。
+\end{proof}
+
+     
+\begin{definition}
+$(X,\mathcal{O}_X^{\times})$ を有理多面空間とし、
+$Y$ を $X$ の部分集合とする。
+\end{definition}
+
+\begin{proposition}
+
+
+\begin{align}
+\mathcal{O}_Y^{\times}|_{Y\cap U}\simeq 
+\opn{Im}(j^{-1}\mathcal{O}_{\mathbb{T}^{n}}^{\times}|_{U}\to \mathcal{C}_{Y\cap U}^{0})
+\end{align}
+
+
+\end{proposition}
+
+\begin{proof}
+
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJZXFxjYXAgVSJdLFsxLDAsIlUiXSxbMCwxLCJZIl0sWzEsMSwiXFxtYXRoYmJ7VH1ee259Il0sWzAsMl0sWzAsMV0sWzIsM10sWzEsM11d
+\[\begin{tikzcd}
+	{Y\cap U} & U \\
+	Y & {\mathbb{T}^{n}}
+	\arrow[from=1-1, to=2-1, "i"]
+	\arrow[from=1-1, to=1-2, "j"]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=1-2, to=2-2]
+\end{tikzcd}\]
+
+\end{proof}
 
 \begin{proposition}
 $X_1,X_2$ をトロピカル多様体とし、
