@@ -431,6 +431,7 @@ $D$を中庸な位置にある
 \cite[Theorem 6.3]{demedrano2023chern}
 とを合わせると次のようになる。
 \begin{corollary}
+\label{corollary-ds-euler-rr}
 $X$が Delzant face 構造をもつコンパクトトロピカル
 曲面のとき、 \cref{conjecture-rr-euler}は正しい。
 \end{corollary}
@@ -496,12 +497,20 @@ $D'\cap D$ を台空間とした $D$ のトロピカル部分多様体である�
 \end{enumerate}
 このとき、次の等式が成り立つ。
 \begin{align}
+\label{equation-rr-bertini}
 \opn{RR}(X;D'-D)=\chi (X\setminus D')-
 \chi(D\setminus (D'\cap D)).
 \end{align}
 
 \end{conjecture}
 
+なお、\cref{conjecture-rr-bertini}は、
+\cref{conjecture-rr-euler}と Todd 類に関する
+満たすべき性質(\cref{conjecture-grr-divisor})
+との組み合わせから帰結することができる
+(\cref{proposition-euler-to-bertini})。
+この観点を基に\cref{theorem-rr-euler-surface}
+を一般化する(\cref{theorem-rr-bertini-surface})。
 \begin{remark}
 $D,D'$が空集合のとき、
 \cref{conjecture-rr-bertini}は、
@@ -514,25 +523,33 @@ $D$が空集合で$D'$が空ではないとき、
 \cref{conjecture-rr-euler}と同等である。
 よって\cref{conjecture-rr-bertini}は上述の
 三つの予想を一般化したものとみなすことができる。
+また、\cref{conjecture-rr-bertini} の重要な点は、
+\eqref{equation-rr-bertini} の右辺はホモロジカルな
+データの不変量として得られていると解釈することができ、
+\cref{remark-c-infinity-divisor}で説明する関係を
+踏まえるとミラー対称性と深い関係があると期待できる点である。
 \end{remark}
+
+\begin{definition}
+トロピカル多様体 $X$ 上のトロピカル部分多様体の組
+$(D,D')$ が、\cref{conjecture-rr-bertini} の条件
+(1)-(3) を満たすとき、$(D,D')$ を $X$ 上の
+トロピカル部分多様体の
+\emph{Bertini pair} と呼ぶ。
+\end{definition}
 
 \begin{conjecture}
 $X$をトロピカル射影空間の部分トロピカル多様体とする。
 このとき、任意の因子$D_0$に対して
 \cref{conjecture-rr-bertini}において課した
 条件をみたし、$D'-D$ が $D_0$ と線形同値になる
-余次元$1$の部分トロピカル多様体の組
-$D,D'$が存在する。
+$X$ 上の Bertini pair $(D,D')$ が存在する。
 \end{conjecture}
 
 
 
-なお、\cref{conjecture-rr-bertini}は、
-\cref{conjecture-rr-euler}と Todd 類に関する
-満たすべき性質(\cref{conjecture-grr-divisor})
-との組み合わせから帰結することができる。
 
-右辺の量は随分具体的な量であるが、
+
 
 \subsection{本論文のアウトライン}
 
@@ -795,7 +812,7 @@ $\opn{LC}_x Y\simeq \opn{LC}_x X$
 
 点 $x\in X$ に対して
 $\opn{lineal}(X,x)$ を$\opn{LC}_x X (\subset T_x X)$
-の (maximal) lineality 空間とする。
+の maximal lineality 空間とする。
 (\cite[\textsection 2.1]{MR4246795} と
 \cite[\textsection 3]{demedrano2023chern} を見よ。)
 
@@ -1041,7 +1058,7 @@ C . C=&\opn{deg}(K_C)-K_S . C \\
 =& \sum_{p\in C_{\mathrm{sing}}}(\opn{val}(p)-2)
 - \sum_{p\in C_{\mathrm{sing}}\cap S_{\mathrm{sing}}}
 (\opn{val}(p)-2) \\
-=& \sharp (C_{\mathrm{sing}}\cap S_{\mathrm{reg}})
+=& \sharp (C_{\mathrm{sing}}\cap S_{\mathrm{reg}}).
 \end{align}
 
 \end{proof}
@@ -1115,6 +1132,10 @@ $C_{\opn{reg}}$ 上では、$\mathbb{Q}^2$
 \end{align}
 \end{proof}
 
+\begin{proof}[{Proof of \cref{corollary-ds-euler-rr}}]
+ 
+\end{proof}
+
 \begin{remark}
 \cref{theorem-rr-euler-surface} の
 証明において、$S\setminus C$ の Euler 数を
@@ -1176,10 +1197,11 @@ $\chi_c(X\setminus D)=\chi(X)-\chi(D)$ は、
 一方で、\cref{conjecture-rr-euler} を直接示唆する
 代数幾何的な事実を (トーリック多様体などの特殊な場合を除いて)
 筆者は知らない。
-トロピカル多様体のトポロジーが Berkovich 空間と関係が
+先行研究からわかるように
+トロピカル多様体のトポロジーは Berkovich 空間と関係が
 深いため、\cref{conjecture-rr-c-euler,conjecture-rr-euler}
 は Berkovich 幾何とも深く関係していると期待されるが、
-筆者は現時点ではよくわかっていない。
+筆者は執筆時点ではよくわかっていない。
 一方で、\cite{tsutsui2023graded} での研究を踏まえると
 $H^{\bullet}(X\setminus D)$ は、Floer 複体との密接な関係が
 あると期待でき、ミラー対称性を通じて
@@ -1189,7 +1211,7 @@ $H^{\bullet}(X\setminus D)$ は、Floer 複体との密接な関係が
 
 簡単のために、$X$ を $\mathbb{R}/\mathbb{Z}$ とし、$D$ を有限個の
 点集合とする。
-このとき、次の等式が成り立つ。
+このとき、次の次数つき加群としての同型が成り立つ:
 \begin{align}
 H^{\bullet}(X\setminus D;\mathbb{Z}) 
 &\simeq \bigoplus_{E\in \pi_0(X\setminus D)} 
@@ -1233,7 +1255,12 @@ H^{0}(X;\mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times})$
 \cite{tsutsui2023graded} では、
 $\opn{Div}^{\infty}(X)$の元を
 $X$ 上の \emph{$C^{\infty}$-divisor} と呼んでいる。
-とくに、$\mathcal{L}$ を $D$ が定義する直線束とすると、
+$B$ が整アフィン多様体であるとき、$C^{\infty}$-因子から
+Lagrange トーラス束 $\check{f}_B\colon \check{X}(B)\to B$
+の Lagrange 切断を構築することができることから
+$C^{\infty}$-因子は Lagrange 部分多様体の一種の派生と
+見ることができる。
+また、$\mathcal{L}$ を $D$ が定義する直線束とすると、
 上述の連結準同型によって $\mathcal{L}$ に移る
 $C^{\infty}$-因子を一つとることができる。
 今回の場合は、上で定義した $s_D$ の折れているところを
@@ -1259,11 +1286,12 @@ Riemann--Roch 数と等しいことを予想した
 (ただし、\cite[Conjecture 1.2]{tsutsui2023graded}
 は、\cite{demedrano2023chern}が公開されるより前で
 あったため Todd 類の明示的な定義はされていない。)
+なお $X=\mathbb{R}/\mathbb{Z}$のとき、
 $X$ は整アフィン多様体なので、
 このとき、$s_{\mathcal{L}}$ が定義する次数付き加群
 $\opn{LMD}^{\bullet}(X;s_{\mathcal{L}})$ は、
 $s_{\mathcal{L}}$ が定義する Lagrangian 切断の
-Floer 複体\cite[Remark 13]{MR1882331} と
+Floer 複体 \cite[Remark 13]{MR1882331} と
 次数付き加群として同型であり、今回の場合は次のように
 書くことができる
 (より詳しくは\cite[\textsection 4.4]{tsutsui2023graded}
@@ -1318,20 +1346,19 @@ Demazure's theorem \cite{MR284446} があることも
 \end{remark}
 
 \section{その他の例}
-
-ここでは、トロピカル多様体の Todd 類が
-満たすべき性質を持っている場合
-いくつかの初等的な例で予想が成立している
-ことを示す。
+\cite{demedrano2023chern}
 トロピカル多様体の Chern 類は、ベクトル束の
 理論の直接的な類似として定義されていないため、
 現時点では多くのことはわかっていない。
-例えば、全 Chern 類に関する
-分裂原理 (splitting principle) 周りの
-議論のトロピカル類似がよくわかっていない。
-一方で乗法列\cite[\textsection 1]{MR1335917}の
+また、筆者はトロピカル多様体上の
+\emph{tropical tangent bundle} の定義を知らない。
+(なお、トロピカルベクトル束に関する研究や考察は
+\cite{MR2961320,MR4646329}
+や \cite[Theorem 1.8]{amini2020hodge}
+などでなされている。)
+一方で乗法列 \cite[\textsection 1]{MR1335917} の
 定義および
-形式的な議論のみで完了する内容はうまくいく
+形式的な議論のみで導出できる内容はうまくいく
 部分がある。
 ここでは Todd 類が持つべき性質
 (\cref{conjecture-grr-divisor})
@@ -1339,7 +1366,8 @@ Demazure's theorem \cite{MR284446} があることも
 \cref{conjecture-rr-bertini} 
 が\cite[Conjecture 6.13]{demedrano2023chern}
 と\cref{conjecture-rr-euler} より
-帰結されることを見る。
+帰結されること
+(\cref{proposition-euler-to-bertini})を見る。
 
 
 
@@ -1371,6 +1399,14 @@ $Z_n(X)$ の元を定義することである
 
 $\opn{cyc}_k\colon Z_k(X)\to H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
 が存在する。
+
+$
+\phi \colon $
+
+について可換である。
+\cite[Lemma 5.13]{MR3894860}
+
+
 \subsection{トロピカル Cartier 因子}
 
 $(X,\mathcal{O}_X^{\times})$ を有理多面空間
@@ -1453,42 +1489,57 @@ $X$ が boundaryless なとき、より一般の結果が
 これより示された。
 \end{proof}
 
-最後に因子の
-
+最後に
 古典的な代数曲面の交点数の異なる定義
 の一致をトロピカル曲面の場合で見る。
 \begin{proposition}
 \label{proposition-cycle-chern}
 $X$ をコンパクトトロピカル曲面とし、$D_1,D_2$
-をトロピカル$1$-サイクルとする。このとき、
+をトロピカル $1$-サイクルとする。このとき、
 次が成り立つ。
 \begin{align}
-D_1 . D_2=\int_X c_1(\mathcal{L}(D_1))
-\cdot c_1(\mathcal{L}(D_2))
-=\int_X 
+D_1 . D_2=\int_X \PD{D_1}\cdot \PD{D_2}.
 \end{align}
-とくに右辺は、古典的なトロピカルホモロジーの
-交叉積と一致する。
+ここで左辺は、
+\cite{shaw2015tropical,demedrano2023chern}
+の意味での交点数である。
 \end{proposition}
 \begin{proof}
-$D_1',D_2'$ をそれぞれ $\mathcal{L}(D_1),\mathcal{L}(D_2)$
-を表現する $\opn{Div}(X)^{[0]}$ に属す因子とする。
-得られた因子は、
-\cite[\textsection 2.4]{demedrano2023chern}
-でも言及している通り
-それぞれ $D_1$, $D_2$ と rationally
-equivalent である。このとき、
-\cite[Corollary 3.37]{shaw2015tropical} より
-$D_1.D_2=D_1'. D_2'$ である。
-よって、$D_1,D_2$ はともに$\opn{Div}(X)^{[0]}$ に属している
-と仮定してよい。さらに、
-\begin{align}
-\opn{cyc}_X(D_i')=c_1(\mathcal{L}(D_i'))\frown [X], \quad
-\opn{PD}_X(\opn{cyc}_X(D_i))=c_1(\mathcal{L}(D'_i)).
-\end{align}
+$i=1,2$ とする。
+The wave homomorphism 
+$\hat{\phi}\colon 
+H^{\mathrm{BM}}_{1,1}(X;\mathbb{Z})
+\to H^{\mathrm{BM}}_{2,0}(X;\mathbb{R})$ に対して
+$[D_i]\deq \opn{cyc}_X(D_i)\in \opn{Ker} \hat{\phi}$
+であるため、\cite[Lemma 5.13]{MR3894860}より
+$c_1(\mathcal{L}(D'_i))=\PD{D_i}$、つまり
+$c_1(\mathcal{L}(D'_i))\frown [X]=[D_i]$ となる
+因子 $D'_i\in \opn{Div}^{[0]}(X)$ を選ぶことができる。
+\cite[Proposition 5.12]{MR4637248}より、
+$[D_i']=c_1(\mathcal{L}(D'_i))\frown [X]=[D_i]\in 
+H_{1,1}^{\mathrm{BM}}(X;\mathbb{Z})$ 
 となる。
+このとき、
+\cite[Proposition 3.34]{shaw2015tropical} と基本事実より
+次の等式がそれぞれ成り立つ:
+\begin{align}
+D_1.D_2=D_1'.D_2', \quad 
+\int_X \PD{D_1}\cdot \PD{D_2}
+=\int_X \PD{D_1'}\cdot \PD{D_2'}.
+\end{align}
 
+よって、$D_1,D_2$ はともに$\opn{Div}(X)^{[0]}$ に属している
+と仮定してよい。そのとき、トレース写像の定義と
+\cite[Proposition 5.12]{MR4637248}と射影公式より、
+\begin{align}
+\int_X \PD{D_1}\cdot \PD{D_2}
+&=a_{X*}(c_1(\mathcal{L}(D_1))\frown [D_2])
+=a_{D_2*}(c_1(\mathcal{L}(D_1|_{D_2}))\frown [D_2]) \\
+&=\int_{D_2}c_1(\mathcal{L}(D_1|_{D_2}))=\
+\opn{deg}(D_1|_{D_2})=D_1.D_2.
+\end{align}
 \end{proof}
+
 
 \subsection{トロピカル多様体の Todd 類}
 
@@ -1569,6 +1620,7 @@ $c^{\mathrm{sm}}(X)$を代入することで得られるものとする。
 \iota^{*}c(\mathcal{T}_X)
 =c(\mathcal{T}_{D})c(\iota^{*}\mathcal{O}_X(D))
 \end{align}
+$c(\mathcal{O}_X(D))=1+c_1(\mathcal{O}_X(D))$ なので
 次数部分に着目すれば、$k\in \mathbb{Z}_{\geq 0}$
 に対して
 \begin{align}
@@ -1585,20 +1637,22 @@ c_{k-1}(\mathcal{T}_{D})c_1(\iota^{*}\mathcal{O}_X(D))
 \begin{conjecture}
 \label{conjecture-grr-divisor}
 $X$をトロピカル多様体とし、$D$ を余次元$1$の
-部分トロピカル多様体とする。このとき、包含写像
+部分トロピカル多様体とする。このとき、
+$k\in \mathbb{Z}_{\geq 0}$ と包含写像
 $\iota\colon D \to X$ に対して次が成り立つ。
 \begin{align}
 \label{equation-total-adjunction}
-\iota^{*}c^{\mathrm{sm}}(X)=c^{\mathrm{sm}}(D)c(\iota^{*}\mathcal{L}_{D}), \\ 
-\iota^{*}c^{\mathrm{sm}}_k(X)=c^{\mathrm{sm}}_k(D)+
-c^{\mathrm{sm}}_{k-1}(D)c_1(\iota^{*}\mathcal{L}_{D})
+\iota^{*}c^{\mathrm{sm}}(X)&=c^{\mathrm{sm}}(D)
+(1+\iota^{*}\PD{D}), \\ 
+\iota^{*}c^{\mathrm{sm}}_k(X)&=c^{\mathrm{sm}}_k(D)+
+c^{\mathrm{sm}}_{k-1}(D)\iota^{*}\PD{D}(\in H^{k,k}(D;\mathbb{Z})).
 \end{align}
-ここで、$c(\iota^{*}\mathcal{L}_{D})\deq 1+c_1(\iota^{*}\mathcal{L}_{D})
-=\iota^{*}(1+c_1(\mathcal{L}_{D}))$である。 
 \end{conjecture}
 \cref{conjecture-grr-divisor}では、簡単のために
 トロピカルコホモロジーの元に対するものとしたが、
 トロピカル Chow 群版も同様に期待できる。
+トロピカル Chow 群の定義は
+\cite[Definition 3.30]{shaw2015tropical} を見よ。
 $\dim X=1,2$ のとき、
 \cref{conjecture-grr-divisor}
 は正しい。$\dim X=1$のときは、
@@ -1667,7 +1721,9 @@ H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})
 \end{align}
 を与えていることがわかる。
 カップ積 $\cdot \frown [X]$
-の逆準同型を$\opn{PD}_X$ とする。
+の逆準同型を $\opn{PD}_X$ とし、
+$Z\in H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$
+に対して、$\PD{Z}\deq \opn{PD}_X(Z)$ とする。
 
 ($X$ が global な面構造を持つ場合の、
 基本類のカップ積による上述の同型は、
@@ -1686,7 +1742,7 @@ H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})
 \cite[Chapter 13. Appendix]{MR2810322})。
 (なお、トロピカル多様体における
 一般化された Gysin 押し出しは
-\cite[Proposition 8.3]{} でも用いられている。)
+\cite[Proposition 8.3]{amini2020hodge} でもすでに用いられている。)
 \begin{definition}
 $X,Y$ を pure なトロピカル多様体とし、
 $Q$を$\mathbb{R}$の部分環とする。
@@ -1727,59 +1783,116 @@ $\cdot \frown [Y]$ は同型射なので、次の等式を
 \begin{align}
     f_!(f^{*}(c)\cdot d)\frown [Y]=(c\cdot f_!(d))\frown [Y]
 \end{align}
-実際に、
+実際に、Borel--Morre ホモロジーについての射影公式より
+次のように式変形することで得られる:
 \begin{align}
-(c\cdot f_!(d))\frown [Y]=
+(c\cdot f_!(d))\frown [Y]&=
 c\frown(f_!(d)\frown [Y])=
 c\frown f_*(d\frown [X])\\
-=f_*(f^*(c)\frown (d\frown [X]))=
-f_*((f^*(c)\cdot d) \frown [X])
-=f_!(f^{*}(c)\cdot d)\frown [Y].
+&=f_*(f^*(c)\frown (d\frown [X]))
+=f_*((f^*(c)\cdot d) \frown [X]) \\
+&=f_!(f^{*}(c)\cdot d)\frown [Y].
 \end{align}
-よって示せた。
 \end{proof}
 
 \begin{example}
      
 $X$ をトロピカル多様体とし $D$ を余次元 $1$ の
 部分トロピカル多様体とする。
-まず、包含写像
+\cref{conjecture-grr-divisor} が正しいと仮定すると、
+包含写像
 $\iota\colon D\to X$ に関する
 Gysin 押し出しと射影公式から
 \begin{align}
-c^{\mathrm{sm}}(X)\cdot [D]=\iota_!c^{\mathrm{sm}}(D)
-c(\mathcal{L}_{D}).
+c^{\mathrm{sm}}(X)\cdot \PD{D}=\iota_!c^{\mathrm{sm}}(D)
+(1+\PD{D}).
 \end{align}
 
-この等式は、第一次数部分に着目すれば、
+この等式の第 $1$ 次数部分は、
+\begin{align}
+\label{equation-adjunction-dmrs}
+c^{\mathrm{sm}}_{1}(X)\cdot \PD{D}=\iota_!c^{\mathrm{sm}}_1(D)
++\PD{D}\cdot \PD{D}.
+\end{align}
+これは、
 \cite[Theorem 5.2]{demedrano2023chern}にて示された
-同伴公式の高次元版の一種とみなせる。
+同伴公式のサイクル写像による像の
+Poincar\'e dual である。
+\eqref{equation-adjunction-dmrs} を標準束で書き直すと
+\begin{align}
+\iota_! \PD{K_D}=(\PD{K_X}+\PD{D})\PD{D}.
+\end{align}
+$\dim X=2$ のとき、$H^{1,1}(X;\mathbb{Z})\simeq \mathbb{Z}$
+なのでこの等式も
+\cite[Theorem 4.11]{shaw2015tropical} にて示された
+随伴公式を与える。
+\end{example}
 
-一方で\eqref{equation-total-adjunction}と
-Todd類の性質より
+\begin{example}
+再び
+$X$ をトロピカル多様体とし $D$ を余次元 $1$ の
+部分トロピカル多様体とする。
+\eqref{equation-total-adjunction}と
+Todd類の乗法列としての性質より
 \begin{align}
 \iota^{*}\opn{td}(X)=
-\opn{td}(D)\frac{c_1(\iota^{*}\mathcal{L}_{D})}
-{1-\opn{exp}(c_1(\iota^{*}\mathcal{L}_{D}))}.
+\opn{td}(D)\frac{\iota^{*}\PD{D}}
+{1-\opn{exp}(\iota^{*}\PD{D})}.
 \end{align}
 これを式変形すると次のようになる。
 \begin{align}
 \opn{td}(D)
 =\iota^{*}\left(
-\frac{1-\opn{exp}(c_1(\mathcal{L}_{D}))}{
-c_1(\mathcal{L}_{D})}\opn{td}(X)\right)
+\frac{1-\opn{exp}(\PD{D})}{
+\PD{D}}\opn{td}(X)\right).
 \end{align}
 また、これに射影公式
 を当てはめると
 \begin{align}
 \label{equation-grr-divisor-2}
-\iota_!(\opn{td}(D))=(1-\opn{ch}(\mathcal{L}_{D}))\opn{td}(X).
+\iota_!(\opn{td}(D))=(1-\opn{ch}(\PD{D}))\opn{td}(X).
 \end{align}
 \eqref{equation-grr-divisor-2} は、
 Grothendieck--Riemann--Roch の定理の特殊例
 のトロピカル類似である。
-
 \end{example}
+
+\begin{proposition}
+\label{proposition-euler-to-bertini}
+\cite[Conjecture 6.13]{demedrano2023chern},
+\cref{conjecture-grr-divisor,conjecture-rr-euler}
+が正しいなら、\cref{conjecture-rr-bertini}も正しい。  
+\end{proposition}
+
+\begin{proof}
+\cref{conjecture-grr-divisor} が正しいと仮定すると
+埋め込み $\iota\colon D\to X$ に対する
+射影公式より
+\begin{align}
+\iota_!(\opn{ch}(\iota^{*}(\PD{D'}))\opn{td}(D))
+&=\opn{ch}(\PD{D'})\iota_!(\opn{td}(D)) \notag \\
+&=(\opn{ch}(\PD{D'})-\opn{ch}(\PD{D'-D}))\opn{td}(X).
+\end{align}
+
+仮定より $D'$ は sedentarity-$0$ なので、
+因子としての引き戻し$\iota^{*}D'=D'|_{D}$が存在するため
+次が成り立つ。
+\begin{align}
+\label{equation-rr-number-divisor}
+\opn{RR}(X;D'-D)=\opn{RR}(X;D')-
+\opn{RR}(D;D'|_{D}).
+\end{align}
+
+\cref{conjecture-rr-euler} と
+\cite[Conjecture 6.13]{demedrano2023chern} が
+正しいならば、
+\begin{align}
+\opn{RR}(X;D')-
+\opn{RR}(D;D'|_{D})=
+\chi(X\setminus D')-\chi(D\setminus (D'\cap D)) \notag
+\end{align}
+となる。よって示せた。
+\end{proof}
 
 以上を踏まえて、\cref{theorem-rr-euler-surface}
 を一般化する。
@@ -1788,8 +1901,7 @@ Grothendieck--Riemann--Roch の定理の特殊例
 \label{theorem-rr-bertini-surface}
 $X$を
 コンパクトトロピカル曲面とし、$D$ と $D'$が余次元$1$
-のトロピカル部分多様体とする。
-
+のトロピカル部分多様体とする。このとき、次が成り立つ。
 \begin{align}
 \chi(X\setminus D')-\chi(D\setminus (D'\cap D))
 =\frac{(D'-D).(D'-D-K_X)}{2}+\chi(X).
@@ -1801,20 +1913,6 @@ $X$を
 \begin{proof}
 $\dim X=2$なので、
 \cref{conjecture-grr-divisor}は正しい。
-そのため射影公式と\eqref{equation-grr-divisor-2}より、
-\begin{align}
-\iota_!(\opn{ch}(\iota^{*}(\mathcal{L}_{D'}))\opn{td}(D))
-=\opn{ch}(\mathcal{L}_{D'})\iota_!(\opn{td}(D))
-=(\opn{ch}(\mathcal{L}_{D'})-\opn{ch}(\mathcal{L}_{D'-D}))\opn{td}(X).
-\end{align}
-
-よって、次が成り立つ。
-\begin{align}
-\label{equation-rr-number-divisor}
-\opn{RR}(X;D'-D)=\opn{RR}(X;D')-
-\opn{RR}(D;\iota^{*}(D')).
-\end{align}
-
 \cref{theorem-rr-euler-surface}と
 \eqref{equation-rr-number-divisor}より、
 \begin{align}
@@ -1825,20 +1923,7 @@ $\dim X=2$なので、
 \end{align}
 \end{proof}
 
-\begin{remark}
 
-\cite[Conjecture 6.13]{demedrano2023chern},
-\cref{conjecture-grr-divisor,conjecture-rr-euler}
-が正しいなら、\cref{conjecture-rr-bertini}も正しい。  
-\end{remark}
-
-\begin{proof}
-
-
-
-
-
-\end{proof}
 
 \begin{remark}
 
@@ -1867,7 +1952,7 @@ $(\mathcal{F})_{Z}\simeq j_!j^{-1}\mathcal{F}$ である。
 $\Gamma_{Z}\mathcal{F}\simeq
 j_*j^{-1}\mathcal{F}$ である
 \cite[Proposition 2.3.9 (iii)]{MR1299726}。
-このとき、次の完全列が存在する。
+このとき、次の層の完全列が存在する。
 
 \begin{align}
 \label{equation-closed-open-exact}
@@ -1920,8 +2005,8 @@ permissible な $C^{\infty}$ 因子 $s$ が定義する
 
 
 
-この論文では、\cref{equation-closed-open-exact} を
-\cref{equation-anti-effective-divisor} の一種の
+この論文では、\eqref{equation-closed-open-exact} を
+\eqref{equation-anti-effective-divisor} の一種の
 類似と見立てており、
 導来関手 $R\Gamma_{X\setminus D'}$ を
 代数多様体の非特異因子が定義する直線束のテンソル積の類似
@@ -2022,7 +2107,7 @@ Z_{k-1}(X)
 \cite[Proposition 5.12]{MR4637248}。
 (\cite[Theorem 4.15]{MR3894860}もみよ。)
 \begin{align}
-\opn{cyc}_X(D\cdot A)=c_1(\mathcal{L}_{D})
+\opn{cyc}_X(D\cdot A)=c_1(\mathcal{L}(D))
 \frown \opn{cyc}_X(A).
 \end{align}
 
@@ -2045,47 +2130,9 @@ $D\cdot 1_{X_{\mathrm{reg}}}=\iota_*(1_{Y_{\opn{reg}}})$
 \opn{PD}_X(\iota_*[D])=c_1(\mathcal{L}_{D}).
 \end{align}
 
-ここで
-
-\begin{align}
-(\opn{PD}_X(\iota_*[D])\cdot \opn{PD}_X(\iota_*'[D']))\frown [X]=
-c_1(\mathcal{L}_{D'})\frown \iota_*[D]
-\end{align}
-
-\begin{proof}[{Proof of \cref{proposition-cycle-chern}}]
-
-$D_1,D_2$ は、 sedentarity 0 であると仮定してよい。
-
-$D_i'$ ($i=1,2$) を $D_i$を表す Cartier 因子とすると、
-
-\begin{align}
-\opn{cyc}_X(D_i)=c_1(\mathcal{L}(D_i'))\frown [X], \quad
-\opn{PD}_X(\opn{cyc}_X(D_i))=c_1(\mathcal{L}(D'_i)).
-\end{align}
-となる。
-
-\begin{align}
-D_1\cdot_{\opn{PD}} D_2
-\deq \int_X \opn{PD}_X(\opn{cyc}_X(D_1))\cdot \opn{PD}_X(\opn{cyc}_X(D_2))\\
-=\int_X c_1(\mathcal{L}(D'_1))\cdot c_1(\mathcal{L}(D'_2))
-\end{align}
-
-また、
-
-\begin{align}
-\int_X \opn{PD}_X(\opn{cyc}_X(D_1))\cdot 
-\opn{PD}_X(\opn{cyc}_X(D_2))& =
-a_{X*} (c_1(\mathcal{L}(D_1')) \frown \opn{cyc}_X(D_2)) \\
-& =a_{X*}(\opn{cyc}_X(D_1'\cdot D_2)) 
-\label{equation-cartier-weil-intersection}
-\end{align}
-$D_1,D_2$ は、sedentarity 0 であると仮定したので、
-\cref{equation-cartier-weil-intersection}
-は、\cite{shaw2015tropical,demedrano2023chern}
-で言及されているように$D_1$と$D_2$の交点数となる。
 
 
-\end{proof}
+
 
 \subsection{没話(次論文の一部とする)}
 
