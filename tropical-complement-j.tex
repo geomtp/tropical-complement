@@ -408,7 +408,19 @@ $D$ に対して、
 が成り立つと期待される根拠となるその他の例は、
 \cref{example-TPn} や
 \cref{remark-iass} で説明する。
-また、筆者は \cite{tsutsui2023graded} 
+\cref{conjecture-rr-euler} の面白い点の一つは、
+予想自体は非常にシンプルであるものの、
+トロピカル部分多様体の補空間の多くが代数多様体の
+Zariski 開集合のトロピカル類似とは言えないものであり、
+\cref{conjecture-rr-euler} が成り立つと期待できる
+代数幾何学的な直接的な根拠が見当たらなさそうな点である。
+(実際に、多項式の開集合のトロピカル類似は
+\cite[Remark 3.5 and Example 3.6]{MR2275625} 
+においても強調されている
+ようにトロピカル多項式の full graph 
+\cite[\textsection 3.3]{MR2275625}
+の補集合として定義する方が自然である。)
+なお、筆者は \cite{tsutsui2023graded} 
 の派生として \cref{conjecture-rr-euler}
 を予想するに至った。
 本論文と \cite{tsutsui2023graded}
@@ -416,7 +428,7 @@ $D$ に対して、
 にて述べる。
 
 本論文の主定理の一つは次のようになる。
-証明は難しくない。
+証明も難しくない。
 \begin{theorem}[{Main theorem}]
 \label{theorem-rr-euler-surface}
 $X$ をコンパクトトロピカル曲面とし、
@@ -435,6 +447,8 @@ $D$を中庸な位置にある
 $X$が Delzant face 構造をもつコンパクトトロピカル
 曲面のとき、 \cref{conjecture-rr-euler}は正しい。
 \end{corollary}
+
+
 
 もう少しだけ踏み込んだ話をする。
 トロピカル多様体 $X$ の
@@ -545,11 +559,6 @@ $X$をトロピカル射影空間の部分トロピカル多様体とする。
 条件をみたし、$D'-D$ が $D_0$ と線形同値になる
 $X$ 上の Bertini pair $(D,D')$ が存在する。
 \end{conjecture}
-
-
-
-
-
 
 \subsection{本論文のアウトライン}
 
@@ -1506,12 +1515,21 @@ D_1 . D_2=\int_X \PD{D_1}\cdot \PD{D_2}.
 \end{proposition}
 \begin{proof}
 $i=1,2$ とする。
-The wave homomorphism 
+このとき、トロピカル $1$-サイクルは、
+\cite[Definition 4.2]{MR3330789} の意味での
+straight tropical $1$-cycle をなし、
+この straight tropical $1$-cycle を
+$H_{1,1}^{\mathrm{BM}}(X;\mathbb{Z})$
+へと移す写像は、\cite{MR3894860} や
+\cite{MR4637248} の意味でのサイクル写像と
+整合的である \cite[Theorem 5.13]{MR4637248}。
+さらに wave homomorphism 
 $\hat{\phi}\colon 
 H^{\mathrm{BM}}_{1,1}(X;\mathbb{Z})
 \to H^{\mathrm{BM}}_{2,0}(X;\mathbb{R})$ に対して
 $[D_i]\deq \opn{cyc}_X(D_i)\in \opn{Ker} \hat{\phi}$
-であるため、\cite[Lemma 5.13]{MR3894860}より
+である \cite[Theorem 5.4]{MR3330789}。
+そのため、\cite[Lemma 5.13]{MR3894860}より
 $c_1(\mathcal{L}(D'_i))=\PD{D_i}$、つまり
 $c_1(\mathcal{L}(D'_i))\frown [X]=[D_i]$ となる
 因子 $D'_i\in \opn{Div}^{[0]}(X)$ を選ぶことができる。
@@ -1534,8 +1552,8 @@ D_1.D_2=D_1'.D_2', \quad
 \begin{align}
 \int_X \PD{D_1}\cdot \PD{D_2}
 &=a_{X*}(c_1(\mathcal{L}(D_1))\frown [D_2])
-=a_{D_2*}(c_1(\mathcal{L}(D_1|_{D_2}))\frown [D_2]) \\
-&=\int_{D_2}c_1(\mathcal{L}(D_1|_{D_2}))=\
+=a_{|D_2|*}(c_1(\mathcal{L}(D_1|_{D_2}))\frown [D_2]) \\
+&=\int_{|D_2|}c_1(\mathcal{L}(D_1|_{D_2}))=\
 \opn{deg}(D_1|_{D_2})=D_1.D_2.
 \end{align}
 \end{proof}
@@ -2077,7 +2095,8 @@ $\opn{cyc}_X \colon Z_k(X)\to
 H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
 が存在し、固有射の押し出しに関して可換である
 \cite[Definition 5.4 and Corollary 5.8]{MR4637248}。
-また、次のようなペアリングが存在する
+また、\cite{MR2591823} の理論をもとに
+次のようなペアリングが存在する
 \cite[\textsection 3.4]{MR4637248}。
 \begin{align}
 \label{equation-divisor-pairing}
