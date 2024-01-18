@@ -592,6 +592,8 @@ $X$ 上の Bertini pair $(D,D')$ が存在する。
 のことであり、点 $x\in X$ に対して
 $\dim_x X$ を $X$ の $x$ における局所次元と呼ぶ
 \cite[Chapter III. Definition 9.10]{MR842190}。
+有理多面空間の定義から $X$ が空ではなければ、
+$\dim_x X$ は非負整数である。
 有理多面空間
 $(X,\mathcal{O}_X^{\times})$
 が、純次元的(pure dimensional)
@@ -1383,7 +1385,8 @@ Demazure's theorem \cite{MR284446} があることも
 $Z_k(X)$ を $X$ 上のトロピカル $k$-サイクルの
 なす群とする\cite[Definition 3.5]{MR4637248}。
 $X$の開集合に対して$Z_k(U)$を値に持つ前層は層をなし、
-これを$\mathscr{Z}_k^{X}$と書く。
+これを$\mathscr{Z}_k^{X}$と書く
+\cite[p.591]{MR4637248}。
 
 
 
@@ -1399,10 +1402,29 @@ $\phi \colon $
 \cite[Definition 6.1]{MR4637248})
 の層理論的なトロピカルホモロジー論について、
 必要な部分を \cite{MR4637248} から
-復習する。
+復習する。この節では、$Q$ を $\mathbb{R}$
+の部分環とする。
+有理多面空間 $(X,\mathcal{O}_X^{\times})$
+と$p,q\in \mathbb{Z}$ に対して、
+トロピカルコホモロジー $H^{p,q}(X;Q)$ と
+トロピカル Borel--Moore ホモロジー
+$H_{p,q}^{\mathrm{BM}}(X;Q)$ が次のように定義される
+\cite{MR4637248}:
+\begin{align}
+H^{p,q}(X;Q)&\deq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}(
+\mathbb{Z}_X,\Omega_{\mathbb{Z},X}^{p}[q])
+\otimes_{\mathbb{Z}} Q, \\
+H_{p,q}^{\mathrm{BM}}(X;Q)
+&\deq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}
+(\Omega_{\mathbb{Z},X}^{p}[q],\upomega_{X}^{\bullet})
+\otimes_{\mathbb{Z}}Q.
+\end{align}
 
-
-
+各 $Z_k(X)$ にはサイクル写像
+$\opn{cyc}_X \colon Z_k(X)\to 
+H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
+が存在し、固有射の押し出しに関して可換である
+\cite[Definition 5.4 and Corollary 5.8]{MR4637248}。
 
 有理多面空間
 $(X,\mathcal{O}_X^{\times})$ が、
@@ -1415,15 +1437,32 @@ $Z_{\dim X}(X)$ の元を定義することである
 \cite[\textsection 6.1]{MR4637248}。
 
 
-各 $Z_k(X)$ にはサイクル写像
-$\opn{cyc}_X \colon Z_k(X)\to 
-H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
-が存在し、固有射の押し出しに関して可換である
-\cite[Definition 5.4 and Corollary 5.8]{MR4637248}。
 
-$X$ を
-
-
+$(X,\mathcal{O}_X^{\times})$ 
+を基本類を許す $n$ 次元有理多面空間とする。
+このとき、$[X]\deq \opn{cyc}_X(1_{X_{\opn{reg}}})
+\in H^{n,n}(X;\mathbb{Z})$ を $X$ の基本類と呼ぶ
+(cf. \cite[Definition 4.8]{MR3894860})。定義より、
+$H_{n,n}^{\mathrm{BM}}
+(X;\mathbb{Z})\deq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}
+(\Omega_{X}^{n}[n],\upomega_{X}^{\bullet})$
+なので、$\Omega_X^{\bullet}$ の乗法構造と
+基本類から次の射が誘導される。
+\begin{align}
+\Omega_X^{n-p}[n]\otimes^{L}_{\mathbb{Z}_X}
+\Omega_X^{p} \to \Omega_X^{n}[n] \xto{[X]}
+\upomega_X^{\bullet}. 	
+\end{align}
+これの tensor-hom 随伴をとることで次の射が誘導される
+\cite[p.627]{MR4637248}:
+\begin{align}
+\delta_p^{X}\colon \Omega_X^{n-p}[n]\to 
+\mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p})
+\deq R\mathcal{H}om_{\mathbb{Z}_X}(\Omega_X^{p},
+\upomega_X^{\bullet}).
+\end{align}
+定義より、$\delta_0^{X}=[X]$ である。
+$X$ が、
 
 \subsection{トロピカル Cartier 因子}
 
