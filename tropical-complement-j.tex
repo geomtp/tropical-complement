@@ -569,13 +569,13 @@ $X$ 上の Bertini pair $(D,D')$ が存在する。
 ここでは、本論文で必要な
 トロピカル多様体の
 前提知識を
-\cite{mikhalkin2018tropical,MR4637248,demedrano2023chern}
+\cite{shaw2011tropical,MR3330789,mikhalkin2018tropical,MR4637248,demedrano2023chern}
 を参考に整理する。
 (必要に応じて、別の文献も引用する。)
 本論文の後半を記述する上での事情から、
 \cite{MR4637248}による
 層理論的な定式化を主に採用することとする。
-特に、本論文でのトロピカル多様体の定義は
+便宜上、本論文でのトロピカル多様体の定義は
 \cite[Definition 6.1]{gross2019sheaftheoretic}
 を採用し、finite type に関する条件
 (e.g. \cite[Definition 7.1.14]{mikhalkin2018tropical} や
@@ -1409,7 +1409,7 @@ $\phi \colon $
 トロピカルコホモロジー $H^{p,q}(X;Q)$ と
 トロピカル Borel--Moore ホモロジー
 $H_{p,q}^{\mathrm{BM}}(X;Q)$ が次のように定義される
-\cite{MR4637248}:
+\cite[Definition 4.3]{MR4637248}:
 \begin{align}
 H^{p,q}(X;Q)&\deq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}(
 \mathbb{Z}_X,\Omega_{\mathbb{Z},X}^{p}[q])
@@ -1449,7 +1449,7 @@ $H_{n,n}^{\mathrm{BM}}
 なので、$\Omega_X^{\bullet}$ の乗法構造と
 基本類から次の射が誘導される。
 \begin{align}
-\Omega_X^{n-p}[n]\otimes^{L}_{\mathbb{Z}_X}
+\eta_{p}^{X}\colon \Omega_X^{n-p}[n]\otimes^{L}_{\mathbb{Z}_X}
 \Omega_X^{p} \to \Omega_X^{n}[n] \xto{[X]}
 \upomega_X^{\bullet}. 	
 \end{align}
@@ -1462,7 +1462,49 @@ $H_{n,n}^{\mathrm{BM}}
 \upomega_X^{\bullet}).
 \end{align}
 定義より、$\delta_0^{X}=[X]$ である。
-$X$ が、
+
+また、
+$\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(- 
+\otimes^{L}_{\mathbb{Z}_X} \Omega_X^{p}[q],
+\omega_X^{\bullet})$ から
+$\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(-,
+\mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p}[q]))$
+への自然同型を
+$\alpha \colon \mathbb{Z}_X\to \Omega_X^{n-p}[n-q]$
+に対して適用することで次の可換図式を得る。
+\[\begin{tikzcd}
+{\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\Omega_X^{n-p}[n-q]
+\otimes^{L}_{\mathbb{Z}_X} \Omega_X^{p}[q]
+,\omega_X^{\bullet})} & 
+{\opn{Hom}_{D^{b}(\mathbb{Z}_X)}
+(\Omega_X^{n-p}[n-q],\mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p}[q]))} \\
+{\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\Omega^{p}[q],
+\omega_X^{\bullet})} & {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\mathbb{Z}_X,\mathcal{D}_{\mathbb{Z}_X}(\Omega^{p}[q]))}
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+\end{tikzcd}\]
+なお、各行の射は自然な同型である。
+とくに、左上から左下への射の $\eta^X_{p}$ の像は、
+$\alpha\frown [X]$ のことである。
+よって、$\delta_p^{X}$ が誘導する準同型
+
+カップ積 $\cdot \frown [X]$
+の逆準同型を $\opn{PD}_X$ とし、
+$Z\in H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$
+に対して、$\PD{Z}\deq \opn{PD}_X(Z)$ とする。
+
+($X$ が global な面構造を持つ場合の、
+基本類のカップ積による上述の同型は、
+\cite[Theorem 5.3]{MR3894860} にて初めて示された。
+また Poincar\'e 双対性は
+\cite[Theorem 1.2]{amini2021homology}によって、
+より広いクラス(彼らの意味での smooth の定義)
+に一般化された。なお、トロピカル多様体(tropical variety)
+が、Verdier--Poincar\'e 双対性を持つときの
+必要十分条件は、\cite[Theorem 6.7]{MR4637248}
+を見よ。)
 
 \subsection{トロピカル Cartier 因子}
 
@@ -1661,9 +1703,7 @@ D_1.D_2=D_1'.D_2', \quad
 Poincar\'e 双対
 $\opn{PD}_X\colon H_{k,k}^{\opn{BM}}(X;\mathbb{Z})
 \to H_{n-k,n-k}^{\opn{BM}}(X;\mathbb{Z})$
-も存在する。この準同型射はトロピカル多様体の
-基本類のカップ積の射 \eqref{equation-cup-pd}
-の逆写像である。
+も存在する。
 
 \begin{notation}
 $X$ を純 $n$ 次元トロピカル多様体としたとき、
@@ -1777,75 +1817,9 @@ $\dim X=2$のときは、
 が正しいならば、
 どのような結論を導くのか見てみる。
 
-$X$が純 $n$ 次元トロピカル多様体のとき、
-任意の$p\in\mathbb{Z}_{\geq 0}$に対して
-次の同型が存在する
-\cite[Theorem 6.2]{gross2019sheaftheoretic}。
 
-\begin{align}
-\opn{PVD}^{(n-p)}_X\colon \Omega_{X}^{n-p}[n]\simeq
-\mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p})
-\end{align}
-とくに、$[X]\deq \opn{PVD}^{(n)}_X\in H_{n,n}^{\mathrm{BM}}
-(X;\mathbb{Z})$
-はトロピカル多様体の基本類(fundamental class)
-である (cf. \cite[Definition 4.8]{MR3894860})。
-また、$\opn{PVD}^{(n-p)}_X$は、射の合成により同型
-\begin{align}
-H^{n-p,n-q}(X;\mathbb{Z})& \simeq
-\opn{Hom}_{D^{b}(\mathbb{Z}_X)}
-(\mathbb{Z}_X,\Omega_X^{n-p}[n-q]) \\
-& \simeq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}
-(\mathbb{Z}_X,\mathcal{D}_X(\Omega_X^{p})[-q])
-\label{equation-pvd-rhom} \\
-& \simeq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}
-(\Omega_X^{p}[q],\omega_X^{\bullet})
-\simeq H_{p,q}^{\mathrm{BM}}(X;\mathbb{Z})
-\label{equation-pvd-tensor}
-\end{align}
-を与える。さらに
-\cref{equation-pvd-rhom,equation-pvd-tensor}
-の同型は tensor-hom 随伴から由来するため、
-射の合成
-\begin{align}
-\mathbb{Z}_X \xto{\alpha} \Omega_X^{n-p}[n-q] 
-\xto{\opn{PVD}^{(n-p)}_X} 
-R\mathcal{H}om (\Omega_X^{p},\omega_X^{\bullet}[-q])
-\end{align}
-は、tensor-hom 随伴より次の射の合成
-\begin{align}
-\Omega_X^{p}[q]\xto{\alpha \otimes \opn{id}} \Omega_X^{n-p}[n-q]\otimes^{L}_{\mathbb{Z}_X}
-\Omega_X^{p}[q] \to\omega_X^{\bullet}
-\end{align}
-に対応する。
-さらに、$\opn{PVD}^{(n-p)}_X$の射の構成と
-Borel--Moore ホモロジーのカップ積の構成を
-先ほどと同様に tensor-hom 随伴と導来関手の
-普遍性に注意しながら見ると、
-$\opn{PVD}^{(n-p)}_X$ は、
-基本類のカップ積による同型
-\begin{align}
-\label{equation-cup-pd}
-\cdot \frown [X]
-\colon H^{n-p,n-q}(X;\mathbb{Z})\simeq
-H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})
-\end{align}
-を与えていることがわかる。
-カップ積 $\cdot \frown [X]$
-の逆準同型を $\opn{PD}_X$ とし、
-$Z\in H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$
-に対して、$\PD{Z}\deq \opn{PD}_X(Z)$ とする。
 
-($X$ が global な面構造を持つ場合の、
-基本類のカップ積による上述の同型は、
-\cite[Theorem 5.3]{MR3894860} にて初めて示された。
-また Poincar\'e 双対性は
-\cite[Theorem 1.2]{amini2021homology}によって、
-より広いクラス(彼らの意味での smooth の定義)
-に一般化された。なお、トロピカル多様体(tropical variety)
-が、Verdier--Poincar\'e 双対性を持つときの
-必要十分条件は、\cite[Theorem 6.7]{MR4637248}
-を見よ。)
+
 
 次に、古典の場合に従い
 一般化された Gysin 押し出し(generalized Gysin map)
