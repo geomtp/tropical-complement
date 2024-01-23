@@ -269,7 +269,12 @@ $D$の定義する可逆層のコホモロジーの Euler 数と対応する。
 Riemann--Roch 数を比較することができない。
 トロピカル幾何における Riemann--Roch の定理は、
 Baker--Norine によるグラフの Riemann--Roch の定理
-の一般化という形で発展していったが、彼らの定理の
+\cite{MR2355607} の一般化という形で
+\cite{MR2377750,MR2457739} によって
+証明された。これらの結果の一般化やその派生もまた
+\cite{MR3046301,MR4444458,MR4251610,MR4512397} などで
+発展していったが、
+tropical Riemann--Roch theorem の 
 直接的な一般化として、より高次のトロピカル多様体の
 Riemann--Roch の定理の定式化はまだなされていない。
 いづれにせよ、
@@ -291,12 +296,19 @@ $X$ が Delzant face 構造を持つ
 証明された。なお、Delzant face 構造を持つという
 条件は、十分に広い範囲のトロピカル曲面で成立している
 \cite[Corollary 6.11]{demedrano2023chern}。
+(関連する研究として、\cite{cartwright2015combinatorial}
+も挙げておく。)
 トロピカル多様体の位相的 Euler 数
 $\chi(X)$が代数多様体上の構造層の
 コホモロジーの Euler 数のトロピカル幾何的な類似であるべき
 であることは、古くから期待されており、
 \cite[Corollary 2]{MR3961331}
 などで実際に対応していることが示されている。
+また、special affine manifold に対する
+Chern 予想 \cite{MR3665000} から、
+コンパクト整アフィン多様体に対しても、
+\cite[Conjecture 6.13]{demedrano2023chern}
+は正しい。
 本論文では、$D$ が自明ではないいくつかのケースにおける、
 $\opn{RR}(X;D)$ のトロピカル幾何学的な
 意味について考察することが主目的である。
@@ -319,7 +331,7 @@ $\iota\colon D\to X$を自然な閉埋め込みとする。
 -\chi(D;\mathcal{O}_D)
 \end{align}
 
-次の予想は、以上の事実を踏まえるとごく自然であり,
+次の予想は、以上の事実らを踏まえるとごく自然であり,
 広く信じられていると思われる。
 
 \begin{conjecture}[{Folklore?}]
@@ -474,7 +486,7 @@ $\iota\colon D\to X$ を埋め込み写像とする。
 =\chi(X;\iota_*(\iota^{*}\mathcal{O}_X(D')\otimes_{\mathcal{O}_D} \mathcal{O}_D))
 =\chi(D;\iota^{*}\mathcal{O}_X(D'))
 \end{align}
-となり、$D'$が非特異因子で$D\cap D'$もまた$D$の非特異因子
+となり、$D'$が非特異因子で$D'\cap D$もまた$D$の非特異因子
 になるならば、有効因子の引き戻しの性質として次のように
 書き直せる。
 \begin{align}
@@ -909,6 +921,11 @@ $D$ を余次元$1$のトロピカル部分多様体とする。
 が成り立つ。
 \end{proof}
 
+\begin{corollary}
+$X$ を連結かつコンパクトな整アフィン多様体とし、
+$D$ を余次元$1$のトロピカル部分多様体とする。	
+\end{corollary}
+
 \begin{remark}[{特異点つき整アフィン多様体の場合}]
 \label{remark-iass}
 \cref{conjecture-rr-euler}や
@@ -1262,7 +1279,7 @@ $H^{0}(X;\mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times})
 Abel 群 
 $\opn{Div}^{\infty}(X)\deq 
 H^{0}(X;\mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times})$
-は、Cartier 因子のなす群の類似物であり
+は、Cartier 因子のなす群の類似物である。
 \cite{tsutsui2023graded} では、
 $\opn{Div}^{\infty}(X)$の元を
 $X$ 上の \emph{$C^{\infty}$-divisor} と呼んでいる。
@@ -1397,13 +1414,19 @@ $\phi \colon $
 
 \subsection{トロピカルホモロジー側の準備}
 
-ここでは、トロピカル多様体 
-(より一般的に滑らかな有理多面空間
-\cite[Definition 6.1]{MR4637248})
-の層理論的なトロピカルホモロジー論について、
-必要な部分を \cite{MR4637248} から
+ここでは、トロピカル多様体上のトロピカルホモロジー論について、
+必要な部分を \cite{MR3330789,MR3894860,MR4637248} から
+復習する。なお、本論文では \cite{MR4637248} による
+層理論的なトロピカルホモロジー論について中心的に
 復習する。この節では、$Q$ を $\mathbb{R}$
 の部分環とする。
+有理多面空間 $(X,\mathcal{O}_X^{\times})$
+と$p\in \mathbb{Z}$ に対して
+$\Omega_{\mathbb{Z},X}^{p}$ を
+tropical $p$-form のなす層とする
+\cite[Definition 2.7]{MR4246795}。
+(\cite{MR3330789,MR3961331} との比較のために 
+\cite[Remark 2.8]{MR4637248} も見よ。)
 有理多面空間 $(X,\mathcal{O}_X^{\times})$
 と$p,q\in \mathbb{Z}$ に対して、
 トロピカルコホモロジー $H^{p,q}(X;Q)$ と
@@ -1420,7 +1443,7 @@ H_{p,q}^{\mathrm{BM}}(X;Q)
 \otimes_{\mathbb{Z}}Q.
 \end{align}
 
-各 $Z_k(X)$ にはサイクル写像
+各 $k\in \mathbb{Z}_{\geq 0}$ に対してサイクル写像
 $\opn{cyc}_X \colon Z_k(X)\to 
 H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
 が存在し、固有射の押し出しに関して可換である
@@ -1505,6 +1528,13 @@ $Z\in H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$
 が、Verdier--Poincar\'e 双対性を持つときの
 必要十分条件は、\cite[Theorem 6.7]{MR4637248}
 を見よ。)
+
+有理多面空間 $(X,\mathcal{O}_X^{\times})$ について次の
+よく知られた層の短完全列が存在する。
+\begin{align}
+0\to \mathbb{R}_X \to 
+\mathcal{O}_X^{\times} \to \Omega_{\mathbb{Z},X}^{1}\to 0
+\end{align}
 
 \subsection{トロピカル Cartier 因子}
 
@@ -1699,11 +1729,7 @@ D_1.D_2=D_1'.D_2', \quad
 
 \cite[Definition 5.4]{MR4637248}。
 (\cite[Definition 4.13]{MR3894860}もみよ。)
-また、$X$が純 $n$ 次元トロピカル多様体のとき、
-Poincar\'e 双対
-$\opn{PD}_X\colon H_{k,k}^{\opn{BM}}(X;\mathbb{Z})
-\to H_{n-k,n-k}^{\opn{BM}}(X;\mathbb{Z})$
-も存在する。
+
 
 \begin{notation}
 $X$ を純 $n$ 次元トロピカル多様体としたとき、
@@ -1979,6 +2005,12 @@ Grothendieck--Riemann--Roch の定理の特殊例
 となる。よって示せた。
 \end{proof}
 
+\begin{example}
+\cref{conjecture-rr-euler} と
+\cref{conjecture-grr-divisor} が正しいならば、
+\cref{conjecture-rr-c-euler} は正しい。
+\end{example}
+
 以上を踏まえて、\cref{theorem-rr-euler-surface}
 を一般化する。
 
@@ -2127,6 +2159,15 @@ R\Gamma_{X\setminus D'}
 \cref{remark-c-infinity-divisor}
 を読んでいないならば、読み飛ばして問題ない。
 \end{remark}
+
+\begin{proposition}
+$X$ を連結かつコンパクトな整アフィン多様体とし、
+$D$ を余次元$1$のトロピカル部分多様体とする。
+このとき、\cref{conjecture-grr-divisor} は正しい。
+特に、$D$ について \cref{conjecture-rr-euler} 
+が正しいとき、$X$ について \cref{conjecture-rr-bertini}
+が正しい。
+\end{proposition}
 
 \section{没話(次論文の一部とする)}
 
