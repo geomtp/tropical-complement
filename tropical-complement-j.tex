@@ -432,6 +432,19 @@ Zariski 開集合のトロピカル類似とは言えないものであり、
 ようにトロピカル多項式の full graph 
 \cite[\textsection 3.3]{MR2275625}
 の補集合として定義する方が自然である。)
+
+また、注意しなければならないのは、
+\cref{conjecture-rr-euler} とは異なり、
+コンパクトトロピカル多様体 $X$ 上の中庸な位置にある
+余次元 $1$ のトロピカル部分多様体 $D$ の補集合
+の定数層コホモロジー 
+$H^{\bullet}(X\setminus D;\mathbb{R})$ の階数は
+代数多様体 $\mathcal{X}$ 上の因子 $\mathcal{D}$ が
+定義する可逆層 $\mathcal{O}_{\mathcal{X}}(\mathcal{D})$
+の層コホモロジー $H^{\bullet}(\mathcal{X},
+\mathcal{O}_{\mathcal{X}}(\mathcal{D}))$
+の階数のように振る舞うとは限らない点である。
+
 なお、筆者は \cite{tsutsui2023graded} 
 の研究の派生として \cref{conjecture-rr-euler}
 を予想するに至った。
@@ -1363,15 +1376,93 @@ $H^{\bullet}(X\setminus D)$ に対して、
 $H^{\bullet}(X\setminus D)$ から
 $D$ のホモロジカルな不変量を取り出す
 ことができる可能性も示唆している。
-このことについては、\cref{remark-floer-differential}
-にてもう少し説明する。
-
+なお、この "Floer differential" の必要である根拠の一つは、
+$X\setminus D$ の各連結成分が可縮である場合などの
+特殊なケースを除いて $H^{\bullet}(X\setminus D)$
+の階数が代数多様体上の
+有効因子の層コホモロジーのように振舞わない点である。
+(\cref{remark-complement-cohomology} も見よ。)
 最後に、この Remark にて
 言及したことと深い関係があることが示唆される話題の
 一つに
 Demazure's theorem \cite{MR284446} があることも
 述べておく(\cite[\textsection 9.1]{MR2810322} も見よ)。
 \end{remark}
+
+\begin{remark}
+\label{remark-complement-cohomology}
+$C$ をコンパクトトロピカル曲線とし、$D$ を
+$C\setminus C_{\mathrm{sing}}$ 内の有限個の点とする。
+このとき、コンパクト台コホモロジー
+$H_c^{\bullet}(C\setminus D)$ の階数と
+$D$ の
+Baker--Norine rank $r(D)$ には次のような関係がある。
+\begin{align}
+\opn{rank} H_c^{0}(C\setminus D)=r(D)+1=0, \quad
+\opn{rank} H_c^{1}(C\setminus D)=r(K_C-D)+1.
+\end{align}
+
+Baker--Norine rank $r(D)$ は、代数幾何における因子の
+線形系の階数の組み合わせ的類似であるため、上の等式は
+$H_c^{\bullet}(C\setminus D)$ の階数が
+代数多様体上の因子の層コホモロジーの階数の類似として
+ふさわしい振る舞いをしていると考えることができる。
+
+一方でイントロでも言及したように、
+$H^{\bullet}(C\setminus D)$ は必ずしも
+代数多様体上の因子の層コホモロジーの階数の類似として
+振舞わない。
+
+以降より、
+$C$ を \cite[Figure 1]{MR2457739}
+にあるような種数 $2$ のコンパクトトロピカル曲線とする。
+$E$ と $C\setminus C_{\mathrm{sing}}$ の連結成分の
+一つとして、$D$ を $E$ 上の空ではない有限個の点とする。
+このとき、補集合の特異コホモロジーの回数は次のようになる。
+\begin{align}
+\opn{rank} H^{0}(C\setminus D)=\sharp(D), \quad
+\opn{rank} H^{1}(C\setminus D)=1.
+\end{align}
+
+一方で $\opn{deg}(K_C-D)=2-\sharp (D)$ なので、
+$\sharp (D)>2$ のとき定義より、
+\begin{align}
+r(D)+1=\sharp(D)+1,\quad r(K_C-D)+1=0.
+\end{align}
+
+つまり、このときは 
+$\opn{rank} H^{0}(C\setminus D)\ne r(D)+1$ となっている。
+
+$\mathfrak{m}\colon H^{0}(C\setminus D)
+\to H^{1}(C\setminus D)$ を微分とし、
+$``\opn{HF}^{\bullet}(C;D)"$ を鎖複体 
+$(H^{\bullet}(C\setminus D),\mathfrak{m})$
+とおくと $\mathfrak{m}$ の取り方によらず、
+次の不等式
+\begin{align}
+\opn{rank}``\opn{HF}^{0}(C;D)"< r(D)+1
+\end{align}
+が成り立っていることを意味する。
+この不等式は、$H^{\bullet}(C\setminus D)$ に適切な
+"Floer differential" を付加しても、
+得られる修正されたコホモロジーの階数は
+Baker--Norine 階数とは必ず異なることを意味している。
+一方で、\cite[Lemma 2.8 and Corollary 3.1]{MR2448666}
+で示されているようにグラフ上の因子の Baker--Norine の階数と
+付値体上の代数曲線の因子の階数との関係性はあくまでも
+グラフ上の因子の Baker--Norine rank によって上から
+抑えられる不等式であるため、上述の不等式は
+$``\opn{HF}^{0}(C;D)"$
+が代数曲線の因子のコホモロジーにより近い振る舞いをするように
+定義できる可能性を排除しない。
+また、$H^{\bullet}(C\setminus D)$ に対する適切な微分は、
+trivalent graph に対するホモロジー的ミラー対称性
+\cite{auroux2022lagrangian} を参考にして構成することが
+できると期待でき、それが付値体上の代数曲線のモデルが定める
+specialization map と何らかの意味で整合的であると期待すること
+も不自然ではない。
+\end{remark}
+
 
 \section{その他の例}
 \cite{demedrano2023chern}
@@ -1663,6 +1754,13 @@ $X$ が boundaryless なとき、より一般の結果が
 これより示された。
 \end{proof}
 
+以降より、$X$ がトロピカル多様体
+(より一般に、regular at infinity な有理多面空間)
+のとき、$\opn{Div}(X)^{[0]}$ を 
+$Z_{n-1}(X)$ の部分群とみなす。
+
+
+
 最後に
 古典的な代数曲面の交点数の異なる定義
 の一致をトロピカル曲面の場合で見る。
@@ -1724,8 +1822,10 @@ D_1.D_2=D_1'.D_2', \quad
 \end{proof}
 
 
-\subsection{トロピカル多様体の Todd 類}
+\subsection{トロピカル多様体の Chern 類と Todd 類}
 
+なお、代数多様体の Chern 類と Todd 類の内容は
+\cite{MR1335917,MR1644323,MR2810322} を参考にした。
 
 \cite[Definition 5.4]{MR4637248}。
 (\cite[Definition 4.13]{MR3894860}もみよ。)
@@ -1744,47 +1844,16 @@ c_{k}^{\mathrm{sm}}(X)\deq
 同様に$X$の全 Chern 類を
 $c^{\mathrm{sm}}(X)=\sum_{k=0}^{n} c_{k}^{\mathrm{sm}}(X)$
 とする。
+また $L\in H^{1,1}(X;\mathbb{Z})$ に対して、
+Chern 指標を次のように書く。
+\begin{align}
+\opn{ch}(L)\deq \opn{exp}(L)
+\deq \sum_{i=0}^{\infty}\frac{L^{i}}{i!}\in 
+H^{\bullet,\bullet}(X;\mathbb{Q}).
+\end{align}
 \end{notation}
 
-古典的には、複素多様体 $M$ 上の偶コホモロジー環
-$H^{\mathrm{even}}(M;\mathbb{Q})$
-と接束 $TM$の全 Chern 類 
-$c(TM)\deq \sum_{i=0}^{\infty}c_i(TM)\in 
-H^{\mathrm{even}}(X;\mathbb{Q})$
-に対して
-Todd $m$-列 $(\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
-を適用させることで $M$ の Todd 類
-$\opn{td}(M)$
-が定義されるのであった
-\cite[\textsection 10]{MR1335917}。
-トロピカル多様体 $X$ の Todd 類は
-$H^{\mathrm{even}}(M;\mathbb{Q})$ を
-$\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$
-に置き換えるだけで同様に定義することができる
-(\cref{definition-tropical-todd})。
-
-\begin{definition}[{\cite{demedrano2023chern}}]
-\label{definition-tropical-todd}
-$X$をトロピカル多様体とする。
-第 $j$ 次 Todd 類を
-$\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$に
-関する Todd $m$-列 $\opn{Todd}\deq (\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
-に対して
-$X$ の全 Chern 類
-$c^{\mathrm{sm}}(X)$を代入することで得られるものとする。
-\begin{align}
-\opn{td}_j(X)\deq \opn{Todd}_j(c_{1}^{\mathrm{sm}}(X),
-\ldots,c_{j}^{\mathrm{sm}}(X)),
-\end{align}
-\begin{align}
-\opn{td}(X)\deq \sum_{j=0}^{\infty}\opn{td}_j(X)=
-\opn{Todd}(c^{\mathrm{sm}}(X)).
-\end{align}
-
-\end{definition}
-
-
-ここで代数多様体 $X$ の接束を$\mathcal{T}_X$とすると、
+代数多様体 $X$ の接束を$\mathcal{T}_X$とすると、
 非特異因子 $D$ に対して、次の層短完全列が存在する。
 \begin{align}
 0 \to \mathcal{T}_{D}\to \iota^{*}\mathcal{T}_X
@@ -1841,7 +1910,65 @@ $\dim X=2$のときは、
 \cite[Theorem 6]{shaw2015tropical}。
 \cref{conjecture-grr-divisor} 
 が正しいならば、
-どのような結論を導くのか見てみる。
+どのような結論を導くのかは後で見ていく。
+
+これよりトロピカル多様体の Todd 類について議論する。
+古典的には、複素多様体 $M$ 上の偶コホモロジー環
+$H^{\mathrm{even}}(M;\mathbb{Q})$
+と接束 $TM$の全 Chern 類 
+$c(TM)\deq \sum_{i=0}^{\infty}c_i(TM)\in 
+H^{\mathrm{even}}(X;\mathbb{Q})$
+に対して
+Todd $m$-列 $(\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
+を適用させることで $M$ の Todd 類
+$\opn{td}(M)$
+が定義されるのであった
+\cite[\textsection 10]{MR1335917}。
+ 
+トロピカル多様体 $X$ の Todd 類は
+$H^{\mathrm{even}}(M;\mathbb{Q})$ を
+$\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$
+に置き換えるだけで同様に定義することができる
+(\cref{definition-tropical-todd})。
+
+\cite{demedrano2023chern} では Todd 類はサイクルとして
+定義しているが、本論文では代数幾何でよく用いられる形に
+近づけるためにそれの Poincar\'e 双対を取ることとする。
+
+\begin{definition}[{\cite{demedrano2023chern}}]
+\label{definition-tropical-todd}
+$X$をトロピカル多様体とする。
+第 $j$ 次 Todd 類を
+$\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$に
+関する Todd $m$-列 $\opn{Todd}\deq (\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
+に対して
+$X$ の全 Chern 類
+$c^{\mathrm{sm}}(X)$を代入することで得られるものとする。
+\begin{align}
+\opn{td}_j(X)\deq \opn{Todd}_j(c_{1}^{\mathrm{sm}}(X),
+\ldots,c_{j}^{\mathrm{sm}}(X)),
+\end{align}
+\begin{align}
+\opn{td}(X)\deq \sum_{j=0}^{\infty}\opn{td}_j(X)=
+\opn{Todd}(c^{\mathrm{sm}}(X)).
+\end{align}
+
+\end{definition}
+
+
+
+\begin{definition}
+$X$ をコンパクトトロピカル多様体とし、$D$ を余次元 $1$ の
+トロピカル部分多様体とする。このとき、
+$D$ の Riemann--Roch 数を次のようにする。
+\begin{align}
+\opn{RR}(X;D)\deq \int_X \opn{ch}(\PD{D})\opn{td}(X).
+\end{align}
+\end{definition}
+
+
+
+
 
 
 
@@ -2154,34 +2281,34 @@ R\Gamma_{X\setminus D'}
 
 \end{remark}
 
-\begin{remark}
-\label{remark-floer-differential}
-\cref{remark-c-infinity-divisor}
-を読んでいないならば、読み飛ばして問題ない。
-$(D,D')$ をコンパクトトロピカル多様体
-$X$ 上の Bertini 対としたとき、
-$\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
-((\mathbb{Q}_X)_{X\setminus D}))$
-の Euler 数が $D'-D$ の Riemann--Roch 数の
-ように振る舞い、実際にいくつかのケースでは正しいことを
-見てきた。しかし、$\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
-((\mathbb{Q}_X)_{X\setminus D}))$ は必ずしも
-$D'-D$ に付随する直線束のコホモロジーのようには
-振舞わない。これをトロピカル楕円曲線 $X\deq 
-\mathbb{R}/\mathbb{Z}$ を例にとり説明する。
-$0=a_1<b_1<\frac{1}{4}<b_2<a_2=\frac{1}{2}$ とし、
-$D'=[a_1]+[a_2]$, $D=[b_1]+[b_2]$ とする。このとき、
-$c\deq b_2+(b_1-a_1)<\frac{1}{2}$なので、
-$D_0\deq [a_1]-[b_1]-[b_2]-[c]$ は
-$\mathbb{R}/\mathbb{Z}$ 上の主因子を定義する。
-よって、$D'-D$ は $[a_2]-[c]$ と線形同値となる。
-よって $D'-D$ が線形同値であるか否かは
-$[a_2]=[c]$ であるか否かとなる。
-代数曲線 $\mathcal{C}$ 上の因子 $\mathcal{D}$ が
-自明か否かは
-またトロピカル曲線
-Baker--Norine rank は、
-\end{remark}
+% \begin{remark}
+% \label{remark-floer-differential}
+% \cref{remark-c-infinity-divisor}
+% を読んでいないならば、読み飛ばして問題ない。
+% $(D,D')$ をコンパクトトロピカル多様体
+% $X$ 上の Bertini 対としたとき、
+% $\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
+% ((\mathbb{Q}_X)_{X\setminus D}))$
+% の Euler 数が $D'-D$ の Riemann--Roch 数の
+% ように振る舞い、実際にいくつかのケースでは正しいことを
+% 見てきた。しかし、$\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
+% ((\mathbb{Q}_X)_{X\setminus D}))$ は必ずしも
+% $D'-D$ に付随する直線束のコホモロジーのようには
+% 振舞わない。これをトロピカル楕円曲線 $X\deq 
+% \mathbb{R}/\mathbb{Z}$ を例にとり説明する。
+% $0=a_1<b_1<\frac{1}{4}<b_2<a_2=\frac{1}{2}$ とし、
+% $D'=[a_1]+[a_2]$, $D=[b_1]+[b_2]$ とする。このとき、
+% $c\deq b_2+(b_1-a_1)<\frac{1}{2}$なので、
+% $D_0\deq [a_1]-[b_1]-[b_2]-[c]$ は
+% $\mathbb{R}/\mathbb{Z}$ 上の主因子を定義する。
+% よって、$D'-D$ は $[a_2]-[c]$ と線形同値となる。
+% よって $D'-D$ が線形同値であるか否かは
+% $[a_2]=[c]$ であるか否かとなる。
+% 代数曲線 $\mathcal{C}$ 上の因子 $\mathcal{D}$ が
+% 自明か否かは
+% またトロピカル曲線
+% Baker--Norine rank は、
+% \end{remark}
 
 \begin{proposition}
 $X$ を連結かつコンパクトな整アフィン多様体とし、
