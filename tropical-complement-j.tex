@@ -792,7 +792,8 @@ $X$ 上の sedentarity 関数
 上半連続関数である。
 特に次の集合たちは、
 $X$の閉部分集合である
-(上半連続関数の定義は例えば\cite[p.287]{MR463157})。
+(上半連続関数の定義は例えば\cite[p.287]{MR463157}
+を見よ)。
 \begin{align}
 X^{[\geq k]}\deq \{p\in X\mid \opn{sed}_X(p)\geq k\},
 \quad 
@@ -829,7 +830,7 @@ $Y$ を $X$
 \end{align}
 \begin{align}
 \opn{codim}_x(Y/X) \geq 
-\opn{sed}_X(x)-\opn{sed}_Y(x)\geq 0
+\opn{sed}_X(x)-\opn{sed}_Y(x)\geq 0.
 \end{align}
 
 とくに $\opn{codim}_x(Y/X)=1$
@@ -840,6 +841,11 @@ $\dim \opn{LC}_x Y=\dim \opn{LC}_x X$
 なので トロピカル部分多様体の定義より
 $\opn{LC}_x Y\simeq \opn{LC}_x X$
 となる。
+任意の点 $x\in Y$ に対して、
+$\opn{sed}_X(x)=\opn{sed}_Y(x)$ 
+のとき、$Y$ を $X$ の sedentarity-0 な
+トロピカル部分多様体と呼ぶ。 
+
 点 $x\in X$ に対して
 $\opn{lineal}(X,x)$ を$\opn{LC}_x X (\subset T_x X)$
 の maximal lineality 空間とする。
@@ -1013,7 +1019,7 @@ $X$ をトロピカル多様体とし、$Y$ を
 $X$ の余次元 $1$
 のトロピカル部分多様体とする。
 $Y$ が中庸な位置にあるとき、
-$Y$ は sedentarity 0 なトロピカル部分多様体である。
+$Y$ は sedentarity-0 なトロピカル部分多様体である。
 \end{proposition}
 \begin{proof}
 点 $x\in Y$ に対して
@@ -1588,7 +1594,7 @@ $H_{n,n}^{\mathrm{BM}}
 また、
 $\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(- 
 \otimes^{L}_{\mathbb{Z}_X} \Omega_X^{p}[q],
-\omega_X^{\bullet})$ から
+\upomega_X^{\bullet})$ から
 $\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(-,
 \mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p}[q]))$
 への自然同型を
@@ -1597,11 +1603,11 @@ $\alpha \colon \mathbb{Z}_X\to \Omega_X^{n-p}[n-q]$
 \[\begin{tikzcd}
 {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\Omega_X^{n-p}[n-q]
 \otimes^{L}_{\mathbb{Z}_X} \Omega_X^{p}[q]
-,\omega_X^{\bullet})} & 
+,\upomega_X^{\bullet})} & 
 {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}
 (\Omega_X^{n-p}[n-q],\mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p}[q]))} \\
 {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\Omega^{p}[q],
-\omega_X^{\bullet})} & {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\mathbb{Z}_X,\mathcal{D}_{\mathbb{Z}_X}(\Omega^{p}[q]))}
+\upomega_X^{\bullet})} & {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\mathbb{Z}_X,\mathcal{D}_{\mathbb{Z}_X}(\Omega^{p}[q]))}
 	\arrow[from=1-2, to=2-2]
 	\arrow[from=2-1, to=2-2]
 	\arrow[from=1-1, to=1-2]
@@ -1613,19 +1619,29 @@ $\alpha\frown [X]$ のことである。
 よって、$\delta_p^{X}$ が誘導する準同型
 \begin{align}
 \mathbb{H}^{-q}(\delta_p^{X})
-\colon H^{p,q}(X;\mathbb{Z})
+\colon H^{n-p,n-q}(X;\mathbb{Z})
 \to \mathbb{H}^{-q}(X;\mathcal{D}_{\mathbb{Z}_X}
 (\Omega_X^{p})) \notag
 \end{align}
 は、基本類によるカップ積
+\cite[\textsection 4.6]{MR4246795}
 \begin{align}
 \label{equation-PD-map}
 \cdot \frown [X]
-\colon H^{p,q}(X;\mathbb{Z})
+\colon H^{n-p,n-q}(X;\mathbb{Z})
 \to
 H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})
 \end{align}
 と同一視することができる。
+(なお、視認性のため、\cite[\textsection 4.6]{MR4246795}
+と作用を逆にしている。)
+特に $X$ がコンパクトならば、
+一点空間への写像
+$a_X\colon X\to \{\mathrm{pt}\}$
+による写像によってトレース写像
+$\int_X c\deq a_{X*}(c\frown [X])\in 
+H_{0,0}^{\mathrm{BM}}(X;\mathbb{Z})\simeq \mathbb{Z}$
+が定義される。
 
 任意の $p\in \mathbb{Z}_{\geq 0}$ に対して
 $\delta_{p}^{X}$ が同型射であるとき,
@@ -1634,7 +1650,6 @@ $(X,\mathcal{O}_X^{\times})$ は
 を満たすと呼ぶ \cite[Definition 6.4]{MR4637248}。
 有理多面空間が Poincar\'e--Verdier duality を満たすとき、
 \cref{equation-PD-map} は同型射となる。
-
 なお、$X$ が global な面構造を持つ場合の、
 基本類のカップ積による上述の同型は、
 \cite[Theorem 5.3]{MR3894860} にて初めて示された。
@@ -1646,7 +1661,9 @@ Bergman fan に対する Poincar\'e duality
 \cite[Proposition 5.5]{MR3894860} と
 \cite[Theorem 6.7]{MR4637248}
 より分かる。
-
+$(X,\mathcal{O}_X^{\times})$ を
+Poincar\'e--Verdier duality を満たす有理多面空間
+としたとき、
 カップ積
 $\cdot \frown [X]$
 の逆準同型を $\opn{PD}_X$ とし、
@@ -1776,9 +1793,7 @@ $X$ をトロピカル多様体とする。このとき、
 は単射である。
 \end{proposition}
 \begin{proof}
-
-
-また、ペアリングの定義が局所的なので
+ペアリングの定義が局所的なので
 次の層の射が誘導される。
 \begin{align}
 \opn{div}_X\colon \mathcal{D}iv_X^{[0]}\to 
@@ -1813,6 +1828,8 @@ $X$ が boundaryless なとき、より一般の結果が
 (より一般に、regular at infinity な有理多面空間)
 のとき、$\opn{Div}(X)^{[0]}$ を 
 $Z_{n-1}(X)$ の部分群とみなす。
+$D$ が $X$ の sedentarity-0 な部分トロピカル多様体
+ならば、$\opn{Div}(X)^{[0]}$ に含まれる。
 
 
 \begin{proposition}
@@ -1826,7 +1843,53 @@ $D,D'\in \opn{Div}^{[0]}(X)$ とする。
 の意味での交叉$D\cdot D'$は一致する。
 \end{proposition}
 \begin{proof}
+\label{proposition-two-pairings}
 両者の定義は共に局所的である。
+よって、任意のチャートに対して示せばよい。
+任意の点 $x\in X$ に対して $x$ を含むチャート
+$ \psi_x
+\colon U_x \to 
+\opn{LC}_x X\times \mathbb{T}^{\opn{sed}_X(x)}$
+で、$\psi_x(x)=(0,-\infty)\in \opn{LC}_x X\times \mathbb{T}^{\opn{sed}_X(x)}$
+となるものが取れる。
+また $U_x$ は、$0\in \opn{LC}_x X$ の可縮な開近傍
+$V_x$ と $\mathbb{T}^{\opn{sed}_X(x)}$ の可縮な開近傍
+$W_x$ の直積 $V_x\times W_x$ に置き換えてもよい。
+さらに、$\opn{Div}^{[0]}(X)$ の定義から
+$D|_{V_x\times W_x}$ は 
+$B_x\cap \opn{LC}_x X=V_x$ となる
+$T_x X$ の開集合上の
+$\mathbb{Z}$PL 関数の$V_x$への制限の
+主因子 $\opn{div}_{V_x}(f|_{V_x})$ と
+$W_x$の直積と仮定してもよい。
+よって、両者の因子とサイクルの交叉は、$x$ の近傍では
+$V_x$ 上の主因子同士の交叉と $W_x$ の直積とみなせる。
+よって、$\opn{sed}_X(x)=0$ の場合に示せば十分である。
+以降より $\opn{sed}_X(x)=0$ とする。
+また、$i \colon V_x\to B_x$ を包含写像とすると
+$V_x$ 上の因子 $D_0$ に対して
+\begin{align}
+i_*((f|_{V_x})\cdot D_0)=(f)\cdot i_*D_0
+\in Z_{n-2}(B_x)
+\end{align}
+が成り立つ。$B_x$ は、ある実ベクトル空間の開集合であるため、
+\cite[\textsection 3.4]{MR4637248}の
+ペアリングは、実ベクトル空間上の
+\cite{MR2591823} によるトロピカルサイクルの
+ペアリングによって決定される。
+\cite[\textsection 2.4]{demedrano2023chern}
+の意味でのペアリングでも同様の議論が成り立ち、
+\cite[Proposition 2.1.9]{shaw2011tropical}
+より、やはり$\mathbb{R}^n$
+上のトロピカルサイクルの安定交叉
+\cite[Definition 4.4]{MR2275625} 
+の場合に帰着される。
+\cite[\textsection 2]{MR3032930} でも言及されている
+ように $\mathbb{R}^n$ 上のトロピカルサイクルの
+\cite{MR2591823} の意味での交叉と
+\cite{MR2149011,MR2275625} の意味での交叉が一致する
+ことは
+\cite{MR3529085} や \cite{MR2887109} で示されている。
 \end{proof}
 
 
@@ -1834,17 +1897,9 @@ $D,D'\in \opn{Div}^{[0]}(X)$ とする。
 古典的な代数曲面の交点数の異なる定義
 の一致をトロピカル曲面の場合で見る。
 
-\cite[\textsection 2.4]{demedrano2023chern}
-で定義された
 
-また、\cite{shaw2011tropical} のサイクルの交叉と
-\cite{MR3041763} との整合性は
-両者のサイクルが sedentarity-$0$ のときは
-\cite[Theorem 8.10]{MR3041763} にて
-示されている。
-\cite[Definition and Theorem 6.4.]{MR3041763}
-では、boundaryless なトロピカル多様体に対して
-サイクルの交叉が定義されている。
+
+
 
 \begin{proposition}
 \label{proposition-cycle-chern}
@@ -1852,6 +1907,7 @@ $X$ をコンパクトトロピカル曲面とし、$D_1,D_2$
 をトロピカル $1$-サイクルとする。このとき、
 次が成り立つ。
 \begin{align}
+\label{equation-two-intersections}
 D_1 . D_2=\int_X \PD{D_1}\cdot \PD{D_2}.
 \end{align}
 ここで左辺は、
@@ -1912,21 +1968,12 @@ $1$-サイクルの交点数の定義は
 トロピカルサイクルとの交叉は \cite{shaw2011tropical}
 をもとに定義されているため
 \cite{demedrano2023chern} と
-\cite{shaw2011tropical} は互いに整合的である。
-
-よって
-\cite{MR4637248} と
-\cite{demedrano2023chern} とのサイクルの
-交叉が整合的であることを
-確認すればよい。
-サイクルの交叉は局所的に定義されることと、
-サイクルの整合性を見るときにトレース写像は
-不必要であるため、$X$ を
-
-また \cite[Proposition 2.1.9]{shaw2011tropical}
-と、\cite{}
-
-
+\cite{shaw2015tropical} は互いに整合的である。
+\cref{proposition-two-pairings} より、
+$D_1,D_2\in \opn{Div}^{[0]}(X)$ の
+\cite{demedrano2023chern} による交叉と
+\cite{MR4637248} による交叉は一致しているため、
+\cite{equation-two-intersections} が示される。
 \end{proof}
 
 
@@ -2420,7 +2467,8 @@ R\Gamma_{X\setminus D'}
 $X$ を連結かつコンパクトな整アフィン多様体とし、
 $D$ を余次元$1$のトロピカル部分多様体とする。
 このとき、\cref{conjecture-grr-divisor} は正しい。
-特に、$D$ について \cref{conjecture-rr-euler} 
+特に、$D$ について\cite[Conjecture 6.13]{demedrano2023chern}
+と \cref{conjecture-rr-euler} 
 が正しいとき、$X$ について \cref{conjecture-rr-bertini}
 が正しい。
 \end{proposition}
@@ -2433,9 +2481,24 @@ Bergman fan のいずれかと同型である。
 また、$X$ は boundaryless なので、$D$
 の自身への引き戻しは、自然に定義される。
 Chern--Schwartz--Macpherson 類の定義は局所的なので
-$X=\Sigma_{U_{n,n}}$ かつ、$D=\Sigma_{U_{n-1,n}}$ 
+$X=L_{U_{n,n}}$ かつ、$D=L_{U_{n-1,n}}$ 
 と仮定してよい。これについて、\cref{conjecture-grr-divisor}
-は正しい。
+は正しい。\cref{conjecture-grr-divisor} が正しいので
+\cref{proposition-divisor-poincare} より
+$D$ について \cite[Conjecture 6.13]{demedrano2023chern}
+が正しいならば、\eqref{equation-rr-number-divisor}
+より
+\begin{align}
+\chi(X\setminus D)=(-1)^{\dim X}\chi_c(X\setminus D)
+=(-1)^{\dim X}\opn{RR}(X,-D)
+=\opn{RR}(X,D)
+\end{align}
+
+つまり、$X$ についても \cref{conjecture-rr-euler}
+が正しい。よって、
+\cref{proposition-euler-to-bertini} より
+$X$ についても \cref{conjecture-rr-bertini} は正しい。
+
 \end{proof}
 
 \section{没話(次論文の一部とする)}
@@ -2692,6 +2755,15 @@ $D_1,D_2$ を中庸な位置にある
 \end{align}
 
 \end{example}
+
+また、\cite{shaw2011tropical} のサイクルの交叉と
+\cite{MR3041763} との整合性は
+両者のサイクルが sedentarity-$0$ のときは
+\cite[Theorem 8.10]{MR3041763} にて
+示されている。
+\cite[Definition and Theorem 6.4.]{MR3041763}
+では、boundaryless なトロピカル多様体に対して
+サイクルの交叉が定義されている。
 
 \bibliography{tropical-complement}
 \bibliographystyle{amsalpha}
