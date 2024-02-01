@@ -222,7 +222,7 @@
 \usepackage{mathrsfs}
 \usepackage{upgreek}
 \numberwithin{equation}{section}
-\title{The complement of moderate tropical curves on
+\title{The complement of tropical curves in moderate position on
 tropical surfaces}
 \author[Y. Tsutsui]{Yuki Tsutsui}
 \address{Graduate School of Mathematical Sciences,
@@ -236,196 +236,286 @@ Tokyo, 153-8914, Japan}
 \maketitle
 
 \begin{abstract}
-     
-\end{abstract}
-\section{イントロダクション}
+% 1. de Medrano, Rinc\'on and Shaw defined 
+% the Chern classes and the Todd classes on
+% tropical manifolds as an extension
+% of their theory of
+% the Chern--Schwartz--Macpherson cycles on matroids.
+% This makes it possible to define
+% the Riemann--Roch number of tropical Cartier divisors
+% on compact tropical manifolds.
+% In this paper, we discuss a conjecture
+% that the Riemann--Roch number
+% $\opn{RR}(X;D)$ of
+% a tropical submanifold $D$ of codimension $1$
+% in moderate position on a compact tropical manifold
+% $X$ is equal to the topological Euler characteristic of 
+% the complement $X\setminus D$.
+% In particular, we prove it and 
+% its generalization when $X$ is a compact
+% tropical surface admitting a Delzant face structure.
 
-\cite{demedrano2023chern}の理論によって
-トロピカル多様体の Todd 類 が定義可能となった。
-コンパクトトロピカル多様体
-$X$上の (sedentarity 0) な Cartier 因子 $D$ の
-Riemann--Roch 数 $\opn{RR}(X;D)$ が
-次のように定義できるようになった。
+% 2. de Medrano, Rinc\'on and Shaw defined 
+% the Chern classes and the Todd classes on
+% tropical manifolds as an extension
+% of their theory of
+% the Chern--Schwartz--Macpherson cycles on matroids.
+% This makes it possible to define
+% the Riemann--Roch number
+% of tropical Cartier divisors
+% on compact tropical manifolds.
+% If $D$ is a tropical submanifold of codimension 
+% $1$ in a compact tropical surface $X$ admitting
+% a Delzant face structure, then 
+% the Riemann--Roch number $\opn{RR}(X,-D)$ is 
+% equal to the Euler characteristic with compact support 
+% of the complement $X\setminus D$ from their
+% tropical analogs of adjunction formula and
+% Noether formula.
+% In this paper, we prove that 
+% the Riemann--Roch number $\opn{RR}(X,D)$ is equal
+% to the topological Euler characteristic of 
+% $X\setminus D$
+% when $D$ is in moderate position.
+
+\end{abstract}
+\section{Introduction}
+
+Thanks to the theory of the Chern classes of
+matroids and tropical manifolds by 
+de Medrano--Rinc\'on--Shaw
+\cite{MR3999674,demedrano2023chern},
+we can define the Todd class of tropical manifolds
+naturally \cite[Conjecture 6.13]{demedrano2023chern}.
+In particular, we can also define the Riemann--Roch
+number $\opn{RR}(X;D)$ for any (sedentarity-0)
+tropical Cartier divisor $D$ on
+a compact (purely) $n$-dimensional tropical manifold $X$:
 \begin{align}
 \label{equation-intro-rr}
 \opn{RR}(X;D)\deq 
 \int_{X}\opn{ch}(\mathcal{L}(D))\opn{td}(X).
 \end{align}
-ここで、$\mathcal{L}(D)$ とは、$D$ が定める
-トロピカル直線束であり、
-$\opn{ch}(\mathcal{L}(D))\deq 
+where $\mathcal{L}(D)$ is the 
+tropical line bundle associated with $D$
+, $\opn{ch}(\mathcal{L}(D))\deq 
 \sum_{i=0}^{\infty}\frac{c_1(\mathcal{L}(D))^{i}}{i!}$
-は、$\mathcal{L}(D)$ の Chern 指標であり、
-$\int_X$ はトレース写像である。
-この Riemann--Roch 数は Poincar\'e 双対によって
-余次元 $1$ のサイクルに対しても定義される
-(\cref{definition-rr-number})。
-古典的には、この Riemann--Roch 数 $\opn{RR}(X;D)$
-は、Hirzebruch--Riemann--Roch の定理もしくは、
-Grothendieck--Riemann--Roch の定理より、
-$D$の定義する可逆層のコホモロジーの Euler 数と対応する。
-しかし、トロピカル幾何では、
-可逆層とくに構造層は Abel 群のなす層では
-ないため、可逆層の層コホモロジーの Euler 数と
-Riemann--Roch 数を比較することができない。
-トロピカル幾何における Riemann--Roch の定理は、
-Baker--Norine によるグラフの Riemann--Roch の定理
-\cite{MR2355607} の一般化という形で
-\cite{MR2377750} や \cite{MR2457739} によって
-それぞれ独立に証明された。
-これらの結果の一般化やその派生もまた
-\cite{MR3046301,MR4251610,MR4229604,MR4444458,MR4512397} などで
-発展していったが、
-tropical Riemann--Roch theorem の 
-直接的な一般化として、より高次のトロピカル多様体の
-Riemann--Roch の定理の定式化はまだなされていない。
-いずれにせよ、
-$\opn{RR}(X;D)$ がトロピカル幾何的にどういう意味を持った
-量であるのかということの理解は、
-トロピカル幾何における
-Riemann--Roch の定理の定式化および解釈を与えるうえで
-重要な話題であるといえる。
+is the Chern character of $\mathcal{L}(D)$
+and $\int_X$ is the trace map of $X$.
+We can extend the Riemann--Roch number for
+tropical cycles of codimension $1$
+by Poincar\'e duality
+(\cref{definition-rr-number}).
+In algebraic geometry, the Riemann--Roch number
+$\opn{RR}(X;D)$ of a given Cartier divisor $D$
+on a smooth projective variety
+corresponds to
+the Euler characteristic of the sheaf cohomology
+of the invertible sheaf 
+assocaited with $D$ by the Hirzebruch--Riemann--Roch theorem
+or the Grothendieck--Riemann--Roch theorem.
 
-少なくとも$\opn{RR}(X;0)$の幾何学的な意味は、
-専門家の間で共通の認識が存在し、
-\cite[Conjecture 6.13]{demedrano2023chern}
-では、$\opn{RR}(X;0)$は、$X$
-の位相的 Euler 数 $\chi(X)$ と一致していると
-予想されており、
-$X$ が Delzant face 構造を持つ
-コンパクトトロピカル曲面の場合
-において\cite[Theorem 6.3]{demedrano2023chern}にて
-証明された。なお、Delzant face 構造を持つという
-条件は、十分に広い範囲のトロピカル曲面で成立している
-\cite[Corollary 6.11]{demedrano2023chern}。
-(関連する研究として、\cite{cartwright2015combinatorial}
-も挙げておく。)
-トロピカル多様体の位相的 Euler 数
-$\chi(X)$が代数多様体上の構造層の
-コホモロジーの Euler 数のトロピカル幾何的な類似であるべき
-であることは、古くから期待されており、
-\cite[Corollary 2]{MR3961331}
-などで実際に対応していることが示されている。
-また、special affine manifold に対する
-Chern 予想 \cite{MR3665000} から、
-コンパクト整アフィン多様体に対しても、
-\cite[Conjecture 6.13]{demedrano2023chern}
-は正しい。
-本論文では、$D$ が自明ではないいくつかのケースにおける、
-$\opn{RR}(X;D)$ のトロピカル幾何学的な
-意味について考察することが主目的である。
-特に本文書では、トロピカル曲面の場合が中心的な
-話題であるが、これらの内容は高次元に一般化できると
-期待している。
+In tropical geometry, invertible sheaves,
+paricularly the structure sheaf
+on tropical manifolds
+(e.g. \cite[\textsection 1]{MR3330789}) 
+do not form sheaves of abelian groups.
+Consequently, there is no a direct
+analog of the Euler characteristic of 
+the sheaf cohomology of 
+tropical Cartier divisors now.
+The tropical Riemann--Roch theorem for 
+compact tropical curves was proved by 
+both Gathmann--Kerber \cite{MR2377750}
+and Mikhalkin--Zharkov \cite{MR2457739}
+independently
+as a generalization of the 
+Riemann--Roch theorem for finite graphs
+establised by Baker--Norine \cite{MR2355607}. 
+The generalization of these results and
+their derivatives have developed in works such as 
+\cite{MR3046301,MR4251610,MR4229604,MR4444458,MR4512397}.
 
-まず、代数幾何的な基本事項を整理する。
-$X$を非特異代数多様体とし、$D$ をその非特異因子とし、
-$\iota\colon D\to X$を自然な閉埋め込みとする。
-このとき、次の層短完全列が存在する。
+However, researchers have not yet established
+the tropical Riemann--Roch
+theorem for higher-dimensional
+compact tropical manifolds
+as a direct generalization of the tropical
+Riemann--Roch theorem for compact tropical curves.
+Regardless of the specifics, it seems that understanding
+the tropical geometric meaning of $\opn{RR}(X;D)$ is 
+important.
+At least, there exists a common interpretation
+for a geometric meaning of the Riemann--Roch number
+$\opn{RR}(X;0)$ for the trival divisor.
+In \cite[Conjecture 6.13]{demedrano2023chern},
+de Medrano, Rinc\'on and Shaw conjectured
+that $\opn{RR}(X;0)$ for a compact 
+tropical manifold $X$ is equal to the 
+topological Euler characteristic 
+$\chi(X)$ of $X$, 
+and they proved it when 
+$X$ is a compact tropical surface admitting
+a Delzant face structure \cite[Theorem 6.3]{demedrano2023chern}.
+They also proved a sufficiently broad range of 
+tropical surfaces admit Delzant face structures
+\cite[Corollary 6.11]{demedrano2023chern}.
+(The tropical Noether formula
+was studied in \cite{shaw2015tropical} previously.
+We also note that a study of the Noether
+formula for tropical complexes of dimension $2$
+in \cite{cartwright2015combinatorial}).
+Many researchers expect that the topological Euler 
+characteristic of compact tropical manifolds
+should be an analog of that of the sheaf cohomology
+of the structure sheaves on complete
+smooth algebraic varieties.
+In fact, the two are highly related 
+via a good deneration of algebraic varieties
+\cite[Corollary 2]{MR3961331}.
+Besides, the Conjecture 6.13 of 
+\cite{demedrano2023chern} is true for 
+compact integral affine manifolds
+from Klingler's proof of Chern's conjecture for
+special affine manifolds \cite{MR3665000}.
+
+In this paper, we discuss
+a geometrical meaning of $\opn{RR}(X;D)$
+when $D$ is in several non-trivial cases.
+We mainly consider it when $X$ is
+a compact tropical surface, but we expect 
+that there exists a generalization for
+higher-dimensional compact tropical manifolds.
+
+Firstly, we recall some elementary properties
+of divisors on algebraic varieties. 
+To clarify the similarities we wish to investigate,
+we will recall them under strong conditions.
+
+Let $D$ be a non-singular divisor on a non-singular
+algebraic variety $X$, and a morphism  
+$\iota\colon D\to X$ is the closed embedding.
+Then, there exists the following exact sequence
+of sheaves:
 \begin{align}
      0\to \mathcal{O}_X(-D)\to 
 \mathcal{O}_X\to \iota_*\mathcal{O}_D\to 0
 \end{align}
-これより、層コホモロジーの Euler 数について次の等式が成り立つ。
+From this, we get the following equation for the Euler
+characteristic of the sheaf cohomology:
 \begin{align}
 \label{equation-anti-effective-divisor}
 \chi(X;\mathcal{O}_X(-D))=\chi(X;\mathcal{O}_X)
 -\chi(D;\mathcal{O}_D)
 \end{align}
-
-次の予想は、以上の事実らを踏まえるとごく自然であり,
-\cite{demedrano2023chern} による Todd 類の定義が
-現れる前から広く信じられていると思われる。
+From \eqref{equation-anti-effective-divisor},
+the conjecture below is very natural and 
+seems to be believed among many researchers
+before \cite{demedrano2023chern}, if
+we mildly ignore a technical condition of 
+tropical submanifolds \cite{demedrano2023chern} (see also
+\cite[Definition 4.3]{shaw2015tropical}).
 
 \begin{conjecture}[{Folklore?}]
 \label{conjecture-rr-c-euler}
-$X$ をコンパクトトロピカル多様体とし、$D$を
-余次元 $1$
-のコンパクト
-トロピカル部分多様体(tropical submanifold)
-とする \cite[Definition 2.14]{demedrano2023chern}。
-このとき、次の等式が成り立つ。
+Let $X$ be a compact
+(purely) $n$-dimensional tropical manifold and
+$D$ a tropical submanifold of codimension $1$
+on $X$ 
+\cite[Definition 2.14]{demedrano2023chern}.
+Then,
 \begin{align}
 \opn{RR}(X;-D)=
 \chi_c (X\setminus D) (=\chi_c (X)-\chi_c(D))
 \end{align}
-ここで$\chi_c(X)$とは、$X$のコンパクト台のコホモロジーの
-Euler 数である。
+where $\chi_c(X)$ is the Euler characteristic
+with compact support of $X$.
 \end{conjecture}
 
 \begin{example}
-$\dim X=1$ のときは、
-\cref{conjecture-rr-c-euler}は自明である。
-
-次に、$\dim X=2$とし、$K_X$ を
-$X$の標準因子とすると、
-トロピカル曲線の随伴公式
-(\cite[Theorem 6]{shaw2015tropical}と
-\cite[Theorem 5.2]{demedrano2023chern}を参照)より、
+If $\dim X=1$, then 
+\cref{conjecture-rr-c-euler} is trivial.
+Let $\dim X=2$ and $K_X$ the canonical cycle of
+$X$ \cite[Definition 5.8]{MR2275625}.
+The adjunction formula for tropical submanifold
+of codimension $1$ on $X$
+\cite[Theorem 6]{shaw2015tropical} gives
 \begin{align}
 \opn{RR}(X;-D)=\frac{(-D-K_X).(-D)}{2}+\opn{RR}(X;0)
 =\chi(D)+\opn{RR}(X;0).
 \end{align}
-なお $(-D-K_X). D$ は、$-D-K_X$ と
-$D$ との \cite{shaw2015tropical} の意味での交点数である。
-よって、$X$ が Delzant face 構造を持つとき、
-\cref{conjecture-rr-c-euler} が成立する。
-なお、このとき、トロピカルサイクルの交点数と
-付随する Chern 類の
-交点数が一致することを用いている
-(\cref{proposition-cycle-chern})。
+where $(-D-K_X).D$ is the intersection number of 
+$-D-K_X$ and $D$ in the meaning of \cite{shaw2015tropical}.
+Therefore, if $X$ admits a Delzant face structure 
+\cref{conjecture-rr-c-euler} is true
+by \cite[Theorem 6.3]{demedrano2023chern}.
+(We will see the compatibility of different definition of
+intersection numbers which is needed to prove it in 
+\cref{proposition-cycle-chern}.)
 \end{example}
-本論文の主役は、$\opn{RR}(X;-D)$の双対である
-$\opn{RR}(X;D)$の幾何学的意味を与える次の予想である。
+
+The main conjecture of this paper is the following 
+which gives
+the geometric meaning of $\opn{RR}(X;D)$, i.e.,
+the dual of $\opn{RR}(X;-D)$.
 
 \begin{conjecture}
 \label{conjecture-rr-euler}
-$X$ をコンパクトトロピカル多様体とし、$D$を余次元$1$
-のコンパクト
-トロピカル部分多様体(tropical submanifold)とする
-\cite[Definition 2.14]{demedrano2023chern}。
-$D$が$X$上の中庸な位置
-(\cref{definition-permissible-position})
-にあるとき、次が成り立つ。
+Let $D$ be a tropical submanifold of codimension 
+$1$ of a compact tropical manifold $X$
+\cite[Definition 2.14]{demedrano2023chern}.
+If $D$ is in \emph{moderate position}
+(\cref{definition-permissible-position}) on $X$,
+then 
 \begin{align}
 \opn{RR}(X;D)=\chi(X\setminus D).
 \end{align}
 \end{conjecture}
-\cref{conjecture-rr-euler}
-は\cref{conjecture-rr-c-euler}と
-同様に他の研究者も予想していると思われるが、より非自明である。
-実際に、中庸な位置の条件は、十分に一般的なトロピカル部分多様体に対して
-成立する条件である一方で、満たさないものも簡単に作れる条件である。
-(\cref{example-permissible-point}などを参照。)
+I believe that other researchers also expect
+\cref{conjecture-rr-euler} as like
+\cref{conjecture-rr-c-euler},
+but \cref{conjecture-rr-euler} is more non-trivial than
+\cref{conjecture-rr-c-euler}.
+In fact, many tropical submanifolds are in moderate position,
+but we can easily construct of tropical submanifolds
+which are not in moderate position.
 
 \begin{example}
 \label{example-permissible-point}
-$C$をコンパクトトロピカル曲線とする。点 $p\in C$ が
-中庸な位置にあることは、
-$p\in C_{\opn{reg}}$ であることと同値である。
-簡単な計算から、中庸な位置にある
-余次元 $1$ のトロピカル部分多様体
-$D$ に対して、
+Let $C$ be a compact tropical curve 
+and $C_{\mathrm{reg}}$ the set of all
+points whose valency are $2$.
+A point $p$ on $C$ is in moderate position
+if and only if $p\in C_{\mathrm{reg}}$.
+
+From easy calculation, for any 
+tropical submanifold $D$ of codimension $1$,i.e.,
+finite subsets contained in $C_{\mathrm{reg}}$ 
+satisfies
 \begin{align}
 \opn{RR}(C;D)=\sharp (\opn{supp}(D))+ \chi_{\opn{top}}(C)
 =\chi_{\opn{top}}(C\setminus D).
 \end{align}
-よって、$\dim X=1$のとき、
-\cref{conjecture-rr-euler}
-は正しい。
-\end{example}
 
-\cref{conjecture-rr-euler}
-が成り立つと期待される根拠となるその他の例は、
-\cref{example-TPn} や
-\cref{remark-iass} で説明する。
-\cref{conjecture-rr-euler} の面白い点の一つは、
-予想自体は非常にシンプルであるものの、
-トロピカル部分多様体の補空間の多くが代数多様体の
-Zariski 開集合のトロピカル類似とは言えないものであり、
-\cref{conjecture-rr-euler} が成り立つと期待できる
-代数幾何学的な直接的な根拠が見当たらなさそうな点である。
-(実際に、多項式の開集合のトロピカル類似は
+Therefore, \cref{conjecture-rr-euler} is true
+for $C$.
+\end{example}
+In \cref{example-TPn,remark-iass},
+we will see other examples for evidence 
+why it seems that \cref{conjecture-rr-euler}
+is true.
+
+One of interesting points of
+\cref{conjecture-rr-euler} is that
+it does \emph{not} seem that there is
+no a direct evidence of \cref{conjecture-rr-euler}
+derived from usual algebraic geometry.  
+For instance, the complement of two points 
+on a tropical elliptic curve
+$\mathbb{R}/\mathbb{Z}$ is disconnected.
+This feature is far from that of the analyfication of Zariski open subsets of
+algebraic varieties.
+(In fact, 多項式の開集合のトロピカル類似は
 \cite[Remark 3.5 and Example 3.6]{MR2275625} 
 においても強調されている
 ようにトロピカル多項式の full graph 
@@ -2087,11 +2177,11 @@ $\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$
 に置き換えるだけで同様に定義することができる
 (\cref{definition-tropical-todd})。
 
-\cite{demedrano2023chern} では Todd 類はサイクルとして
+\cite[Conjecture 6.13]{demedrano2023chern} では Todd 類はサイクルとして
 定義しているが、本論文では代数幾何でよく用いられる形に
 近づけるためにそれの Poincar\'e 双対を取ることとする。
 
-\begin{definition}[{\cite{demedrano2023chern}}]
+\begin{definition}[{\cite[\textsection 6]{demedrano2023chern}}]
 \label{definition-tropical-todd}
 $X$をトロピカル多様体とする。
 第 $j$ 次 Todd 類を
