@@ -280,7 +280,7 @@ Tokyo, 153-8914, Japan}
 
 \end{abstract}
 \section{Introduction}
-
+\subsection{Background}
 Thanks to the theory of the Chern classes of
 matroids and tropical manifolds by 
 de Medrano--Rinc\'on--Shaw
@@ -371,7 +371,7 @@ should be an analog of that of the sheaf cohomology
 of the structure sheaves on complete
 smooth algebraic varieties.
 In fact, the two are highly related 
-via a good deneration of algebraic varieties
+via a good degeneration of algebraic varieties
 \cite[Corollary 2]{MR3961331}.
 Besides, the Conjecture 6.13 of 
 \cite{demedrano2023chern} is true for 
@@ -386,6 +386,8 @@ We mainly consider it when $X$ is
 a compact tropical surface, but we expect 
 that there exists a generalization for
 higher-dimensional compact tropical manifolds.
+
+\subsection{Main results}
 
 Firstly, we recall some elementary properties
 of divisors on algebraic varieties. 
@@ -515,116 +517,112 @@ on a tropical elliptic curve
 $\mathbb{R}/\mathbb{Z}$ is disconnected.
 This feature is far from that of the analyfication of Zariski open subsets of
 algebraic varieties.
-(In fact, 多項式の開集合のトロピカル類似は
-\cite[Remark 3.5 and Example 3.6]{MR2275625} 
-においても強調されている
-ようにトロピカル多項式の full graph 
-\cite[\textsection 3.3]{MR2275625}
-の補集合として定義する方が自然である。)
+(In fact, Mikhalkin defined
+a tropical analog of the open subset of
+a given polynomial as the complement of
+the full graph \cite[\textsection 3.3]{MR2275625}
+of a tropical polynomial in
+\cite[Remark 3.5 and Example 3.6]{MR2275625}.)
 
-また、注意しなければならないのは、
-\cref{conjecture-rr-euler} とは異なり、
-コンパクトトロピカル多様体 $X$ 上の中庸な位置にある
-余次元 $1$ のトロピカル部分多様体 $D$ の補集合
-の定数層コホモロジー 
-$H^{\bullet}(X\setminus D;\mathbb{R})$ の階数は
-代数多様体 $\mathcal{X}$ 上の因子 $\mathcal{D}$ が
-定義する可逆層 $\mathcal{O}_{\mathcal{X}}(\mathcal{D})$
-の層コホモロジー $H^{\bullet}(\mathcal{X},
-\mathcal{O}_{\mathcal{X}}(\mathcal{D}))$
-の階数のように振る舞うとは限らない点である。
+Besides, it must be noted that
+the rank of the cohomology 
+$H^{\bullet}(X\setminus D;\mathbb{R})$ 
+for a codimension-1 tropical submanifold
+on a compact $n$-dimensional tropical manifold
+may not behave like that of
+the sheaf cohomology 
+$\mathcal{O}_{\mathcal{X}}(\mathcal{D})$
+for a Cartier divisor $\mathcal{D}$ 
+on a complete algebraic variety unlike
+$H^{\bullet}_c(X\setminus D;\mathbb{R})$.
+Incidentally, the author arrived at
+\cref{conjecture-rr-euler} as
+a derivation from the study in
+\cite{tsutsui2023graded}. 
+We will see a relationship between 
+this paper and \cite{tsutsui2023graded}
+in \cref{remark-c-infinity-divisor}.
 
-なお、筆者は \cite{tsutsui2023graded} 
-の研究の派生として \cref{conjecture-rr-euler}
-を予想するに至った。
-本論文と \cite{tsutsui2023graded}
-との関係は \cref{remark-c-infinity-divisor}
-にて述べる。
-
-本論文の主定理の一つは次のようになる。
-証明も難しくない。
+One of main theorem in this paper
+is the following, and its proof is not difficult:
 \begin{theorem}[{Main theorem}]
 \label{theorem-rr-euler-surface}
-$X$ をコンパクトトロピカル曲面とし、
-$D$を中庸な位置にある
-余次元 $1$ のコンパクトトロピカル部分多様体
-に対して次が成り立つ。
+Let $D$ be a tropical submanifold of codimension $1$
+in moderate position on a compact tropical manifold
+$X$. Then,
 \begin{align}
 \chi(X\setminus D)=\frac{(D-K_X). D}{2}+
 \chi(X).
 \end{align}
 \end{theorem}
-
-\cite[Theorem 6.3]{demedrano2023chern}
-とを合わせると次のようになる。
+From \cite[Theorem 6.3]{demedrano2023chern}
+and \cref{theorem-rr-euler-surface}, we get
+the following corollary:
 \begin{corollary}
 \label{corollary-ds-euler-rr}
-$X$が Delzant face 構造をもつコンパクトトロピカル
-曲面のとき、 \cref{conjecture-rr-euler}は正しい。
+If $X$ is a compact tropical surface admitting 
+a Delzant face structure, then
+\cref{conjecture-rr-euler} is true.
 \end{corollary}
-
-
-
-もう少しだけ踏み込んだ話をする。
-トロピカル多様体 $X$ の
-余次元$1$のトロピカル部分多様体 $D$ の
-Riemann--Roch 数
-$\opn{RR}(X;D)$の幾何学的な意味を与えると、
-次のようなもう少し一般的な因子に対しても
-幾何学的な意味を与えることができると期待できる。
-以下よりそれを説明する。
-
-$X$を非特異射影多様体とし、$D$を非特異因子とし、
-$\iota\colon D\to X$ を埋め込み写像とする。
-任意の因子 $D'$に対して次の短完全列が得られる。
+From this point, 
+we will consider an extension of both
+\cref{conjecture-rr-c-euler,conjecture-rr-euler}.
+We recall well-known properties in algebraic geometry again.
+Let $X$ be a nonsingular projective varieties,
+$D$ a monsingular divisor on $X$ and
+$\iota\colon D\to X$ the inclusion of $D$.
+For any divisor $D'$ on $X$, we have
+the short exact sequence:
 \begin{align}
 0 \to \mathcal{O}_X(D'-D)\to \mathcal{O}_X(D')
 \to \mathcal{O}_X(D')
-\otimes_{\mathcal{O}_X} \iota_*\mathcal{O}_D \to 0 
+\otimes_{\mathcal{O}_X} \iota_*\mathcal{O}_D \to 0. 
 \end{align}
-
-一方で局所自由層の射影公式より、
+From the projection formula for locally free sheaves,
+we get 
 \begin{align}
 \chi(X;\mathcal{O}_X(D')\otimes_{\mathcal{O}_X} \iota_*\mathcal{O}_D)
 =\chi(X;\iota_*(\iota^{*}\mathcal{O}_X(D')\otimes_{\mathcal{O}_D} \mathcal{O}_D))
-=\chi(D;\iota^{*}\mathcal{O}_X(D'))
-\end{align}
-となり、$D'$が非特異因子で$D'\cap D$もまた$D$の非特異因子
-になるならば、有効因子の引き戻しの性質として次のように
-書き直せる。
-\begin{align}
-\chi(D;\iota^{*}\mathcal{O}_X(D'))=\chi(D;\mathcal{O}_D(D'\cap D))
+=\chi(D;\iota^{*}\mathcal{O}_X(D')).
 \end{align}
 
-上述で 因子のペア $(D,D')$ に課した条件は厳しいように見えるが
-Bertiniの定理の応用から射影多様体の任意の因子$D_0$に対して
-$D_0=D'-D$かつ
-$D,D',D\cap D'$ が非特異部分多様体になるように$D,D'$
-を選ぶことができる。
-そして、以上の仮定の下では次の等式が成り立つ。
+If $D'$ is nonsingular and the intersection
+$D'\cap D$ is an nonsingular effective divisor
+on $D$, then
+\begin{align}
+\chi(D;\iota^{*}\mathcal{O}_X(D'))=\chi(D;\mathcal{O}_D(D'\cap D)).
+\end{align}
+It may seems that 
+the assumption for a pair $(D,D')$ above is
+too strict.
+
+However, through the application of the theorem of
+Bertini, we can select a pair $(D,D')$ of divisors 
+satisfying the condition above 
+and $D_0=D'-D$ for a given divisor $D_0$ on $X$.
+For such a pair, the following equation holds:
 \begin{align}
 \chi(X;\mathcal{O}_X(D'-D))=
 \chi(X;\mathcal{O}_X(D'))-
 \chi(D;\mathcal{O}_D(D'\cap D)).
 \end{align}
-
-当然ではあるが、Grothendieck--Riemann--Roch の定理からも
-同様の公式が導出される。これと補集合に関する前述の予想を融合させると
-次のことも期待できる。
-
+By combining the observation and \cref{conjecture-rr-euler}, 
+we can also expect the following conjecture:
 \begin{conjecture}
 \label{conjecture-rr-bertini}
-$X$をコンパクトトロピカル多様体とし, 
-$D,D'$を余次元$1$のトロピカル部分多様体または
-空集合とする。
-$D$ と $D'$ は次の条件を満たしているとする。
+Let $X$ be a compact $n$-dimensional
+tropical manifold. 
+Let $D,D'$ be tropical submanifolds of codimension $1$
+on $X$ or empty.
+Asuume $D$ and $D'$ satisfy the following conditions:
 \begin{enumerate}
-\item $D'$が$X$上中庸な位置にある。
-\item $D'$ の $D$ への制限 $D'|_{D}$ は 
-$D'\cap D$ を台空間とした $D$ のトロピカル部分多様体である。
-\item $D'\cap D$ が $D$ 上中庸な位置にある。
+\item $D'$ is in moderate position on $X$.
+\item the restrction $D'|_{D}$ of $D'$ on $D$ is 
+a tropical submanifold of $D$ such that its support is   
+$D'\cap D$.
+\item $D'\cap D$ is in moderate position on $D$.
 \end{enumerate}
-このとき、次の等式が成り立つ。
+Then,
 \begin{align}
 \label{equation-rr-bertini}
 \opn{RR}(X;D'-D)=\chi (X\setminus D')-
@@ -634,57 +632,71 @@ $D'\cap D$ を台空間とした $D$ のトロピカル部分多様体である�
 \end{conjecture}
 
 \begin{definition}
-トロピカル多様体 $X$ 上の余次元$1$のトロピカル部分多様体の組
-$(D,D')$ が、\cref{conjecture-rr-bertini} の条件
-(1)-(3) を満たすとき、$(D,D')$ を $X$ 上の
-余次元 $1$ のトロピカル部分多様体の
-\emph{Bertini pair} と呼ぶ。
+A pair $(D,D')$ of tropical submanifolds of codimension 
+$1$ on a compact tropical manifold $X$ is 
+\emph{in moderate position} if $(D,D')$ satisfies
+the condition (1)-(3) in \cref{conjecture-rr-bertini}.
 \end{definition}
+In this paper, we won't discuss how many pairs of 
+tropical submanifolds of codimension $1$ in moderate position,
+but we expect there to be a sufficient number of them.
 
-本論文では余次元 $1$ のトロピカル部分多様体の Bertini pair が
-どの程度存在するかについて扱わないが
-十分に多く存在すると期待している。
-なお、\cref{conjecture-rr-bertini}は、
-\cref{conjecture-rr-euler}と Todd 類に関する
-満たすべき性質(\cref{conjecture-grr-divisor})
-との組み合わせから帰結することができる
-(\cref{proposition-euler-to-bertini})。
-この観点を基に\cref{theorem-rr-euler-surface}
-を一般化する(\cref{theorem-rr-bertini-surface})。
+Instead, we will see that we can deduce
+\cref{conjecture-rr-bertini} from 
+\cref{conjecture-rr-euler} and 
+a conjecture about the Todd class of tropical 
+manifolds (\cref{conjecture-grr-divisor})
+in \cref{proposition-euler-to-bertini}.
+From this observation, we will
+generalize \cref{theorem-rr-euler-surface}
+to \cref{theorem-rr-bertini-surface}.
 \begin{remark}
-$D,D'$が空集合のとき、
-\cref{conjecture-rr-bertini}は、
-\cite[Conjecture 6.13]{demedrano2023chern}
-と同等である。また、$D'$が空集合で$D$が空ではないとき、
-\cref{conjecture-rr-bertini}は、
-\cref{conjecture-rr-c-euler}と同等であり、
-$D$が空集合で$D'$が空ではないとき、
-\cref{conjecture-rr-bertini}は、
-\cref{conjecture-rr-euler}と同等である。
-よって\cref{conjecture-rr-bertini}は上述の
-三つの予想を一般化したものとみなすことができる。
-また、\cref{conjecture-rr-bertini} の重要な点は、
-\eqref{equation-rr-bertini} の右辺はホモロジカルな
-データの不変量として得られていると解釈することができ、
-\cref{remark-c-infinity-divisor}で説明する関係を
-踏まえるとミラー対称性と深い関係があると期待できる点である。
+If both $D$ and $D'$ is empty, then
+\cref{conjecture-rr-bertini} is equivalent to
+\cite[Conjecture 6.13]{demedrano2023chern}.
+\cref{conjecture-rr-bertini} is equivalent to
+\cref{conjecture-rr-c-euler} when 
+$D'$ is empty and $D$ is not.
+\cref{conjecture-rr-euler} is 
+equivalent to
+\cref{conjecture-rr-c-euler} when 
+$D$ is empty and $D'$ is not.
+Therefore, we can consider 
+\cref{conjecture-rr-bertini} as a generalization
+of the three conjecture above.
+Moreover, it is important that 
+the RHS of \eqref{equation-rr-bertini} 
+can be considered as a certain homological data.
+This data also related with the study in 
+\cite{tsutsui2023graded}, so we expect 
+\cref{conjecture-rr-bertini} is highly related
+with homological mirror symmetry.
 \end{remark}
 
-\subsection{本論文のアウトライン}
+\subsection{Outline of this paper}
+In \cref{section-on-rr-euler}, we mainly
+discuss \cref{conjecture-rr-euler} and
+give a proof of \cref{theorem-rr-euler-surface}.
+In \cref{section-on-rr-bertini}, we mainly
+discuss \cref{conjecture-rr-bertini,proposition-euler-to-bertini}.
+We also give a generalization of
+\cref{theorem-rr-euler-surface}.
 
+\subsection*{Acknowledgement}
+I would like to thank Kazushi Ueda for his advice
+and encouragement. This work was partially supported 
+by JSPS KAKENHI Grant Number JP21J14529 and JP21K18575.
 
-
-\section{証明の準備}
-
-ここでは、本論文で必要な
-トロピカル多様体の
-前提知識を
-\cite{shaw2011tropical,MR3330789,mikhalkin2018tropical,MR4637248,demedrano2023chern}
-を参考に整理する。
-(必要に応じて、別の文献も引用する。)
-本論文の後半を記述する上での事情から、
-\cite{MR4637248}による
-層理論的な定式化を主に採用することとする。
+\section{On \cref{conjecture-rr-euler}}
+\label{section-on-rr-euler}
+\subsection{Tropical manifolds}
+In this subsection, we recall about 
+the theory of tropical manifolds from
+\cite{shaw2011tropical,MR3330789,mikhalkin2018tropical,MR4637248,demedrano2023chern}.
+We also recall it from other references if necessary.
+We mainly follow the sheaf theoretic approach of
+tropical manifolds in \cite{MR4637248}.
+For simplicity, we use 
 便宜上、本論文でのトロピカル多様体の定義は
 \cite[Definition 6.1]{gross2019sheaftheoretic}
 を採用し、finite type に関する条件
@@ -1028,7 +1040,7 @@ $X$ を連結かつコンパクトな整アフィン多様体とし、
 $D$ を余次元$1$のトロピカル部分多様体とする。	
 \end{corollary}
 
-\begin{remark}[{特異点つき整アフィン多様体の場合}]
+\begin{remark}[{Integral affine manifolds with singularities}]
 \label{remark-iass}
 \cref{conjecture-rr-euler}や
 \cref{proposition-divisor-poincare}
@@ -1555,7 +1567,8 @@ specialization map と何らかの意味で整合的であると期待するこ�
 \end{remark}
 
 
-\section{その他の例}
+\section{On \cref{conjecture-rr-bertini}}
+\label{section-on-rr-bertini}
 \cite{demedrano2023chern}
 トロピカル多様体の Chern 類は、ベクトル束の
 理論の直接的な類似として定義されていないため、
