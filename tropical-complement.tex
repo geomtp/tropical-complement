@@ -697,39 +697,44 @@ We also recall it from other references if necessary.
 We mainly follow the sheaf theoretic approach of
 tropical manifolds in \cite{MR4637248}.
 For simplicity, we use 
-便宜上、本論文でのトロピカル多様体の定義は
-\cite[Definition 6.1]{gross2019sheaftheoretic}
-を採用し、finite type に関する条件
-(e.g. \cite[Definition 7.1.14]{mikhalkin2018tropical} や
-\cite[Definition 2.3 (4)]{demedrano2023chern})
-は課さないこととする。トロピカル多様体がコンパクト
-なら finite type に関する条件は気にする必要はない。
+For simplicity, we adopt the definition of
+tropical manifolds as used in \cite[Definition 6.1]{gross2019sheaftheoretic},
+and we will not impose conditions related to finite type 
+(e.g., \cite[Definition 7.1.14]{mikhalkin2018tropical} 
+or \cite[Definition 2.3 (4)]{demedrano2023chern}).
+If a tropical manifold is compact, we need not
+taking care of the condition of finite type. 
+Since every tropical manifold is paracompact and
+locally contractible, the singular cohomology
+of it is isomorphic to the sheaf cohomology
+of the constant sheaf on it, so we identify
+the two cohomologies.
 
 \begin{notation}
-本文書での
-有理多面空間 $(X,\mathcal{O}_X^{\times})$ 
-\cite[Definition 2.2]{MR4246795} の
-次元$\dim X$とは、$X$の局所コンパクト Hausdorff 空間
-の次元\cite[Chapter III. Definition 9.4]{MR842190}
-のことであり、点 $x\in X$ に対して
-$\dim_x X$ を $X$ の $x$ における局所次元と呼ぶ
-\cite[Chapter III. Definition 9.10]{MR842190}。
-有理多面空間の定義から $X$ が空ではなければ、
-$\dim_x X$ は非負整数である。
-有理多面空間
-$(X,\mathcal{O}_X^{\times})$
-が、純次元的(pure dimensional)
-とは、任意の点 $x\in X$ に対して
-$\dim X=\dim_x X$ であることをいう。
-これらの定義は、
-\cite[Definition 7.1.1]{mikhalkin2018tropical}
-と整合的である。
+Throughout this paper, $\mathbb{T}\deq 
+\mathbb{R}\cup\{-\infty\}$.
+Let $(X,\mathcal{O}_X^{\times})$ be a rational
+polyhedral space \cite[Definition 2.2]{MR4246795}.
+The \emph{dimension} $\dim X$ of $X$ is 
+the homological dimension of locally compact
+Hausdorff spaces (e.g.
+\cite[Chapter III. Definition 9.4]{MR842190}).
+The \emph{local dimension} of $X$ at $x\in X$
+will be denoted by $\dim_x X$
+\cite[Chapter III. Definition 9.10]{MR842190}.
+A rational polyhedral space $(X,\mathcal{O}_X^{\times})$
+is \emph{pure dimensional} if $\dim X$ is finite and
+$\dim X=\dim_x X$ for any $x\in X$.
+These definitions are compatible with
+\cite[Definition 7.1.1]{mikhalkin2018tropical}.
 \end{notation}
 
 \begin{remark}
-有理多面空間はパラコンパクトかつ局所可縮である。
-特に、定数層のコホモロジーと
-特異コホモロジーが同型である。
+Every rational polyhedral space
+is paracompact and locally contractible.
+In particular, the singular cohomology of it 
+is isomorphic to the sheaf cohomology of
+the constant sheaf on it.
 有理多面空間が
 boundaryless もしくは
 トロピカル多様体であるときは自明である。
@@ -759,19 +764,23 @@ subanalytic set に三角形分割が存在すること
 存在定理は、$o$-極小構造の理論によってより一般化されている。
 (詳しくは、\cite[Theorem II]{MR1463945} などを見よ。)
 \end{remark}
+Let $(X,\mathcal{O}_X^{\times})$ be a rational polyhedral space.
+An \emph{atlas} means a family 
+$\{(U_i,\psi_i)\}_{i\in I}$ of charts 
+$\psi_i\colon U_i\to V_i (\subset \mathbb{T}^{n_i})$
+\cite[Definition 2.2]{MR4637248}
+such that $\bigcup_{i\in I}U_i=X$ 
+(cf. \cite[Definition 2.3]{demedrano2023chern}).
+If $(X,\mathcal{O}_X^{\times})$ is a tropical manifold
+in the sense of \cite[Definition 6.1]{gross2019sheaftheoretic},
+there exists an atlas $\{(U_i,\psi_i)\}_{i\in I}$
+such that for every chart $\psi_i \colon U_i \to V_i 
+(\subset \mathbb{T}^{n_i})$,
+$V_i$ is an open subset of $L_M\times \mathbb{T}^{m_i}$
+($m_i\in \mathbb{Z}_{\geq 0}$) where 
+$L_M$ is the support of
+the Bergman fan for some loopless matroid $M$. 
 
-\cite{demedrano2023chern}に倣い、
-有理多面空間 $(X,\mathcal{O}_X^{\times})$
-全体を被覆するチャートの集まり
-$\{(U_i,\psi_i)\}_{i\in I}$を
-$(X,\mathcal{O}_X^{\times})$のアトラスと呼ぶこととする。
-有理多面空間$(X,\mathcal{O}_X^{\times})$ が
-\cite[Definition 6.1]{gross2019sheaftheoretic}
-の意味でトロピカル多様体であるとき、各チャート
-$\psi_i\colon U_i\to V_i(\subset \underline{\mathbb{R}}^{n_i})$
-の$V_i$が$L_M\times \underline{\mathbb{R}}^{r_i}$の開集合
-となるようなアトラス$\{(U_i,\psi_i)\}_{i\in I}$を
-取ることができる。
 
 \cite[Definition 2.14]{demedrano2023chern}
 に倣い、本文における部分有理多面空間
@@ -780,38 +789,42 @@ $\psi_i\colon U_i\to V_i(\subset \underline{\mathbb{R}}^{n_i})$
 
 
 \begin{definition}
-
-$(X,\mathcal{O}_X^{\times})$ を有理多面空間とし、
-$Y$ を $X$ の部分空間とする。
-有理多面空間 $(Y,\mathcal{O}_Y^{\times})$ が 
-$(X,\mathcal{O}_X^{\times})$ の
-部分有理多面空間であるとは、
-任意の点 $x\in Y$ に対して、$x$ を含む
-$X$ のチャート $\psi \colon U\to \underline{\mathbb{R}}^{n}$
-が存在し、$Y$ への制限 
-$\psi|_{U\cap Y}\colon U\cap Y \to \underline{\mathbb{R}}^{n}$
-が $Y$ のチャートであることを言う。
+Let 
+$(X,\mathcal{O}_X^{\times})$ be a rational polyhedral space
+and $Y$ a subspace of $X$.
+A rational polyhedral space $(Y,\mathcal{O}_Y^{\times})$ is 
+a \emph{rational polyhedral subspace} of
+$(X,\mathcal{O}_X^{\times})$ if 
+for any $x\in Y$, there exists an chart
+$\psi \colon U \to V (\subset \mathbb{T}^{n})$
+of $X$
+such that $x\in U$ and the restriction
+$\psi|_{U\cap Y}\colon U\cap Y\to 
+\psi(U\cap Y)$ is also a chart of $Y$.
 \end{definition}
-
-$(X,\mathcal{O}_X^{\times})$ を有理多面空間とし、
-$(Y,\mathcal{O}_Y^{\times})$ を $Y=X$ かつ、
-恒等写像 $\opn{id}\colon Y\to X$ が有理多面空間としての
-射でありながら、$(Y,\mathcal{O}_Y^{\times})$ が
-$(X,\mathcal{O}_X^{\times})$ の部分有理多面空間とは
-ならない場合があることも注意せよ。(そのような例は
-Frobenious 射のトロピカル幾何的類似によって構築できる。)
-有理多面空間 $(X,\mathcal{O}_X^{\times})$ の局所多面的な
-閉集合は自然と部分有理多面空間の構造を持つ。
-
-$(X,\mathcal{O}_X^{\times})$ を有理多面空間
-$(Y,\mathcal{O}_Y^{\times})$ を $X$ の
-部分有理多面空間とする。
-$\iota\colon Y \to X$ を包含写像としたとき、
-各点 $x\in Y$ ごとに局所錐の包含射
+We note that there exists rational polyhedral spaces
+$(X,\mathcal{O}_X^{\times})$
+and $(Y,\mathcal{O}_Y^{\times})$
+such that $X=Y$ and the identity map of $X$ 
+is a morphism from $(Y,\mathcal{O}_Y^{\times})$ to
+$(X,\mathcal{O}_X^{\times})$ but not an isomorphism.
+(We can construct such an example from a tropical analog of
+Frobenious morphism.)
+Every locally polyhedral set of a rational polyhedral space
+\cite[Definition 2.4 (d)]{MR4637248} has a natural 
+structure of a rational polyhedral subspace.
+Let $(X,\mathcal{O}_X^{\times})$ be a rational
+polyhedral space and $(Y,\mathcal{O}_Y^{\times})$
+a rational polyhedral subspace.
+For every $x\in Y$, 
+the inclusion map $\iota\colon Y\to X$ induces
+an injection 
 $\iota_{*,x}\colon \opn{LC}_x Y\to \opn{LC}_x X$
-が自然と誘導される。
-(局所錐の定義は\cite[\textsection 2.2]{MR4637248}
-を見よ。)
+from the local cone $\opn{LC}_x Y$ of $Y$ at $x$ to 
+that of $X$ at $x$.
+(See \cite[\textsection 2.2]{MR4637248} for
+the definition of the local cone.)
+
 
 さらに、$(X,\mathcal{O}_X^{\times})$ と
 $(Y,\mathcal{O}_Y^{\times})$ が
@@ -1070,16 +1083,57 @@ Serre 双対性を考えると$M$上の因子$D$に対して
 期待できる。
 \end{remark}
 
-\begin{example}[{トロピカル射影空間}]
+\begin{example}[{\cite[Example 2.11]{demedrano2023chern}}]
 \label{example-TPn}
-$\mathbb{T}P^{n}$ をトロピカル射影空間とし、
-$F$を$d\Delta_{n}$をNewton多面体とするトロピカル
-多項式とする。トロピカル超曲面 
-$V_{\mathbb{T}}(F)$ が滑らかとは、$F$ が定義する正則
-多面体分割が、unimodularな三角形分割になることであった。
-(例えば、\cite[\textsection 4.5]{MR3287221} を
-参照。)
-このとき、
+Let $e_i$ the $i$-th coordinate vector of $\mathbb{R}^n$
+and $\Delta_{n}$ be the standard simplex generated by
+$e_i$ ($i=1,\ldots,n$) and the origin of $\mathbb{R}^n$.
+The normal fan $\Sigma$ of $\Delta_{n}$ induces 
+a compactification $X_{\Sigma}$ of $\mathbb{R}^n$.
+The space $X_{\Sigma}$ is a typical example of
+tropical toric varieties \cite{MR2428356,MR2511632}
+and $X_{\Sigma}$ is
+isomorphic to the tropical projective
+$n$-space $\mathbb{T}P^{n}$ \cite[Example 3.10]{MR2275625}.
+From a direct calculation of the \v{C}ech cohomology of
+$\mathcal{O}_{X_{\Sigma}}^{\times}$, we get 
+$H^{1}(X;\mathcal{O}_{X_{\Sigma}}^{\times})
+\simeq H^{1,1}(X;\mathbb{Z})\simeq \mathbb{Z}$.
+In general, the Picard group of toric 
+schemes over semifields is studied in \cite{MR4016643}. 
+(See also  and
+\cite[Chapter 3]{mikhalkin2018tropical} for more detail
+about tropical toric varieties.)
+Let $f$ be a Laurent polynomial on $\mathbb{R}^{n}$
+whose Newton polytope is $d\Delta_{n}$.
+The closure $\overline{V_{\mathbb{T}}(f)}$ of 
+$V_{\mathbb{T}}(f)$ in $X_{\Sigma}$
+is can be considered
+as an analog of a hypersurface of projective $n$-space of
+a homogenous polynomial of degree $d$
+(see also \cite[Definition 3.4.6]{mikhalkin2018tropical}).
+The degree of $\overline{V_{\mathbb{T}}(f)}$
+on $\mathbb{T}P^n$ is equal to 
+that of
+The tropical hypersurface $V_{\mathbb{T}}(f)$ of $f$
+is \emph{smooth} (in the sense of
+\cite[\textsection 4.5]{MR3287221})
+if the regular subdivision of $f$ is unimodular.
+If $f$ the regular subdivision of $f$ is unimodular,
+then $\overline{V_{\mathbb{T}}(f)}$ is a tropical manifold.
+Let $d\Delta_n(\mathbb{Z})$ be the set of lattice points
+in $d\Delta_n(\mathbb{Z})$ and 
+$\opn{int}(d\Delta_n)(\mathbb{Z})$ the set of lattice points
+in the (relative) interior of $d\Delta_n$.
+It is well-known that the complement 
+$\mathbb{T}P^{n}\setminus
+\overline{V_{\mathbb{T}}(f)}$ is homotopy equivalent
+to $d\Delta_n(\mathbb{Z})$ and 
+$\overline{V_{\mathbb{T}}(f)}$ is homotopy equivalent
+to the $\sharp (\opn{int}(d\Delta_n)(\mathbb{Z}))$-th
+bouquet of $(n-1)$-spheres
+(e.g. \cite[Proposition 3.1.6]{MR3287221}
+or \cite[Proposition 3.4.12]{mikhalkin2018tropical}).
 $\mathbb{T}P^{n}\setminus
 V_{\mathbb{T}}(F)$の各連結成分が$d\Delta_n$内の格子点集合と
 全単射になっていることは有名である
