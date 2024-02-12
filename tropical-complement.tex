@@ -232,9 +232,6 @@ Tokyo, 153-8914, Japan}
 %\date{\today}
 
 \begin{document}
-
-\maketitle
-
 \begin{abstract}
 % 1. de Medrano, Rinc\'on and Shaw defined 
 % the Chern classes and the Todd classes on
@@ -254,31 +251,10 @@ Tokyo, 153-8914, Japan}
 % In particular, we prove it and 
 % its generalization when $X$ is a compact
 % tropical surface admitting a Delzant face structure.
-
-% 2. de Medrano, Rinc\'on and Shaw defined 
-% the Chern classes and the Todd classes on
-% tropical manifolds as an extension
-% of their theory of
-% the Chern--Schwartz--Macpherson cycles on matroids.
-% This makes it possible to define
-% the Riemann--Roch number
-% of tropical Cartier divisors
-% on compact tropical manifolds.
-% If $D$ is a tropical submanifold of codimension 
-% $1$ in a compact tropical surface $X$ admitting
-% a Delzant face structure, then 
-% the Riemann--Roch number $\opn{RR}(X,-D)$ is 
-% equal to the Euler characteristic with compact support 
-% of the complement $X\setminus D$ from their
-% tropical analogs of adjunction formula and
-% Noether formula.
-% In this paper, we prove that 
-% the Riemann--Roch number $\opn{RR}(X,D)$ is equal
-% to the topological Euler characteristic of 
-% $X\setminus D$
-% when $D$ is in moderate position.
-
 \end{abstract}
+
+\maketitle
+
 \section{Introduction}
 \subsection{Background}
 Thanks to the theory of the Chern classes of
@@ -297,8 +273,8 @@ a compact (purely) $n$-dimensional tropical manifold $X$:
 \int_{X}\opn{ch}(\mathcal{L}(D))\opn{td}(X).
 \end{align}
 where $\mathcal{L}(D)$ is the 
-tropical line bundle associated with $D$
-, $\opn{ch}(\mathcal{L}(D))\deq 
+tropical line bundle associated with $D$,
+$\opn{ch}(\mathcal{L}(D))\deq 
 \sum_{i=0}^{\infty}\frac{c_1(\mathcal{L}(D))^{i}}{i!}$
 is the Chern character of $\mathcal{L}(D)$
 and $\int_X$ is the trace map of $X$.
@@ -312,15 +288,15 @@ on a smooth projective variety
 corresponds to
 the Euler characteristic of the sheaf cohomology
 of the invertible sheaf 
-assocaited with $D$ by the Hirzebruch--Riemann--Roch theorem
+associated with $D$ by the Hirzebruch--Riemann--Roch theorem
 or the Grothendieck--Riemann--Roch theorem.
 
 In tropical geometry, invertible sheaves,
-paricularly the structure sheaf
+particularly the structure sheaf
 on tropical manifolds
 (e.g. \cite[\textsection 1]{MR3330789}) 
-do not form sheaves of abelian groups.
-Consequently, there is no a direct
+do not form sheaves of Abelian groups.
+Consequently, there is no direct
 analog of the Euler characteristic of 
 the sheaf cohomology of 
 tropical Cartier divisors now.
@@ -331,7 +307,7 @@ and Mikhalkin--Zharkov \cite{MR2457739}
 independently
 as a generalization of the 
 Riemann--Roch theorem for finite graphs
-establised by Baker--Norine \cite{MR2355607}. 
+established by Baker--Norine \cite{MR2355607}. 
 The generalization of these results and
 their derivatives have developed in works such as 
 \cite{MR3046301,MR4251610,MR4229604,MR4444458,MR4512397}.
@@ -347,7 +323,7 @@ the tropical geometric meaning of $\opn{RR}(X;D)$ is
 important.
 At least, there exists a common interpretation
 for a geometric meaning of the Riemann--Roch number
-$\opn{RR}(X;0)$ for the trival divisor.
+$\opn{RR}(X;0)$ for the trivial divisor.
 In \cite[Conjecture 6.13]{demedrano2023chern},
 de Medrano, Rinc\'on and Shaw conjectured
 that $\opn{RR}(X;0)$ for a compact 
@@ -452,7 +428,7 @@ Therefore, if $X$ admits a Delzant face structure
 \cref{conjecture-rr-c-euler} is true
 by \cite[Theorem 6.3]{demedrano2023chern}.
 (We will see the compatibility of different definition of
-intersection numbers which is needed to prove it in 
+intersection numbers which is needed to prove it in
 \cref{proposition-cycle-chern}.)
 \end{example}
 
@@ -510,12 +486,12 @@ is true.
 One of interesting points of
 \cref{conjecture-rr-euler} is that
 it does \emph{not} seem that there is
-no a direct evidence of \cref{conjecture-rr-euler}
+no direct evidence of \cref{conjecture-rr-euler}
 derived from usual algebraic geometry.  
 For instance, the complement of two points 
 on a tropical elliptic curve
 $\mathbb{R}/\mathbb{Z}$ is disconnected.
-This feature is far from that of the analyfication of Zariski open subsets of
+This feature is far from that of the analytification of Zariski open subsets of
 algebraic varieties.
 (In fact, Mikhalkin defined
 a tropical analog of the open subset of
@@ -568,8 +544,8 @@ From this point,
 we will consider an extension of both
 \cref{conjecture-rr-c-euler,conjecture-rr-euler}.
 We recall well-known properties in algebraic geometry again.
-Let $X$ be a nonsingular projective varieties,
-$D$ a monsingular divisor on $X$ and
+Let $X$ be a nonsingular projective variety,
+$D$ a nonsingular divisor on $X$ and
 $\iota\colon D\to X$ the inclusion of $D$.
 For any divisor $D'$ on $X$, we have
 the short exact sequence:
@@ -587,7 +563,7 @@ we get
 \end{align}
 
 If $D'$ is nonsingular and the intersection
-$D'\cap D$ is an nonsingular effective divisor
+$D'\cap D$ is a nonsingular effective divisor
 on $D$, then
 \begin{align}
 \chi(D;\iota^{*}\mathcal{O}_X(D'))=\chi(D;\mathcal{O}_D(D'\cap D)).
@@ -614,7 +590,7 @@ Let $X$ be a compact $n$-dimensional
 tropical manifold. 
 Let $D,D'$ be tropical submanifolds of codimension $1$
 on $X$ or empty.
-Asuume $D$ and $D'$ satisfy the following conditions:
+Assume $D$ and $D'$ satisfy the following conditions:
 \begin{enumerate}
 \item $D'$ is in moderate position on $X$.
 \item the restrction $D'|_{D}$ of $D'$ on $D$ is 
@@ -698,8 +674,9 @@ We mainly follow the sheaf theoretic approach of
 tropical manifolds in \cite{MR4637248}.
 For simplicity, we use 
 For simplicity, we adopt the definition of
-tropical manifolds as used in \cite[Definition 6.1]{gross2019sheaftheoretic},
-and we will not impose conditions related to finite type 
+rational polyhedral space
+as used in \cite[Definition 6.1]{gross2019sheaftheoretic},
+but we will not impose conditions related to finite type 
 (e.g., \cite[Definition 7.1.14]{mikhalkin2018tropical} 
 or \cite[Definition 2.3 (4)]{demedrano2023chern}).
 If a tropical manifold is compact, we need not
@@ -764,13 +741,38 @@ subanalytic set に三角形分割が存在すること
 存在定理は、$o$-極小構造の理論によってより一般化されている。
 (詳しくは、\cite[Theorem II]{MR1463945} などを見よ。)
 \end{remark}
-Let $(X,\mathcal{O}_X^{\times})$ be a rational polyhedral space.
-An \emph{atlas} means a family 
+Let $(X,\mathcal{O}_X^{\times})$ be a rational polyhedral space
+and $\opn{LC}_x X$ the local cone of $X$ at $x$ ($\in X$)
+\cite[\textsection 2.2]{MR4637248}.
+Follwoing \cite[Definition 7.1.8]{mikhalkin2018tropical} and 
+\cite[Definition 2.3]{demedrano2023chern},
+an \emph{atlas} of $X$ means a family 
 $\{(U_i,\psi_i)\}_{i\in I}$ of charts 
 $\psi_i\colon U_i\to V_i (\subset \mathbb{T}^{n_i})$
 \cite[Definition 2.2]{MR4637248}
-such that $\bigcup_{i\in I}U_i=X$ 
-(cf. \cite[Definition 2.3]{demedrano2023chern}).
+such that $\bigcup_{i\in I}U_i=X$.
+
+Let $(X,\mathcal{O}_X^{\times})$ be
+a rational polyhedral space which is regular at
+infinity \cite[\textsection 6.1]{MR4637248}
+(see also \cite[Definition 1.2]{MR3330789}
+and \cite[Definition 7.2.4]{mikhalkin2018tropical}).
+Then, every $x\in X$ has an open neighborhood
+which is isomorphic to an open subset of 
+$\opn{LC}_x X\times \mathbb{T}^n$ for some
+$n\in \mathbb{Z}_{\geq 0}$.
+Let $\Omega_{\mathbb{Z},X}\deq
+\mathcal{O}_X^{\times}/\mathbb{R}_X$ be
+the sheaf of tropical $1$-forms and
+$H^{1,0}(X;\mathbb{Z})$ the global section of 
+$\Omega_{\mathbb{Z},X}$.
+Since every local cone has a polyhedral fan structure,
+so $H^{1,0}(\opn{LC}_x X\times \mathbb{T}^n;\mathbb{Z})
+\simeq H^{1,0}(\opn{LC}_x X;\mathbb{Z})\simeq 
+(\Omega_{\mathbb{Z},X})_x$.
+
+Let $\psi_x\colon U_x \to \opn{LC}_x X\times \mathbb{T}^n$
+
 If $(X,\mathcal{O}_X^{\times})$ is a tropical manifold
 in the sense of \cite[Definition 6.1]{gross2019sheaftheoretic},
 there exists an atlas $\{(U_i,\psi_i)\}_{i\in I}$
@@ -779,14 +781,41 @@ such that for every chart $\psi_i \colon U_i \to V_i
 $V_i$ is an open subset of $L_M\times \mathbb{T}^{m_i}$
 ($m_i\in \mathbb{Z}_{\geq 0}$) where 
 $L_M$ is the support of
-the Bergman fan for some loopless matroid $M$. 
+the Bergman fan for some loopless matroid $M$.
 
 
-\cite[Definition 2.14]{demedrano2023chern}
-に倣い、本文における部分有理多面空間
-(rational polyhedral subspace)
-の定義を以下にしておく。
+and $\opn{sed}_X$ the sedentarity function on $X$
+\cite[Definition 7.2.6]{mikhalkin2018tropical}
+(see also \cite[Definition 2.4]{demedrano2023chern}).
+From definition, for any $x\in X$
+\begin{align}
+\opn{sed}_X(x)+\dim \opn{LC}_x X=\dim_x X.
+\end{align}
+The sedentarity function
+$\opn{sed}_X$ is upper semiconstant, so 
+$\opn{sed}_X$ is upper semicontinuous.
+特に次の集合たちは、
+$X$の閉部分集合である
+(上半連続関数の定義は例えば\cite[p.287]{MR463157}
+を見よ)。
+\begin{align}
+X^{[\geq k]}\deq \{p\in X\mid \opn{sed}_X(p)\geq k\},
+\quad 
+X_{\infty}\deq X^{[\geq 1]}.
+\end{align}
+$X_{\infty}$ は、
+$X$の境界(boundary)
+と呼ばれ、
+$\partial X$と書く場合がある。
+($X$がトロピカルトーリック多様体のとき、
+$X_{\infty}$が$X$の境界つき
+位相多様体の境界となっていることと、
+代数幾何におけるトーリック境界の
+トロピカル類似になっていることに
+由来していると思われる。)
 
+In this paper, a rational polyhedral subspace is meant
+in the following sense.
 
 \begin{definition}
 Let 
@@ -809,7 +838,7 @@ such that $X=Y$ and the identity map of $X$
 is a morphism from $(Y,\mathcal{O}_Y^{\times})$ to
 $(X,\mathcal{O}_X^{\times})$ but not an isomorphism.
 (We can construct such an example from a tropical analog of
-Frobenious morphism.)
+Frobenius morphism.)
 Every locally polyhedral set of a rational polyhedral space
 \cite[Definition 2.4 (d)]{MR4637248} has a natural 
 structure of a rational polyhedral subspace.
@@ -824,14 +853,11 @@ from the local cone $\opn{LC}_x Y$ of $Y$ at $x$ to
 that of $X$ at $x$.
 (See \cite[\textsection 2.2]{MR4637248} for
 the definition of the local cone.)
-
-
-さらに、$(X,\mathcal{O}_X^{\times})$ と
-$(Y,\mathcal{O}_Y^{\times})$ が
-regular at infinity 
-(\cite[\textsection 6.1]{MR4637248} と
-\cite[Definition 1.2]{MR3330789} を見よ) 
-であるとき、各点 $x$ の近傍の射はある射
+Besides, if
+$(X,\mathcal{O}_X^{\times})$ and
+$(Y,\mathcal{O}_Y^{\times})$ are
+regular at infinity, 
+the $x$
 $f_{x}\colon \opn{LC}_x Y\times 
 \underline{\mathbb{R}}^{r_{\alpha}}
 \to \opn{LC}_x X\times \underline{\mathbb{R}}^{r_{\alpha'}}$
@@ -870,8 +896,10 @@ $i \colon L_M\to L_N$
 と同型であるものをいう。
 \end{definition}
 
-トロピカルサイクルの台は、閉部分集合なので
-トロピカル部分多様体は常に閉部分集合である。
+The support of every tropical cycle in a given
+rational polyhedral space $(X,\mathcal{O}_X^{\times})$ is
+a closed subset, so every tropical submanifold is
+a closed set.
 
 \begin{remark}
 \cite[Example 2.15]{demedrano2023chern}でも強調されているように、
@@ -890,40 +918,7 @@ $i \colon L_M\to L_N$
 
 \end{remark}
 
-$X$をトロピカル多様体のとし、
-$\opn{sed}_X\colon 
-X\to \mathbb{Z}$ を
-$X$ 上の sedentarity 関数
-\cite[Definition 7.2.6]{mikhalkin2018tropical}
-とする。
-(\cite[Definition 2.4]{demedrano2023chern}
-もみよ。)
-定義より、任意の点 $x\in X$ に対して
-次の等式が成り立つ。
-\begin{align}
-\opn{sed}_X(x)+\dim \opn{LC}_x X=\dim_x X.
-\end{align}
-また $\opn{sed}_X$ は、
-上半連続関数である。
-特に次の集合たちは、
-$X$の閉部分集合である
-(上半連続関数の定義は例えば\cite[p.287]{MR463157}
-を見よ)。
-\begin{align}
-X^{[\geq k]}\deq \{p\in X\mid \opn{sed}_X(p)\geq k\},
-\quad 
-X_{\infty}\deq X^{[\geq 1]}.
-\end{align}
-$X_{\infty}$ は、
-$X$の境界(boundary)
-と呼ばれ、
-$\partial X$と書く場合がある。
-($X$がトロピカルトーリック多様体のとき、
-$X_{\infty}$が$X$の境界つき
-位相多様体の境界となっていることと、
-代数幾何におけるトーリック境界の
-トロピカル類似になっていることに
-由来していると思われる。)
+
 さらに言えば、$\opn{sed}_X$ は
 semiconstant な関数なので、
 
@@ -996,7 +991,7 @@ $C$の多面体的錐の扇構造を与える。
 を見よ。)
 \end{remark}
 
-\begin{definition}[{中庸な位置}]
+\begin{definition}
 \label{definition-permissible-position}
 $X$をトロピカル多様体とし、$Y$を$X$
 トロピカル部分多様体(tropical submanifold)とする。
@@ -1262,16 +1257,15 @@ C . C=&\opn{deg}(K_C)-K_S . C \\
 
 
 \begin{proof}[{Proof of \cref{theorem-rr-euler-surface}}]
-
-$j\colon S\setminus C\to S$ を包含写像とし、
-$a_S$ を $S$ から一点空間への連続写像とする。
-このとき、次の等式が成り立つ。
+Let
+$j\colon S\setminus C\to S$ be an inclusion map.
+Then, the following equation holds:
 \begin{align}
-\chi(S\setminus C)=\chi(Ra_{S*}Rj_*\mathbb{Q}_{S\setminus C}) 
+\chi(S\setminus C)=\chi(Rj_*\mathbb{Q}_{S\setminus C})
+\deq \chi(\mathbb{H}^{\bullet}(S;Rj_*\mathbb{Q}_{S\setminus C})).
 \end{align}
-$C$が$S$上中庸な位置にあるとき、
-\cref{proposition-self-intersection}
-の証明で見た局所錐の構造の分類より、
+If $C$ is in moderate position on $S$, then
+the classification of the local cone of $C$ gives 
 \begin{align}
 (Rj_*\mathbb{Q}_{S\setminus C})_x
 \simeq
@@ -1282,36 +1276,32 @@ $C$が$S$上中庸な位置にあるとき、
 \mathbb{Q}^2[0], \text{ otherwise.}  
 \end{cases}  
 \end{align}
-となっている。
-とくに、$Rj_*\mathbb{Q}_{S\setminus C}\simeq
-j_*\mathbb{Q}_{S\setminus C}$ である。
-$j^{-1}j_*=\opn{id}$ なので、
-\cite[Proposition 2.3.6 (v)]{MR1299726} より、
+In particular, $Rj_*\mathbb{Q}_{S\setminus C}\simeq
+j_*\mathbb{Q}_{S\setminus C}$.
+Since $j^{-1}j_*=\opn{id}_{S\setminus C}$,  
+from \cite[Proposition 2.3.6 (v)]{MR1299726}
+there exists the following short exact sequence:
 \begin{align}
 0\to j_!\mathbb{Q}_{S\setminus C} 
 \to j_* \mathbb{Q}_{S\setminus C}
 \to (j_*\mathbb{Q}_{S\setminus C})_{C} \to 0
 \end{align}
-という層単完全列を持つ。
-特に、
+In particular, we have
 \begin{align}
 \chi(S\setminus C)=
-\chi_c(S\setminus C)+\chi((j_*\mathbb{Q}_{S\setminus C})|_C)
+\chi_c(S\setminus C)+\chi((j_*\mathbb{Q}_{S\setminus C})|_C).
 \end{align}
-となる。
-層の押し出しの定義より
-$(j_*\mathbb{Q}_{S\setminus C})|_C$は、
-$C_{\opn{reg}}$ 上では、$\mathbb{Q}^2$
-を茎とする局所定数層である。
-よって、同様の議論で
+From definition of the pushforward of sheaves, 
+$(j_*\mathbb{Q}_{S\setminus C})|_C$ is locally constant 
+on $C_{\opn{reg}}$ and the stalk of it is $\mathbb{Q}^2$.
+Therefore, we also have
 \begin{align}
 \chi((j_*\mathbb{Q}_{S\setminus C})|_C)=
 2\chi_c(C_{\mathrm{reg}})+
 3\chi_c(C_{\mathrm{sing}}\cap S_{\mathrm{reg}})+
-2\chi_c(C_{\mathrm{sing}}\cap S_{\mathrm{sing}})
+2\chi_c(C_{\mathrm{sing}}\cap S_{\mathrm{sing}}).
 \end{align}
-と書かれるため、$\chi(S\setminus C)$
-は次のように書くことができる。
+Therefore, 
 \begin{align}
 \label{equation-euler-calculus}
 \chi(S\setminus C)&=
@@ -1322,51 +1312,54 @@ $C_{\opn{reg}}$ 上では、$\mathbb{Q}^2$
 \cap S_{\mathrm{reg}}))\\
 &=\chi_c(S\setminus C)+2\chi_c(C)+
 \chi_c(C_{\mathrm{sing}}
-\cap S_{\mathrm{reg}}) \\
+\cap S_{\mathrm{reg}}) \notag \\
+&=\chi(S)+\chi(C)+\chi(|C.C|) \\
 &=\chi(S)+C.C+\chi(C)
 =\frac{C.(C-K_S)}{2}+\chi(S).
 \end{align}
 \end{proof}
-
+In the proof \cref{theorem-rr-euler-surface}, we gave
+various representations of $\chi(X\setminus S)$.
+All of them are important.
+\eqref{equation-euler-calculus}
 \begin{proof}[{Proof of \cref{corollary-ds-euler-rr}}]
 \cref{theorem-rr-euler-surface} と、
 \cref{proposition-cycle-chern} より示される。
 \end{proof}
 
 \begin{remark}
-\cref{theorem-rr-euler-surface} の
-証明において、$S\setminus C$ の Euler 数を
-計算するために、$Rj_*\mathbb{Q}_{S\setminus C}$
-を定数層に分割して証明を行ったが、これは
-Euler calculus と密接に関係している\cite{MR970076,MR1115569}。
-Euler calculus は構成可能層の Euler 数を計算する
-上で有効な考え方であり、
-\cref{equation-euler-calculus} の右辺は、
-コンパクト台 Euler 標数を符号付き測度の一種とみなし、
-その上で次の$S$上の単関数を
-積分していると解釈することができる。
+In the proof of \cref{theorem-rr-euler-surface},
+we considered $Rj_*\mathbb{Q}_{S\setminus C}$ to calculate
+the Euler characteristic of $S\setminus C$.
+This method is highly related with \emph{Euler calculus}
+\cite{MR970076,MR1115569}.
+Euler calculus is an effective way to calculate
+the Euler characteristic of the sheaf cohomology of
+constructible sheaves. We can consider 
+the Euler characteristic of compact supports of 
+locally closed subsets of $S$
+as an analog of signed measure,
+and the RHS of \cref{equation-euler-calculus} as an
+integration of the following simple function over it
+\cite[(3.4)]{MR1115569}:
 \begin{align}
 \chi(Rj_*\mathbb{Q}_{S\setminus C})(x)\deq \chi((Rj_*\mathbb{Q}_{S\setminus C})_x) 
 \simeq \chi(\varinjlim_{U\ni x} H^{\bullet}((S\setminus C)
-\cap U;\mathbb{Q}))   
+\cap U;\mathbb{Q})), \quad (x\in S).
 \end{align}
-この構成可能関数の $x\in S$ での値を
-$Rj_*\mathbb{Q}_{S\setminus C}$
-の局所 Euler--Poincar\'e 指数と呼ぶ。
-
-Euler calculus はトロピカル多様体上の基本的な
-構成可能層を調べる上でも有効な手段であり、
-tropical Poincar\'e--Hopf の定理
-\cite[Theorem 4.7]{MR4540954} の最初の等式は、
-\cite[Remark 4.8]{MR4540954} でも強調されているように
-トロピカル $p$-form のなす層の全複体 
-$\Omega^{\bullet}_{\mathbb{Z},X}$ に対する Euler integration 
-だと解釈できる。
-解析多様体上の構成可能層の Euler 数が
-付随する構成可能関数の Euler integration に
-よって計算可能であることは、\cite[Theorem 9.7.1]{MR1299726}
-などを見よ。より一般の場合の構成可能層については
-\cite[Chapter 2]{MR2031639} などで解説されている。
+The value $\chi(Rj_*\mathbb{Q}_{S\setminus C})(x)$ is
+called the \emph{local Euler--Poincar\'e index} of 
+$Rj_*\mathbb{Q}_{S\setminus C}$ at $x$.
+Euler calculus is also a useful way to
+investigate other constructible sheaves
+on tropical manifolds.
+As stressed in \cite[Remark 4.8]{MR4540954},
+we can interpret the first equation of 
+the tropical Poincar\'e--Hopf theorem
+\cite[Theorem 4.7]{MR4540954} as 
+the Euler integration of the total complex
+$\Omega^{\bullet}_{\mathbb{Z},X}$ of the sheaves of
+tropical $p$-forms.
 \end{remark}
 % \begin{example}
 % $\opn{deg}(F)=d$, $\opn{deg}(G)=e$とする。
@@ -1379,36 +1372,34 @@ $\Omega^{\bullet}_{\mathbb{Z},X}$ に対する Euler integration
 
 \begin{remark}
 \label{remark-c-infinity-divisor}
-ここでは、\cref{conjecture-rr-euler} と
-\cite{tsutsui2023graded}との関係について少し述べる。
-なお、ここに書かれている内容は
-\cite{tsutsui2023graded}に大きく依存しており、
-本論文の主定理の証明を理解するには不要なので飛ばしても
-構わない。
-イントロで説明したように、コンパクトトロピカル多様体 $X$
-とその部分
-$\chi_c(X\setminus D)=\chi(X)-\chi(D)$ は、
-\cref{equation-anti-effective-divisor} の類似だと
-考えられるため、\cref{conjecture-rr-c-euler} を予想することは
-想像に難くない。
-一方で、\cref{conjecture-rr-euler} を直接示唆する
-代数幾何的な事実を (トーリック多様体などの特殊な場合を除いて)
-筆者は知らない。
-先行研究からわかるように
-トロピカル多様体のトポロジーは Berkovich 空間と関係が
-深いため、\cref{conjecture-rr-c-euler,conjecture-rr-euler}
-は Berkovich 幾何とも深く関係していると期待されるが、
-筆者は執筆時点ではよくわかっていない。
-一方で、\cite{tsutsui2023graded} での研究を踏まえると
-$H^{\bullet}(X\setminus D)$ は、Floer 複体との密接な関係が
-あると期待でき、ミラー対称性を通じて
-複素多様体上の直線束の Euler 数と関連付ける
-ことができると期待できる。以下よりこれを例を用いて
-軽く説明する。
-
-簡単のために、$X$ を $\mathbb{R}/\mathbb{Z}$ とし、$D$ を有限個の
-点集合とする。
-このとき、次の次数つき加群としての同型が成り立つ:
+In this remark, we discuss relationships
+between \cref{conjecture-rr-euler} and 
+\cite{tsutsui2023graded}.
+This remark highly depends on
+\cite{tsutsui2023graded}, and you can
+skip this remark to understand the main theorem of  
+this paper. As explained in the introduction of this paper,
+the Euler characteristic 
+$\chi_c(X\setminus D)\deq \chi_c(X)-\chi_c(D)$ of 
+the complement of a tropical submanifold $D$ on
+a compact tropical manifold $X$ is an analog of  
+\cref{equation-anti-effective-divisor}, so 
+it is natural to expect that \cref{conjecture-rr-c-euler} holds.
+On the other hand, the author does not know some theorem
+in algebraic geometry or Berkovich geometry
+which suggests \cref{conjecture-rr-euler} directly
+as like \cref{conjecture-rr-c-euler}
+(except toric varieties or special cases like them).
+On the other hand, based on the study in \cite{tsutsui2023graded},
+we can expect that 
+$H^{\bullet}(X\setminus D)$ is highly related with
+the theory of Floer cohomology of
+Lagrangian submanifolds, homological mirror symmetry
+and the Strominger--Yau--Zaslow conjecture.
+Below, we will see about it by using examples. 
+For simplicity, let 
+$X$ be $\mathbb{R}/\mathbb{Z}$ and $D$ a finite subset of
+$X$. Then, the following isomorphisms of graded modules hold:
 \begin{align}
 H^{\bullet}(X\setminus D;\mathbb{Z}) 
 &\simeq \bigoplus_{E\in \pi_0(X\setminus D)} 
@@ -1420,159 +1411,208 @@ H^{\bullet}_c(E;\mathbb{Z})
 \simeq \bigoplus_{E\in \pi_0(X\setminus D)} \mathbb{Z}[-1].
 \end{align}
 
-一方で、$D$ を台とする Cartier 因子
-$s_D\in \opn{CDiv}(X)$ が存在し、
-それは $D$の近傍のみ位数$1$で折れている
-$\mathbb{Z}$-affine な関数を局所的に貼り合わせたものとなっており、
-普遍被覆 $\pi\colon \mathbb{R}\to \mathbb{R}/\mathbb{Z}$ 
-による引き戻し $\pi^{*}s_D$ は $\mathbb{R}$ 上の単調増加な
-$\mathbb{Z}$-affine 関数 $f$ の主因子となっている。
-当然であるが、$\opn{deg}(s_D)=\sharp D$ である。
+We can also define similar graded modules
+for $C^{\infty}$-divisors on $X$.
+In \cite{tsutsui2023graded},
+the author proposed the following approach
+inspired from microlocal sheaf theory and
+the Strominger--Yau--Zaslow conjecture.
 
-筆者は \cite{tsutsui2023graded} にて、
-ミラー対称性と超局所層理論のアイデアから代数多様体上の直線束の
-Euler 数の類似を考察する上で次の手法を提案した。
-$\mathcal{A}^{0,0}_X$ を $X$ 上の
-$(0,0)$-superform のなす層
-\cite{MR3903579} とすると、
-次の層完全列が存在する。
+Let $\mathcal{A}^{0,0}_X$ be the sheaf of
+$(0,0)$-superforms on $X$
+\cite[Definition 2.24]{MR3903579}.
+Then, the following exact sequence exists:
+
 \begin{align}
 0\to \mathcal{O}_X^{\times} \to \mathcal{A}^{0,0}_X
 \to \mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times} \to 0
 \end{align}
 
-$\mathcal{A}^{0,0}_X$ は acyclic なので、
-連結準同型
-$H^{0}(X;\mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times})
-\to H^{1}(X;\mathcal{O}_X^{\times})$ は全射である。
-Abel 群 
+Since $\mathcal{A}^{0,0}_X$ is acyclic,
+the connecting homomorphism
+\begin{align}
+H^{0}(X;\mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times})
+\to H^{1}(X;\mathcal{O}_X^{\times}); s\mapsto \mathcal{L}(s).
+\end{align}
+is surjective. The group 
 $\opn{Div}^{\infty}(X)\deq 
 H^{0}(X;\mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times})$
-は、Cartier 因子のなす群の類似物である。
-\cite{tsutsui2023graded} では、
-$\opn{Div}^{\infty}(X)$の元を
-$X$ 上の \emph{$C^{\infty}$-divisor} と呼んでいる。
-$B$ が整アフィン多様体であるとき、$C^{\infty}$-因子から
-Lagrange トーラス束 $\check{f}_B\colon \check{X}(B)\to B$
-の Lagrange 切断を構築することができることから
-$C^{\infty}$-因子は Lagrange 部分多様体の一種の派生と
-見ることができる。
-また、$\mathcal{L}$ を $D$ が定義する直線束とすると、
-上述の連結準同型によって $\mathcal{L}$ に移る
-$C^{\infty}$-因子を一つとることができる。
-今回の場合は、上で定義した $s_D$ の折れているところを
-適当な単調関数で滑らかに置き換えることで同じ
-$H^{1}(X;\mathcal{O}_X^{\times})$ の元を与える
-$C^{\infty}$-因子 $s_{\mathcal{L}}$ を得ることができる。
-特に、$s_0\cap s_{\mathcal{L}}$が、$X\setminus D$ の中に
-含まれ、任意の
-$E\in\pi_0(X\setminus D)$ に対して
-$(s_0\cap s_{\mathcal{L}})\cap E$ が一点 $p_{E}$ となるように
-とることができる。このとき、$s_{\mathcal{L}}$ は、
-\emph{permissible} な因子であり、
-$\pi^{*}s_{\mathcal{L}}$は、strictly convex な
-$C^{\infty}$-関数の
-主因子となっている。
-\cite{tsutsui2023graded}では、
-コンパクトトロピカル多様体上の permissible な
-$C^{\infty}$-因子 $s_{\mathcal{L}}$に対して、次数付き$\mathbb{Z}$加群
-$\opn{LMD}^{\bullet}(X;s_{\mathcal{L}})$
-を定義し、それが$s_{\mathcal{L}}$の因子類の
-Riemann--Roch 数と等しいことを予想した
-\cite[Conjecture 1.2]{tsutsui2023graded}。
-(ただし、\cite[Conjecture 1.2]{tsutsui2023graded}
-は、\cite{demedrano2023chern}が公開されるより前で
-あったため Todd 類の明示的な定義はされていない。)
-なお $X=\mathbb{R}/\mathbb{Z}$のとき、
-$X$ は整アフィン多様体なので、
-このとき、$s_{\mathcal{L}}$ が定義する次数付き加群
-$\opn{LMD}^{\bullet}(X;s_{\mathcal{L}})$ は、
-$s_{\mathcal{L}}$ が定義する Lagrangian 切断の
-Floer 複体 \cite[Remark 13]{MR1882331} と
-次数付き加群として同型であり、今回の場合は次のように
-書くことができる
-(より詳しくは\cite[\textsection 4.4]{tsutsui2023graded}
-を見よ)。
+is an analog of the group of Cartier divisors
+when $X$ is a boundaryless tropical manifold.
+In \cite{tsutsui2023graded}, elements 
+in $\opn{Div}^{\infty}(X)$ are called 
+\emph{$C^{\infty}$-divisors} on $X$.
+We note that the author 
+defined the group of $C^{\infty}$-divisor for \emph{any}
+tropical manifold in \cite{tsutsui2023graded}.
+If $B$ is an integral affine manifold,
+then every $C^{\infty}$-divisor defines
+a Lagrangian section of the standard Lagrangian
+torus fibration $\check{f}_B\colon \check{X}(B)\to B$
+on $B$, we can consider $C^{\infty}$-divisors on
+tropical manifolds as derivative objects
+of Lagrangian sections.
+
+For a given finite set $D$ on
+$X=\mathbb{R}/\mathbb{Z}$,
+we can find a $C^{\infty}$-divisor $s$ on $X$
+such that $\mathcal{L}(D)=\mathcal{L}(s)$ as follows.
+Let $\pi\colon \mathbb{R}\to \mathbb{R}/\mathbb{Z}$
+be the canonical universal covering.
+The pullback $\pi^* D$ is a principal divisor 
+of a convex function $f$ on $\mathbb{R}$ such that 
+the set of strictly convex points of $f$ is $\pi^{-1}(D)$
+and satisfies a quasi-periodicity.
+By smoothing of $f$, we can find a quasi-periodic
+convex $C^{\infty}$-function $g$ such that $f(x)=g(x)$ on 
+the complement of a sufficiently 
+small neighborhood of $\pi^{-1}(D)$. 
+This $g$ gives a $C^{\infty}$-divisor $s_1$ on
+$X$ such that the associated line bundle on $X$ is equal
+to $\mathcal{L}(D)$.
+Moreover, we can deform $s_1$ to another 
+linearly equivalent 
+$C^{\infty}$-divisor $s_2$ on $X$ such that 
+the intersection $s_0\cap s_2\deq 
+L_{0}\cap L_{s_2}$ of the associated 
+Lagrangian section $L_{s_2}$
+of $s_2$ and the zero section $L_0$ is contained in 
+$X\setminus D$ and $\sharp (E\cap L_{0}\cap L_{s_2})=1$
+for any $E\in \pi_0(X\setminus D)$.
+Then, $s_2$ is a \emph{permissible} 
+$C^{\infty}$-divisor and $\pi^{*}s_2$ is the 
+principal divisor of a strictly convex
+$C^{\infty}$-function. 
+In \cite{tsutsui2023graded}, the author
+defined the graded module $\opn{LMD}^{\bullet}(X;s)$
+for a permissible $C^{\infty}$-divisor $s$ on
+a compact tropical manifold.
+By using the theory of \cite{demedrano2023chern}
+we can refine the Conjecture 1.2 of 
+\cite{tsutsui2023graded}
+like this: the Euler characteristic of
+$\opn{LMD}^{\bullet}(X;s)$ 
+is equal to the Riemann--Roch number of 
+$\mathcal{L}(s)$.
+(\cite[Conjecture 1.2]{tsutsui2023graded} does not
+give an explicit definition of the Riemann--Roch number
+since this conjecture appeared before
+\cite{demedrano2023chern}.)
+\todo[inline]{直前の説明は失礼に当たらないか大丈夫？}
+
+
+If $X=\mathbb{R}/\mathbb{Z}$, then 
+$X$ is an integral affine manifold and  
+the graded module $\opn{LMD}^{\bullet}(X;s_2)$
+for $s_2$ is isomorphic to the Floer complex
+associated with the Lagrangian section $L_{s_2}$
+of $s_2$ \cite[Remark 13]{MR1882331} as a graded
+module (see also \cite[\textsection 4.4]{tsutsui2023graded}
+for more detail about it). In our case, we have 
+the following isomorphisms:
 \begin{align}
-\opn{LMD}^{\bullet}(X;s_{\mathcal{L}}) &\simeq 
-\bigoplus_{p_E\in s_0\cap s_{\mathcal{L}}}\mathbb{Z}[0]
+\opn{LMD}^{\bullet}(X;s_{2}) &\simeq 
+\bigoplus_{p\in s_0\cap s_{2}}\mathbb{Z}[0]
 \simeq H^{\bullet}(X\setminus D;\mathbb{Z}), \\
-\opn{LMD}^{\bullet}(X;-s_{\mathcal{L}}) &\simeq
-\bigoplus_{p_E\in s_0\cap s_{\mathcal{L}}}\mathbb{Z}[-1]
+\opn{LMD}^{\bullet}(X;-s_{2}) &\simeq
+\bigoplus_{p\in s_0\cap s_{2}}\mathbb{Z}[-1]
 \simeq H^{\bullet}_c(X\setminus D;\mathbb{Z}).
 \end{align}
-これはただの偶然ではない。
-実際に同様の論法が、$X$を
-$\mathbb{Z}^{n}$内の top dimensional 格子多面体
-$P$の射影的トロピカルトーリック多様体 $X_P$ に、
-$D$ をトーリック幾何的な意味で豊富な因子$D_P$
-と線形同値な因子を与える滑らかなトロピカル超曲面に
-置き換えても似たような議論が成立し、その場合は
-次のような同型を与える permissible な 
-$C^{\infty}$-divisor 
-$s_{P}$ が得られる:
+The method presented here is indeed not canonical,
+but the isomorphisms are not coincidences. In fact, 
+a similar logic works for tropical toric varieties.
+
+Let $P$ be a top dimensional lattice polytope
+in $\mathbb{Z}^{n}$ and $X_P$ tropical toric variety
+of $P$. Recall that,
+if $f$ is a tropical Laurent polynomial on 
+$\mathbb{R}^{n}$ 
+whose Newton polynomial is $P$ and the regular
+subdivision of $f$ is unimodular, then the closure
+$\overline{V(f)}$ of
+the hypersurface of $f$ in $X_P$ is a tropical submanifold
+of $X_P$ and the set of connected component of 
+$X_P\setminus \overline{V(f)}$ is bijective with the set $P(\mathbb{Z})$
+of lattice points in $P$.
+By using the method the Maslov dequantization 
+of a family of nonnegative valued Laurent polynomial
+which converges to $f$, we get a 
+$C^{\infty}$-divisor $s_f$ on $X_P$ whose line bundle is
+isomorphic to that of $\overline{V(f)}$, 
+$s_0\cap s_{f}\subset X_P\setminus \overline{V(f)}$,
+and $\pi_0(s_0\cap s_{f})$ is bijective with 
+$\pi_0(X_P\setminus \overline{V(f)})$.
+Then, we have
 \begin{align}
-\opn{LMD}^{\bullet}(X_P;s_{P})
+\opn{LMD}^{\bullet}(X_P;s_{f})
 &\simeq \bigoplus_{p\in P\cap \mathbb{Z}^{n}}\mathbb{Z}[0]
-\simeq \bigoplus_{W\in \pi_0(X_P\setminus D)}
-H^{\bullet}(W;\mathbb{Z})\simeq 
-H^{\bullet}(X_P\setminus D;\mathbb{Z}), \\
-\opn{LMD}^{\bullet}(X_P;-s_{P})
-&\simeq \bigoplus_{p\in \opn{int}(P)\cap \mathbb{Z}^{n}}
+\simeq \bigoplus_{W\in \pi_0(X_P\setminus \overline{V(f)})}
+H^{\bullet}(W;\mathbb{Z}) \notag \\
+&\simeq H^{\bullet}(X_P\setminus \overline{V(f)};\mathbb{Z}), \\
+\opn{LMD}^{\bullet}(X_P;-s_{f})
+&\simeq \bigoplus_{p\in \opn{int}(P)(\mathbb{Z})}
 \mathbb{Z}[-\dim X_P]
-\simeq \bigoplus_{W\in \pi_0(X_P\setminus D)}
-H^{\bullet}_c(W;\mathbb{Z}) \\
-&\simeq H^{\bullet}_c(X_P\setminus D;\mathbb{Z}).
+\simeq \bigoplus_{W\in \pi_0(X_P\setminus \overline{V(f)})}
+H^{\bullet}_c(W;\mathbb{Z}) \notag \\
+&\simeq H^{\bullet}_c(X_P\setminus \overline{V(f)};\mathbb{Z}).
 \end{align}
-$s_P$ については、\cite[Appendix D]{tsutsui2023graded}
-にて実質的に説明している。
-こういった対応は、
-$H^{\bullet}(X\setminus D)$ に対して、
-"Floer differential" が定義できるならば、
-$H^{\bullet}(X\setminus D)$ から
-$D$ のホモロジカルな不変量を取り出す
-ことができる可能性も示唆している。
-なお、この "Floer differential" の必要である根拠の一つは、
-$X\setminus D$ の各連結成分が可縮である場合などの
-特殊なケースを除いて $H^{\bullet}(X\setminus D)$
-の階数が代数多様体上の
-有効因子の層コホモロジーのように振舞わない点である。
-(\cref{remark-complement-cohomology} も見よ。)
-最後に、この Remark にて
-言及したことと深い関係があることが示唆される話題の
-一つに
-Demazure's theorem \cite{MR284446} があることも
-述べておく(\cite[\textsection 9.1]{MR2810322} も見よ)。
+
+See \cite[Appendix D]{tsutsui2023graded}
+for more detail about $C^{\infty}$-divisors on
+tropical toric manifolds associated with lattice polytopes.
+
+From these examples, it seems that the cohomology
+of the complement of tropical submanifold $D$ of codimension
+$1$ on a compact tropical manifold $X$ has a piece of data of
+homological invariant of $\mathcal{L}(D)$.
+From analogy of Floer cohomology,
+the author expects that we can define the cohomology
+of $\mathcal{L}(D)$ if we can define a good 
+``Floer differential'' for the graded module
+$H^{\bullet}(X\setminus D)$ (over some Novikov field).
+One of reason why we need some ``Floer differential'' for
+$H^{\bullet}(X\setminus D)$ is explained
+in \cref{remark-complement-cohomology}.
+We also note that 
+Demazure's theorem \cite{MR284446} is also related
+with this remark 
+(see also \cite[\textsection 9.1]{MR2810322}).
 \end{remark}
 
 \begin{remark}
 \label{remark-complement-cohomology}
-$C$ をコンパクトトロピカル曲線とし、$D$ を
-$C\setminus C_{\mathrm{sing}}$ 内の有限個の点とする。
-このとき、コンパクト台コホモロジー
-$H_c^{\bullet}(C\setminus D)$ の階数と
-$D$ の
-Baker--Norine rank $r(D)$ には次のような関係がある。
+Let $C$ be a compact tropical curve and $D$
+a finite set of $C\setminus C_{\mathrm{sing}}$.
+Then, there exist the following relationships
+between the rank of cohomology of compact support
+of $C\setminus D$ and that of Baker--Norine rank
+$r(D)$ of $D$ \cite[Definition 1.12]{MR2377750}: 
 \begin{align}
+\label{equation-bn-rank-negative}
 \opn{rank} H_c^{0}(C\setminus D)=r(D)+1=0, \quad
 \opn{rank} H_c^{1}(C\setminus D)=r(K_C-D)+1.
 \end{align}
+The Baker--Norine rank $r(D)$ is a analog of 
+the rank of linear systems of divisors on
+algebraic varieties.
+There is an explanation that the Baker--Norine
+rank is truly a good analog of the rank of linear systems
+in \cite{MR2448666}.
+From \eqref{equation-bn-rank-negative},
+we can say the rank of $H_c^{\bullet}(C\setminus D)$
+also behave like the cohomology of a line bundle on
+an algebraic variety.
+On the other hand, the cohomology
+$H^{\bullet}(C\setminus D)$ does not necessarily behave
+as an analog of the cohomology of a line bundle on
+an algebraic variety.
 
-Baker--Norine rank $r(D)$ は、代数幾何における因子の
-線形系の階数の組み合わせ的類似であるため、上の等式は
-$H_c^{\bullet}(C\setminus D)$ の階数が
-代数多様体上の因子の層コホモロジーの階数の類似として
-ふさわしい振る舞いをしていると考えることができる。
-
-一方でイントロでも言及したように、
-$H^{\bullet}(C\setminus D)$ は必ずしも
-代数多様体上の因子の層コホモロジーの階数の類似として
-振舞わない。
-
-以降より、
-$C$ を \cite[Figure 1]{MR2457739}
-にあるような種数 $2$ のコンパクトトロピカル曲線とする。
-$E$ と $C\setminus C_{\mathrm{sing}}$ の連結成分の
+From now on, let $C$ be a compact tropical curve
+of genus $2$ like the Figure 1 of
+\cite{MR2457739}.
+\todo[inline]{絵を描くべき？}
+Let $E$ be a connected component of  
+ $C\setminus C_{\mathrm{sing}}$ の連結成分の
 一つとして、$D$ を $E$ 上の空ではない有限個の点とする。
 このとき、補集合の特異コホモロジーの回数は次のようになる。
 \begin{align}
@@ -1623,7 +1663,7 @@ specialization map と何らかの意味で整合的であると期待するこ�
 
 \section{On \cref{conjecture-rr-bertini}}
 \label{section-on-rr-bertini}
-\cite{demedrano2023chern}
+In this section, we discuss \cref{conjecture-rr-bertini}.
 トロピカル多様体の Chern 類は、ベクトル束の
 理論の直接的な類似として定義されていないため、
 現時点では多くのことはわかっていない。
@@ -1646,11 +1686,11 @@ specialization map と何らかの意味で整合的であると期待するこ�
 帰結されること
 (\cref{proposition-euler-to-bertini})を見る。
 
-\subsection{トロピカルホモロジー側の準備}
-
-ここでは、トロピカル多様体上のトロピカルホモロジー論について、
-必要な部分を \cite{MR3330789,MR3894860,MR4637248} から
-復習する。なお、本論文では \cite{MR4637248} による
+\subsection{Tropical homology}
+In this subsection, we recall
+the theory of tropical homology from
+\cite{MR3330789,MR3894860,MR4637248}.
+なお、本論文では \cite{MR4637248} による
 層理論的なトロピカルホモロジー論について中心的に
 復習する。この節では、$Q$ を $\mathbb{R}$
 の部分環とする。
@@ -2332,7 +2372,7 @@ $\cdot \frown [Y]$ は同型射なので、次の等式を
 \begin{align}
     f_!(f^{*}(c)\cdot d)\frown [Y]=(c\cdot f_!(d))\frown [Y]
 \end{align}
-実際に、Borel--Morre ホモロジーについての射影公式より
+実際に、Borel--Moore ホモロジーについての射影公式より
 次のように式変形することで得られる:
 \begin{align}
 (c\cdot f_!(d))\frown [Y]&=
@@ -2638,7 +2678,7 @@ Bergman fan のいずれかと同型である。
 階数 $1$ の coloopless matroid となることからわかる。
 また、$X$ は boundaryless なので、$D$
 の自身への引き戻しは、自然に定義される。
-Chern--Schwartz--Macpherson 類の定義は局所的なので
+Chern--Schwartz--MacPherson 類の定義は局所的なので
 $X=L_{U_{n,n}}$ かつ、$D=L_{U_{n-1,n}}$ 
 と仮定してよい。これについて、\cref{conjecture-grr-divisor}
 は正しい。\cref{conjecture-grr-divisor} が正しいので
