@@ -43,6 +43,8 @@
 \pagestyle{plain}
 \setlength{\footskip}{30pt}
 
+\usepackage{enumitem}
+
 %%%%
 
 
@@ -353,7 +355,9 @@ Besides, the Conjecture 6.13 of
 \cite{demedrano2023chern} is true for 
 compact integral affine manifolds
 from Klingler's proof of Chern's conjecture for
-special affine manifolds \cite{MR3665000}.
+special affine manifolds \cite{MR3665000}
+since the Todd class of integral affine manifold
+is trivial.
 
 In this paper, we discuss
 a geometrical meaning of $\opn{RR}(X;D)$
@@ -471,8 +475,8 @@ tropical submanifold $D$ of codimension $1$,i.e.,
 finite subsets contained in $C_{\mathrm{reg}}$ 
 satisfies
 \begin{align}
-\opn{RR}(C;D)=\sharp (\opn{supp}(D))+ \chi_{\opn{top}}(C)
-=\chi_{\opn{top}}(C\setminus D).
+\opn{RR}(C;D)=\sharp (\opn{supp}(D))+ \chi(C)
+=\chi(C\setminus D).
 \end{align}
 
 Therefore, \cref{conjecture-rr-euler} is true
@@ -509,7 +513,8 @@ may not behave like that of
 the sheaf cohomology 
 $\mathcal{O}_{\mathcal{X}}(\mathcal{D})$
 for a Cartier divisor $\mathcal{D}$ 
-on a complete algebraic variety unlike
+on a complete algebraic variety
+$\mathcal{X}$ unlike
 $H^{\bullet}_c(X\setminus D;\mathbb{R})$.
 Incidentally, the author arrived at
 \cref{conjecture-rr-euler} as
@@ -993,20 +998,21 @@ $C$の多面体的錐の扇構造を与える。
 
 \begin{definition}
 \label{definition-permissible-position}
-$X$をトロピカル多様体とし、$Y$を$X$
-トロピカル部分多様体(tropical submanifold)とする。
-$Y$ が \emph{中庸な位置(moderate position)}にあるとは、
-任意の$x\in Y$に対して
+Let $X$ be a tropical manifold and $Y$ a
+tropical submanifold of $X$.
+$Y$ is in \emph{moderate position} on $X$ if
+for any $x\in Y$
 \begin{align}
      \opn{lineal}(Y,x) \subsetneq
- \opn{lineal}(X,x)
+ \opn{lineal}(X,x).
 \end{align}
-となることである。
 \end{definition}
 
 \begin{example}
+We retain the notation of 
+\cref{definition-permissible-position}.
 \begin{enumerate}
-\item $Y$が$X$上の中庸な位置にあるとき、
+\item $Y$ is in moderate position on $X$
 $Y$は$\opn{lineal}(X,x)$
 が自明となる点集合上には存在しない。
 \item $Y\cap X_{\mathrm{reg}}$ は、
@@ -1015,38 +1021,69 @@ $X_{\mathrm{reg}}$ 上の中庸な位置にある。
 常に中庸な位置にある。
 \end{enumerate}
 
-\end{example}
-
 \begin{remark}
 $Y$が$X$の中庸な位置にあるとき
 補集合 $X\setminus Y$ は、大抵 finite type の条件を
 満たさない。
 \end{remark}
 
+\end{example}
+If $Y$ is in moderate position, then 
+$\opn{LC}_x Y\to \opn{LC}_x X$ induces the following 
+exact sequence:
+% https://q.uiver.app/#q=WzAsMTAsWzEsMCwiXFxvcG57bGluZWFsfShZLHgpIl0sWzAsMCwiMCJdLFswLDEsIjAiXSxbMSwxLCJcXG9wbntsaW5lYWx9KFgseCkiXSxbMiwwLCJUX3ggWSJdLFsyLDEsIlRfeCBYIl0sWzMsMSwiVF94IFgvXFxvcG57bGluZWFsfShYLHgpIl0sWzMsMCwiVF94IFkvXFxvcG57bGluZWFsfShZLHgpIl0sWzQsMSwiMCJdLFs0LDAsIjAiXSxbMSwwXSxbMiwzXSxbNSw2XSxbNCw3XSxbNyw2XSxbMCwzXSxbMCw0XSxbMyw1XSxbNCw1XSxbNiw4XSxbNyw5XV0=
+\[\begin{tikzcd}
+	0 & {\opn{lineal}(Y,x)} & {T_x Y} & {T_x Y/\opn{lineal}(Y,x)} & 0 \\
+	0 & {\opn{lineal}(X,x)} & {T_x X} & 
+{T_x X/\opn{lineal}(X,x)} & 0
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-3, to=2-4]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-4, to=2-4]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=1-3, to=2-3]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=1-4, to=1-5]
+\end{tikzcd}.\]
+
+
+
 \begin{proposition}
 \label{proposition-divisor-poincare}
-$X$ を連結かつコンパクトな整アフィン多様体とし、
-$D$ を余次元$1$のトロピカル部分多様体とする。
-このとき、\cref{conjecture-rr-c-euler}と
-\cref{conjecture-rr-euler}は同値である。
+Let $X$ be an purely 
+$n$-dimensional compact integral
+affine manifold and $D$ a tropical submanifold 
+of codimension $1$.
+Then, \cref{conjecture-rr-c-euler} is 
+equivalent to
+\cref{conjecture-rr-euler}. In particular,
+\cref{conjecture-rr-euler} is true for
+all compact integral affine manifolds when
+\cite[Conjecture 6.13]{demedrano2023chern} is
+true for any compact tropical manifold.
 \end{proposition}
 \begin{proof}
-定義より、$D$は常に$X$上の中庸な位置にある。
-また、$\opn{td}(X)=1$なので、
+Since $X$ is an integral affine manifold,
+$D$ is always in moderate position in $X$.
+Since $\opn{td}(X)=1$, we have
 \begin{align}
-\opn{RR}(X;-D)=(-1)^{\dim X}\opn{RR}(X;D)
+\label{equation-trivial-serre}
+\opn{RR}(X;-D)=(-1)^{\dim X}\opn{RR}(X;D).
 \end{align}
-また、$X\setminus D$は位相多様体なので、Poincar\'e 双対性より
+Besides, $X\setminus D$ is a topological manifold, 
+and thus we have the following equation from 
+the Poincar\'e duality:
 \begin{align}
-\chi_c(X\setminus D)=(-1)^{\dim X}\chi(X\setminus D)
+\label{equation-pd}
+\chi_c(X\setminus D)=(-1)^{\dim X}\chi(X\setminus D).
 \end{align}
-が成り立つ。
+Therefore, \cref{proposition-divisor-poincare} follows from
+\cref{equation-trivial-serre} and
+\cref{equation-pd}.
 \end{proof}
-
-\begin{corollary}
-$X$ を連結かつコンパクトな整アフィン多様体とし、
-$D$ を余次元$1$のトロピカル部分多様体とする。	
-\end{corollary}
 
 \begin{remark}[{Integral affine manifolds with singularities}]
 \label{remark-iass}
@@ -1109,7 +1146,8 @@ a homogenous polynomial of degree $d$
 (see also \cite[Definition 3.4.6]{mikhalkin2018tropical}).
 The degree of $\overline{V_{\mathbb{T}}(f)}$
 on $\mathbb{T}P^n$ is equal to 
-that of
+that of $f$ and the first Chern class 
+of $\mathcal{L}(\overline{V_{\mathbb{T}}(f)})$.
 The tropical hypersurface $V_{\mathbb{T}}(f)$ of $f$
 is \emph{smooth} (in the sense of
 \cite[\textsection 4.5]{MR3287221})
@@ -1129,117 +1167,144 @@ to the $\sharp (\opn{int}(d\Delta_n)(\mathbb{Z}))$-th
 bouquet of $(n-1)$-spheres
 (e.g. \cite[Proposition 3.1.6]{MR3287221}
 or \cite[Proposition 3.4.12]{mikhalkin2018tropical}).
-$\mathbb{T}P^{n}\setminus
-V_{\mathbb{T}}(F)$の各連結成分が$d\Delta_n$内の格子点集合と
-全単射になっていることは有名である
-(例えば、\cite[Proposition 3.1.6]{MR3287221})。各連結成分は、
-$\mathbb{T}P^{n}$内の凸多面体であるため、位相空間的には
-すべて可縮である。また、
-トーリック多様体における Chern 類の表現と
-CSM サイクルによる Chern 類の定義は整合的である
-\cite[Proposition 13.1.2]{MR2810322}。
-よって、Todd 類も同等のものとなる
-(\cite[Theorem 13.1.6]{MR2810322} も参照)。よって、
-$c_1(V_{\mathbb{T}}(F))=d\in H^{1,1}(\mathbb{T}P^{n};
-\mathbb{Z})
-\simeq \mathbb{Z}$であることから次の等式が得られる。
+In particular, every connected component is a polyhedron in 
+$\mathbb{T}P^{n}$, so it is contractible.
+Moreover, the definition of Chern classes of
+tropical toric manifolds is compatible with
+that of algebraic toric manifolds
+(cf. \cite[Proposition 13.1.2]{MR2810322}).
+Therefore, the Todd class of $\mathbb{T}P^{n}$
+also has the same representation of that of
+algebraic toric manifolds
+(see also \cite[Theorem 13.1.6]{MR2810322}). 
+Therefore, we have
 \begin{align}
-\opn{RR}(\mathbb{T}P^{n};V_{\mathbb{T}}(F))=
+\opn{RR}(\mathbb{T}P^{n};\overline{V_{\mathbb{T}}(f)})=
 \sharp d\Delta_n(\mathbb{Z})=
 \chi(\mathbb{T}P^{n}\setminus
-V_{\mathbb{T}}(F))
+\overline{V_{\mathbb{T}}(f)}).
 \end{align}
-なお、同様にして次の等式も得られる。
+
+We can also get the following equation in a similar way:
 \begin{align}
-\opn{RR}(\mathbb{T}P^{n};-V_{\mathbb{T}}(F))=
+\label{equation-int-polytope}
+\opn{RR}(\mathbb{T}P^{n};-\overline{V_{\mathbb{T}}(f)})=
 (-1)^{n}\sharp \opn{int}(d\Delta_n(\mathbb{Z}))=
 \chi_{c}(\mathbb{T}P^{n}\setminus
-V_{\mathbb{T}}(F))   
+\overline{V_{\mathbb{T}}(f)}).
 \end{align}
-二番目の等式は、
+The second equation of \eqref{equation-int-polytope}
+follows from that 
 $\chi_{c}(\mathbb{T}P^{n}\setminus
-V_{\mathbb{T}}(F))=1-\chi (V_{\mathbb{T}}(F))$
-と$V_{\mathbb{T}}(F)$が、$(n-1)$次元球面
-$S^{n-1}$ 
-の$\sharp \opn{int}(d\Delta_n(\mathbb{Z}))$
-個の wedge 和とホモトピー同値であることから従う。
+\overline{V_{\mathbb{T}}(f)})
+=1-\chi (\overline{V_{\mathbb{T}}(f)})$
+and $\overline{V_{\mathbb{T}}(f)}$ is homoytopy 
+equivalent to the bouquet
+of $\sharp \opn{int}(d\Delta_n(\mathbb{Z}))$
+$(n-1)$-dimensional spheres.
 \end{example}
 
 \begin{proposition}
-$X$ をトロピカル多様体とし、$Y$ を
-$X$ の余次元 $1$
-のトロピカル部分多様体とする。
-$Y$ が中庸な位置にあるとき、
-$Y$ は sedentarity-0 なトロピカル部分多様体である。
+Let $X$ be a tropical manifold and 
+$Y$ a tropical submanifold of codimension $1$
+in moderate position on $X$.
+Then, $Y$ is a sedentarity-0 submanifold of $X$.
 \end{proposition}
 \begin{proof}
-点 $x\in Y$ に対して
-$\opn{sed}_X(x)-\opn{sed}_Y(x)=1$ ならば、
-$\opn{LC}_xY\simeq \opn{LC}_x X$ なので
-$Y$ が中庸な位置にあるとき、そのような点は
-存在しない。
+If $Y$ is in moderate position,
+then $\opn{LC}_x Y\not \simeq \opn{LC}_x X$ for all 
+$x \in Y$.
+On the other hand, if $x \in Y$ satisfies 
+$\opn{sed}_X(x)-\opn{sed}_Y(x)=1$, then
+$\opn{LC}_x Y\simeq \opn{LC}_x X$.
+Therefore, $\opn{sed}_X(x)-\opn{sed}_Y(x)=0$ when
+$Y$ is in moderate position. 
 \end{proof}
+For the proof of \cref{theorem-rr-euler-surface}, we 
+use the following well-known 
+proposition for Berdman fans: 
+the support of the Bergman fan of
+a loopless matroid of rank $2$ 
+is isomorphic to the support of the Bergman fan of
+a uniform matroid $U_{2,n}$ on
+$[n]\deq \{0,\ldots,n-1\}$.
+In fact, we can deduce it from that 
+the supports of the Bergman fans of
+loopless matroids are isomorphic
+when the simplification of them are isomorphic
+and the definition of simple matroid.
+Shaw classified local cones which comes from
+for some tropical surface in
+\cite[Corollary 2.4]{shaw2015tropical}.
 
-証明には、
-次のよく知られた命題を用いる。
-\begin{proposition}[{Well-known}]
-
-
-特に、階数 $2$ のループをもたないマトロイドが定義する
-Bergman 扇は $\Gamma_n$ のいずれかと同型である。
-\end{proposition}
-\begin{proof}
-$M$ を階数 $2$ のマトロイドとする。このとき、
-Lattice of flats から単純マトロイド
-$M'$ が定義される。Lattice of flats が同型ならば、
-Bergman 扇の台としても同型となる。
-階数 $2$ の連結な
-単純マトロイドは、皆一様マトロイドである。
-\end{proof}
-
-
-トロピカル曲面上の各点の局所錐の構造は、
-\cite[Corollary 2.4]{shaw2015tropical}
-によって分類されている。
-これを念頭に次の命題を解く。
 
 \begin{proposition}
 \label{proposition-self-intersection}
-$S$をコンパクトトロピカル曲面とし、
-$C$を$S$の部分トロピカル曲線とする。
-$C$が中庸な位置にあるとき、次の等式が成り立つ。
+Let $S$ be a compact tropical surface
+and $C$ is a tropical submanifold of codimension $1$
+in moderate position on $S$. Then, 
 \begin{align}
-     C.C=\sharp (C_{\mathrm{sing}}\cap S_{\mathrm{reg}})
+     |C\cdot C|= C_{\mathrm{sing}}\cap S_{\mathrm{reg}}.
 \end{align}
+where $|C\cdot C|$ is the support of
+the self-intersection of 
+$C$ \cite[Definition 3.22]{shaw2015tropical}. 
 \end{proposition}
 \begin{proof}
-$C$が$S$上中庸な位置にあるとき、
-$\dim \opn{lineal}(S,x)=1,2$ のみである。
-$\dim \opn{lineal}(S,x)=2$ のとき、
-$\opn{LC}_x C$ は、ある
-$\{0,1,2\}$上の階数$2$
-の単純マトロイドの
-Bergman 扇の台と同型でなくてはならないので、
-$\opn{val}_C(x)=2,3$ である。
-次に、$\dim \opn{lineal}(S,x)=1$ のときを
-考える。このとき、
-$\dim \opn{lineal}(C,x)=0$である。
-特に、$\opn{LC}_x C$ は、次数 $3$ 以上の木となる。
-\cite[Corollary 2.4]{shaw2015tropical} 
-より、
-$x$の近傍は$\Gamma_m\times \mathbb{R}$の
-$(m\geq 3)$の開集合の場合のみを考えればよい。
+First, we will see the classification of
+the embeddings
+$\opn{LC}_x C \subset \opn{LC}_x S$ of local cones.
+If $C$ is in moderate position on $S$
+$\dim \opn{lineal}(S,x)=1,2$ for any $x\in C$.
+\begin{enumerate}[align=left,leftmargin=*]
+\item Suppose $\dim \opn{lineal}(S,x)=2$.
+Then, $\opn{LC}_x S\simeq \mathbb{R}^2$ and
+$\opn{LC}_x C$ should be isomorphic to 
+the support of the Bergman fan of a loopless matroid
+of rank $2$ on $[3]$. 
+In particular, $\opn{val}_C(x)=2,3$ in this case.
+\item We assume $\dim \opn{lineal}(S,x)=1$. 
+Then, $\dim \opn{lineal}(C,x)=0$.
+In particular, $\opn{val}_C(x)\geq 3$.
+From \cite[Corollary 2.4]{shaw2015tropical}, 
+we may assume $\opn{LC}_x S\simeq L_{U_{2,m}}\times \mathbb{R}
+\simeq L_{U_{2,m}\oplus U_{1,1}}$
+$(m\geq 3)$.
 
-また$\opn{LC}_x C\cap \opn{lineal}(S,x)=\{0\}$である。
+From this description, we can check $\opn{val}_C(x)\leq m$.
+In particular, we can consider $T_x C$ as 
+a proper vector subspace of $T_x S$.
+We fix an isomorphism 
+$\opn{LC}_x S\to L_{U_{2,m}}\times \mathbb{R}$.
+This isomorphism induces the isomorphism
+$q\colon T_x S \simeq T_0(L_{U_{2,m}})\times \mathbb{R}$.
+Then, $q(T_x C)= (q(T_x C)\cap T_0(L_{U_{2,m}}))\times
+(\mathbb{R}\cap q(T_x C))$ for the canonical splitting of
+$T_0(L_{U_{2,m}})\times \mathbb{R}$.
+
+Besides, we can check 
+$\opn{LC}_x C\cap \opn{lineal}(S,x)=\{0\}$
+by indirect proof.
+In fact, if $\opn{LC}_x C\cap \opn{lineal}(S,x)\ne \{0\}$,
+then $q(T_x C)\cap T_0(L_{U_{2,m}})$ is a
+proper subspace of $T_0(L_{U_{2,m}})$.
+On the other hand,
+the convex hull of $q(T_x C)\cap (L_{U_{2,m}}\times\{0\})$
+does not contain any nontrivial vector subspace.
+This contradicts with $\dim T_x C\geq 2$.
+
+Since $\opn{LC}_x C\cap \opn{lineal}(S,x)=\{0\}$,
+\end{enumerate}
+
 実際に、$\opn{LC}_x C\cap \opn{lineal}(S,x)\ne \{0\}$
 ならば、$T_x C \cap \opn{LC}_x S$ は、
 $\Gamma_m$と真の部分線形空間との交叉と $\mathbb{R}$
 の直積となる。この凸包は $T_x C$ の全体を張らないこととなり
 矛盾する。
 同じ理由から、$T_x C\cap \opn{lineal}(S,x)=\{0\}$である。
-このとき、$T_x C\cap \opn{LC}_x S\simeq \Gamma_m$
+このとき、$T_x C\cap \opn{LC}_x S\simeq L_{U_{2,m}}$
 である。よって、バランス条件から
-$\opn{LC}_x C\simeq \Gamma_m$ である。
+$\opn{LC}_x C\simeq L_{U_{2,m}}$ である。
 $\opn{LC}_x C$ と $\opn{lineal}(S,x)$ はマトロイドの交叉
 とみなせるので、\cite[Theorem 4.2]{MR3032930}
 と随伴公式\cite[Theorem 4.11]{shaw2015tropical} より、
@@ -1313,18 +1378,22 @@ Therefore,
 &=\chi_c(S\setminus C)+2\chi_c(C)+
 \chi_c(C_{\mathrm{sing}}
 \cap S_{\mathrm{reg}}) \notag \\
-&=\chi(S)+\chi(C)+\chi(|C.C|) \\
+&=\chi(S)+\chi(C)+\chi(|C\cdot C|) 
+\label{equation-iterated-euler} \\
 &=\chi(S)+C.C+\chi(C)
-=\frac{C.(C-K_S)}{2}+\chi(S).
+=\frac{C.(C-K_S)}{2}+\chi(S). \notag
 \end{align}
 \end{proof}
-In the proof \cref{theorem-rr-euler-surface}, we gave
+In the proof of \cref{theorem-rr-euler-surface}, we gave
 various representations of $\chi(X\setminus S)$.
-All of them are important.
-\eqref{equation-euler-calculus}
+We would like to stress that both
+\eqref{equation-iterated-euler} and 
+\eqref{equation-euler-calculus} are important.
+
 \begin{proof}[{Proof of \cref{corollary-ds-euler-rr}}]
-\cref{theorem-rr-euler-surface} と、
-\cref{proposition-cycle-chern} より示される。
+It follows from
+\cref{theorem-rr-euler-surface} and
+\cref{proposition-cycle-chern}.
 \end{proof}
 
 \begin{remark}
@@ -1870,7 +1939,8 @@ $Z\in H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$
 
 
 
-有理多面空間 $(X,\mathcal{O}_X^{\times})$ について次の
+Every rational polyhedral space $(X,\mathcal{O}_X^{\times})$
+について次の
 よく知られた層の短完全列が存在する。
 \begin{align}
 0\to \mathbb{R}_X \to 
@@ -1885,9 +1955,10 @@ $\hat{\phi} \colon
 H_{n-1,n-1}^{\mathrm{BM}}(X;\mathbb{Z})
 \to H_{n,n-2}^{\mathrm{BM}}(X;\mathbb{R})$
 が存在する \cite[(5.2)]{MR3330789}
-(\cite[Definition 2.9]{MR3894860} も見よ)。
-実際に両者は、Poincar\'e 双対で整合的である
-\cite[Lemma 5.13]{MR3894860}。
+(see also \cite[Definition 2.9]{MR3894860}).
+In fact both of them are compatible with 
+the Poincar\'e duality for tropical manifolds
+\cite[Lemma 5.13]{MR3894860}.
 
 \subsection{トロピカル Cartier 因子}
 
@@ -2447,10 +2518,10 @@ Grothendieck--Riemann--Roch の定理の特殊例
 \end{example}
 
 \begin{proposition}
-\label{proposition-euler-to-bertini}
-\cite[Conjecture 6.13]{demedrano2023chern},
+If \label{proposition-euler-to-bertini}
+\cite[Conjecture 6.13]{demedrano2023chern} and
 \cref{conjecture-grr-divisor,conjecture-rr-euler}
-が正しいなら、\cref{conjecture-rr-bertini}も正しい。  
+are true, then \cref{conjecture-rr-bertini} is also true. 
 \end{proposition}
 
 \begin{proof}
@@ -2483,31 +2554,25 @@ Grothendieck--Riemann--Roch の定理の特殊例
 となる。よって示せた。
 \end{proof}
 
-\begin{example}
-\cref{conjecture-rr-euler} と
-\cref{conjecture-grr-divisor} が正しいならば、
-\cref{conjecture-rr-c-euler} は正しい。
-\end{example}
-
 以上を踏まえて、\cref{theorem-rr-euler-surface}
 を一般化する。
 
 \begin{theorem}
 \label{theorem-rr-bertini-surface}
-$X$を
-コンパクトトロピカル曲面とし、$D$ と $D'$が余次元$1$
-のトロピカル部分多様体とする。このとき、次が成り立つ。
+Let $X$ be a compact tropical surface
+and $(D,D')$ a pair of tropical submanifold of
+codimension $1$ in moderate position. Then,
 \begin{align}
 \chi(X\setminus D')-\chi(D\setminus (D'\cap D))
 =\frac{(D'-D).(D'-D-K_X)}{2}+\chi(X).
 \end{align}
-特に $X$ が Delzant 面構造をもつとき、
-\cref{conjecture-rr-bertini} は正しい。
+In particular, \cref{conjecture-rr-bertini} is true 
+when $X$ admits a Delzant face structure.
 \end{theorem}
 
 \begin{proof}
-$\dim X=2$なので、
-\cref{conjecture-grr-divisor}は正しい。
+Since $\dim X=2$, 
+\cref{conjecture-grr-divisor} is true.
 \cref{theorem-rr-euler-surface}と
 \eqref{equation-rr-number-divisor}より、
 \begin{align}
