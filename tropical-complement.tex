@@ -664,8 +664,9 @@ We also give a generalization of
 \cref{theorem-rr-euler-surface}.
 
 \subsection*{Acknowledgement}
-I would like to thank Kazushi Ueda for his advice
-and encouragement. This work was partially supported 
+We would like to thank Kazushi Ueda for his continous advice
+and encouragement.
+This work was partially supported 
 by JSPS KAKENHI Grant Number JP21J14529 and JP21K18575.
 
 \section{On \cref{conjecture-rr-euler}}
@@ -711,41 +712,6 @@ These definitions are compatible with
 \cite[Definition 7.1.1]{mikhalkin2018tropical}.
 \end{notation}
 
-\begin{remark}
-Every rational polyhedral space
-is paracompact and locally contractible.
-In particular, the singular cohomology of it 
-is isomorphic to the sheaf cohomology of
-the constant sheaf on it.
-有理多面空間が
-boundaryless もしくは
-トロピカル多様体であるときは自明である。
-一般の有理多面空間が局所可縮であることは、
-$\mathbb{T}^{n}$ 内の凸多面体 $P$ が
-局所可縮であることと、
-$\mathbb{R}^{n}$ 内の コンパクト集合 $K$ が Euclid 
-neighborhood retract であることと
-$K$が局所可縮であることが同値であること、
-Euclid neighborhood retract な距離空間は
-absolute neighborhood retract であること、
-そして Borsuk's pasting theorem から示される。
-(\href{https://eudml.org/doc/212574}{EUDML | Über eine Klasse von lokal zusammenhängenden Räumen}
-の p.226 で初めて示されたらしい。
-)
-
-もしくは、
-$\mathbb{T}^{n}$ 内の有理多面集合 $P$ の指数写像
-$\opn{exp}\colon \mathbb{T}^{n}\to 
-\mathbb{R}^{n}_{\geq 0}$ の像が $\mathbb{R}^{n}$
-内の subanalytic set であることと、
-$\mathbb{R}^{n}$ 内の局所閉な
-subanalytic set に三角形分割が存在すること
-\cite{MR760983} からも
-示すことができる。
-なお、subamalytic set の三角形分割の
-存在定理は、$o$-極小構造の理論によってより一般化されている。
-(詳しくは、\cite[Theorem II]{MR1463945} などを見よ。)
-\end{remark}
 Let $(X,\mathcal{O}_X^{\times})$ be a rational polyhedral space
 and $\opn{LC}_x X$ the local cone of $X$ at $x$ ($\in X$)
 \cite[\textsection 2.2]{MR4637248}.
@@ -1012,13 +978,13 @@ for any $x\in Y$
 We retain the notation of 
 \cref{definition-permissible-position}.
 \begin{enumerate}
-\item $Y$ is in moderate position on $X$
+\item If $Y$ is in moderate position on $X$
 $Y$は$\opn{lineal}(X,x)$
 が自明となる点集合上には存在しない。
-\item $Y\cap X_{\mathrm{reg}}$ は、
-$X_{\mathrm{reg}}$ 上の中庸な位置にある。
-特に $X$ が整アフィン多様体のとき、$Y$は
-常に中庸な位置にある。
+\item $Y\cap X_{\mathrm{reg}}$ is in 
+moderate position on $X_{\mathrm{reg}}$.
+In particular, $Y$ is always in moderate position
+when $X$ is an integral affine manifold.
 \end{enumerate}
 
 \begin{remark}
@@ -1491,10 +1457,9 @@ Let $\mathcal{A}^{0,0}_X$ be the sheaf of
 $(0,0)$-superforms on $X$
 \cite[Definition 2.24]{MR3903579}.
 Then, the following exact sequence exists:
-
 \begin{align}
 0\to \mathcal{O}_X^{\times} \to \mathcal{A}^{0,0}_X
-\to \mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times} \to 0
+\to \mathcal{A}^{0,0}_X/\mathcal{O}_X^{\times} \to 0.
 \end{align}
 
 Since $\mathcal{A}^{0,0}_X$ is acyclic,
@@ -1681,79 +1646,81 @@ of genus $2$ like the Figure 1 of
 \cite{MR2457739}.
 \todo[inline]{絵を描くべき？}
 Let $E$ be a connected component of  
- $C\setminus C_{\mathrm{sing}}$ の連結成分の
-一つとして、$D$ を $E$ 上の空ではない有限個の点とする。
-このとき、補集合の特異コホモロジーの回数は次のようになる。
+ $C\setminus C_{\mathrm{sing}}$, and
+$D$ a nonempty finite subset of $E$. 
+Then,
 \begin{align}
 \label{equation-cohomology-behaviour}
 \opn{rank} H^{0}(C\setminus D)=\sharp(D), \quad
 \opn{rank} H^{1}(C\setminus D)=1.
 \end{align}
 
-一方で $\opn{deg}(K_C-D)=2-\sharp (D)$ なので、
-$\sharp (D)>2$ のとき定義より、
+On the other hand, $\opn{deg}(K_C-D)=2-\sharp (D)$.
+Therefore, when $\sharp (D)>2$, we get
 \begin{align}
 \label{equation-rank-behaviour}
 r(D)+1=\sharp(D)-1,\quad r(K_C-D)+1=0.
 \end{align}
+In particular, 
+$\opn{rank} H^{0}(C\setminus D)>r(D)+1$ in this case.
+The equation $\opn{rank} H^{1}(C\setminus D)=1$ is
+independent of the degree of $D$.
+It is a very different point from behaviour of 
+the cohomology of invertible sheaves on algebraic varieties.
+This is a main reason why we stress 
+that we need to define a ``Floer differential'' for 
+$H^{\bullet}(C\setminus D)$ in order to capture a
+homological data of tropical line bundles 
+in \cref{remark-c-infinity-divisor}.
 
-つまり、このときは 
-$\opn{rank} H^{0}(C\setminus D)>r(D)+1$ となっている。
-
-$\opn{rank} H^{1}(C\setminus D)=1$ は、どんなに $D$
-の次数が増えても変わらない。これは、因子に付随する
-可逆層のコホモロジーの挙動とは異なる性質である。
-これが、\cref{remark-c-infinity-divisor} にて言及した
-$H^{\bullet}(C\setminus D)$ に対して ``Floer differential''
-が必要なだと考える理由である。
-% また、\eqref{equation-rank-behaviour} は
-% $H^{\bullet}(C\setminus D)$ に対して
-% そのような理想的な微分
-% $\mathfrak{m}\colon H^{\bullet}(C\setminus D)
-% \to H^{\bullet}(C\setminus D)[-1]$
-% が定義でき、鎖複体 
-% $(H^{\bullet}(C\setminus D),\mathfrak{m})$
-% のコホモロジー
-% $``\opn{HF}^{\bullet}(C;D)"$ が定義できたとしても 
-% $\mathfrak{m}$ の定義によらず、次の不等式
-% \begin{align}
-% \opn{rank}``\opn{HF}^{0}(C;D)"< r(D)+1
-% \end{align}
-% が成り立っていることを意味する。
-また、$H^{\bullet}(C\setminus D)$ に対する適切な微分は、
-trivalent graph に対するホモロジー的ミラー対称性
-\cite{auroux2022lagrangian} を参考にして
-組み合わせ的に構成することが
-できると期待でき、それが付値体上の代数曲線のモデルが定める
-specialization map と何らかの意味で整合的であると期待すること
-も不自然ではないと筆者は考える。
+We expect that we can define such an appropiriate
+differential of $H^{\bullet}(C\setminus D)$
+by a combinatorial way as an analog of
+the Floer complex of Lagrangian sections on 
+trivalent graphs
+\cite{auroux2022lagrangian}.
+We also expect the homological mirror symmetry
+gives a new perspective on the specialization
+inequality of the Baker--Norine rank 
+\cite[Lemma 2.8]{MR2448666}. 
 \end{remark}
 
 
 \section{On \cref{conjecture-rr-bertini}}
 \label{section-on-rr-bertini}
 In this section, we discuss \cref{conjecture-rr-bertini}.
-トロピカル多様体の Chern 類は、ベクトル束の
-理論の直接的な類似として定義されていないため、
-現時点では多くのことはわかっていない。
-また、筆者はトロピカル多様体上の
-\emph{tropical tangent bundle} の定義を知らない。
-(なお、トロピカルベクトル束に関する研究や考察は
-\cite{MR2961320,MR4646329}
-や \cite[Theorem 1.8]{amini2020hodge}
-などでなされている。)
-一方で乗法列 \cite[\textsection 1]{MR1335917} の
-定義および
-形式的な議論のみで導出できる内容はうまくいく
-部分がある。
-ここでは Todd 類が持つべき性質
-(\cref{conjecture-grr-divisor})
-を仮定した場合に、
-\cref{conjecture-rr-bertini} 
-が\cite[Conjecture 6.13]{demedrano2023chern}
-と\cref{conjecture-rr-euler} より
-帰結されること
-(\cref{proposition-euler-to-bertini})を見る。
+In order to discuss \cref{conjecture-rr-bertini},
+we need preparation from the theory of tropical homology
+and Chern classes of tropical manifolds.
+First, we note 
+the theory of Chern classes of tropical manifold
+\cite{demedrano2023chern} is new and 
+the Chern(--Schwartz--Macpherson) class of
+tropical manifolds is not defined from a direct analog
+of the theory of vector bundles on algebraic varieties.
+Therefore, there is much that is not sufficiently
+understood about Chern classes of tropical manifolds.
+(The theory of tropical vector bundle is studied
+in \cite{MR2961320,MR4646329} or 
+\cite[Theorem 1.8]{amini2020hodge}.)
+On the other hand, we can use facts 
+which arise from elementary properties
+multiplicative sequences (or $m$-sequences)
+\cite[\textsection 1]{MR1335917}
+(see also \cite[\textsection 19]{MR440554}).
+Even from these properties alone,
+we can intestigate the Todd classes of tropical manifolds
+to some extent.
+
+In this section, we mainly
+discuss about properties which 
+the Todd should have if
+a natural conjecture for
+tropical Chern classes
+(\cref{conjecture-grr-divisor}) holds.
+We also prove a generalization of 
+\cref{theorem-rr-euler-surface}
+in \cref{theorem-rr-bertini-surface}.
 
 \subsection{Tropical homology}
 In this subsection, we recall
@@ -2242,7 +2209,7 @@ $1$-サイクルの交点数の定義は
 $D_1,D_2\in \opn{Div}^{[0]}(X)$ の
 \cite{demedrano2023chern} による交叉と
 \cite{MR4637248} による交叉は一致しているため、
-\cite{equation-two-intersections} が示される。
+\cref{equation-two-intersections} が示される。
 \end{proof}
 
 
@@ -2256,18 +2223,17 @@ $D_1,D_2\in \opn{Div}^{[0]}(X)$ の
 
 
 \begin{notation}
-$X$ を純 $n$ 次元トロピカル多様体としたとき、
-$X$ の 第 $k$ Chern 類を次のように書く。 
+Let $X$ be a purely $n$-dimensional tropical manifold.
+Then, we write the $k$-th Chern class of $X$ as
 \begin{align}
 c_{k}^{\mathrm{sm}}(X)\deq
 \opn{PD}_X\circ \opn{cyc}_{n-k}(\opn{csm}_{n-k}(X))
-\in H^{k,k}(X;\mathbb{Z})
+\in H^{k,k}(X;\mathbb{Z}).
 \end{align}
-なお、$c_{k}^{\mathrm{sm}}(X)$と書いたのは、
-因子類の Chern 類との混同を避けるためである。
-同様に$X$の全 Chern 類を
-$c^{\mathrm{sm}}(X)=\sum_{k=0}^{n} c_{k}^{\mathrm{sm}}(X)$
-とする。
+This notation $c_{k}^{\mathrm{sm}}(X)$
+is used to aviod confusion with the Chern classes of divisors.
+As like this, we write the total Chern class of $X$ as
+$c^{\mathrm{sm}}(X)=\sum_{k=0}^{n} c_{k}^{\mathrm{sm}}(X)$.
 また $L\in H^{1,1}(X;\mathbb{Z})$ に対して、
 Chern 指標を次のように書く。
 \begin{align}
@@ -2277,11 +2243,13 @@ H^{\bullet,\bullet}(X;\mathbb{Q}).
 \end{align}
 \end{notation}
 
-複素多様体 $X$ の接束を$\mathcal{T}_X$とすると、
+Let $X$ be a complex manifold and $D$ a nonsingular
+divisor on $X$. Let $\mathcal{T}_X$ be the tangent
+bundle of 
 非特異因子 $D$ に対して、次の層短完全列が存在する。
 \begin{align}
 0 \to \mathcal{T}_{D}\to \iota^{*}\mathcal{T}_X
-\to \mathcal{N}_{D/X}\to 0
+\to \iota^{*}\mathcal{O}_X(D)\to 0
 \end{align}
 ここで、$\mathcal{N}_{D/X}\simeq \iota^{*}\mathcal{O}_X(D)$
 であるため、次の全 Chern 類の同伴公式が成り立つ。
@@ -2294,87 +2262,104 @@ $c(\mathcal{O}_X(D))=1+c_1(\mathcal{O}_X(D))$ なので
 次数部分に着目すれば、$k\in \mathbb{Z}_{\geq 0}$
 に対して
 \begin{align}
-\label{equation-classical-total-adjunction}
+\label{equation-classical-total-adjunction-2}
 \iota^{*}c_k(\mathcal{T}_X)
 =c_{k}(\mathcal{T}_{D})+
-c_{k-1}(\mathcal{T}_{D})c_1(\iota^{*}\mathcal{O}_X(D))
+c_{k-1}(\mathcal{T}_{D})c_1(\iota^{*}\mathcal{O}_X(D)).
 \end{align}
-である。
 なお、Chern 類は、Chow 群の元としても定義でき、同様の
 同伴公式が成立する。
 \eqref{equation-classical-total-adjunction}の
 トロピカル幾何的類似は考察でき、次の予想が期待できる。
 \begin{conjecture}
 \label{conjecture-grr-divisor}
-$X$をトロピカル多様体とし、$D$ を余次元$1$の
-部分トロピカル多様体とする。このとき、
-$k\in \mathbb{Z}_{\geq 0}$ と包含写像
-$\iota\colon D \to X$ に対して次が成り立つ。
+Let $X$ be a pure dimensional tropical manifold
+and $D$ a tropical submanifold of $X$ of codimension $1$.
+Then, the following equations hold for 
+$k\in \mathbb{Z}_{\geq 0}$ and the inclusion 
+$\iota\colon D \to X$:
 \begin{align}
 \label{equation-total-adjunction}
 \iota^{*}c^{\mathrm{sm}}(X)&=c^{\mathrm{sm}}(D)
 (1+\iota^{*}\PD{D}), \\ 
 \iota^{*}c^{\mathrm{sm}}_k(X)&=c^{\mathrm{sm}}_k(D)+
-c^{\mathrm{sm}}_{k-1}(D)\iota^{*}\PD{D}(\in H^{k,k}(D;\mathbb{Z})).
+c^{\mathrm{sm}}_{k-1}(D)\iota^{*}\PD{D} \,
+(\in H^{k,k}(D;\mathbb{Z})).
 \end{align}
 \end{conjecture}
-\cref{conjecture-grr-divisor}では、簡単のために
-トロピカルコホモロジーの元に対するものとしたが、
-トロピカル Chow 群版も同様に期待できる。
-トロピカル Chow 群の定義は
-\cite[Definition 3.30]{shaw2015tropical} を見よ。
-$\dim X=1,2$ のとき、
+We also expect that a version
+of \cref{conjecture-grr-divisor} for tropical
+Chow groups \cite[Definition 3.30]{shaw2015tropical}
+also holds.
+When $\dim X=1$, \cref{conjecture-grr-divisor} holds
+trivially. When $\dim X=2$,
 \cref{conjecture-grr-divisor}
-は正しい。$\dim X=1$のときは、
-明らかである。
-$\dim X=2$のときは、
-トロピカル曲面内の
-部分トロピカル曲線の
-同伴公式の別表現に過ぎない
-\cite[Theorem 6]{shaw2015tropical}。
-\cref{conjecture-grr-divisor} 
-が正しいならば、
-どのような結論を導くのかは後で見ていく。
+is just an another representation of adjunction formula
+of locally degree 1 tropical curves on tropical surfaces
+(\cite[Theorem 6]{shaw2015tropical},
+\cite[Theorem 5.2]{demedrano2023chern}).
+We will see later what 
+corollaries appear
+when \cref{conjecture-grr-divisor} is true.  
 
-これよりトロピカル多様体の Todd 類について議論する。
-古典的には、複素多様体 $M$ 上の偶コホモロジー環
-$H^{\mathrm{even}}(M;\mathbb{Q})$
-と接束 $TM$の全 Chern 類 
-$c(TM)\deq \sum_{i=0}^{\infty}c_i(TM)\in 
-H^{\mathrm{even}}(X;\mathbb{Q})$
-に対して
-Todd $m$-列 $(\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
-を適用させることで $M$ の Todd 類
-$\opn{td}(M)$
-が定義されるのであった
-\cite[\textsection 10]{MR1335917}。
+From now on, we discuss the Todd classes of
+tropical manifolds.
+At first, we recall about $m$-sequences.
+The notion of $m$-sequence is introduced
+by Hirzebruch in \cite[\textsection 1]{MR1335917},
+but some part of explanation in
+\cite[\textsection 19]{MR440554}
+by Milnor--Stasheff are more comprehensible,
+we also follow from \cite[\textsection 19]{MR440554}.
+Let $\opn{Todd}\deq 
+(\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$ be 
+the Todd $m$-sequence \cite[\textsection 1.7]{MR1335917}.
+In complex geometry, the $k$-th Chern class
+$c_k(M)$ of a given complex manifold $M$ is 
+defined as an element of $H^{2k}(M;\mathbb{Z})$.
+The image of the total Chern class 
+$c(TM)\deq \sum_{i=0}^{\infty}c_i(TM)$
+in the even cohomology ring $H^{\mathrm{even}}(X;\mathbb{Q})$
+of $M$ over $\mathbb{Q}$.
+Since $H^{\mathrm{even}}(M;\mathbb{Q})$
+is commutative and a graded $\mathbb{Q}$-algebra,
+so the total Chern class of $M$ defines 
+the Todd class $\opn{td}(M)=\sum_{j=0}^{\infty}
+\opn{Todd}_j(c_{1}(M),\ldots,c_{j}(M))$ of $M$
+\cite[\textsection 10]{MR1335917}.
  
-トロピカル多様体 $X$ の Todd 類は
-$H^{\mathrm{even}}(M;\mathbb{Q})$ を
+We can define the Todd class
+$\opn{td}(X)$ of a given tropical manifold
+$X$ by replacing 
+$H^{\mathrm{even}}(M;\mathbb{Q})$ with
 $\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$
-に置き換えるだけで同様に定義することができる
-(\cref{definition-tropical-todd})。
+(\cref{definition-tropical-todd}).
 
-\cite[Conjecture 6.13]{demedrano2023chern} では Todd 類はサイクルとして
-定義しているが、本論文では代数幾何でよく用いられる形に
-近づけるためにそれの Poincar\'e 双対を取ることとする。
+In \cite[Conjecture 6.13]{demedrano2023chern},
+the Todd class of tropical manifolds is
+defined as a tropical cycle.
+In this paper, we use the Poincar\'e dual of it
+in order to get closer to the notation 
+in algebraic geometry.
 
 \begin{definition}[{\cite[\textsection 6]{demedrano2023chern}}]
 \label{definition-tropical-todd}
-$X$をトロピカル多様体とする。
-第 $j$ 次 Todd 類を
-$\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$に
-関する Todd $m$-列 $\opn{Todd}\deq (\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
-に対して
-$X$ の全 Chern 類
-$c^{\mathrm{sm}}(X)$を代入することで得られるものとする。
+Let $X$ be a purely $n$-dimensional tropical manifold.
+The $j$-th \emph{Todd class} of $X$ is  
+is a cycle in $H^{j,j}(X;\mathbb{Q})$
+defined from 
+the Todd $m$-sequence 
+$\opn{Todd}\deq (\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
+with respect to $\bigoplus_{i=0}^{\infty}
+H^{i,i}(X;\mathbb{Q})$ as follows:
 \begin{align}
 \opn{td}_j(X)\deq \opn{Todd}_j(c_{1}^{\mathrm{sm}}(X),
 \ldots,c_{j}^{\mathrm{sm}}(X)),
 \end{align}
 \begin{align}
-\opn{td}(X)\deq \sum_{j=0}^{\infty}\opn{td}_j(X)=
-\opn{Todd}(c^{\mathrm{sm}}(X)).
+\opn{td}(X)\deq
+\opn{Todd}(c^{\mathrm{sm}}(X))\deq
+\sum_{j=0}^{\infty}\opn{td}_j(X).
 \end{align}
 
 \end{definition}
@@ -2383,35 +2368,37 @@ $c^{\mathrm{sm}}(X)$を代入することで得られるものとする。
 
 \begin{definition}
 \label{definition-rr-number}
-$X$ を純$n$次元
-コンパクトトロピカル多様体とし、$D\in Z_{n-1}(X)$
-とする。このとき、
-$D$ の Riemann--Roch 数を次のようにする。
+Let $X$ be a purely $n$-dimensional
+compact tropical manifold.
+The \emph{Riemann--Roch number}
+of $D(\in Z_{n-1}(X))$ is the following number:
 \begin{align}
+\label{equation-rr-number}
 \opn{RR}(X;D)\deq \int_X \opn{ch}(\PD{D})\opn{td}(X).
 \end{align}
 \end{definition}
-$D\in \opn{Div}(X)^{[0]}$ のとき、
-\cite[Proposition 5.12]{MR4637248} より
-\cref{definition-rr-number} は
-\cref{equation-intro-rr} のようにも書ける。
+If $D\in \opn{Div}(X)^{[0]}$,
+then we can write \cref{equation-rr-number}
+as \cref{equation-intro-rr}
+from \cite[Proposition 5.12]{MR4637248}.
 
-次に、古典の場合に従い
-一般化された Gysin 押し出し(generalized Gysin map)
-を定義する(e.g. 
-\cite[Chapter 13. Appendix]{MR2810322})。
-(なお、トロピカル多様体における
-一般化された Gysin 押し出しは
-\cite[Proposition 8.3]{amini2020hodge} でもすでに用いられている。)
-\begin{definition}
-$X,Y$ を pure なトロピカル多様体とし、
-$Q$を$\mathbb{R}$の部分環とする。
-$f\colon X\to Y$ を固有射とする。
-$f$ の \emph{generalized Gysin map} とは、
-次の射が可換となる射
-$f_!\colon H^{\bullet,\bullet}(X;Q)\to 
+Follwoing the theory of algebraic geometry,
+we define the \emph{generalized Gysin map}
+associated with proper morphism between
+tropical manifolds (see  
+\cite[Chapter 13. Appendix]{MR2810322}
+for classical cases).
+We note that the generalized Gysin map
+for tropical manifolds
+have already appeared in \cite{amini2020hodge}.
+\begin{definition}[{cf. \cite{amini2020hodge}}]
+Let $X$ and $Y$ be pure dimensional tropical manifolds
+and $Q$ a subring of $\mathbb{R}$.
+Let $f\colon X\to Y$ be a proper morphism.
+The \emph{generalized Gysin map} of $f$ is 
+the morphism $f_!\colon H^{\bullet,\bullet}(X;Q)\to 
 H^{\bullet,\bullet}(Y;Q)$
-のことである。
+which commutes with the following diagram:
 \begin{equation}
 \begin{tikzcd}
 	{H^{\bullet,\bullet}(X;Q)} & {H^{\bullet,\bullet}(Y;Q)} \\
@@ -2420,31 +2407,32 @@ H^{\bullet,\bullet}(Y;Q)$
 	\arrow["{\cdot\frown[Y]}", from=1-2, to=2-2]
 	\arrow["{f_*}"', from=2-1, to=2-2]
 	\arrow["{f_!}", from=1-1, to=1-2]
-\end{tikzcd}    
+\end{tikzcd}.   
 \end{equation}
 
 \end{definition}
-定義より、次の射影公式が成り立つ。
-\begin{proposition}[{射影公式}]
-$X,Y$ を pure なトロピカル多様体とし、
-$f\colon X\to Y$ を固有射とする。
-このとき、$c\in H^{\bullet,\bullet}(Y;Q) $
-$d\in H^{\bullet,\bullet}(X;Q)$
-に対して、次が成り立つ。
+From definition, there exists the following projection formula.
+\begin{proposition}
+Let $f\colon X\to Y$ be a proper morphism
+between pure dimensional
+tropical manifolds $X$ and $Y$.
+Then, for any $c\in H^{\bullet,\bullet}(Y;Q) $ and
+$d\in H^{\bullet,\bullet}(X;Q)$ the following equation holds:
 \begin{align}
     f_!(f^{*}(c)\cdot d)=c\cdot f_!(d).
 \end{align}
-とくに、$f_!(f^{*}(c))=c\cdot f_!(1)$ が成り立つ。
+In particular, $f_!(f^{*}(c))=c\cdot f_!(1)=c\cdot \PD{X}$.
 \end{proposition}
 
 \begin{proof}
-$\cdot \frown [Y]$ は同型射なので、次の等式を
-示せばよい。
+Since $\cdot \frown [Y]$ is an isomorphism, we only need
+to prove the following:
 \begin{align}
     f_!(f^{*}(c)\cdot d)\frown [Y]=(c\cdot f_!(d))\frown [Y]
 \end{align}
-実際に、Borel--Moore ホモロジーについての射影公式より
-次のように式変形することで得られる:
+We can get the projection formula for generalized Gysin
+map from that for the pushforward of tropical 
+Borel--Moore homologies as follows:
 \begin{align}
 (c\cdot f_!(d))\frown [Y]&=
 c\frown(f_!(d)\frown [Y])=
@@ -2456,106 +2444,105 @@ c\frown f_*(d\frown [X])\\
 \end{proof}
 
 \begin{example}
-     
-$X$ をトロピカル多様体とし $D$ を余次元 $1$ の
-部分トロピカル多様体とする。
-\cref{conjecture-grr-divisor} が正しいと仮定すると、
-包含写像
-$\iota\colon D\to X$ に関する
-Gysin 押し出しと射影公式から
+\label{example-grr-1}
+Let $X$ be a purely n-dimensional tropical manifold
+and $D$ a tropical submanifold of codimension $1$ on 
+$X$. If 
+\cref{conjecture-grr-divisor} is true, then
+the generalized Gysin map of the
+inclusion map
+$\iota\colon D\to X$ induces
 \begin{align}
 c^{\mathrm{sm}}(X)\cdot \PD{D}=\iota_!c^{\mathrm{sm}}(D)
 (1+\PD{D}).
 \end{align}
-
-この等式の第 $1$ 次数部分は、
+The first degree part of the equation above is
 \begin{align}
 \label{equation-adjunction-dmrs}
 c^{\mathrm{sm}}_{1}(X)\cdot \PD{D}=\iota_!c^{\mathrm{sm}}_1(D)
 +\PD{D}\cdot \PD{D}.
 \end{align}
-これは、
-\cite[Theorem 5.2]{demedrano2023chern}にて示された
-同伴公式のサイクル写像による像の
-Poincar\'e dual である。
-\eqref{equation-adjunction-dmrs} を標準束で書き直すと
+We may consider \cref{equation-adjunction-dmrs} as 
+the Poincar\'e dual of the adjunction formula proved in
+\cite[Theorem 5.2]{demedrano2023chern}.
+By using the danonical divisor of tropical manifolds,
+\eqref{equation-adjunction-dmrs} can be rewritten as follows:
 \begin{align}
 \iota_! \PD{K_D}=(\PD{K_X}+\PD{D})\PD{D}.
 \end{align}
-$\dim X=2$ のとき、$H^{1,1}(X;\mathbb{Z})\simeq \mathbb{Z}$
-なのでこの等式も
-\cite[Theorem 4.11]{shaw2015tropical} にて示された
-随伴公式を与える。
+If $\dim X=2$, then this equation also gives
+the adjunction formula of tropical surfaces which is proved
+in \cite[Theorem 4.11]{shaw2015tropical}
+since $H^{2,2}(X;\mathbb{Z})\simeq \mathbb{Z}$.
 \end{example}
 
-\begin{example}
-再び
-$X$ をトロピカル多様体とし $D$ を余次元 $1$ の
-部分トロピカル多様体とする。
-\eqref{equation-total-adjunction}と
-Todd類の乗法列としての性質より
+\begin{example}[{cf. \cite[Chapter 13. Appendix]{MR2810322}}]
+We retain the notation in \cref{example-grr-1}.
+From \eqref{equation-total-adjunction}
+and the property of multiplicative sequences, 
 \begin{align}
+\label{equation-todd-adjunction-1}
 \iota^{*}\opn{td}(X)=
 \opn{td}(D)\frac{\iota^{*}\PD{D}}
 {1-\opn{exp}(\iota^{*}\PD{D})}.
 \end{align}
-これを式変形すると次のようになる。
+From \cref{equation-todd-adjunction-1} we also get
 \begin{align}
 \opn{td}(D)
 =\iota^{*}\left(
 \frac{1-\opn{exp}(\PD{D})}{
 \PD{D}}\opn{td}(X)\right).
 \end{align}
-また、これに射影公式
-を当てはめると
+Moreover, the projection formula for 
+$\iota$ gives
 \begin{align}
 \label{equation-grr-divisor-2}
 \iota_!(\opn{td}(D))=(1-\opn{ch}(\PD{D}))\opn{td}(X).
 \end{align}
-\eqref{equation-grr-divisor-2} は、
-Grothendieck--Riemann--Roch の定理の特殊例
-のトロピカル類似である。
+The equation \eqref{equation-grr-divisor-2} 
+is a special case of an analog of 
+the Grothendieck--Riemann--Roch theorem.
 \end{example}
 
 \begin{proposition}
 If \label{proposition-euler-to-bertini}
-\cite[Conjecture 6.13]{demedrano2023chern} and
+\cite[Conjecture 6.13]{demedrano2023chern},
 \cref{conjecture-grr-divisor,conjecture-rr-euler}
 are true, then \cref{conjecture-rr-bertini} is also true. 
 \end{proposition}
 
 \begin{proof}
-\cref{conjecture-grr-divisor} が正しいと仮定すると
-埋め込み $\iota\colon D\to X$ に対する
-射影公式より
+We suppose \cref{conjecture-grr-divisor} is true.
+The projection formula for 
+the embedding $\iota\colon D\to X$ gives
 \begin{align}
 \iota_!(\opn{ch}(\iota^{*}(\PD{D'}))\opn{td}(D))
 &=\opn{ch}(\PD{D'})\iota_!(\opn{td}(D)) \notag \\
 &=(\opn{ch}(\PD{D'})-\opn{ch}(\PD{D'-D}))\opn{td}(X).
 \end{align}
-
-仮定より $D'$ は sedentarity-$0$ なので、
-因子としての引き戻し$\iota^{*}D'=D'|_{D}$が存在するため
-次が成り立つ。
+From the assumpition, 
+$D'$ is sedentarity-$0$. 
+The pullback $\iota^{*}D'=D'|_{D}$ of $D'$ satisfies
+the following:
 \begin{align}
 \label{equation-rr-number-divisor}
 \opn{RR}(X;D'-D)=\opn{RR}(X;D')-
 \opn{RR}(D;D'|_{D}).
 \end{align}
 
-\cref{conjecture-rr-euler} と
-\cite[Conjecture 6.13]{demedrano2023chern} が
-正しいならば、
+If \cref{conjecture-rr-euler} and 
+\cite[Conjecture 6.13]{demedrano2023chern} is true,
+then
 \begin{align}
 \opn{RR}(X;D')-
 \opn{RR}(D;D'|_{D})=
-\chi(X\setminus D')-\chi(D\setminus (D'\cap D)) \notag
+\chi(X\setminus D')-\chi(D\setminus (D'\cap D)). \notag
 \end{align}
-となる。よって示せた。
+よって示せた。
 \end{proof}
 
-以上を踏まえて、\cref{theorem-rr-euler-surface}
-を一般化する。
+Based on the above, we will generalize
+\cref{theorem-rr-euler-surface}.
 
 \begin{theorem}
 \label{theorem-rr-bertini-surface}
@@ -2573,8 +2560,8 @@ when $X$ admits a Delzant face structure.
 \begin{proof}
 Since $\dim X=2$, 
 \cref{conjecture-grr-divisor} is true.
-\cref{theorem-rr-euler-surface}と
-\eqref{equation-rr-number-divisor}より、
+From \cref{theorem-rr-euler-surface} and 
+\eqref{equation-rr-number-divisor}, we have
 \begin{align}
 \frac{(D'-D).(D'-D-K_X)}{2}=&
 \opn{RR}(X;D')-\opn{RR}(X;0)-
