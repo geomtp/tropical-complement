@@ -573,7 +573,7 @@ on $D$, then
 \begin{align}
 \chi(D;\iota^{*}\mathcal{O}_X(D'))=\chi(D;\mathcal{O}_D(D'\cap D)).
 \end{align}
-It may seems that 
+It may seem that 
 the assumption for a pair $(D,D')$ above is
 too strict.
 
@@ -664,8 +664,10 @@ We also give a generalization of
 \cref{theorem-rr-euler-surface}.
 
 \subsection*{Acknowledgement}
-We would like to thank Kazushi Ueda for his continous advice
-and encouragement.
+We would like to thank Kazushi Ueda for his continuous advice
+and encouragement. We are also thankful to Kris Shaw
+for answering my question on
+\cite{shaw2015tropical,demedrano2023chern}.
 This work was partially supported 
 by JSPS KAKENHI Grant Number JP21J14529 and JP21K18575.
 
@@ -1164,7 +1166,7 @@ follows from that
 $\chi_{c}(\mathbb{T}P^{n}\setminus
 \overline{V_{\mathbb{T}}(f)})
 =1-\chi (\overline{V_{\mathbb{T}}(f)})$
-and $\overline{V_{\mathbb{T}}(f)}$ is homoytopy 
+and $\overline{V_{\mathbb{T}}(f)}$ is homotopy 
 equivalent to the bouquet
 of $\sharp \opn{int}(d\Delta_n(\mathbb{Z}))$
 $(n-1)$-dimensional spheres.
@@ -1188,7 +1190,7 @@ $Y$ is in moderate position.
 \end{proof}
 For the proof of \cref{theorem-rr-euler-surface}, we 
 use the following well-known 
-proposition for Berdman fans: 
+proposition for Bergman fans: 
 the support of the Bergman fan of
 a loopless matroid of rank $2$ 
 is isomorphic to the support of the Bergman fan of
@@ -1665,7 +1667,7 @@ In particular,
 $\opn{rank} H^{0}(C\setminus D)>r(D)+1$ in this case.
 The equation $\opn{rank} H^{1}(C\setminus D)=1$ is
 independent of the degree of $D$.
-It is a very different point from behaviour of 
+It is a very different point from behavior of 
 the cohomology of invertible sheaves on algebraic varieties.
 This is a main reason why we stress 
 that we need to define a ``Floer differential'' for 
@@ -1673,7 +1675,7 @@ $H^{\bullet}(C\setminus D)$ in order to capture a
 homological data of tropical line bundles 
 in \cref{remark-c-infinity-divisor}.
 
-We expect that we can define such an appropiriate
+We expect that we can define such an appropriate
 differential of $H^{\bullet}(C\setminus D)$
 by a combinatorial way as an analog of
 the Floer complex of Lagrangian sections on 
@@ -1695,7 +1697,7 @@ and Chern classes of tropical manifolds.
 First, we note 
 the theory of Chern classes of tropical manifold
 \cite{demedrano2023chern} is new and 
-the Chern(--Schwartz--Macpherson) class of
+the Chern(--Schwartz--MacPherson) class of
 tropical manifolds is not defined from a direct analog
 of the theory of vector bundles on algebraic varieties.
 Therefore, there is much that is not sufficiently
@@ -1709,12 +1711,12 @@ multiplicative sequences (or $m$-sequences)
 \cite[\textsection 1]{MR1335917}
 (see also \cite[\textsection 19]{MR440554}).
 Even from these properties alone,
-we can intestigate the Todd classes of tropical manifolds
+we can investigate the Todd classes of tropical manifolds
 to some extent.
 
 In this section, we mainly
 discuss about properties which 
-the Todd should have if
+the Todd classes should have if
 a natural conjecture for
 tropical Chern classes
 (\cref{conjecture-grr-divisor}) holds.
@@ -2213,10 +2215,13 @@ $D_1,D_2\in \opn{Div}^{[0]}(X)$ の
 \end{proof}
 
 
-\subsection{トロピカル多様体の Chern 類と Todd 類}
-
-なお、代数多様体の Chern 類と Todd 類の内容は
-\cite{MR1335917,MR1644323,MR2810322} を参考にした。
+\subsection{Chern classes and Todd classes of
+tropical manifolds}
+In this subsection, we start to discuss
+\cref{conjecture-rr-bertini} and give a generalization
+of \cref{theorem-rr-euler-surface}.
+We mainly follow
+from \cite{MR1335917,MR1644323,MR2810322}.
 
 \cite[Definition 5.4]{MR4637248}。
 (\cite[Definition 4.13]{MR3894860}もみよ。)
@@ -2231,11 +2236,11 @@ c_{k}^{\mathrm{sm}}(X)\deq
 \in H^{k,k}(X;\mathbb{Z}).
 \end{align}
 This notation $c_{k}^{\mathrm{sm}}(X)$
-is used to aviod confusion with the Chern classes of divisors.
+is used to avoid confusion with the Chern classes of divisors.
 As like this, we write the total Chern class of $X$ as
 $c^{\mathrm{sm}}(X)=\sum_{k=0}^{n} c_{k}^{\mathrm{sm}}(X)$.
-また $L\in H^{1,1}(X;\mathbb{Z})$ に対して、
-Chern 指標を次のように書く。
+For a given $L\in H^{1,1}(X;\mathbb{Z})$, we write
+the \emph{Chern character} of $L$ as follows:
 \begin{align}
 \opn{ch}(L)\deq \opn{exp}(L)
 \deq \sum_{i=0}^{\infty}\frac{L^{i}}{i!}\in 
@@ -2243,34 +2248,41 @@ H^{\bullet,\bullet}(X;\mathbb{Q}).
 \end{align}
 \end{notation}
 
-Let $X$ be a complex manifold and $D$ a nonsingular
-divisor on $X$. Let $\mathcal{T}_X$ be the tangent
-bundle of 
-非特異因子 $D$ に対して、次の層短完全列が存在する。
+In order to discuss the Todd classes of
+tropical manifolds, we recall fundamental properties
+of Chern classes of complex manifolds.
+Let $M$ be a complex manifold and 
+$D$ a nonsingular
+divisor on $D$. Let $\mathcal{T}_M$ be the tangent
+bundle of $M$.
+For an embedding $\iota\colon D\to M$ of
+a (nonsingular) divisor on $M$, we have the following
+exact sequence: 
 \begin{align}
-0 \to \mathcal{T}_{D}\to \iota^{*}\mathcal{T}_X
-\to \iota^{*}\mathcal{O}_X(D)\to 0
+\label{equation-total-adjunction-exact}
+0 \to \mathcal{T}_{D}\to \iota^{*}\mathcal{T}_M
+\to \iota^{*}\mathcal{O}_M(D)\to 0.
 \end{align}
-ここで、$\mathcal{N}_{D/X}\simeq \iota^{*}\mathcal{O}_X(D)$
-であるため、次の全 Chern 類の同伴公式が成り立つ。
+From the axioms of Chern classes,
+\eqref{equation-total-adjunction-exact} gives 
+the adjunction formula for total Chern classes:
 \begin{align}
 \label{equation-classical-total-adjunction}
 \iota^{*}c(\mathcal{T}_X)
-=c(\mathcal{T}_{D})c(\iota^{*}\mathcal{O}_X(D))
+=c(\mathcal{T}_{D})c(\iota^{*}\mathcal{O}_X(D)).
 \end{align}
-$c(\mathcal{O}_X(D))=1+c_1(\mathcal{O}_X(D))$ なので
-次数部分に着目すれば、$k\in \mathbb{Z}_{\geq 0}$
-に対して
+Since $c(\mathcal{O}_X(D))=1+c_1(\mathcal{O}_X(D))$, 
+the $k$-th part of \eqref{equation-classical-total-adjunction}
+is
 \begin{align}
 \label{equation-classical-total-adjunction-2}
 \iota^{*}c_k(\mathcal{T}_X)
 =c_{k}(\mathcal{T}_{D})+
 c_{k-1}(\mathcal{T}_{D})c_1(\iota^{*}\mathcal{O}_X(D)).
 \end{align}
-なお、Chern 類は、Chow 群の元としても定義でき、同様の
-同伴公式が成立する。
-\eqref{equation-classical-total-adjunction}の
-トロピカル幾何的類似は考察でき、次の予想が期待できる。
+We can discuss an analog of 
+\eqref{equation-classical-total-adjunction},
+and expect the following conjecture holds:
 \begin{conjecture}
 \label{conjecture-grr-divisor}
 Let $X$ be a pure dimensional tropical manifold
@@ -2318,13 +2330,14 @@ In complex geometry, the $k$-th Chern class
 $c_k(M)$ of a given complex manifold $M$ is 
 defined as an element of $H^{2k}(M;\mathbb{Z})$.
 The image of the total Chern class 
-$c(TM)\deq \sum_{i=0}^{\infty}c_i(TM)$
+$c(M)\deq \sum_{i=0}^{\infty}c_i(M)$
 in the even cohomology ring $H^{\mathrm{even}}(X;\mathbb{Q})$
 of $M$ over $\mathbb{Q}$.
 Since $H^{\mathrm{even}}(M;\mathbb{Q})$
-is commutative and a graded $\mathbb{Q}$-algebra,
+is commutative and a graded $\mathbb{Q}$-algebra
+and $c_0(M)=1$,
 so the total Chern class of $M$ defines 
-the Todd class $\opn{td}(M)=\sum_{j=0}^{\infty}
+the Todd class $\opn{td}(M)\deq \sum_{j=0}^{\infty}
 \opn{Todd}_j(c_{1}(M),\ldots,c_{j}(M))$ of $M$
 \cite[\textsection 10]{MR1335917}.
  
@@ -2334,7 +2347,6 @@ $X$ by replacing
 $H^{\mathrm{even}}(M;\mathbb{Q})$ with
 $\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$
 (\cref{definition-tropical-todd}).
-
 In \cite[Conjecture 6.13]{demedrano2023chern},
 the Todd class of tropical manifolds is
 defined as a tropical cycle.
@@ -2345,8 +2357,8 @@ in algebraic geometry.
 \begin{definition}[{\cite[\textsection 6]{demedrano2023chern}}]
 \label{definition-tropical-todd}
 Let $X$ be a purely $n$-dimensional tropical manifold.
-The $j$-th \emph{Todd class} of $X$ is  
-is a cycle in $H^{j,j}(X;\mathbb{Q})$
+The $j$-th \emph{Todd class} of $X$ is
+a cycle in $H^{j,j}(X;\mathbb{Q})$
 defined from 
 the Todd $m$-sequence 
 $\opn{Todd}\deq (\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
@@ -2382,7 +2394,7 @@ then we can write \cref{equation-rr-number}
 as \cref{equation-intro-rr}
 from \cite[Proposition 5.12]{MR4637248}.
 
-Follwoing the theory of algebraic geometry,
+Following the theory of algebraic geometry,
 we define the \emph{generalized Gysin map}
 associated with proper morphism between
 tropical manifolds (see  
@@ -2465,7 +2477,7 @@ c^{\mathrm{sm}}_{1}(X)\cdot \PD{D}=\iota_!c^{\mathrm{sm}}_1(D)
 We may consider \cref{equation-adjunction-dmrs} as 
 the Poincar\'e dual of the adjunction formula proved in
 \cite[Theorem 5.2]{demedrano2023chern}.
-By using the danonical divisor of tropical manifolds,
+By using the canonical divisor of tropical manifolds,
 \eqref{equation-adjunction-dmrs} can be rewritten as follows:
 \begin{align}
 \iota_! \PD{K_D}=(\PD{K_X}+\PD{D})\PD{D}.
@@ -2520,7 +2532,7 @@ the embedding $\iota\colon D\to X$ gives
 &=\opn{ch}(\PD{D'})\iota_!(\opn{td}(D)) \notag \\
 &=(\opn{ch}(\PD{D'})-\opn{ch}(\PD{D'-D}))\opn{td}(X).
 \end{align}
-From the assumpition, 
+From the assumption, 
 $D'$ is sedentarity-$0$. 
 The pullback $\iota^{*}D'=D'|_{D}$ of $D'$ satisfies
 the following:
