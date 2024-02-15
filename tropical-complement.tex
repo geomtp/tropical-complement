@@ -424,12 +424,12 @@ of codimension $1$ on $X$
 \cite[Theorem 6]{shaw2015tropical} gives
 \begin{align}
 \opn{RR}(X;-D)=\frac{(-D-K_X).(-D)}{2}+\opn{RR}(X;0)
-=\chi(D)+\opn{RR}(X;0).
+=-\chi(D)+\opn{RR}(X;0).
 \end{align}
 where $(-D-K_X).D$ is the intersection number of 
 $-D-K_X$ and $D$ in the meaning of \cite{shaw2015tropical}.
-Therefore, if $X$ admits a Delzant face structure 
-\cref{conjecture-rr-c-euler} is true
+Therefore, if $X$ admits a Delzant face structure,
+then \cref{conjecture-rr-c-euler} is true
 by \cite[Theorem 6.3]{demedrano2023chern}.
 (We will see the compatibility of different definition of
 intersection numbers which is needed to prove it in
@@ -666,7 +666,7 @@ We also give a generalization of
 \subsection*{Acknowledgement}
 We would like to thank Kazushi Ueda for his continuous advice
 and encouragement. We are also thankful to Kris Shaw
-for answering my question on
+for answering my questions on
 \cite{shaw2015tropical,demedrano2023chern}.
 This work was partially supported 
 by JSPS KAKENHI Grant Number JP21J14529 and JP21K18575.
@@ -924,44 +924,51 @@ $\dim \opn{LC}_x Y=\dim \opn{LC}_x X$
 なので トロピカル部分多様体の定義より
 $\opn{LC}_x Y\simeq \opn{LC}_x X$
 となる。
-任意の点 $x\in Y$ に対して、
+For $x\in Y$,
 $\opn{sed}_X(x)=\opn{sed}_Y(x)$ 
 のとき、$Y$ を $X$ の sedentarity-0 な
 トロピカル部分多様体と呼ぶ。 
 
-点 $x\in X$ に対して
-$\opn{lineal}(X,x)$ を$\opn{LC}_x X (\subset T_x X)$
-の maximal lineality 空間とする。
-(\cite[\textsection 2.1]{MR4246795} と
-\cite[\textsection 3]{demedrano2023chern} を見よ。)
+For $x\in X$, let 
+$\opn{lineal}(X,x)$ be the (maximal) lineality space
+$\opn{lineal}(\opn{LC}_x X)$ of 
+$\opn{LC}_x X (\subset T_x X)$ \cite[\textsection 2.1]{MR4246795}
+(see also \cite[\textsection 3]{demedrano2023chern}).
 
 
 
 \begin{remark}
-\cite[\textsection 5]{MR3041763}の意味での
-錐的多面集合の lineality 空間
-は、
-\cite[\textsection 2.1]{MR4246795}の意味での
-極大 lineality 空間と一致する。
-一致することを見るには、錐的多面集合が常に扇構造を持つことを
-みれば十分である。これは、
-$\mathbb{R}^{n}$ 内の凸多面集合の三角形分割を与える証明と
-ほぼ同様にして証明することができる。
-まず、錐的多面集合$C$は幾つかの有理凸多面錐の有限和
-$C=\bigcup_{i\in I}\sigma_i$として
-得ることができる。また、各有理凸多面錐は強凸と仮定して
-よい。
-各 $\sigma_i$ に対して$\sigma_i$を面に持つ
-完備扇 $\Sigma_i$ が存在する。
-(これは隅広の同変コンパクト化定理
-\cite[Theorem 3]{MR337963}をトーリック幾何に適用
-することで求まる。)
-この共細 $\bigwedge_{i\in I}\Sigma_i$が、
-$C$の多面体的錐の扇構造を与える。
-この論法はコンパクトな polyhedron の
-単体分割と実質的に同じである。
-(例えば\cite[Theorem 2.11]{MR665919}
-を見よ。)
+The lineality space of the local cone $\opn{LC}_x X$
+at a point $x$ in a rational polyhedral space
+$(X,\mathcal{O}_X^{\times})$ in the sense of 
+\cite[\textsection 2.1]{MR4246795}
+is equivalent to
+the maximal lineality space of $\opn{LC}_x X$ in
+\cite[\textsection 5]{MR3041763}.
+We can check about this as follows:
+Since every conical rational polyhedral set $P$ has an isomorphism
+$P\simeq P/\opn{lineal}(P)\simeq \opn{lineal}(P)$, we
+may assume $\opn{lineal}(P)$ is trivial.
+Therefore, to see that the two coincide,
+it is sufficient to observe that 
+conical rational polyhedral sets
+always possess a fan structure.
+We can give a proof of it like
+that of the existence theorem
+of a triangulation of compact convex polyhedron
+in $\mathbb{R}^{n}$ (cf. \cite[Theorem 2.11]{MR665919}):
+From definition, every conical rational polyhedral set $P$
+is the finite union $\bigcup_{i\in I}\sigma_i$ of 
+rational polyhedral cones $\sigma_i$.
+Besides, we may assume every $\sigma_i$ is strongly convex.
+For every $i\in I$, there exists a
+complete fan $\Sigma_i$ such that $\sigma_i\in\Sigma$.
+(We can prove it by an application of Sumihiro's
+compactification theorem for toric varieties
+\cite[Theorem 3]{MR337963}.)
+The refinement $\bigwedge_{i\in I}\Sigma_i$
+of a family $\{\Sigma_i\}_{i\in I}$ of fans gives
+a fan structure of $P$.
 \end{remark}
 
 \begin{definition}
@@ -1055,32 +1062,37 @@ Therefore, \cref{proposition-divisor-poincare} follows from
 
 \begin{remark}[{Integral affine manifolds with singularities}]
 \label{remark-iass}
-\cref{conjecture-rr-euler}や
+We expect that we can generalize
+\cref{conjecture-rr-euler} and 
 \cref{proposition-divisor-poincare}
-は、特異点つき整アフィン多様体に対して一般化できる
-と期待できる。
-一般に (境界を持たない) 向き付け可能な
-特異点つき整アフィン多様体は、
-Calabi--Yau 多様体の類似物と考えられている。
-コンパクト Calabi--Yau 多様体 $M$ の標準束
-$K_M$ は自明なので
-Serre 双対性を考えると$M$上の因子$D$に対して
+for integral affine manifold with singularities
+\cite{MR2213573,MR2181810,MR4347312}.
+\todo[inline]{特異点つき整アフィン多様体の文献は十分か?}
+Normally, integral affine manifolds with singularities
+are analogs of complex manifolds whose canonical bundles
+are numerically trivial. If $M$ is a compact and
+connected complex manifold whose canonical bundle $K_M$ is
+numerically trivial, then $l\cdot c_1(K_M)=0$ for 
+some $l\in \mathbb{Z}_{>0}$.
+From the Atiyah--Singer index formula and the Serre duality, 
+for any divisor $D$ on $M$, we have
 \begin{align}
 \label{equation-calabi-yau-euler}
 \chi(M;\mathcal{O}_M(-D))=(-1)^{\dim M}
-\chi(M;\mathcal{O}_{M}(D))
+\chi(M;\mathcal{O}_{M}(D)).
 \end{align}
-となる。
-これまでの議論を踏まえると、
-\cref{equation-calabi-yau-euler} は
-整アフィン多様体の場合に示した
-\cref{proposition-divisor-poincare} と類似した
-性質であり、\cref{proposition-divisor-poincare}
-の証明は $X\setminus D$ が位相多様体であることが
-本質的であるため、
-\cref{proposition-divisor-poincare}
-は特異点つき整アフィン多様体に一般化できると
-期待できる。
+The equation \cref{equation-calabi-yau-euler} is
+similar with
+\cref{proposition-divisor-poincare}, and 
+one of essential points of the proof of it
+is that $X\setminus D$ is a topological manifold.
+Hence, we expect that we can generalize
+\cref{conjecture-rr-euler} for 
+integral affine manifolds with singularities
+and this description is compatible with
+tropical contractions from tropical manifolds
+to integral affine manifold with singularities
+\cite{yamamoto2021tropical}.
 \end{remark}
 
 \begin{example}[{\cite[Example 2.11]{demedrano2023chern}}]
@@ -1524,7 +1536,7 @@ defined the graded module $\opn{LMD}^{\bullet}(X;s)$
 for a permissible $C^{\infty}$-divisor $s$ on
 a compact tropical manifold.
 By using the theory of \cite{demedrano2023chern}
-we can refine the Conjecture 1.2 of 
+we can refine the Conjecture 1.2 in 
 \cite{tsutsui2023graded}
 like this: the Euler characteristic of
 $\opn{LMD}^{\bullet}(X;s)$ 
@@ -1728,23 +1740,21 @@ in \cref{theorem-rr-bertini-surface}.
 In this subsection, we recall
 the theory of tropical homology from
 \cite{MR3330789,MR3894860,MR4637248}.
-なお、本論文では \cite{MR4637248} による
-層理論的なトロピカルホモロジー論について中心的に
-復習する。この節では、$Q$ を $\mathbb{R}$
-の部分環とする。
-有理多面空間 $(X,\mathcal{O}_X^{\times})$
-と$p\in \mathbb{Z}$ に対して
-$\Omega_{\mathbb{Z},X}^{p}$ を
-tropical $p$-form のなす層とする
-\cite[Definition 2.7]{MR4246795}。
-(\cite{MR3330789,MR3961331} との比較のために 
-\cite[Remark 2.8]{MR4637248} も見よ。)
+In this subsection, let
+$Q$ be a subring of $\mathbb{R}$.
+Let $(X,\mathcal{O}_X^{\times})$ be
+a rational polyhedral space and 
+$\Omega_{\mathbb{Z},X}^{p}$
+the sheaf of tropical $p$-forms
+on $X$ \cite[Definition 2.7]{MR4637248}
+(cf. \cite[\textsection 2.4]{MR3330789}).
+
 有理多面空間 $(X,\mathcal{O}_X^{\times})$
 と$p,q\in \mathbb{Z}$ に対して、
 トロピカルコホモロジー $H^{p,q}(X;Q)$ と
 トロピカル Borel--Moore ホモロジー
 $H_{p,q}^{\mathrm{BM}}(X;Q)$ が次のように定義される
-\cite[Definition 4.3]{MR4637248}:
+\cite[Definition 4.1 and 4.3]{MR4637248}:
 \begin{align}
 H^{p,q}(X;Q)&\deq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}(
 \mathbb{Z}_X,\Omega_{\mathbb{Z},X}^{p}[q])
@@ -1754,6 +1764,10 @@ H_{p,q}^{\mathrm{BM}}(X;Q)
 (\Omega_{\mathbb{Z},X}^{p}[q],\upomega_{X}^{\bullet})
 \otimes_{\mathbb{Z}}Q.
 \end{align}
+
+For comparison with the original
+tropical homology \cite{MR3330789,MR3961331},
+see also \cite[Remark 2.8 and Theorem 4.20]{MR4637248}.
 $\Omega_{\mathbb{Z},X}^{\bullet}$ 
 を tropical $p$-form のなす
 全複体とする(cf. \cite[Proposition 3.1]{smacka2017differential})。
@@ -1789,7 +1803,7 @@ $\opn{cyc}_X \colon Z_k(X)\to
 H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
 が存在し、固有射の押し出しに関して可換である
 \cite[Definition 5.4 and Corollary 5.8]{MR4637248}。
-
+(see also \cite[Definition 4.13]{MR3894860})
 有理多面空間
 $(X,\mathcal{O}_X^{\times})$ が、
 基本類を許す
@@ -2220,15 +2234,12 @@ tropical manifolds}
 In this subsection, we start to discuss
 \cref{conjecture-rr-bertini} and give a generalization
 of \cref{theorem-rr-euler-surface}.
-We mainly follow
-from \cite{MR1335917,MR1644323,MR2810322}.
-
-\cite[Definition 5.4]{MR4637248}。
-(\cite[Definition 4.13]{MR3894860}もみよ。)
-
 
 \begin{notation}
-Let $X$ be a purely $n$-dimensional tropical manifold.
+Let $X$ be a purely $n$-dimensional tropical manifold
+and $\opn{csm}_{k}(X)$ the $k$-th
+Chern--Schwartz--MacPherson cycle of $X$
+\cite[Definition 3.4]{demedrano2023chern}.
 Then, we write the $k$-th Chern class of $X$ as
 \begin{align}
 c_{k}^{\mathrm{sm}}(X)\deq
@@ -2250,13 +2261,14 @@ H^{\bullet,\bullet}(X;\mathbb{Q}).
 
 In order to discuss the Todd classes of
 tropical manifolds, we recall fundamental properties
-of Chern classes of complex manifolds.
+of Chern classes of complex manifolds from
+\cite{MR1335917,MR1644323,MR2810322}.
 Let $M$ be a complex manifold and 
 $D$ a nonsingular
 divisor on $D$. Let $\mathcal{T}_M$ be the tangent
 bundle of $M$.
 For an embedding $\iota\colon D\to M$ of
-a (nonsingular) divisor on $M$, we have the following
+$D$, we have the following
 exact sequence: 
 \begin{align}
 \label{equation-total-adjunction-exact}
@@ -2268,17 +2280,17 @@ From the axioms of Chern classes,
 the adjunction formula for total Chern classes:
 \begin{align}
 \label{equation-classical-total-adjunction}
-\iota^{*}c(\mathcal{T}_X)
-=c(\mathcal{T}_{D})c(\iota^{*}\mathcal{O}_X(D)).
+\iota^{*}c(\mathcal{T}_M)
+=c(\mathcal{T}_{D})c(\iota^{*}\mathcal{O}_M(D)).
 \end{align}
-Since $c(\mathcal{O}_X(D))=1+c_1(\mathcal{O}_X(D))$, 
+Since $c(\mathcal{O}_M(D))=1+c_1(\mathcal{O}_M(D))$, 
 the $k$-th part of \eqref{equation-classical-total-adjunction}
 is
 \begin{align}
 \label{equation-classical-total-adjunction-2}
-\iota^{*}c_k(\mathcal{T}_X)
+\iota^{*}c_k(\mathcal{T}_M)
 =c_{k}(\mathcal{T}_{D})+
-c_{k-1}(\mathcal{T}_{D})c_1(\iota^{*}\mathcal{O}_X(D)).
+c_{k-1}(\mathcal{T}_{D})c_1(\iota^{*}\mathcal{O}_M(D)).
 \end{align}
 We can discuss an analog of 
 \eqref{equation-classical-total-adjunction},
@@ -2327,8 +2339,9 @@ Let $\opn{Todd}\deq
 (\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$ be 
 the Todd $m$-sequence \cite[\textsection 1.7]{MR1335917}.
 In complex geometry, the $k$-th Chern class
-$c_k(M)$ of a given complex manifold $M$ is 
-defined as an element of $H^{2k}(M;\mathbb{Z})$.
+$c_k(M)\deq c_k(\mathcal{T}_M)$ of
+a given complex manifold $M$ is defined
+as an element of $H^{2k}(M;\mathbb{Z})$.
 The image of the total Chern class 
 $c(M)\deq \sum_{i=0}^{\infty}c_i(M)$
 in the even cohomology ring $H^{\mathrm{even}}(X;\mathbb{Q})$
@@ -2350,7 +2363,8 @@ $\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$
 In \cite[Conjecture 6.13]{demedrano2023chern},
 the Todd class of tropical manifolds is
 defined as a tropical cycle.
-In this paper, we use the Poincar\'e dual of it
+In this paper, we use the Poincar\'e dual of the image 
+of the cycle map of it
 in order to get closer to the notation 
 in algebraic geometry.
 
@@ -2550,7 +2564,7 @@ then
 \opn{RR}(D;D'|_{D})=
 \chi(X\setminus D')-\chi(D\setminus (D'\cap D)). \notag
 \end{align}
-よって示せた。
+Therefore, it has been proved.
 \end{proof}
 
 Based on the above, we will generalize
@@ -2585,8 +2599,7 @@ From \cref{theorem-rr-euler-surface} and
 
 
 \begin{remark}
-
-\cref{theorem-rr-euler-surface} 
+In the proof of \cref{theorem-rr-euler-surface}, 
 の証明では、Euler calculus の視点から
 トロピカル多様体 $X$ の余次元 $1$ のトロピカル部分多様体
 $D$ の補集合の Euler 数 $\chi(X\setminus D)$ を計算するという
