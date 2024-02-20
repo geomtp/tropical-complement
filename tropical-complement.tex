@@ -395,7 +395,8 @@ the conjecture below is very natural and
 seems to be believed among many researchers
 before \cite{demedrano2023chern}, if
 we mildly ignore a technical condition of 
-tropical submanifolds \cite{demedrano2023chern} (see also
+tropical submanifolds
+\cite[Definition 2.14]{demedrano2023chern} (see also
 \cite[Definition 4.3]{shaw2015tropical}).
 
 \begin{conjecture}[{Folklore?}]
@@ -423,11 +424,11 @@ The adjunction formula for tropical submanifold
 of codimension $1$ on $X$
 \cite[Theorem 6]{shaw2015tropical} gives
 \begin{align}
-\opn{RR}(X;-D)=\frac{(-D-K_X).(-D)}{2}+\opn{RR}(X;0)
+\opn{RR}(X;-D)=\frac{\opn{deg}(D.D+K_X.D)}{2}+\opn{RR}(X;0)
 =-\chi(D)+\opn{RR}(X;0).
 \end{align}
-where $(-D-K_X).D$ is the intersection number of 
-$-D-K_X$ and $D$ in the meaning of \cite{shaw2015tropical}.
+where $K_X.D$ is the intersection of 
+$K_X$ and $D$ in the meaning of \cite{shaw2015tropical}.
 Therefore, if $X$ admits a Delzant face structure,
 then \cref{conjecture-rr-c-euler} is true
 by \cite[Theorem 6.3]{demedrano2023chern}.
@@ -471,14 +472,12 @@ A point $p$ on $C$ is in moderate position
 if and only if $p\in C_{\mathrm{reg}}$.
 
 From easy calculation, for any 
-tropical submanifold $D$ of codimension $1$,i.e.,
-finite subsets contained in $C_{\mathrm{reg}}$ 
-satisfies
+tropical submanifold $D$ of codimension $1$, i.e.,
+finite subsets contained in $C_{\mathrm{reg}}$, we get
 \begin{align}
-\opn{RR}(C;D)=\sharp (\opn{supp}(D))+ \chi(C)
+\opn{RR}(C;D)=\sharp (D)+ \chi(C)
 =\chi(C\setminus D).
 \end{align}
-
 Therefore, \cref{conjecture-rr-euler} is true
 for $C$.
 \end{example}
@@ -487,11 +486,18 @@ we will see other examples for evidence
 why it seems that \cref{conjecture-rr-euler}
 is true.
 
+なお、\cref{conjecture-rr-euler} の代数幾何学的な
+背景については \cref{remark-rr-in-ag} にて説明する。
+ただし、\cref{conjecture-rr-c-euler} よりも
+トロピカル幾何学に由来する特殊な事情が絡んでいる。
+
+
 One of interesting points of
-\cref{conjecture-rr-euler} is that
-it does \emph{not} seem that there is
-no direct evidence of \cref{conjecture-rr-euler}
-derived from usual algebraic geometry.  
+\cref{conjecture-rr-c-euler,conjecture-rr-euler} is that
+the complement of a tropical submanifold in
+a tropical manifold is \emph{not} usually
+considered an analog of Zariski open subset
+of algebraic variety, but related with Riemann--Roch number.
 For instance, the complement of two points 
 on a tropical elliptic curve
 $\mathbb{R}/\mathbb{Z}$ is disconnected.
@@ -503,26 +509,29 @@ a given polynomial as the complement of
 the full graph \cite[\textsection 3.3]{MR2275625}
 of a tropical polynomial in
 \cite[Remark 3.5 and Example 3.6]{MR2275625}.)
-
-Besides, it must be noted that
-the rank of the cohomology 
-$H^{\bullet}(X\setminus D;\mathbb{R})$ 
-for a codimension-1 tropical submanifold
-on a compact $n$-dimensional tropical manifold
-may not behave like that of
-the sheaf cohomology 
-$\mathcal{O}_{\mathcal{X}}(\mathcal{D})$
-for a Cartier divisor $\mathcal{D}$ 
-on a complete algebraic variety
-$\mathcal{X}$ unlike
-$H^{\bullet}_c(X\setminus D;\mathbb{R})$.
+% Besides, it must be noted that
+% the rank of the cohomology 
+% $H^{\bullet}(X\setminus D;\mathbb{R})$ 
+% for a codimension-1 tropical submanifold
+% on a compact $n$-dimensional tropical manifold
+% may not behave like that of
+% the sheaf cohomology 
+% $\mathcal{O}_{\mathcal{X}}(\mathcal{D})$
+% for a Cartier divisor $\mathcal{D}$ 
+% on a complete algebraic variety
+% $\mathcal{X}$ unlike
+% $H^{\bullet}_c(X\setminus D;\mathbb{R})$.
 Incidentally, the author arrived at
 \cref{conjecture-rr-euler} as
 a derivation from the study in
 \cite{tsutsui2023graded}. 
-We will see a relationship between 
+We will see relationships between 
 this paper and \cite{tsutsui2023graded}
 in \cref{remark-c-infinity-divisor}.
+(\cref{remark-c-infinity-divisor}で言及する関係性は、
+トロピカル部分多様体の補集合のコホモロジーと
+コンパクト台コホモロジーはともに直線束のホモジカルな
+不変量に関するデータを一部内包していることを示唆している。)
 
 One of main theorem in this paper
 is the following, and its proof is not difficult:
@@ -680,7 +689,6 @@ the theory of tropical manifolds from
 We also recall it from other references if necessary.
 We mainly follow the sheaf theoretic approach of
 tropical manifolds in \cite{MR4637248}.
-For simplicity, we use 
 For simplicity, we adopt the definition of
 rational polyhedral space
 as used in \cite[Definition 6.1]{gross2019sheaftheoretic},
@@ -797,7 +805,7 @@ and $Y$ a subspace of $X$.
 A rational polyhedral space $(Y,\mathcal{O}_Y^{\times})$ is 
 a \emph{rational polyhedral subspace} of
 $(X,\mathcal{O}_X^{\times})$ if 
-for any $x\in Y$, there exists an chart
+for any $x\in Y$, there exists a chart
 $\psi \colon U \to V (\subset \mathbb{T}^{n})$
 of $X$
 such that $x\in U$ and the restriction
@@ -995,6 +1003,7 @@ moderate position on $X_{\mathrm{reg}}$.
 In particular, $Y$ is always in moderate position
 when $X$ is an integral affine manifold.
 \end{enumerate}
+\end{example}
 
 \begin{remark}
 $Y$が$X$の中庸な位置にあるとき
@@ -1002,7 +1011,6 @@ $Y$が$X$の中庸な位置にあるとき
 満たさない。
 \end{remark}
 
-\end{example}
 If $Y$ is in moderate position, then 
 $\opn{LC}_x Y\to \opn{LC}_x X$ induces the following 
 exact sequence:
@@ -1741,19 +1749,22 @@ In this subsection, we recall
 the theory of tropical homology from
 \cite{MR3330789,MR3894860,MR4637248}.
 In this subsection, let
-$Q$ be a subring of $\mathbb{R}$.
+$Q$ be a subring of $\mathbb{R}$
+and $p,q\in \mathbb{Z}$.
 Let $(X,\mathcal{O}_X^{\times})$ be
 a rational polyhedral space and 
 $\Omega_{\mathbb{Z},X}^{p}$
 the sheaf of tropical $p$-forms
 on $X$ \cite[Definition 2.7]{MR4637248}
 (cf. \cite[\textsection 2.4]{MR3330789}).
-
-有理多面空間 $(X,\mathcal{O}_X^{\times})$
-と$p,q\in \mathbb{Z}$ に対して、
-トロピカルコホモロジー $H^{p,q}(X;Q)$ と
-トロピカル Borel--Moore ホモロジー
-$H_{p,q}^{\mathrm{BM}}(X;Q)$ が次のように定義される
+Let $\upomega_{X}^{\bullet}$ be
+the dualizing complex of $X$
+(e.g. \cite[Definition 3.1.16]{MR1299726}.)
+The $(p,q)$-tropical cohomology
+$H^{p,q}(X;Q)$ and 
+$(p,q)$-tropical Borel--Moore homology
+$H_{p,q}^{\mathrm{BM}}(X;Q)$ of $(X,\mathcal{O}_X)$
+are the following $Q$-modules
 \cite[Definition 4.1 and 4.3]{MR4637248}:
 \begin{align}
 H^{p,q}(X;Q)&\deq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}(
@@ -1768,34 +1779,39 @@ H_{p,q}^{\mathrm{BM}}(X;Q)
 For comparison with the original
 tropical homology \cite{MR3330789,MR3961331},
 see also \cite[Remark 2.8 and Theorem 4.20]{MR4637248}.
-$\Omega_{\mathbb{Z},X}^{\bullet}$ 
-を tropical $p$-form のなす
-全複体とする(cf. \cite[Proposition 3.1]{smacka2017differential})。
-$\Omega_{\mathbb{Z},X}^{\bullet}$ は自明かつ
-graded-commutative な dga のなす層
-であるため、その hypercohomology 
+Let $\Omega_{\mathbb{Z},X}^{\bullet}
+\deq \bigoplus_{j\in \mathbb{Z}_{\geq 0}}
+\Omega_{\mathbb{Z},X}^{j}[-j]$ 
+be the total complex of 
+$\Omega_{X}^{p}$ 
+(see \cite[Proposition 3.1]{smacka2017differential}).
+Since $\Omega_{\mathbb{Z},X}^{\bullet}$ is a sheaf
+of trivial and graded-commutative dga, so the
+hypercohomology 
 $\mathbb{H}^{\bullet}(X;\Omega_{\mathbb{Z},X}^{\bullet})$
-には
-graded-commutative な環構造が自然に誘導される
-(例えば \cite[Remark 21.130]{gortzwedhorn2023})。 
-なお、$\Omega_{\mathbb{Z},X}^{\bullet}$ は自明であるため、
-アーベル群として
+of $\Omega_{\mathbb{Z},X}^{\bullet}$ has
+a natural graded-commutative ring structure
+(see \cite[Remark 21.130]{gortzwedhorn2023}).
+Besides, $\Omega_{\mathbb{Z},X}^{\bullet}$ is trivial,
+so there exists an isomorphism
 $\mathbb{H}^{\bullet}(X;\Omega_{\mathbb{Z},X}^{\bullet})
 \simeq \bigoplus_{p,q\in \mathbb{Z}}
-H^{p,q}(X;\mathbb{Z})$ となる。
-また$f\colon X\to Y$ を有理多面空間の間の射とすると
-これは自然な環準同型射 
-$\mathbb{H}^{\bullet}(Y;\Omega_{\mathbb{Z},Y}^{\bullet})
+H^{p,q}(X;\mathbb{Z})$ as Abelian groups.
+If $f\colon X\to Y$ is a morphism of
+rational polyhedral spaces, then
+$f$ induces the pullback
+$f^{*}\colon \mathbb{H}^{\bullet}(Y;\Omega_{\mathbb{Z},Y}^{\bullet})
 \to \mathbb{H}^{\bullet}(X;\Omega_{\mathbb{Z},X}^{\bullet})$
-が誘導される\cite[Proposition 4.18]{MR4637248}。
-また、$f\colon X\to Y$ が固有射であるとき、
-tropical Borel--Moore ホモロジーの押し出し
+\cite[Proposition 4.18]{MR4637248} and $f^{*}$ is
+a graded ring homomorphism.
+If $f\colon X\to Y$ is a proper morphism, then
+$f$ induces the pushforward 
 $f_*\colon H^{\opn{BM}}_{p,q}(X;Q)\to 
-H^{\opn{BM}}_{p,q}(Y;Q)$ が誘導される。
+H^{\opn{BM}}_{p,q}(Y;Q)$ \cite[Definition 4.9]{MR4637248}.
 
-$Z_k(X)$ を $X$ 上のトロピカル $k$-サイクルの
-なす群とする\cite[Definition 3.5]{MR4637248}。
-$X$の開集合に対して$Z_k(U)$を値に持つ前層は層をなし、
+Let $Z_k(X)$ be the group of tropical $k$-cycle 
+on $X$ \cite[Definition 3.5]{MR4637248}.
+$X$の開集合 $U$ に対して$Z_k(U)$を値に持つ前層は層をなし、
 これを$\mathscr{Z}_k^{X}$と書く
 \cite[p.591]{MR4637248}。
 各 $k\in \mathbb{Z}_{\geq 0}$ に対してサイクル写像
@@ -1814,42 +1830,43 @@ $X_{\opn{reg}}$
 $Z_{\dim X}(X)$ の元を定義することである
 \cite[\textsection 6.1]{MR4637248}。
 
-
-
-$(X,\mathcal{O}_X^{\times})$ 
-を基本類を許す $n$ 次元有理多面空間とする。
-このとき、$[X]\deq \opn{cyc}_X(1_{X_{\opn{reg}}})
-\in H^{n,n}(X;\mathbb{Z})$ を $X$ の基本類と呼ぶ
-(cf. \cite[Definition 4.8]{MR3894860})。定義より、
+Let $(X,\mathcal{O}_X^{\times})$ be 
+a purely $n$-dimensional rational polyhedral space
+admitting a fundamental class. Then, the
+tropical cochain
+$[X]\deq \opn{cyc}_X(1_{X_{\opn{reg}}})
+\in H_{n,n}^{\mathrm{BM}}(X;\mathbb{Z})$ 
+is called the \emph{fundamental class} of $X$
+(cf. \cite[Definition 4.8]{MR3894860}). From definition,
 $H_{n,n}^{\mathrm{BM}}
 (X;\mathbb{Z})\deq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}
-(\Omega_{X}^{n}[n],\upomega_{X}^{\bullet})$
-なので、$\Omega_X^{\bullet}$ の乗法構造と
-基本類から次の射が誘導される。
+(\Omega_{X}^{n}[n],\upomega_{X}^{\bullet})$, so
+the multiplicative structure of $\Omega_X^{\bullet}$
+and the fundamental class of $X$ induces
+the following morphism:
 \begin{align}
 \eta_{p}^{X}\colon \Omega_X^{n-p}[n]\otimes^{L}_{\mathbb{Z}_X}
 \Omega_X^{p} \to \Omega_X^{n}[n] \xto{[X]}
 \upomega_X^{\bullet}. 	
 \end{align}
-これの tensor-hom 随伴をとることで次の射が誘導される
-\cite[p.627]{MR4637248}:
+The tensor-hom adjunction of $\eta_{p}^{X}$ is
+the following \cite[p.627]{MR4637248}:
 \begin{align}
 \delta_p^{X}\colon \Omega_X^{n-p}[n]\to 
 \mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p})
 \deq R\mathcal{H}om_{\mathbb{Z}_X}(\Omega_X^{p},
 \upomega_X^{\bullet}).
 \end{align}
-定義より、$\delta_0^{X}=[X]$ である。
+Of course, $\delta_0^{X}=[X]$.
 
-また、
+Besides, the natural isomorphism from
 $\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(- 
 \otimes^{L}_{\mathbb{Z}_X} \Omega_X^{p}[q],
-\upomega_X^{\bullet})$ から
+\upomega_X^{\bullet})$ to 
 $\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(-,
 \mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p}[q]))$
-への自然同型を
-$\alpha \colon \mathbb{Z}_X\to \Omega_X^{n-p}[n-q]$
-に対して適用することで次の可換図式を得る。
+gives the following commutative diagram
+for any $\alpha \colon \mathbb{Z}_X\to \Omega_X^{n-p}[n-q]$:
 \[\begin{tikzcd}
 {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\Omega_X^{n-p}[n-q]
 \otimes^{L}_{\mathbb{Z}_X} \Omega_X^{p}[q]
@@ -1857,35 +1874,38 @@ $\alpha \colon \mathbb{Z}_X\to \Omega_X^{n-p}[n-q]$
 {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}
 (\Omega_X^{n-p}[n-q],\mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p}[q]))} \\
 {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\Omega^{p}[q],
-\upomega_X^{\bullet})} & {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\mathbb{Z}_X,\mathcal{D}_{\mathbb{Z}_X}(\Omega^{p}[q]))}
+\upomega_X^{\bullet})} & {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\mathbb{Z}_X,\mathcal{D}_{\mathbb{Z}_X}(\Omega^{p}[q]))}.
 	\arrow[from=1-2, to=2-2]
 	\arrow[from=2-1, to=2-2]
 	\arrow[from=1-1, to=1-2]
 	\arrow[from=1-1, to=2-1]
 \end{tikzcd}\]
-なお、各行の射は自然な同型である。
-とくに、左上から左下への射の $\eta^X_{p}$ の像は、
+\todo[inline]{番号を振るとはみ出るがどうすればよいか？}
+The morphism of each row of
+this commutative diagram is an isomorphism.
+In particular,
+左上から左下への射の $\eta^X_{p}$ の像は、
 $\alpha\frown [X]$ のことである。
-よって、$\delta_p^{X}$ が誘導する準同型
+Therefore, we can identify
+the homomorphism
 \begin{align}
 \mathbb{H}^{-q}(\delta_p^{X})
 \colon H^{n-p,n-q}(X;\mathbb{Z})
 \to \mathbb{H}^{-q}(X;\mathcal{D}_{\mathbb{Z}_X}
 (\Omega_X^{p})) \notag
 \end{align}
-は、基本類によるカップ積
-\cite[\textsection 4.6]{MR4246795}
+with the cap product
+\cite[\textsection 4.6]{MR4637248}
 \begin{align}
 \label{equation-PD-map}
 \cdot \frown [X]
 \colon H^{n-p,n-q}(X;\mathbb{Z})
 \to
-H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})
+H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z}).
 \end{align}
-と同一視することができる。
-(なお、視認性のため、\cite[\textsection 4.6]{MR4246795}
+(なお、視認性のため、\cite[\textsection 4.6]{MR4637248}
 と作用を逆にしている。)
-特に $X$ がコンパクトならば、
+In particular, $X$ がコンパクトならば、
 一点空間への写像
 $a_X\colon X\to \{\mathrm{pt}\}$
 による写像によってトレース写像
@@ -2011,7 +2031,7 @@ $f^{*}\colon \opn{Div}(Y)^{[0]} \to \opn{Div}(X)^{[0]}$
 \begin{align}
 \label{equation-divisor-pairing}
 \opn{Div}(X)^{[0]}\times Z_{k}(X)\to Z_{k-1}(X);
-(D,A) \mapsto D\cdot A
+(D,A) \mapsto D\cdot A.
 \end{align}
 
 とくに次のような等式が成り立つ
@@ -2037,12 +2057,12 @@ i_*(D|_{|A|}\cdot A)=D\cdot A
 
 
 \begin{proposition}
-$X$ をトロピカル多様体とする。このとき、
+If $X$ is a tropical manifold, then the homomorphism
 \begin{align}
 \opn{div}_X\colon
 \opn{Div}(X)^{[0]}\to Z_{n-1}(X); D\mapsto D\cdot X    
 \end{align}
-は単射である。
+is injective.
 \end{proposition}
 \begin{proof}
 ペアリングの定義が局所的なので
@@ -2080,6 +2100,13 @@ $X$ が boundaryless なとき、より一般の結果が
 (より一般に、regular at infinity な有理多面空間)
 のとき、$\opn{Div}(X)^{[0]}$ を 
 $Z_{n-1}(X)$ の部分群とみなす。
+In particular, we can define the \emph{$k$-th power}
+$D^{k}$ of $D\in \opn{Div}(X)^{[0]}$ as an element
+of $Z_{n-k}(X)$ and satisfies
+\begin{align}
+\PD{D^{k}}=\PD{D}^{k}=c_1(\mathcal{L}(D))^{k}.
+\end{align}
+
 $D$ が $X$ の sedentarity-0 な部分トロピカル多様体
 ならば、$\opn{Div}(X)^{[0]}$ に含まれる。
 
@@ -2318,13 +2345,25 @@ also holds.
 When $\dim X=1$, \cref{conjecture-grr-divisor} holds
 trivially. When $\dim X=2$,
 \cref{conjecture-grr-divisor}
-is just an another representation of adjunction formula
+is just another representation of adjunction formula
 of locally degree 1 tropical curves on tropical surfaces
 (\cite[Theorem 6]{shaw2015tropical},
 \cite[Theorem 5.2]{demedrano2023chern}).
 We will see later what 
 corollaries appear
 when \cref{conjecture-grr-divisor} is true.  
+
+\begin{example}
+If $X=\mathbb{R}^{n}=L_{U_{n+1,n+1}}$ and 
+$D= L_{U_{n,n+1}}(\subset L_{U_{n+1,n+1}})$,
+then \cref{conjecture-grr-divisor} is true
+from \cite[Example 2.10]{MR3999674} 
+and $D\in \opn{Div}^{[0]}(X)$.
+The intersection of tropical cycles
+is local, so we can also say
+\cref{conjecture-grr-divisor} is true
+when $D$ is relatively uniform on $X$.
+\end{example}
 
 From now on, we discuss the Todd classes of
 tropical manifolds.
@@ -2392,7 +2431,7 @@ H^{i,i}(X;\mathbb{Q})$ as follows:
 
 
 
-\begin{definition}
+\begin{definition}[{\cite[\textsection 12.1.(2)]{MR1335917}}]
 \label{definition-rr-number}
 Let $X$ be a purely $n$-dimensional
 compact tropical manifold.
@@ -2439,6 +2478,7 @@ which commutes with the following diagram:
 \end{definition}
 From definition, there exists the following projection formula.
 \begin{proposition}
+\label{equation-gysin-projection-formula}
 Let $f\colon X\to Y$ be a proper morphism
 between pure dimensional
 tropical manifolds $X$ and $Y$.
@@ -2502,7 +2542,7 @@ in \cite[Theorem 4.11]{shaw2015tropical}
 since $H^{2,2}(X;\mathbb{Z})\simeq \mathbb{Z}$.
 \end{example}
 
-\begin{example}[{cf. \cite[Chapter 13. Appendix]{MR2810322}}]
+\begin{example}[{cf. \cite[Chapter 13 Appendix]{MR2810322}}]
 We retain the notation in \cref{example-grr-1}.
 From \eqref{equation-total-adjunction}
 and the property of multiplicative sequences, 
@@ -2603,7 +2643,7 @@ In the proof of \cref{theorem-rr-euler-surface},
 の証明では、Euler calculus の視点から
 トロピカル多様体 $X$ の余次元 $1$ のトロピカル部分多様体
 $D$ の補集合の Euler 数 $\chi(X\setminus D)$ を計算するという
-手法をとった。このテクニックは Bertini 対 $(D,D')$ に
+手法をとった。このテクニックは moderate  $(D,D')$ に
 対しても有効であるが、注意も必要である。
 
 ここでは、\cite{MR1299726} に書かれている知識が必要であるため
@@ -2625,7 +2665,6 @@ $\Gamma_{Z}\mathcal{F}\simeq
 j_*j^{-1}\mathcal{F}$ である
 \cite[Proposition 2.3.9 (iii)]{MR1299726}。
 このとき、次の層の完全列が存在する。
-
 \begin{align}
 \label{equation-closed-open-exact}
 0 \to (\mathbb{Q}_X)_{X\setminus D}
@@ -2701,7 +2740,7 @@ R\Gamma_{X\setminus D'}
 (R\Gamma_{X\setminus D}(\mathcal{F}))
 \simeq R\Gamma_{X\setminus (D\cup D')}(\mathcal{F}), \quad
 ((\mathcal{F})_{X\setminus D})_{X\setminus D'}
-\simeq (\mathcal{F})_{X\setminus (D \cup D')}
+\simeq (\mathcal{F})_{X\setminus (D \cup D')}.
 \end{align}
 ゆえに、トロピカル部分多様体の Bertini 対 $(D,D')$ の定義を
 トロピカル部分多様体の良い交わりをする有限和の対に弱める
@@ -2738,45 +2777,69 @@ R\Gamma_{X\setminus D'}
 % Baker--Norine rank は、
 % \end{remark}
 
-\begin{proposition}
-$X$ を連結かつコンパクトな整アフィン多様体とし、
-$D$ を余次元$1$のトロピカル部分多様体とする。
-このとき、\cref{conjecture-grr-divisor} は正しい。
-特に、$D$ について\cite[Conjecture 6.13]{demedrano2023chern}
-と \cref{conjecture-rr-euler} 
-が正しいとき、$X$ について \cref{conjecture-rr-bertini}
-が正しい。
-\end{proposition}
-\begin{proof}
-$\mathbb{R}^n$ 内の余次元 $1$ のトロピカル部分多様体の
-局所錐は、$U_{r-1,r}\oplus U_{n-r,n-r}$ の
-Bergman fan のいずれかと同型である。
-これは、$U_{n,n}$ 内の余次元 $1$ のマトロイドの双対が
-階数 $1$ の coloopless matroid となることからわかる。
-また、$X$ は boundaryless なので、$D$
-の自身への引き戻しは、自然に定義される。
-Chern--Schwartz--MacPherson 類の定義は局所的なので
-$X=L_{U_{n,n}}$ かつ、$D=L_{U_{n-1,n}}$ 
-と仮定してよい。これについて、\cref{conjecture-grr-divisor}
-は正しい。\cref{conjecture-grr-divisor} が正しいので
-\cref{proposition-divisor-poincare} より
-$D$ について \cite[Conjecture 6.13]{demedrano2023chern}
-が正しいならば、\eqref{equation-rr-number-divisor}
-より
+
+
+\begin{remark}
+\label{remark-rr-in-ag}
+
+\emph{virtual T-genus} が定義される
+\cite[\textsection 11.2]{MR1335917}。
 \begin{align}
-\chi(X\setminus D)=(-1)^{\dim X}\chi_c(X\setminus D)
-=(-1)^{\dim X}\opn{RR}(X,-D)
-=\opn{RR}(X,D)
+T(X;D_1,\ldots,D_m)\deq
+\int_X\prod_{j=1}^{m}(1-\opn{exp}(-\PD{D_j}))\opn{td}(X).
 \end{align}
-
-つまり、$X$ についても \cref{conjecture-rr-euler}
-が正しい。よって、
-\cref{proposition-euler-to-bertini} より
-$X$ についても \cref{conjecture-rr-bertini} は正しい。
-
-\end{proof}
-
-
+\cite[\textsection 20.6]{MR1335917} にて説明されている
+ように、
+\begin{align}
+\opn{exp}(\PD{D})=(1-(1-\opn{exp}(-\PD{D})))^{-1}
+=\sum_{j=0}^{n}(1-\opn{exp}(-\PD{D}))^j
+\end{align}
+という等式が成り立つ。これより、次の等式を得る
+\cite[\textsection 20.6.(14)]{MR1335917}。
+\begin{align}
+\opn{RR}(X;D)=\opn{RR}(X;0)+
+\sum_{j=1}^{n}T(X;\overbrace{D,\ldots,D}^{j}).
+\end{align}
+さて、$D=D_1$ を中庸な位置にあるトロピカル部分多様体とする。
+\cref{conjecture-grr-divisor} が正しいとすると、
+\cref{equation-rr-number-divisor}と
+\cref{equation-gysin-projection-formula} より、
+\begin{align}
+T(X;D_1,\ldots,D_m)&=T(D_1;D_2|_{D_1},\ldots,D_m|_{D_1}), \\
+\sum_{j=1}^{n}T(X;\overbrace{D,\ldots,D}^{j})
+&=\opn{RR}(D;0)+\sum_{j=1}^{n-1}T(D;\overbrace{D|_D,\ldots,D|_{D}}^{j}).
+\label{equation-rr-reduction}
+\end{align}
+が成立する(\cite[Theorem 11.2.1]{MR1335917})。
+ここで、任意の$j\in \mathbb{Z}_{>0}$ に対して
+$V_j=D$ かつ
+$[V_{j}|_{V_{j}}]=[V_{j+1}]$ となるトロピカル部分多様体の族
+$\{V_j\}_{j\in \mathbb{Z}_{>0}}$ が存在する
+と仮定すると\eqref{equation-rr-reduction} より
+\begin{align}
+\opn{RR}(X;D)\deq \sum_{j=0}^{n}\opn{RR}(V_j;0).
+\end{align}
+となる。$D$ が $X$ に対して相対的に uniform であるとすると、
+$V_j\deq |D^{j}|$ とおくことで、条件を満たす。 
+また、$x\in |D^j|$ に対して次の同型が成り立つ。
+\begin{align}
+\opn{LC}_x D^{j}\simeq 
+\opn{lineal}(D,x)\times \opn{LC}_x X/\opn{lineal}(X,x)
+\times L_{U_{r-j,r}}
+\end{align}
+よって、Euler calculus より次の等式が成り立つはずである。
+\begin{align}
+\label{equation-euler-calculus-sum}
+\chi(X\setminus D)=\sum_{j=0}^{n}\chi(|D^{j}|).
+\end{align}
+本論文では、
+トロピカル多様体上の構成可能層の理論を整備していないため、
+\eqref{equation-euler-calculus-sum}
+を定理として主張することはできないが、
+\eqref{equation-euler-calculus-sum} が成立することは
+ほぼ明らかであることは納得していただけるであろう。
+よって、
+\end{remark}
 
 \bibliography{tropical-complement}
 \bibliographystyle{amsalpha}
