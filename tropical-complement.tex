@@ -1994,13 +1994,14 @@ admitting a global face structure
 \subsection{Tropical Cartier divisors}
 Let 
 $(X,\mathcal{O}_X^{\times})$ be a rational polyhedral space
-とし、$\opn{PAff}_{\mathbb{Z},X}$ を
-$X$ 上の$\mathbb{Z}$ 係数の傾きをもつ区分
-整アフィンな関数のなす層とする
+and $\opn{PAff}_{\mathbb{Z},X}$ the sheaf
+of piecewise integer linear functions
+on $X$
 (see \cite[Definition 4.1]{MR3894860}
 or \cite[Definition 3.8 and Remark
 3.9]{MR4637248}).
-定義より次の層完全列が存在する:
+From definition, there exist the following
+exact sequence of sheaves:
 \begin{align}
 \label{equation-divisor-exact}
 0 \to  \mathcal{O}_X^{\times} 
@@ -2008,25 +2009,23 @@ or \cite[Definition 3.8 and Remark
 \opn{PAff}_{\mathbb{Z},X}/\mathcal{O}_X^{\times}
 \to 0.
 \end{align}
-また、次のように記号を置く。
+Besides, we use the notations below:
 \begin{align}
 \opn{Div}(X)^{[0]}\deq H^{0}(X;
 \opn{PAff}_{\mathbb{Z},X}/\mathcal{O}_X^{\times}), 
-\quad \mathcal{D}iv_X^{[0]}\deq \opn{PAff}_{\mathbb{Z},X}/\mathcal{O}_X^{\times}
+\quad \mathcal{D}iv_X^{[0]}\deq
+\opn{PAff}_{\mathbb{Z},X}/\mathcal{O}_X^{\times}.
 \end{align}
-\cite[Lemma 4.5]{MR3894860} より、
-\eqref{equation-divisor-exact} から誘導される
-接続準同型
+The connecting homomorphism 
 $\delta \colon \opn{Div}(X)^{[0]}\to 
-H^{1}(X;\mathcal{O}_X^{\times})$ は全射である
-\cite[Proposition 4.6]{MR3894860}。
+H^{1}(X;\mathcal{O}_X^{\times})$
+induced from \eqref{equation-divisor-exact}
+is surjective \cite[Proposition 4.6]{MR3894860}.
 From now on, for a given $D\in \opn{Div}(X)^{[0]}$,
 let $\mathcal{L}(D)$ be the associated
 line bundle of $D$
-(see \cite[\textsection ]{MR4637248} and ).
-以降、$D\in \opn{Div}(X)^{[0]}$ に対して
-$\mathcal{L}(D)$ を $D$ が定義する
-トロピカル直線束とする。
+(see \cite[\textsection 3.5]{MR4637248} and 
+\cite[\textsection 4.3]{MR2457739}).
 
 \begin{remark}
 The definition of rational functions on tropical
@@ -2043,92 +2042,106 @@ By \cite[Proposition 3.27]{shaw2015tropical},
 every tropical cycle of codimension $1$ on a tropical manifold
 is a tropical Cartier divisor in the sense of
 \cite{shaw2015tropical,demedrano2023chern}.
-On the other hand, there exist codimension $1$
+In contrast, there exist codimension $1$
 tropical cycle which does not come from any
 elements in $\opn{Div}(X)^{[0]}$.
 For example,
 the point $\{-\infty\}$ in $\mathbb{T}$ does not
 come from $\opn{Div}(\mathbb{T})^{[0]}$.
 
-一方で、\cite{MR3894860,MR4637248} らの意味の Cartier 
-因子の定義にもご利益が存在する。その中の一つが、
-有理多面空間の射 $f\colon X\to Y$ は、引き戻し
-$f^{*}\colon \opn{Div}(Y)^{[0]} \to \opn{Div}(X)^{[0]}$
-が常に存在し、有理多面空間の Picard 群の
-引き戻しと整合的な点である
-\cite[Propoisition 3.15]{MR4637248}。
+On the other hand, there exist advantages of
+the defintion of tropical Cartier divisors in the
+sense of \cite{MR3894860,MR4637248}.
+One of them is that 
+every morphism $f\colon X\to Y$ of rational polyhedral
+spaces always induces the pullback
+$f^{*}\colon \opn{Div}(Y)^{[0]} \to \opn{Div}(X)^{[0]}$,
+and the pullback is compatible with that of 
+Picard groups $f^{*}\colon \opn{Pic}(Y) \to \opn{Pic}(X)$
+\cite[Propoisition 3.15]{MR4637248}.
 \end{remark}
 
-Moreover, \cite{MR2591823} の理論をもとに
+Moreover,
 there exists a natural pairing
-\cite[\textsection 3.4]{MR4637248}.
+\cite[\textsection 3.4]{MR4637248}
+(cf. \cite[Definition 6.5]{MR2591823}):
 \begin{align}
 \label{equation-divisor-pairing}
 \opn{Div}(X)^{[0]}\times Z_{k}(X)\to Z_{k-1}(X);
 (D,A) \mapsto D\cdot A.
 \end{align}
 
-とくに次のような等式が成り立つ
-\cite[Proposition 5.12]{MR4637248}。
-(\cite[Theorem 4.15]{MR3894860}もみよ。)
+In particular, the following equation holds
+\cite[Proposition 5.12]{MR4637248}:
 \begin{align}
 \opn{cyc}_X(D\cdot A)=c_1(\mathcal{L}(D))
 \frown \opn{cyc}_X(A).
 \end{align}
 
-$A$ を $X$ のトロピカル $k$-サイクルとし、
-$i\colon |A|\to X$ を $A$ の台の包含写像とする
-\cite[Definition 3.5]{MR4637248}。
-このとき、$A$は、$Z_k(|A|)$の元と自然とみなせ
-定義より射影公式
+When $(X,\mathcal{O}_X^{\times})$ is 
+a purely $n$-dimensional rational polyhedral space
+which admits a fundamental class, there exists 
+the following homomorphism 
+\cite[Definition 4.14]{MR3894860}:
+\begin{align}
+\label{equation-divisor-map}
+\opn{div}_X\colon
+\opn{Div}(X)^{[0]}\to Z_{n-1}(X); D\mapsto D\cdot X.  
+\end{align}
+See also \cite[Theorem 4.15]{MR3894860}.
+
+Let $A$ be a tropical $k$-cycle on $X$
+, $|A|$ the support of $A$
+\cite[Definition 3.5]{MR4637248},
+and $i\colon |A|\to X$ を $A$
+the inclusion of $|A|$.
+We note that we can consider $A$ as an
+element of $Z_k(|A|)$ and 
+the trivial projection
+formula holds from definition:
 \begin{align}
 \label{equation-projection-formula}
-i_*(D|_{|A|}\cdot A)=D\cdot A
+i_*(D|_{|A|}\cdot A)=D\cdot A.
 \end{align}
-が自明に成り立っていることに注意する。
-
-
-
-
 
 \begin{proposition}
-If $X$ is a tropical manifold, then the homomorphism
-\begin{align}
-\opn{div}_X\colon
-\opn{Div}(X)^{[0]}\to Z_{n-1}(X); D\mapsto D\cdot X    
-\end{align}
+\label{proposition-divisor-map-injective}
+If $X$ is a purely $n$-dimensional
+tropical manifold,
+then the homomorphism \eqref{equation-divisor-map}
 is injective.
 \end{proposition}
 \begin{proof}
-ペアリングの定義が局所的なので
-次の層の射が誘導される。
+The divisor map for each open subset of $X$
+naturally induces
+a sheaf homomorphism
 \begin{align}
 \opn{div}_X\colon \mathcal{D}iv_X^{[0]}\to 
-\mathscr{Z}_{n-1}^{X}
+\mathscr{Z}_{n-1}^{X}.
 \end{align}
-よって、この層の射が単射であることを示せばよい。
-$\mathcal{B}$ を $X$ の開基とすると、
-$\mathcal{B}$ 上の層のなす圏
+Therefore, it is enough to check the homomorphism
+of sheaves is injective.
+Let $\mathcal{B}$ be an open basis of $X$.
+Then, the category of $\mathcal{B}$-sheaves
 (\cite[p.49-50]{MR2675155})
-は、$X$ 上の層のなす圏と
-圏同値なので、任意の開基の元 $U$ について射
-$\mathcal{D}iv_X(U)\to Z_{n-1}(U)$
-が単射であることを示せばよい。
-$X$ はトロピカル多様体であるため、
-$U$ を 
-$\opn{LC}_x X\times \underline{\mathbb{R}}^{n}$
-の開集合と仮定してよい。ここで、
-$(\Omega_{\mathbb{Z},X}^{1})_{x}
-\simeq \opn{Hom}_{\mathbb{Z}}
-(T^{\mathbb{Z}}_0 (\opn{LC}_x X),\mathbb{Z})$
-なので、$\mathbb{Z}$-piecewise affine 関数
-$f\colon U\to \mathbb{R}$ は、
-$\opn{LC}_x X$ 上の$\mathbb{Z}$-piecewise affine 関数の
-$\opn{LC}_x X\times \underline{\mathbb{R}}^{n}$の
-引き戻しとして得られると考えられる。
-$X$ が boundaryless なとき、より一般の結果が
-\cite[Theorem 4.5]{MR4246795} にて示されているので、
-これより示された。
+is equivalent to the category of sheaves on
+$X$, so we only need to check 
+$\opn{div}_{U}\colon \mathcal{D}iv_X^{[0]}(U)\to Z_{n-1}(U)$
+for any $U\in \mathcal{B}$.
+Since $X$ is a tropical manifold, we may assume
+$U$ is isomorphic to an open subset
+of $\opn{LC}_x X\times \mathbb{T}^{n}$
+for some $x\in X$.
+Moreover, we may assume every piecewise
+integer affine linear function on $U$ is the pullback
+of a piecewise
+integer affine linear function on $\opn{LC}_x X$ 
+by the projection $\opn{LC}_x X\times \mathbb{T}^{n}\to \opn{LC}_x X$
+locally. If $X$ is boundaryless, then
+a generalization of {proposition-divisor-map-injective}
+holds
+\cite[Theorem 4.5]{MR4246795}.
+Therefore, it has been proved.
 \end{proof}
 
 \begin{notation}
