@@ -691,12 +691,15 @@ the theory of tropical manifolds from
 We also recall it from other references if necessary.
 We mainly follow the sheaf theoretic approach of
 tropical manifolds in \cite{MR4637248}.
+\todo[inline]{
 For simplicity, we adopt the definition of
 rational polyhedral space
 as used in \cite[Definition 6.1]{gross2019sheaftheoretic},
 but we will not impose conditions related to finite type 
 (e.g., \cite[Definition 7.1.14]{mikhalkin2018tropical} 
 or \cite[Definition 2.3 (4)]{demedrano2023chern}).
+}
+
 If a tropical manifold is compact, we need not
 taking care of the condition of finite type. 
 Since every tropical manifold is paracompact and
@@ -726,81 +729,11 @@ We write $X_{\mathrm{reg}}$ for the set of points
 which have an open neighborhood isomorphic to an
 integral affine manifold
 \cite[Definition 2.7]{MR4637248}
-(see also \cite{MR3894860}).
+(see \cite{MR3894860}).
+See also \cite[Definition 3]{MR2181810}
+for the sheaf theoretical
+definition of integral affine manifolds.
 \end{notation}
-
-Let $(X,\mathcal{O}_X^{\times})$ be a rational polyhedral space
-and $\opn{LC}_x X$ the local cone of $X$ at $x$ ($\in X$)
-\cite[\textsection 2.2]{MR4637248}.
-Follwoing \cite[Definition 7.1.8]{mikhalkin2018tropical} and 
-\cite[Definition 2.3]{demedrano2023chern},
-an \emph{atlas} of $X$ means a family 
-$\{(U_i,\psi_i)\}_{i\in I}$ of charts 
-$\psi_i\colon U_i\to V_i (\subset \mathbb{T}^{n_i})$
-\cite[Definition 2.2]{MR4637248}
-such that $\bigcup_{i\in I}U_i=X$.
-
-Let $(X,\mathcal{O}_X^{\times})$ be
-a rational polyhedral space which is regular at
-infinity \cite[\textsection 6.1]{MR4637248}
-(see also \cite[Definition 1.2]{MR3330789}
-and \cite[Definition 7.2.4]{mikhalkin2018tropical}).
-Then, every $x\in X$ has an open neighborhood
-which is isomorphic to an open subset of 
-$\opn{LC}_x X\times \mathbb{T}^n$ for some
-$n\in \mathbb{Z}_{\geq 0}$.
-Let $\Omega_{\mathbb{Z},X}\deq
-\mathcal{O}_X^{\times}/\mathbb{R}_X$ be
-the sheaf of tropical $1$-forms and
-$H^{1,0}(X;\mathbb{Z})$ the global section of 
-$\Omega_{\mathbb{Z},X}$.
-Since every local cone has a polyhedral fan structure,
-so $H^{1,0}(\opn{LC}_x X\times \mathbb{T}^n;\mathbb{Z})
-\simeq H^{1,0}(\opn{LC}_x X;\mathbb{Z})\simeq 
-(\Omega_{\mathbb{Z},X})_x$.
-
-Let $\psi_x\colon U_x \to \opn{LC}_x X\times \mathbb{T}^n$
-
-If $(X,\mathcal{O}_X^{\times})$ is a tropical manifold
-in the sense of \cite[Definition 6.1]{gross2019sheaftheoretic},
-there exists an atlas $\{(U_i,\psi_i)\}_{i\in I}$
-such that for every chart $\psi_i \colon U_i \to V_i 
-(\subset \mathbb{T}^{n_i})$,
-$V_i$ is an open subset of $L_M\times \mathbb{T}^{m_i}$
-($m_i\in \mathbb{Z}_{\geq 0}$) where 
-$L_M$ is the support of
-the Bergman fan for some loopless matroid $M$.
-
-
-and $\opn{sed}_X$ the sedentarity function on $X$
-\cite[Definition 7.2.6]{mikhalkin2018tropical}
-(see also \cite[Definition 2.4]{demedrano2023chern}).
-From definition, for any $x\in X$
-\begin{align}
-\opn{sed}_X(x)+\dim \opn{LC}_x X=\dim_x X.
-\end{align}
-The sedentarity function
-$\opn{sed}_X$ is upper semiconstant, so 
-$\opn{sed}_X$ is upper semicontinuous.
-特に次の集合たちは、
-$X$の閉部分集合である
-(上半連続関数の定義は例えば\cite[p.287]{MR463157}
-を見よ)。
-\begin{align}
-X^{[\geq k]}\deq \{p\in X\mid \opn{sed}_X(p)\geq k\},
-\quad 
-X_{\infty}\deq X^{[\geq 1]}.
-\end{align}
-$X_{\infty}$ は、
-$X$の境界(boundary)
-と呼ばれ、
-$\partial X$と書く場合がある。
-($X$がトロピカルトーリック多様体のとき、
-$X_{\infty}$が$X$の境界つき
-位相多様体の境界となっていることと、
-代数幾何におけるトーリック境界の
-トロピカル類似になっていることに
-由来していると思われる。)
 
 In this paper, a rational polyhedral subspace is meant
 in the following sense.
@@ -830,6 +763,88 @@ Frobenius morphism.)
 Every locally polyhedral set of a rational polyhedral space
 \cite[Definition 2.4 (d)]{MR4637248} has a natural 
 structure of a rational polyhedral subspace.
+
+Let $(X,\mathcal{O}_X^{\times})$ be a rational polyhedral space
+and $\opn{LC}_x X$ the local cone of $X$ at $x$ ($\in X$)
+\cite[\textsection 2.2]{MR4637248}.
+Follwoing \cite[Definition 7.1.8]{mikhalkin2018tropical} and 
+\cite[Definition 2.3]{demedrano2023chern},
+an \emph{atlas} of $X$ means a family 
+$\{(U_i,\psi_i)\}_{i\in I}$ of charts 
+$\psi_i\colon U_i\to V_i (\subset \mathbb{T}^{n_i})$
+\cite[Definition 2.2]{MR4637248}
+such that $\bigcup_{i\in I}U_i=X$.
+
+Let $(X,\mathcal{O}_X^{\times})$ be
+a rational polyhedral space which is regular at
+infinity \cite[\textsection 6.1]{MR4637248}
+(see also \cite[Definition 1.2]{MR3330789}
+and \cite[Definition 7.2.4]{mikhalkin2018tropical}).
+
+From definition, for any $x\in X$
+\begin{align}
+\opn{sed}_X(x)+\dim \opn{LC}_x X=\dim_x X.
+\end{align}
+The sedentarity function
+$\opn{sed}_X$ is upper semiconstant, so 
+$\opn{sed}_X$ is upper semicontinuous.
+特に次の集合たちは、
+$X$の閉部分集合である
+(上半連続関数の定義は例えば\cite[p.287]{MR463157}
+を見よ)。
+
+Then, every $x\in X$ has an open neighborhood
+which is isomorphic to an open subset of 
+$\opn{LC}_x X\times \mathbb{T}^n$ for some
+$n\in \mathbb{Z}_{\geq 0}$.
+Every rational polyhedral space which is regular
+at infinity has the sedentarity
+$\opn{sed}_X$ on $X$
+\cite[Definition 7.2.6]{mikhalkin2018tropical}
+(see also \cite[Definition 2.4]{demedrano2023chern}).
+
+Let $\Omega_{\mathbb{Z},X}\deq
+\mathcal{O}_X^{\times}/\mathbb{R}_X$ be
+the sheaf of tropical $1$-forms and
+$H^{1,0}(X;\mathbb{Z})$ the global section of 
+$\Omega_{\mathbb{Z},X}$.
+Since every local cone has a polyhedral fan structure,
+so $H^{1,0}(\opn{LC}_x X\times \mathbb{T}^n;\mathbb{Z})
+\simeq H^{1,0}(\opn{LC}_x X;\mathbb{Z})\simeq 
+(\Omega_{\mathbb{Z},X})_x$.
+
+Let $\psi_x\colon U_x \to \opn{LC}_x X\times \mathbb{T}^n$
+
+If $(X,\mathcal{O}_X^{\times})$ is a tropical manifold
+in the sense of \cite[Definition 6.1]{gross2019sheaftheoretic},
+there exists an atlas $\{(U_i,\psi_i)\}_{i\in I}$
+such that for every chart $\psi_i \colon U_i \to V_i 
+(\subset \mathbb{T}^{n_i})$,
+$V_i$ is an open subset of $L_M\times \mathbb{T}^{m_i}$
+($m_i\in \mathbb{Z}_{\geq 0}$) where 
+$L_M$ is the support of
+the Bergman fan for some loopless matroid $M$.
+
+
+\begin{align}
+X^{[\geq k]}\deq \{p\in X\mid \opn{sed}_X(p)\geq k\},
+\quad 
+X_{\infty}\deq X^{[\geq 1]}.
+\end{align}
+$X_{\infty}$ は、
+$X$の境界(boundary)
+と呼ばれ、
+$\partial X$と書く場合がある。
+($X$がトロピカルトーリック多様体のとき、
+$X_{\infty}$が$X$の境界つき
+位相多様体の境界となっていることと、
+代数幾何におけるトーリック境界の
+トロピカル類似になっていることに
+由来していると思われる。)
+
+
+
+
 Let $(X,\mathcal{O}_X^{\times})$ be a rational
 polyhedral space and $(Y,\mathcal{O}_Y^{\times})$
 a rational polyhedral subspace.
@@ -1005,9 +1020,9 @@ does not usually satisfy the condition of finite type.
 We retain the notation of 
 \cref{definition-permissible-position}.
 \begin{enumerate}
-\item If $Y$ is in moderate position on $X$
-$Y$は$\opn{lineal}(X,x)$
-が自明となる点集合上には存在しない。
+\item If $Y$ is in moderate position on $X$, then
+$Y\cap\{x\in X\mid \opn{lineal}(X,x)=\{0\}\}
+=\varnothing$.
 \item $Y\cap X_{\mathrm{reg}}$ is in 
 moderate position on $X_{\mathrm{reg}}$.
 In particular, $Y$ is always in moderate position
@@ -1036,7 +1051,9 @@ exact sequence:
 	\arrow[from=1-4, to=1-5]
 \end{tikzcd}.\]
 
-
+\begin{definition}
+	
+\end{definition}
 
 \begin{proposition}
 \label{proposition-divisor-poincare}
@@ -1943,12 +1960,11 @@ Let $(X,\mathcal{O}_X^{\times})$ be
 a rational polyhedral space admitting
 a fundamental class $[X]$ which satisfies
 Poincar\'e--Verdier duality.
-We write $\opn{PD}_X$ for $\cdot \frown [X]$,
+We write $\opn{PD}_X$ for the inverse of
+the cap product homomorphism $\cdot \frown [X]$,
 and $\PD{Z}\deq \opn{PD}_X(Z)$ for all 
 $Z\in H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$.
 \end{notation}
-
-
 
 
 Every rational polyhedral space $(X,\mathcal{O}_X^{\times})$
@@ -1972,6 +1988,7 @@ H_{n-1,n-1}^{\mathrm{BM}}(X;\mathbb{Z})
 (see also \cite[Definition 2.9]{MR3894860}).
 In fact both of them are compatible with 
 the Poincar\'e duality for tropical manifolds
+admitting a global face structure
 \cite[Lemma 5.13]{MR3894860}.
 
 \subsection{Tropical Cartier divisors}
@@ -2012,25 +2029,27 @@ $\mathcal{L}(D)$ を $D$ が定義する
 トロピカル直線束とする。
 
 \begin{remark}
-トロピカル多様体上の有理関数の定義は、著者によって
-異なる。とくにそれに応じて、
-トロピカル多様体上の Cartier 因子の定義も異なってくる。
-例えば、\cite{MR3894860,MR4637248}
-では、前述の $\opn{Div}(X)^{[0]}$ を
-トロピカル多様体上の Cartier 因子のなす群と呼んでいるが、
-これは \cite{demedrano2023chern} らの意味とは異なる。
-任意のトロピカル多様体の余次元 $1$ のトロピカルサイクルは、
-\cite{shaw2015tropical,demedrano2023chern}
-などの意味でのトロピカル Cartier 因子による表現を持つ
-\cite[Proposition 3.27]{shaw2015tropical}。一方で、
-$\opn{Div}(X)^{[0]}$ の元の台が、
-すべてのトロピカルサイクルの台を表現するとは限らない。
-実際に、$X\deq \mathbb{T}$ としたとき、$\{-\infty\}$
-は、\cite{MR3894860,MR4637248} の意味での
-Cartier 因子の台にはならない。
-この観点から考えると \cite{demedrano2023chern} などの
-意味での Cartier 因子の方が、
-代数多様体上の Cartier 因子の類似としては適当である。
+The definition of rational functions on tropical
+manifolds varies depening on the author.
+Therefore, the definition of Cartier divisors
+on tropical manifolds also varies.
+In \cite{MR3894860,MR4637248},
+the previously mentioned group
+$\opn{Div}(X)^{[0]}$ is called
+the group of tropical Cartier divisors on $X$,
+but this is different from the meaning
+in \cite{demedrano2023chern}.
+By \cite[Proposition 3.27]{shaw2015tropical},
+every tropical cycle of codimension $1$ on a tropical manifold
+is a tropical Cartier divisor in the sense of
+\cite{shaw2015tropical,demedrano2023chern}.
+On the other hand, there exist codimension $1$
+tropical cycle which does not come from any
+elements in $\opn{Div}(X)^{[0]}$.
+For example,
+the point $\{-\infty\}$ in $\mathbb{T}$ does not
+come from $\opn{Div}(\mathbb{T})^{[0]}$.
+
 一方で、\cite{MR3894860,MR4637248} らの意味の Cartier 
 因子の定義にもご利益が存在する。その中の一つが、
 有理多面空間の射 $f\colon X\to Y$ は、引き戻し
@@ -2040,9 +2059,9 @@ $f^{*}\colon \opn{Div}(Y)^{[0]} \to \opn{Div}(X)^{[0]}$
 \cite[Propoisition 3.15]{MR4637248}。
 \end{remark}
 
-また、\cite{MR2591823} の理論をもとに
-次のようなペアリングが存在する
-\cite[\textsection 3.4]{MR4637248}。
+Moreover, \cite{MR2591823} の理論をもとに
+there exists a natural pairing
+\cite[\textsection 3.4]{MR4637248}.
 \begin{align}
 \label{equation-divisor-pairing}
 \opn{Div}(X)^{[0]}\times Z_{k}(X)\to Z_{k-1}(X);
@@ -2063,6 +2082,7 @@ $i\colon |A|\to X$ を $A$ の台の包含写像とする
 このとき、$A$は、$Z_k(|A|)$の元と自然とみなせ
 定義より射影公式
 \begin{align}
+\label{equation-projection-formula}
 i_*(D|_{|A|}\cdot A)=D\cdot A
 \end{align}
 が自明に成り立っていることに注意する。
@@ -2128,6 +2148,29 @@ of $Z_{n-k}(X)$ and satisfies
 \PD{D^{k}}=\PD{D}^{k}=c_1(\mathcal{L}(D))^{k}.
 \end{align}
 For simplicity, $D^{0}\deq X$.
+Additionally, we suppose $D$ is a tropical submanifold on $X$
+and $D|_{D}$ is a tropical submanifold on $D$.
+For the embedding morphism $\iota_{D}\colon D\to X$,
+we obtain the following equation:
+\begin{align}
+\iota_{|D|*}(D|_{|D|})=D\cdot D.
+\end{align}
+We can identify the support $|D|_{|D|}|$ with $|D^2|$ 
+within the scope where confusion does not arise.
+Let $D^{(1)}\deq D$ and $D^{(i+1)}\deq 
+D^{(i)}|_{|D^{(i)}|}=D|_{|D^{(i)}|}$ for all
+$i\in \mathbb{Z}_{>0}$. 
+Moreover, if $D^{(k)}$ $(k=1,\ldots,m)$ is
+tropical submanifolds of $|D^{k-1}|$
+and $|D^{k}|=|D^{(k)}|$, then
+\begin{align}
+\iota_{|D^{(k)}|*}(D^{(k+1)})=
+\iota_{|D^{(k)}|*}(D^{(k)}|_{|D^{(k)}|})
+=D\cdot D^{k}=D^{k+1}.
+\end{align}
+Thus, we can identify 
+$|D^{k+1}|$ with $|D^{(k+1)}|$
+within the scope where confusion does not arise.
 \end{notation}
 
 
@@ -2352,7 +2395,7 @@ We can discuss an analog of
 and expect the following conjecture holds:
 \begin{conjecture}
 \label{conjecture-grr-divisor}
-Let $X$ be a pure dimensional tropical manifold
+Let $X$ be a pure dimensional compact tropical manifold
 and $D$ a tropical submanifold of $X$ of codimension $1$.
 Then, the following equations hold for 
 $k\in \mathbb{Z}_{\geq 0}$ and the inclusion 
@@ -2381,18 +2424,7 @@ We will see later what
 corollaries appear
 when \cref{conjecture-grr-divisor} is true.  
 
-\begin{example}
-If $X=\mathbb{R}^{n}=L_{U_{d+1,n+1}}$ and 
-$D= L_{U_{d,n+1}}(\subset L_{U_{d+1,n+1}})$,
-then \cref{conjecture-grr-divisor} is true
-from \cite[Example 2.10]{MR3999674},
-$D\in \opn{Div}^{[0]}(X)$ and
-the recursive formula of binomial coefficients.
-The intersection of tropical cycles
-is local, so we can also say
-\cref{conjecture-grr-divisor} is true
-when $D$ is relatively uniform on $X$.
-\end{example}
+
 
 From now on, we discuss the Todd classes of
 tropical manifolds.
@@ -2558,7 +2590,7 @@ Then,
 
 \begin{example}
 \label{example-grr-1}
-Let $X$ be a purely n-dimensional tropical manifold
+Let $X$ be a purely $n$-dimensional tropical manifold
 and $D$ a tropical submanifold of codimension $1$ on 
 $X$. If 
 \cref{conjecture-grr-divisor} is true, then
@@ -2590,31 +2622,92 @@ since $H^{2,2}(X;\mathbb{Z})\simeq \mathbb{Z}$.
 \end{example}
 
 \begin{example}[{cf. \cite[Chapter 13 Appendix]{MR2810322}}]
-We retain the notation in \cref{example-grr-1}.
+We retain the notation
+in \cref{example-grr-1}.
+We also assume \cref{conjecture-grr-divisor} is true again.
 From \eqref{equation-total-adjunction}
 and the property of multiplicative sequences, 
 \begin{align}
 \label{equation-todd-adjunction-1}
 \iota^{*}\opn{td}(X)=
 \opn{td}(D)\frac{\iota^{*}\PD{D}}
-{1-\opn{exp}(\iota^{*}\PD{D})}.
+{1-\opn{exp}(-\iota^{*}\PD{D})}.
 \end{align}
 From \cref{equation-todd-adjunction-1} we also get
 \begin{align}
 \opn{td}(D)
 =\iota^{*}\left(
-\frac{1-\opn{exp}(\PD{D})}{
+\frac{1-\opn{exp}(-\PD{D})}{
 \PD{D}}\opn{td}(X)\right).
 \end{align}
 Moreover, the projection formula for 
 $\iota$ gives
 \begin{align}
 \label{equation-grr-divisor-2}
-\iota_!(\opn{td}(D))=(1-\opn{ch}(\PD{D}))\opn{td}(X).
+\iota_!(\opn{td}(D))=(1-\opn{ch}(-\PD{D}))\opn{td}(X).
 \end{align}
 The equation \eqref{equation-grr-divisor-2} 
 is a special case of an analog of 
 the Grothendieck--Riemann--Roch theorem.
+
+Let $D'$ be a tropical $(n-1)$-cycle on $X$.
+Then, the projection formula for 
+the embedding $\iota\colon D\to X$ gives
+\begin{align}
+\iota_!(\opn{ch}(\iota^{*}(\PD{D'}))\opn{td}(D))
+&=\opn{ch}(\PD{D'})\iota_!(\opn{td}(D)) \notag \\
+&=(\opn{ch}(\PD{D'})-\opn{ch}(\PD{D'-D}))\opn{td}(X).
+\end{align}
+If $D'$ is in $\opn{Div}^{[0]}(X)$, then
+the pullback $\iota^{*}D'=D'|_{D}$ of $D'$ satisfies
+the following:
+\begin{align}
+\label{equation-rr-number-divisor}
+\opn{RR}(X;D'-D)=\opn{RR}(X;D')-
+\opn{RR}(D;D'|_{D}).
+\end{align}
+
+
+Similarity to the case of algebraic varieties,
+we can define the
+\emph{virtual T-genus} of $D_1,\ldots,D_m\in Z_{n-1}(X)$
+as follows \cite[\textsection 11.2]{MR1335917}:
+\begin{align}
+T(X)\deq \opn{RR}(X;0),\quad  T(X;D_1,\ldots,D_m)\deq
+\int_X\prod_{j=1}^{m}(1-\opn{exp}(-\PD{D_j}))\opn{td}(X).
+\end{align}
+We can see $T(X;D)=\opn{RR}(X;D)$ when
+\cref{conjecture-grr-divisor} is true.
+
+
+As explained in \cite[\textsection 20.6]{MR1335917},
+the following equation holds
+\begin{align}
+\opn{exp}(\PD{D_1})=(1-(1-\opn{exp}(-\PD{D_1})))^{-1}
+=\sum_{j=0}^{n}(1-\opn{exp}(-\PD{D_1}))^j.
+\end{align}
+
+From this, we obtain the following equation
+\cite[\textsection 20.6.(14)]{MR1335917}:
+\begin{align}
+\opn{RR}(X;D_1)=\sum_{j=0}^{n}T(X;\overbrace{D_1,\ldots,D_1}^{j}).
+\end{align}
+
+Additionally, we assume every $D_i$ ($i=1,\ldots,m$) is
+in $\opn{Div}^{[0]}(X)$ and $D_1=D$.
+Then, from 
+\cref{equation-rr-number-divisor} and
+\cref{equation-gysin-projection-formula},
+we also obtain the following equations \cite[Theorem 11.2.1]{MR1335917}:
+\begin{align}
+T(X;D_1,\ldots,D_m)&=T(D_1;D_2|_{D_1},\ldots,D_m|_{D_1}), \\
+\sum_{j=1}^{n}T(X;\overbrace{D,\ldots,D}^{j})
+&=\opn{RR}(D;0)+\sum_{j=1}^{n-1}T(D;\overbrace{D|_D,\ldots,D|_{D}}^{j})
+=\opn{RR}(X;D|_D).
+\label{equation-rr-reduction}
+\end{align}
+If $D|_D$ is also a tropical submanifold,
+then this process can be repeated.
 \end{example}
 
 \begin{proposition}
@@ -2626,30 +2719,17 @@ are true, then \cref{conjecture-rr-bertini} is also true.
 
 \begin{proof}
 We suppose \cref{conjecture-grr-divisor} is true.
-The projection formula for 
-the embedding $\iota\colon D\to X$ gives
-\begin{align}
-\iota_!(\opn{ch}(\iota^{*}(\PD{D'}))\opn{td}(D))
-&=\opn{ch}(\PD{D'})\iota_!(\opn{td}(D)) \notag \\
-&=(\opn{ch}(\PD{D'})-\opn{ch}(\PD{D'-D}))\opn{td}(X).
-\end{align}
 From the assumption, 
 $D'$ is sedentarity-$0$. 
-The pullback $\iota^{*}D'=D'|_{D}$ of $D'$ satisfies
-the following:
-\begin{align}
-\label{equation-rr-number-divisor}
-\opn{RR}(X;D'-D)=\opn{RR}(X;D')-
-\opn{RR}(D;D'|_{D}).
-\end{align}
+
 
 If \cref{conjecture-rr-euler} and 
 \cite[Conjecture 6.13]{demedrano2023chern} is true,
 then
 \begin{align}
-\opn{RR}(X;D')-
-\opn{RR}(D;D'|_{D})=
-\chi(X\setminus D')-\chi(D\setminus (D'\cap D)). \notag
+\opn{RR}(X;D'-D)=&\opn{RR}(X;D')-
+\opn{RR}(D;D'|_{D}) \notag \\
+=&\chi(X\setminus D')-\chi(D\setminus (D'\cap D)). \notag
 \end{align}
 Therefore, it has been proved.
 \end{proof}
@@ -2826,40 +2906,96 @@ R\Gamma_{X\setminus D'}
 % Baker--Norine rank は、
 % \end{remark}
 
+ここでは、
 
+
+
+\begin{definition}
+Let $\colon D\to X$ be the inclusion map
+of tropical submanifold of codimension $1$ on
+a tropical manifold of dimension $n$ 
+and $A\in\bigoplus_{k=0}^{\infty} Z_{k}(X)$.
+Suppose $D\in \opn{Div}^{[0]}(X)$.
+A element $B\in\bigoplus_{k=0}^{\infty} Z_{k}(X)$
+is a \emph{pullback} of $A$ if
+\begin{align}
+	\iota_* B=D\cdot A.
+\end{align}
+\end{definition}
+
+\begin{example}
+Let $B$ be a pullback of $\opn{csm}(X)=
+\sum_{k=0}^{n}\opn{csm}_k(X)$.
+Suppose the following equation holds:
+\begin{align}
+B=(1+\iota^{*}D)\cdot \opn{csm}(D).
+\end{align}
+Then, we get 
+\begin{align}
+\iota_*B=D\cdot \opn{csm}(X)
+=(1+D)\cdot \iota_*\opn{csm}(D),\\
+\PD{\opn{cyc}_D(B)}=(1+\iota^{*}\PD{D})c^{\mathrm{sm}}(D).
+\end{align}
+
+\begin{align}
+\PD{\opn{cyc}_D(\iota_*B)}=\iota_!\PD{\opn{cyc}_D(B)}
+=D\cdot c^{\mathrm{sm}}(X)=
+\iota_{!}(\iota^{*}(c^{\mathrm{sm}}(X))).
+\end{align}
+
+\begin{align}
+\opn{td}(D)=\iota^{*}\left(
+\frac{1-\opn{exp}(-\PD{D})}{
+\PD{D}}\right)\opn{Todd}(\PD{\opn{cyc}_D(B)})
+\end{align}
+
+\end{example}
+
+\begin{example}
+If $X=\mathbb{R}^{n}=L_{U_{d+1,n+1}}$ and 
+$D= L_{U_{d,n+1}}(\subset L_{U_{d+1,n+1}})$,
+then \cref{conjecture-grr-divisor} is true
+from \cite[Example 2.10]{MR3999674},
+$D\in \opn{Div}^{[0]}(X)$ and
+the recursive formula of binomial coefficients.
+The intersection of tropical cycles
+is local, so we can also say
+\cref{conjecture-grr-divisor} is true
+when $D$ is relatively uniform on $X$.
+\end{example}
+
+
+\begin{proposition}
+Let $X$ be a purely $n$-dimensional
+compact tropical manifold
+and $D$ a tropical submanifold of codimension $1$.
+If $D$ is relatively uniform on $X$, then 
+the $k$-th power of $D$ is also a tropical submanifold
+of $X$ for all $k \in \mathbb{Z}_{>0}$ and the following
+equations hold:
+\begin{align}
+\opn{RR}(X;D)&=\sum_{i=0}^{n}\opn{RR}(|D^{i}|;0).
+\end{align}
+\end{proposition}
+\begin{proof}
+If $D$ is relatively uniform on $X$,
+then for any $x\in |D^{j}|$ for some $j\in \mathbb{Z}_{>0}$
+there exists the following isomorphism:
+\begin{align}
+\label{equation-relatively-uniform-cone}
+\opn{LC}_x |D^{j}|\simeq 
+\opn{lineal}(D,x)\times \opn{LC}_x X/\opn{lineal}(X,x)
+\times L_{U_{r-j,r}}.
+\end{align}
+
+
+
+\end{proof}
 
 \begin{remark}
 \label{remark-rr-in-ag}
 
-\emph{virtual T-genus} が定義される
-\cite[\textsection 11.2]{MR1335917}。
-\begin{align}
-T(X;D_1,\ldots,D_m)\deq
-\int_X\prod_{j=1}^{m}(1-\opn{exp}(-\PD{D_j}))\opn{td}(X).
-\end{align}
-\cite[\textsection 20.6]{MR1335917} にて説明されている
-ように、
-\begin{align}
-\opn{exp}(\PD{D})=(1-(1-\opn{exp}(-\PD{D})))^{-1}
-=\sum_{j=0}^{n}(1-\opn{exp}(-\PD{D}))^j
-\end{align}
-という等式が成り立つ。これより、次の等式を得る
-\cite[\textsection 20.6.(14)]{MR1335917}。
-\begin{align}
-\opn{RR}(X;D)=\opn{RR}(X;0)+
-\sum_{j=1}^{n}T(X;\overbrace{D,\ldots,D}^{j}).
-\end{align}
-さて、$D=D_1$ を中庸な位置にあるトロピカル部分多様体とする。
-\cref{conjecture-grr-divisor} が正しいとすると、
-\cref{equation-rr-number-divisor}と
-\cref{equation-gysin-projection-formula} より、
-\begin{align}
-T(X;D_1,\ldots,D_m)&=T(D_1;D_2|_{D_1},\ldots,D_m|_{D_1}), \\
-\sum_{j=1}^{n}T(X;\overbrace{D,\ldots,D}^{j})
-&=\opn{RR}(D;0)+\sum_{j=1}^{n-1}T(D;\overbrace{D|_D,\ldots,D|_{D}}^{j}).
-\label{equation-rr-reduction}
-\end{align}
-が成立する(\cite[Theorem 11.2.1]{MR1335917})。
+
 ここで、任意の$j\in \mathbb{Z}_{>0}$ に対して
 $V_j=D$ かつ
 $[V_{j}|_{V_{j}}]=[V_{j+1}]$ となるトロピカル部分多様体の族
@@ -2871,11 +3007,7 @@ $\{V_j\}_{j\in \mathbb{Z}_{>0}}$ が存在する
 となる。$D$ が $X$ に対して相対的に uniform であるとすると、
 $V_j\deq |D^{j}|$ とおくことで、条件を満たす。 
 また、$x\in |D^j|$ に対して次の同型が成り立つ。
-\begin{align}
-\opn{LC}_x D^{j}\simeq 
-\opn{lineal}(D,x)\times \opn{LC}_x X/\opn{lineal}(X,x)
-\times L_{U_{r-j,r}}
-\end{align}
+
 よって、Euler calculus より次の等式が成り立つはずである。
 \begin{align}
 \label{equation-euler-calculus-sum}
