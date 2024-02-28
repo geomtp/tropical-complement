@@ -392,14 +392,15 @@ characteristic of the sheaf cohomology:
 \end{align}
 From \eqref{equation-anti-effective-divisor},
 the conjecture below is very natural and 
-seems to be believed among many researchers
+seems to be widely
+believed among many researchers
 before \cite{demedrano2023chern}, if
 we mildly ignore a technical condition of 
 tropical submanifolds
 \cite[Definition 2.14]{demedrano2023chern} (see also
 \cite[Definition 4.3]{shaw2015tropical}).
 
-\begin{conjecture}[{Folklore?}]
+\begin{conjecture}[{Widely believed?}]
 \label{conjecture-rr-c-euler}
 Let $X$ be a compact
 (purely) $n$-dimensional tropical manifold and
@@ -454,8 +455,12 @@ then
 \opn{RR}(X;D)=\sum_{k=0}^{n}\chi(|D^k|)=\chi(X\setminus D).
 \end{align}
 where $|D^{k}|$ is the support of the $k$-th power
-of $D$ (\cref{notation-power-divisor}). 
+of $D$ (\cref{notation-power-divisor}).
 \end{conjecture}
+The first equation of \cref{conjecture-rr-euler}
+is a certain tropical analog of
+\cite[\textsection 20.6. (14)]{MR1335917}
+and I will explain it in \cref{example-sum-formula}.
 I believe that other researchers also expect
 \cref{conjecture-rr-euler} as like
 \cref{conjecture-rr-c-euler},
@@ -464,6 +469,9 @@ but \cref{conjecture-rr-euler} is more non-trivial than
 In fact, many tropical submanifolds are in moderate position,
 but we can easily construct of tropical submanifolds
 which are not in moderate position.
+We also remark that the first equation of
+\cref{conjecture-rr-euler} should hold for more general
+cases.
 
 \begin{example}
 \label{example-permissible-point}
@@ -481,19 +489,17 @@ finite subsets contained in $C_{\mathrm{reg}}$, we get
 =\chi(C\setminus D).
 \end{align}
 Therefore, \cref{conjecture-rr-euler} is true
-for $C$.
+for $C$. The first equation above also holds when
+$D$ is not in moderate position.
 \end{example}
 In \cref{example-TPn,remark-iass},
 we will see other examples for evidence 
 why it seems that \cref{conjecture-rr-euler}
-is true.
-
-なお、\cref{conjecture-rr-euler} の代数幾何学的な
-背景については \cref{remark-rr-in-ag} にて説明する。
-ただし、\cref{conjecture-rr-c-euler} よりも
-トロピカル幾何学に由来する特殊な事情が絡んでいる。
-
-
+is true. Moreover, we also prove
+the second equation of 
+\cref{conjecture-rr-euler} when $D$ is 
+relatively uniform on $X$ in
+\cref{theorem-euler-power}.
 One of interesting points of
 \cref{conjecture-rr-c-euler,conjecture-rr-euler} is that
 the complement of a tropical submanifold in
@@ -530,10 +536,12 @@ a derivation from the study in
 We will see relationships between 
 this paper and \cite{tsutsui2023graded}
 in \cref{remark-c-infinity-divisor}.
-(\cref{remark-c-infinity-divisor}で言及する関係性は、
-トロピカル部分多様体の補集合のコホモロジーと
-コンパクト台コホモロジーはともに直線束のホモジカルな
-不変量に関するデータを一部内包していることを示唆している。)
+The relationships which are
+remarked in \cref{remark-c-infinity-divisor}
+suggest that the cohomology of the complement
+of tropical submanifold contain a piece of data
+of a homological invariant of the line bundle
+associated with the tropical submanifold.
 
 One of main theorem in this paper
 is the following, and its proof is not difficult:
@@ -788,6 +796,15 @@ a rational polyhedral space which is regular at
 infinity \cite[\textsection 6.1]{MR4637248}
 (see also \cite[Definition 1.2]{MR3330789}
 and \cite[Definition 7.2.4]{mikhalkin2018tropical}).
+Then, every $x\in X$ has an open neighborhood
+which is isomorphic to an open subset of 
+$\opn{LC}_x X\times \mathbb{T}^n$ for some
+$n\in \mathbb{Z}_{\geq 0}$.
+Every rational polyhedral space which is regular
+at infinity has the sedentarity
+$\opn{sed}_X$ on $X$
+\cite[Definition 7.2.6]{mikhalkin2018tropical}
+(see also \cite[Definition 2.4]{demedrano2023chern}).
 
 From definition, for any $x\in X$
 \begin{align}
@@ -801,15 +818,23 @@ $X$の閉部分集合である
 (上半連続関数の定義は例えば\cite[p.287]{MR463157}
 を見よ)。
 
-Then, every $x\in X$ has an open neighborhood
-which is isomorphic to an open subset of 
-$\opn{LC}_x X\times \mathbb{T}^n$ for some
-$n\in \mathbb{Z}_{\geq 0}$.
-Every rational polyhedral space which is regular
-at infinity has the sedentarity
-$\opn{sed}_X$ on $X$
-\cite[Definition 7.2.6]{mikhalkin2018tropical}
-(see also \cite[Definition 2.4]{demedrano2023chern}).
+\begin{align}
+X^{[\geq k]}\deq \{p\in X\mid \opn{sed}_X(p)\geq k\},
+\quad 
+X_{\infty}\deq X^{[\geq 1]}.
+\end{align}
+$X_{\infty}$ は、
+$X$の境界(boundary)
+と呼ばれ、
+$\partial X$と書く場合がある。
+($X$がトロピカルトーリック多様体のとき、
+$X_{\infty}$が$X$の境界つき
+位相多様体の境界となっていることと、
+代数幾何におけるトーリック境界の
+トロピカル類似になっていることに
+由来していると思われる。)
+
+
 
 Let $\Omega_{\mathbb{Z},X}\deq
 \mathcal{O}_X^{\times}/\mathbb{R}_X$ be
@@ -829,26 +854,10 @@ there exists an atlas $\{(U_i,\psi_i)\}_{i\in I}$
 such that for every chart $\psi_i \colon U_i \to V_i 
 (\subset \mathbb{T}^{n_i})$,
 $V_i$ is an open subset of $L_M\times \mathbb{T}^{m_i}$
-($m_i\in \mathbb{Z}_{\geq 0}$) where 
-$L_M$ is the support of
-the Bergman fan for some loopless matroid $M$.
+($m_i\in \mathbb{Z}_{\geq 0}$).
 
 
-\begin{align}
-X^{[\geq k]}\deq \{p\in X\mid \opn{sed}_X(p)\geq k\},
-\quad 
-X_{\infty}\deq X^{[\geq 1]}.
-\end{align}
-$X_{\infty}$ は、
-$X$の境界(boundary)
-と呼ばれ、
-$\partial X$と書く場合がある。
-($X$がトロピカルトーリック多様体のとき、
-$X_{\infty}$が$X$の境界つき
-位相多様体の境界となっていることと、
-代数幾何におけるトーリック境界の
-トロピカル類似になっていることに
-由来していると思われる。)
+
 
 
 
@@ -942,9 +951,9 @@ $Y$ を $X$
 
 \begin{align}
 \opn{codim}(Y/X)\deq \dim X -\dim Y,\quad 
-\opn{codim}_x(Y/X)\deq \dim_x X -\dim_x Y
+\opn{codim}_x(Y/X)\deq \dim_x X -\dim_x Y.
 \end{align}
-とおくと、次が成り立つ。
+Then, the following equations and inequalities hold
 \begin{align}
 \opn{sed}_X(x)-\opn{sed}_Y(x)=
 \opn{codim}_x(Y/X)-\opn{codim}_0(\opn{LC}_x Y/\opn{LC}_xX),
@@ -954,14 +963,9 @@ $Y$ を $X$
 \opn{sed}_X(x)-\opn{sed}_Y(x)\geq 0.
 \end{align}
 
-とくに $\opn{codim}_x(Y/X)=1$
-のときは、$\opn{sed}_X(x)-\opn{sed}_Y(x)=0$ または
-$1$ である。さらに、
-$\opn{sed}_X(x)-\opn{sed}_Y(x)=1$のとき、
-$\dim \opn{LC}_x Y=\dim \opn{LC}_x X$
-なので トロピカル部分多様体の定義より
-$\opn{LC}_x Y\simeq \opn{LC}_x X$
-となる。
+In particular, if $\opn{codim}_x(Y/X)=1$,
+then $\opn{sed}_X(x)-\opn{sed}_Y(x)=0$ or $1$.
+
 For $x\in Y$,
 $\opn{sed}_X(x)=\opn{sed}_Y(x)$ 
 のとき、$Y$ を $X$ の sedentarity-0 な
@@ -1060,7 +1064,23 @@ exact sequence:
 	\arrow[from=1-4, to=1-5]
 \end{tikzcd}.\]
 
-
+\begin{proposition}
+Let $X$ be a tropical manifold and 
+$Y$ a tropical submanifold of codimension $1$
+in moderate position on $X$.
+Then, $Y$ is a sedentarity-0 submanifold of $X$.
+\end{proposition}
+\begin{proof}
+If $Y$ is in moderate position,
+then $\opn{LC}_x Y\not \simeq \opn{LC}_x X$ for all 
+$x \in Y$.
+On the other hand, if $x \in Y$ satisfies 
+$\opn{sed}_X(x)-\opn{sed}_Y(x)=1$, then
+$\dim \opn{LC}_x Y=\dim \opn{LC}_x X$,
+and thus $\opn{LC}_x Y\simeq \opn{LC}_x X$.
+Therefore, $\opn{sed}_X(x)-\opn{sed}_Y(x)=0$ when
+$Y$ is in moderate position. 
+\end{proof}
 
 
 \begin{proposition}
@@ -1078,7 +1098,8 @@ all compact integral affine manifolds when
 true for any compact tropical manifold.
 \end{proposition}
 \begin{proof}
-Since $X$ is an integral affine manifold,
+Since $X$ is an integral affine manifold
+(see \cref{definition-tropical-todd}),
 $D$ is always in moderate position in $X$.
 Since $\opn{td}(X)=1$, we have
 \begin{align}
@@ -1103,8 +1124,8 @@ We expect that we can generalize
 \cref{conjecture-rr-euler} and 
 \cref{proposition-divisor-poincare}
 for integral affine manifold with singularities
-\cite{MR2213573,MR2181810,MR4347312}.
-\todo[inline]{特異点つき整アフィン多様体の文献は十分か?}
+(e.g. see \cite{MR2213573,MR2181810,MR4347312}).
+
 Normally, integral affine manifolds with singularities
 are analogs of complex manifolds whose canonical bundles
 are numerically trivial. If $M$ is a compact and
@@ -1222,24 +1243,13 @@ of $\sharp \opn{int}(d\Delta_n(\mathbb{Z}))$
 $(n-1)$-dimensional spheres.
 \end{example}
 
-\begin{proposition}
-Let $X$ be a tropical manifold and 
-$Y$ a tropical submanifold of codimension $1$
-in moderate position on $X$.
-Then, $Y$ is a sedentarity-0 submanifold of $X$.
-\end{proposition}
-\begin{proof}
-If $Y$ is in moderate position,
-then $\opn{LC}_x Y\not \simeq \opn{LC}_x X$ for all 
-$x \in Y$.
-On the other hand, if $x \in Y$ satisfies 
-$\opn{sed}_X(x)-\opn{sed}_Y(x)=1$, then
-$\opn{LC}_x Y\simeq \opn{LC}_x X$.
-Therefore, $\opn{sed}_X(x)-\opn{sed}_Y(x)=0$ when
-$Y$ is in moderate position. 
-\end{proof}
+
 \subsection{Relatively uniform tropical submanifolds}
-We define a good class of 
+In this subsection, we define a good class
+of tropical submanifolds in moderate position
+and prove the second equation of
+\cref{conjecture-rr-euler} for this case
+in \cref{theorem-euler-power}. 
 \begin{definition}
 \label{definition-relatively-uniform}
 Let $X$ be an $n$-dimensional tropical manifold $X$
@@ -1252,8 +1262,8 @@ the pushforward morphism
 $\iota_{*x}\colon\opn{LC}_{x}D\to \opn{LC}_{x}X$ is isomorphic to
 \begin{align}
 \label{equation-relatively-uniform-map}
-\opn{id}_{L_M}\times i\colon L_{M}\times L_{U_{r-1,r}}\to 
-L_{M}\times L_{U_{r,r}}
+\opn{id}_{L_M}\times i\colon L_{M}\times L_{U_{r,r+1}}\to 
+L_{M}\times L_{U_{r+1,r+1}}
 \end{align}
 where
 $M$ is a loopless matroid, $r$ is a positive integer
@@ -1269,9 +1279,18 @@ itself can be represented by a matroidal map
 induced from the parallel connection of matroids
 (see \cite[Lemma 3.1]{MR4246795}
 or \cite[Proposition 3.7]{demedrano2023chern}).
+The author don't know whether there exists a
+tropical submanifold in moderate position but
+not relatively uniform, so
+\cref{definition-relatively-uniform} may be equivalent
+to \cref{definition-permissible-position}.
 
-We mainly use techniques of Euler calculus
-in order to prove \cref{theorem-euler-power}.
+\begin{proposition}
+
+Let $X$ be a purely $n$-dimensional compact tropical manifold
+and $D$ a relatively uniform tropical submanifold of
+codimension $1$ on $X$.
+\end{proposition}
 
 \begin{theorem}
 \label{theorem-euler-power}
@@ -1279,8 +1298,10 @@ Let $X$ be a purely $n$-dimensional compact tropical manifold
 and $D$ a relatively uniform tropical submanifold of
 codimension $1$ on $X$. Then,
 \begin{align}
+\label{equation-euler-power}
 \chi(X\setminus D)=\sum_{k=0}^{n}
-\chi(|D^{k}|).
+\chi(|D^{k}|)=\sum_{k=0}^{n}(k+1)\chi_c(|D^{k}|\setminus
+|D^{k+1}|).
 \end{align}
 \end{theorem}
 \begin{proof}
@@ -1298,8 +1319,8 @@ Rj_*\mathbb{R}_{X\setminus D}\simeq j_*\mathbb{R}_{X\setminus D},
 \sum_{k=0}^{\infty}1_{|D^{k}|}(x).
 \end{align}
 Fix a finite tropical atlas $\mathcal{U}$ for $X$.
-From inclusion exclusion principle and Meyer--Vietoris
-sequence, we only need to check
+From the inclusion-exclusion principle and the Meyer--Vietoris
+sequence of sheaves, we only need to check
 \begin{align}
 \label{equation-open-euler-calculus}
 \chi(H^{\bullet}_c(U;(j_*\mathbb{R}_{X\setminus D})|_{U}))
@@ -1325,6 +1346,42 @@ From \cite[Theorem 9.7.1]{MR1299726} and
 \eqref{equation-local-index}, we obtain
 \eqref{equation-open-euler-calculus}.
 \end{proof}
+
+\begin{remark}
+In the proof of \cref{theorem-euler-power},
+we considered $Rj_*\mathbb{R}_{X\setminus D}$ to calculate
+the Euler characteristic of $X\setminus D$.
+This method comes from \emph{Euler calculus}
+\cite{MR970076,MR1115569}.
+Euler calculus is an effective way to calculate
+the Euler characteristic of the sheaf cohomology of
+constructible sheaves. We can consider 
+the Euler characteristic of compact supports of 
+locally closed subsets of $X$
+as an analog of signed measure,
+and the RHS of \cref{equation-euler-power} as an
+integration of the following simple function over it
+\cite[(3.4)]{MR1115569}:
+\begin{align}
+\chi(Rj_*\mathbb{R}_{X\setminus D})(x)\deq 
+\chi((Rj_*\mathbb{R}_{X\setminus D})_x) 
+\simeq \chi(\varinjlim_{U\ni x} H^{\bullet}((X\setminus D)
+\cap U;\mathbb{R})), \quad (x\in X).
+\end{align}
+The value $\chi(Rj_*\mathbb{R}_{X\setminus D})(x)$ is
+called the \emph{local Euler--Poincar\'e index} of 
+$Rj_*\mathbb{R}_{X\setminus D}$ at $x$.
+Euler calculus is also a useful way to
+investigate other constructible sheaves
+on tropical manifolds.
+As stressed in \cite[Remark 4.8]{MR4540954},
+we can interpret the first equation of 
+the tropical Poincar\'e--Hopf theorem
+\cite[Theorem 4.7]{MR4540954} as 
+the Euler integration of the total complex
+$\Omega^{\bullet}_{\mathbb{Z},X}$ of the sheaves of
+tropical $p$-forms.
+\end{remark}
 
 \subsection{For tropical surfaces}
 
@@ -1502,48 +1559,6 @@ It follows from
 \cref{proposition-cycle-chern}.
 \end{proof}
 
-\begin{remark}
-In the proof of \cref{theorem-rr-euler-surface},
-we considered $Rj_*\mathbb{Q}_{S\setminus C}$ to calculate
-the Euler characteristic of $S\setminus C$.
-This method is highly related with \emph{Euler calculus}
-\cite{MR970076,MR1115569}.
-Euler calculus is an effective way to calculate
-the Euler characteristic of the sheaf cohomology of
-constructible sheaves. We can consider 
-the Euler characteristic of compact supports of 
-locally closed subsets of $S$
-as an analog of signed measure,
-and the RHS of \cref{equation-euler-calculus} as an
-integration of the following simple function over it
-\cite[(3.4)]{MR1115569}:
-\begin{align}
-\chi(Rj_*\mathbb{Q}_{S\setminus C})(x)\deq \chi((Rj_*\mathbb{Q}_{S\setminus C})_x) 
-\simeq \chi(\varinjlim_{U\ni x} H^{\bullet}((S\setminus C)
-\cap U;\mathbb{Q})), \quad (x\in S).
-\end{align}
-The value $\chi(Rj_*\mathbb{Q}_{S\setminus C})(x)$ is
-called the \emph{local Euler--Poincar\'e index} of 
-$Rj_*\mathbb{Q}_{S\setminus C}$ at $x$.
-Euler calculus is also a useful way to
-investigate other constructible sheaves
-on tropical manifolds.
-As stressed in \cite[Remark 4.8]{MR4540954},
-we can interpret the first equation of 
-the tropical Poincar\'e--Hopf theorem
-\cite[Theorem 4.7]{MR4540954} as 
-the Euler integration of the total complex
-$\Omega^{\bullet}_{\mathbb{Z},X}$ of the sheaves of
-tropical $p$-forms.
-\end{remark}
-% \begin{example}
-% $\opn{deg}(F)=d$, $\opn{deg}(G)=e$とする。
-% \begin{align}
-% (V(G)|_{V(F)})^{2}+K_{V(G)}.(V(G)|_{V(F)})
-% =e^2d+(d-4)ed=e^2d+d^2e-4de
-% \end{align}
-
-% \end{example}
 
 \begin{remark}
 \label{remark-c-infinity-divisor}
@@ -2732,6 +2747,7 @@ since $H^{2,2}(X;\mathbb{Z})\simeq \mathbb{Z}$.
 \end{example}
 
 \begin{example}[{cf. \cite[Chapter 13 Appendix]{MR2810322}}]
+\label{example-sum-formula}
 We retain the notation
 in \cref{example-grr-1}.
 We also assume \cref{conjecture-grr-divisor} is true again.
@@ -2757,8 +2773,9 @@ $\iota$ gives
 \iota_!(\opn{td}(D))=(1-\opn{ch}(-\PD{D}))\opn{td}(X).
 \end{align}
 The equation \eqref{equation-grr-divisor-2} 
-is a special case of an analog of 
-the Grothendieck--Riemann--Roch theorem.
+is an analog of 
+the Grothendieck--Riemann--Roch theorem
+for a special case.
 
 Let $D'$ be a tropical $(n-1)$-cycle on $X$.
 Then, the projection formula for 
@@ -2880,8 +2897,7 @@ In the proof of \cref{theorem-rr-euler-surface},
 の証明では、Euler calculus の視点から
 トロピカル多様体 $X$ の余次元 $1$ のトロピカル部分多様体
 $D$ の補集合の Euler 数 $\chi(X\setminus D)$ を計算するという
-手法をとった。このテクニックは moderate  $(D,D')$ に
-対しても有効であるが、注意も必要である。
+手法をとった。
 
 ここでは、\cite{MR1299726} に書かれている知識が必要であるため
 それを整理する。
@@ -2981,40 +2997,12 @@ R\Gamma_{X\setminus D'}
 ((\mathcal{F})_{X\setminus D})_{X\setminus D'}
 \simeq (\mathcal{F})_{X\setminus (D \cup D')}.
 \end{align}
-ゆえに、トロピカル部分多様体の Bertini 対 $(D,D')$ の定義を
-トロピカル部分多様体の良い交わりをする有限和の対に弱める
-ことができると期待できる。
-
+Therefore, we expect that \cref{conjecture-rr-bertini}
+is also true for a pair $(D_1,D_2)$ of rational polyhedral
+subspaces on $X$ such that each $D_i$ is
+a finite union of tropical submanifolds whose
+intersections satisfy a good condition.
 \end{remark}
-
-% \begin{remark}
-% \label{remark-floer-differential}
-% \cref{remark-c-infinity-divisor}
-% を読んでいないならば、読み飛ばして問題ない。
-% $(D,D')$ をコンパクトトロピカル多様体
-% $X$ 上の Bertini 対としたとき、
-% $\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
-% ((\mathbb{Q}_X)_{X\setminus D}))$
-% の Euler 数が $D'-D$ の Riemann--Roch 数の
-% ように振る舞い、実際にいくつかのケースでは正しいことを
-% 見てきた。しかし、$\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
-% ((\mathbb{Q}_X)_{X\setminus D}))$ は必ずしも
-% $D'-D$ に付随する直線束のコホモロジーのようには
-% 振舞わない。これをトロピカル楕円曲線 $X\deq 
-% \mathbb{R}/\mathbb{Z}$ を例にとり説明する。
-% $0=a_1<b_1<\frac{1}{4}<b_2<a_2=\frac{1}{2}$ とし、
-% $D'=[a_1]+[a_2]$, $D=[b_1]+[b_2]$ とする。このとき、
-% $c\deq b_2+(b_1-a_1)<\frac{1}{2}$なので、
-% $D_0\deq [a_1]-[b_1]-[b_2]-[c]$ は
-% $\mathbb{R}/\mathbb{Z}$ 上の主因子を定義する。
-% よって、$D'-D$ は $[a_2]-[c]$ と線形同値となる。
-% よって $D'-D$ が線形同値であるか否かは
-% $[a_2]=[c]$ であるか否かとなる。
-% 代数曲線 $\mathcal{C}$ 上の因子 $\mathcal{D}$ が
-% 自明か否かは
-% またトロピカル曲線
-% Baker--Norine rank は、
-% \end{remark}
 
 ここでは、
 
@@ -3102,29 +3090,7 @@ there exists the following isomorphism:
 
 \end{proof}
 
-\begin{remark}
-\label{remark-rr-in-ag}
 
-
-ここで、任意の$j\in \mathbb{Z}_{>0}$ に対して
-$V_j=D$ かつ
-$[V_{j}|_{V_{j}}]=[V_{j+1}]$ となるトロピカル部分多様体の族
-$\{V_j\}_{j\in \mathbb{Z}_{>0}}$ が存在する
-と仮定すると\eqref{equation-rr-reduction} より
-\begin{align}
-\opn{RR}(X;D)\deq \sum_{j=0}^{n}\opn{RR}(V_j;0).
-\end{align}
-となる。$D$ が $X$ に対して相対的に uniform であるとすると、
-$V_j\deq |D^{j}|$ とおくことで、条件を満たす。 
-また、$x\in |D^j|$ に対して次の同型が成り立つ。
-
-よって、Euler calculus より次の等式が成り立つはずである。
-\begin{align}
-\label{equation-euler-calculus-sum}
-\chi(X\setminus D)=\sum_{j=0}^{n}\chi(|D^{j}|).
-\end{align}
-
-\end{remark}
 
 \bibliography{tropical-complement}
 \bibliographystyle{amsalpha}
