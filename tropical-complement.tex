@@ -712,7 +712,7 @@ the two cohomologies.
 Throughout this paper, $\mathbb{T}\deq 
 \mathbb{R}\cup\{-\infty\}$.
 Let $(X,\mathcal{O}_X^{\times})$ be a rational
-polyhedral space \cite[Definition 2.2]{MR4246795}.
+polyhedral space \cite[Definition 2.2]{MR4637248}.
 The \emph{dimension} $\dim X$ of $X$ is 
 the homological dimension of locally compact
 Hausdorff spaces (e.g.
@@ -733,6 +733,14 @@ integral affine manifold
 See also \cite[Definition 3]{MR2181810}
 for the sheaf theoretical
 definition of integral affine manifolds.
+For a given loopless matroid $M$, let
+$L_M$ be the \emph{tropical linear space} of
+$M$ in the sense of \cite[\textsection 2.2]{MR4637248}.
+When we consider $L_M$ as a tropical cycle on a vector
+space, we say $L_M$ the matroidal tropical cycle associated
+to $M$ like \cite{demedrano2023chern}.
+We wirte $U_{r,n}$ for the uniform of matroid of rank $r$ 
+over $[n]\deq \{1,\ldots,n\}$. 
 \end{notation}
 
 In this paper, a rational polyhedral subspace is meant
@@ -1030,7 +1038,8 @@ when $X$ is an integral affine manifold.
 \end{enumerate}
 \end{example}
 
-If $Y$ is in moderate position, then 
+If $Y$ is in moderate position, then
+the inclusion 
 $\opn{LC}_x Y\to \opn{LC}_x X$ induces the following 
 exact sequence:
 % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiXFxvcG57bGluZWFsfShZLHgpIl0sWzAsMCwiMCJdLFswLDEsIjAiXSxbMSwxLCJcXG9wbntsaW5lYWx9KFgseCkiXSxbMiwwLCJUX3ggWSJdLFsyLDEsIlRfeCBYIl0sWzMsMSwiVF94IFgvXFxvcG57bGluZWFsfShYLHgpIl0sWzMsMCwiVF94IFkvXFxvcG57bGluZWFsfShZLHgpIl0sWzQsMSwiMCJdLFs0LDAsIjAiXSxbMSwwXSxbMiwzXSxbNSw2XSxbNCw3XSxbNyw2XSxbMCwzXSxbMCw0XSxbMyw1XSxbNCw1XSxbNiw4XSxbNyw5XV0=
@@ -1051,9 +1060,8 @@ exact sequence:
 	\arrow[from=1-4, to=1-5]
 \end{tikzcd}.\]
 
-\begin{definition}
-	
-\end{definition}
+
+
 
 \begin{proposition}
 \label{proposition-divisor-poincare}
@@ -1230,6 +1238,96 @@ $\opn{LC}_x Y\simeq \opn{LC}_x X$.
 Therefore, $\opn{sed}_X(x)-\opn{sed}_Y(x)=0$ when
 $Y$ is in moderate position. 
 \end{proof}
+\subsection{Relatively uniform tropical submanifolds}
+We define a good class of 
+\begin{definition}
+\label{definition-relatively-uniform}
+Let $X$ be an $n$-dimensional tropical manifold $X$
+and $\iota\colon D\to X$ is the embedding map of
+a codimension-1 sedentarity-0 tropical submanifold
+$D$ on $X$.
+The tropical submanifold $D$ of $X$
+is \emph{relatively uniform} on $X$ if, for any $x\in D$, 
+the pushforward morphism
+$\iota_{*x}\colon\opn{LC}_{x}D\to \opn{LC}_{x}X$ is isomorphic to
+\begin{align}
+\label{equation-relatively-uniform-map}
+\opn{id}_{L_M}\times i\colon L_{M}\times L_{U_{r-1,r}}\to 
+L_{M}\times L_{U_{r,r}}
+\end{align}
+where
+$M$ is a loopless matroid, $r$ is a positive integer
+and $i$ is the inclusion map induced from the inclusion
+$U_{r,r+1}\subset U_{r+1,r+1}$. 
+\end{definition}
+
+
+
+
+We note that \eqref{equation-relatively-uniform-map}
+itself can be represented by a matroidal map
+induced from the parallel connection of matroids
+(see \cite[Lemma 3.1]{MR4246795}
+or \cite[Proposition 3.7]{demedrano2023chern}).
+
+We mainly use techniques of Euler calculus
+in order to prove \cref{theorem-euler-power}.
+
+\begin{theorem}
+\label{theorem-euler-power}
+Let $X$ be a purely $n$-dimensional compact tropical manifold
+and $D$ a relatively uniform tropical submanifold of
+codimension $1$ on $X$. Then,
+\begin{align}
+\chi(X\setminus D)=\sum_{k=0}^{n}
+\chi(|D^{k}|).
+\end{align}
+\end{theorem}
+\begin{proof}
+Let $j\colon X\setminus D\to X$ be the inclusion map.
+Then, we have 
+\begin{align}
+H^{\bullet}(X\setminus D;\mathbb{R}_{X\setminus D})
+\simeq \mathbb{H}^{\bullet}(X;Rj_*\mathbb{R}_{X\setminus D}).
+\end{align}
+Moreover, since $D$ is relatively uniform, we have
+\begin{align}
+\label{equation-local-index}
+Rj_*\mathbb{R}_{X\setminus D}\simeq j_*\mathbb{R}_{X\setminus D},
+\quad \chi((j_*\mathbb{R}_{X\setminus D})_x)=
+\sum_{k=0}^{\infty}1_{|D^{k}|}(x).
+\end{align}
+Fix a finite tropical atlas $\mathcal{U}$ for $X$.
+From inclusion exclusion principle and Meyer--Vietoris
+sequence, we only need to check
+\begin{align}
+\label{equation-open-euler-calculus}
+\chi(H^{\bullet}_c(U;(j_*\mathbb{R}_{X\setminus D})|_{U}))
+=\sum_{k=0}^{\infty}\chi_c(|D^{k}|\cap U).
+\end{align}
+for any $(U,\phi)\in \mathcal{U}$.
+Since $\mathbb{T}^{m}$ is homeomorphic to 
+$\mathbb{R}_{\geq 0}^{m}$ via the extended exponential map
+$\opn{exp}\colon \mathbb{T}^{m} \to \mathbb{R}_{\geq 0}^{m}$,
+we may consider every rational
+polyhedral set in some $\mathbb{T}^{m}$ as a
+subanalytic set in $\mathbb{R}^{m}$.
+From definition, we can choose an open subset $V$ of 
+$\mathbb{R}^{m}$ such that $\opn{exp}\circ\phi(U)$ is
+a closed subset of $V$.
+The restriction of every rational polyhedral set in $\mathbb{T}^{n}$
+on $V$ is also subanalytic \cite[Proposition 8.2.2.(iii)]{MR1299726}
+on $V$. Let $\iota\deq \opn{exp}\circ \phi$.
+Then, $\iota_*(j_*\mathbb{R}_{X\setminus D})|_{U}$
+is an $\mathbb{R}$-constructible sheaf on $V$
+\cite[Definition 8.4.3]{MR1299726}.
+From \cite[Theorem 9.7.1]{MR1299726} and 
+\eqref{equation-local-index}, we obtain
+\eqref{equation-open-euler-calculus}.
+\end{proof}
+
+\subsection{For tropical surfaces}
+
 For the proof of \cref{theorem-rr-euler-surface}, we 
 use the following well-known 
 proposition for Bergman fans: 
@@ -1270,8 +1368,7 @@ $\dim \opn{lineal}(S,x)=1,2$ for any $x\in C$.
 \item Suppose $\dim \opn{lineal}(S,x)=2$.
 Then, $\opn{LC}_x S\simeq \mathbb{R}^2$ and
 $\opn{LC}_x C$ should be isomorphic to 
-the support of the Bergman fan of a loopless matroid
-of rank $2$ on $[3]$. 
+$L_{U_{2,3}}$ or $L_{U_{2,2}}$. 
 In particular, $\opn{val}_C(x)=2,3$ in this case.
 \item We assume $\dim \opn{lineal}(S,x)=1$. 
 Then, $\dim \opn{lineal}(C,x)=0$.
@@ -1280,7 +1377,6 @@ From \cite[Corollary 2.4]{shaw2015tropical},
 we may assume $\opn{LC}_x S\simeq L_{U_{2,m}}\times \mathbb{R}
 \simeq L_{U_{2,m}\oplus U_{1,1}}$
 $(m\geq 3)$.
-
 From this description, we can check $\opn{val}_C(x)\leq m$.
 In particular, we can consider $T_x C$ as 
 a proper vector subspace of $T_x S$.
@@ -2029,7 +2125,7 @@ line bundle of $D$
 
 \begin{remark}
 The definition of rational functions on tropical
-manifolds varies depening on the author.
+manifolds varies depending on the author.
 Therefore, the definition of Cartier divisors
 on tropical manifolds also varies.
 In \cite{MR3894860,MR4637248},
@@ -2050,7 +2146,7 @@ the point $\{-\infty\}$ in $\mathbb{T}$ does not
 come from $\opn{Div}(\mathbb{T})^{[0]}$.
 
 On the other hand, there exist advantages of
-the defintion of tropical Cartier divisors in the
+the definition of tropical Cartier divisors in the
 sense of \cite{MR3894860,MR4637248}.
 One of them is that 
 every morphism $f\colon X\to Y$ of rational polyhedral
@@ -2282,9 +2378,10 @@ $H_{1,1}^{\mathrm{BM}}(X;\mathbb{Z})$
 \cite{MR4637248} の意味でのサイクル写像と
 整合的である \cite[Theorem 5.13]{MR4637248}。
 さらに wave homomorphism 
-$\hat{\phi}\colon 
-H^{\mathrm{BM}}_{1,1}(X;\mathbb{Z})
-\to H^{\mathrm{BM}}_{2,0}(X;\mathbb{R})$ に対して
+$\hat{\phi} \colon
+H_{n-1,n-1}^{\mathrm{BM}}(X;\mathbb{Z})
+\to H_{n,n-2}^{\mathrm{BM}}(X;\mathbb{R})$
+に対して
 $[D_i]\deq \opn{cyc}_X(D_i)\in \opn{Ker} \hat{\phi}$
 である \cite[Theorem 5.4]{MR3330789}。
 そのため、\cite[Lemma 5.13]{MR3894860}より
