@@ -410,7 +410,8 @@ on $X$
 Then,
 \begin{align}
 \opn{RR}(X;-D)=
-\chi_c (X\setminus D) (=\chi_c (X)-\chi_c(D))
+\chi_c (X)-\chi_c(D)=
+\chi_c (X\setminus D)
 \end{align}
 where $\chi_c(X)$ is the Euler characteristic
 with compact support of $X$.
@@ -452,7 +453,7 @@ If $D$ is in \emph{moderate position}
 (\cref{definition-permissible-position}) on $X$,
 then 
 \begin{align}
-\opn{RR}(X;D)=\sum_{k=0}^{n}\chi(|D^k|)=\chi(X\setminus D).
+\opn{RR}(X;D)=\sum_{k=0}^{n}\chi(|D^k|)=\chi(X\setminus D)
 \end{align}
 where $|D^{k}|$ is the support of the $k$-th power
 of $D$ (\cref{notation-power-divisor}).
@@ -698,23 +699,15 @@ the theory of tropical manifolds from
 \cite{shaw2011tropical,MR3330789,mikhalkin2018tropical,MR4637248,demedrano2023chern}.
 We also recall it from other references if necessary.
 We mainly follow the sheaf theoretic approach of
-tropical manifolds in \cite{MR4637248}.
-\todo[inline]{
+rational polyhedral spaces in \cite{MR4637248}.
 For simplicity, we adopt the definition of
-rational polyhedral space
-as used in \cite[Definition 6.1]{gross2019sheaftheoretic},
-but we will not impose conditions related to finite type 
-(e.g., \cite[Definition 7.1.14]{mikhalkin2018tropical} 
-or \cite[Definition 2.3 (4)]{demedrano2023chern}).
-}
-
-If a tropical manifold is compact, we need not
-taking care of the condition of finite type. 
-Since every tropical manifold is paracompact and
-locally contractible, the singular cohomology
-of it is isomorphic to the sheaf cohomology
-of the constant sheaf on it, so we identify
-the two cohomologies.
+tropical manifold
+\cite[Definition 2.3]{demedrano2023chern}.
+Every tropical manifold in the sense of
+\cite{demedrano2023chern} induce a structure
+of a rational polyhedral space naturally,
+and it is a tropical manifold in the sense of
+\cite[Definition 6.1]{gross2019sheaftheoretic}. 
 
 \begin{notation}
 Throughout this paper, $\mathbb{T}\deq 
@@ -748,7 +741,7 @@ When we consider $L_M$ as a tropical cycle on a vector
 space, we say $L_M$ the matroidal tropical cycle associated
 to $M$ like \cite{demedrano2023chern}.
 We wirte $U_{r,n}$ for the uniform of matroid of rank $r$ 
-over $[n]\deq \{1,\ldots,n\}$. 
+over $[n]\deq \{1,\ldots,n\}$.
 \end{notation}
 
 In this paper, a rational polyhedral subspace is meant
@@ -800,9 +793,18 @@ Then, every $x\in X$ has an open neighborhood
 which is isomorphic to an open subset of 
 $\opn{LC}_x X\times \mathbb{T}^n$ for some
 $n\in \mathbb{Z}_{\geq 0}$.
-Every rational polyhedral space which is regular
-at infinity has the sedentarity
-$\opn{sed}_X$ on $X$
+Therefore, every rational polyhedral space which
+is regular at infinity is paracompact and
+locally contractible,
+so the singular cohomology
+of it is isomorphic to the sheaf cohomology
+of the constant sheaf on it, so we identify
+the two cohomologies.
+Moreover,
+every nonempty
+rational polyhedral space which is regular
+at infinity has the sedentarity function
+$\opn{sed}_X\colon X\to \mathbb{Z}$ on $X$
 \cite[Definition 7.2.6]{mikhalkin2018tropical}
 (see also \cite[Definition 2.4]{demedrano2023chern}).
 
@@ -811,40 +813,20 @@ From definition, for any $x\in X$
 \opn{sed}_X(x)+\dim \opn{LC}_x X=\dim_x X.
 \end{align}
 The sedentarity function
-$\opn{sed}_X$ is upper semiconstant, so 
+$\opn{sed}_X$ is upper semiconstant
+\cite[Definition 7.1.11]{mikhalkin2018tropical} so 
 $\opn{sed}_X$ is upper semicontinuous.
-特に次の集合たちは、
-$X$の閉部分集合である
-(上半連続関数の定義は例えば\cite[p.287]{MR463157}
-を見よ)。
-
+In particular, the following subsets are
+locally polyhedral \cite[Proposition 7.1.12]{mikhalkin2018tropical} 
 \begin{align}
 X^{[\geq k]}\deq \{p\in X\mid \opn{sed}_X(p)\geq k\},
 \quad 
 X_{\infty}\deq X^{[\geq 1]}.
 \end{align}
-$X_{\infty}$ は、
-$X$の境界(boundary)
-と呼ばれ、
-$\partial X$と書く場合がある。
-($X$がトロピカルトーリック多様体のとき、
-$X_{\infty}$が$X$の境界つき
-位相多様体の境界となっていることと、
-代数幾何におけるトーリック境界の
-トロピカル類似になっていることに
-由来していると思われる。)
-
-
-
-Let $\Omega_{\mathbb{Z},X}\deq
-\mathcal{O}_X^{\times}/\mathbb{R}_X$ be
-the sheaf of tropical $1$-forms and
-$H^{1,0}(X;\mathbb{Z})$ the global section of 
-$\Omega_{\mathbb{Z},X}$.
-Since every local cone has a polyhedral fan structure,
-so $H^{1,0}(\opn{LC}_x X\times \mathbb{T}^n;\mathbb{Z})
-\simeq H^{1,0}(\opn{LC}_x X;\mathbb{Z})\simeq 
-(\Omega_{\mathbb{Z},X})_x$.
+The polyhedal subspace $X_{\infty}$ is called
+the \emph{boundary} of $X$. If $X$ is a
+tropical toric variety, then $X_{\infty}$ is a
+direct analog of toric boundary.
 
 Let $\psi_x\colon U_x \to \opn{LC}_x X\times \mathbb{T}^n$
 
@@ -891,12 +873,7 @@ $T_x X\times \underline{\mathbb{R}}^{r_{\alpha}}$
 特に、$(X,\mathcal{O}_X^{\times})$が regular at infinity
 ならば、座標変換は
 extended integer affine map \cite[Definition 2.2]{demedrano2023chern}
-となることがこれよりわかる。よって
-$(X,\mathcal{O}_X^{\times})$ 
-が\cite[Definition 6.1]{gross2019sheaftheoretic}の意味での
-コンパクトトロピカル多様体であるとき、
-\cite[Definition 2.3]{demedrano2023chern}
-の意味でのトロピカル多様体の構造を与えるアトラスを持つ。
+となることがこれよりわかる。
 
 
 
@@ -972,7 +949,7 @@ $\opn{sed}_X(x)=\opn{sed}_Y(x)$
 トロピカル部分多様体と呼ぶ。 
 
 For $x\in X$, let 
-$\opn{lineal}(X,x)$ be the (maximal) lineality space
+$\opn{lineal}(X,x)$ be the maximal lineality space
 $\opn{lineal}(\opn{LC}_x X)$ of 
 $\opn{LC}_x X (\subset T_x X)$ \cite[\textsection 2.1]{MR4246795}
 (see also \cite[\textsection 3]{demedrano2023chern}).
@@ -1285,12 +1262,40 @@ not relatively uniform, so
 \cref{definition-relatively-uniform} may be equivalent
 to \cref{definition-permissible-position}.
 
+In the following proposition, we use
+\cref{notation-power-divisor} but it is elementary.
 \begin{proposition}
-
 Let $X$ be a purely $n$-dimensional compact tropical manifold
 and $D$ a relatively uniform tropical submanifold of
 codimension $1$ on $X$.
+Then, for any $x\in |D^{j}|$ for some $j\in \mathbb{Z}_{>0}$
+there exists the following isomorphism:
+\begin{align}
+\label{equation-relatively-uniform-cone}
+\opn{LC}_x |D^{j}|\simeq 
+L_{M_{x}}
+\times L_{U_{r-j+1,r+1}}
+\end{align}
+where $M_x$ is a loopless matroid which is independent of
+the choice of $j$.
 \end{proposition}
+\begin{proof}
+By direct calculation, we have 
+$|(L_{U_{r,r+1}})^{j}|=L_{U_{r-j+1,r+1}}$.
+The proposition is local, so we may assume 
+$X=\mathbb{T}^{m}\times L_{M}\times L_{U_{r+1,r+1}}$ and 
+$D=\mathbb{T}^{m}\times 
+L_{M}\times L_{U_{r,r+1}}$
+for some loopless matroid $M$.
+Let $\pi_{|D^j|} \colon |D^{j}|\to L_{U_{r-j+1,r+1}}$
+be the projection.
+Then, $D=\pi_{X}^*L_{U_{r,r+1}}$ and 
+$D|_D=\pi_D^{*}(L_{U_{r,r+1}}|_{L_{U_{r,r+1}}})
+=\pi_D^{*}L_{U_{r-1,r+1}}=L_{M}\times L_{U_{r-1,r+1}}$.
+By repeating this, we obtain
+\eqref{equation-relatively-uniform-cone}.
+\end{proof}
+
 
 \begin{theorem}
 \label{theorem-euler-power}
@@ -1311,7 +1316,7 @@ Then, we have
 H^{\bullet}(X\setminus D;\mathbb{R}_{X\setminus D})
 \simeq \mathbb{H}^{\bullet}(X;Rj_*\mathbb{R}_{X\setminus D}).
 \end{align}
-Moreover, since $D$ is relatively uniform, we have
+From \cref{equation-relatively-uniform-cone}, we have
 \begin{align}
 \label{equation-local-index}
 Rj_*\mathbb{R}_{X\setminus D}\simeq j_*\mathbb{R}_{X\setminus D},
@@ -1410,10 +1415,7 @@ and $C$ is a tropical submanifold of codimension $1$
 in moderate position on $S$. Then, 
 \begin{align}
      |C\cdot C|= C_{\mathrm{sing}}\cap S_{\mathrm{reg}}.
-\end{align}
-where $|C\cdot C|$ is the support of
-the self-intersection of 
-$C$ \cite[Definition 3.22]{shaw2015tropical}. 
+\end{align} 
 \end{proposition}
 \begin{proof}
 First, we will see the classification of
@@ -1469,7 +1471,7 @@ $\Gamma_m$と真の部分線形空間との交叉と $\mathbb{R}$
 である。よって、バランス条件から
 $\opn{LC}_x C\simeq L_{U_{2,m}}$ である。
 $\opn{LC}_x C$ と $\opn{lineal}(S,x)$ はマトロイドの交叉
-とみなせるので、\cite[Theorem 4.2]{MR3032930}
+とみなせるので、
 と随伴公式\cite[Theorem 4.11]{shaw2015tropical} より、
 $C$ の自己交点数は次のように書かれる。
 \begin{align}
@@ -1482,6 +1484,12 @@ C . C=&\opn{deg}(K_C)-K_S . C \\
 
 \end{proof}
 
+\begin{remark}
+We can also prove from \cite[Theorem 4.2]{MR3032930}
+since the intersection pairing in the sense of
+\cite{MR4637248} is compatible with that of
+\cite{shaw2015tropical,demedrano2023chern}. 
+\end{remark}
 
 
 \begin{proof}[{Proof of \cref{theorem-rr-euler-surface}}]
@@ -1489,42 +1497,42 @@ Let
 $j\colon S\setminus C\to S$ be an inclusion map.
 Then, the following equation holds:
 \begin{align}
-\chi(S\setminus C)=\chi(Rj_*\mathbb{Q}_{S\setminus C})
-\deq \chi(\mathbb{H}^{\bullet}(S;Rj_*\mathbb{Q}_{S\setminus C})).
+\chi(S\setminus C)=\chi(Rj_*\mathbb{R}_{S\setminus C})
+\deq \chi(\mathbb{H}^{\bullet}(S;Rj_*\mathbb{R}_{S\setminus C})).
 \end{align}
 If $C$ is in moderate position on $S$, then
 the classification of the local cone of $C$ gives 
 \begin{align}
-(Rj_*\mathbb{Q}_{S\setminus C})_x
+(Rj_*\mathbb{R}_{S\setminus C})_x
 \simeq
 \begin{cases}
-\mathbb{Q}[0], \text{ if } x\in S\setminus C, \\
-\mathbb{Q}^3[0], \text{ if } x\in C_{\mathrm{sing}}
+\mathbb{R}[0], \text{ if } x\in S\setminus C, \\
+\mathbb{R}^3[0], \text{ if } x\in C_{\mathrm{sing}}
 \cap S_{\mathrm{reg}}, \\
-\mathbb{Q}^2[0], \text{ otherwise.}  
+\mathbb{R}^2[0], \text{ otherwise.}  
 \end{cases}  
 \end{align}
-In particular, $Rj_*\mathbb{Q}_{S\setminus C}\simeq
-j_*\mathbb{Q}_{S\setminus C}$.
+In particular, $Rj_*\mathbb{R}_{S\setminus C}\simeq
+j_*\mathbb{R}_{S\setminus C}$.
 Since $j^{-1}j_*=\opn{id}_{S\setminus C}$,  
 from \cite[Proposition 2.3.6 (v)]{MR1299726}
 there exists the following short exact sequence:
 \begin{align}
-0\to j_!\mathbb{Q}_{S\setminus C} 
-\to j_* \mathbb{Q}_{S\setminus C}
-\to (j_*\mathbb{Q}_{S\setminus C})_{C} \to 0
+0\to j_!\mathbb{R}_{S\setminus C} 
+\to j_* \mathbb{R}_{S\setminus C}
+\to (j_*\mathbb{R}_{S\setminus C})_{C} \to 0
 \end{align}
 In particular, we have
 \begin{align}
 \chi(S\setminus C)=
-\chi_c(S\setminus C)+\chi((j_*\mathbb{Q}_{S\setminus C})|_C).
+\chi_c(S\setminus C)+\chi((j_*\mathbb{R}_{S\setminus C})|_C).
 \end{align}
 From definition of the pushforward of sheaves, 
-$(j_*\mathbb{Q}_{S\setminus C})|_C$ is locally constant 
-on $C_{\opn{reg}}$ and the stalk of it is $\mathbb{Q}^2$.
+$(j_*\mathbb{R}_{S\setminus C})|_C$ is locally constant 
+on $C_{\opn{reg}}$ and the stalk of it is $\mathbb{R}^2$.
 Therefore, we also have
 \begin{align}
-\chi((j_*\mathbb{Q}_{S\setminus C})|_C)=
+\chi((j_*\mathbb{R}_{S\setminus C})|_C)=
 2\chi_c(C_{\mathrm{reg}})+
 3\chi_c(C_{\mathrm{sing}}\cap S_{\mathrm{reg}})+
 2\chi_c(C_{\mathrm{sing}}\cap S_{\mathrm{sing}}).
@@ -1547,11 +1555,7 @@ Therefore,
 =\frac{C.(C-K_S)}{2}+\chi(S). \notag
 \end{align}
 \end{proof}
-In the proof of \cref{theorem-rr-euler-surface}, we gave
-various representations of $\chi(X\setminus S)$.
-We would like to stress that both
-\eqref{equation-iterated-euler} and 
-\eqref{equation-euler-calculus} are important.
+
 
 \begin{proof}[{Proof of \cref{corollary-ds-euler-rr}}]
 It follows from
@@ -2045,26 +2049,30 @@ $\int_X c\deq a_{X*}(c\frown [X])\in
 H_{0,0}^{\mathrm{BM}}(\{\mathrm{pt}\};\mathbb{Z})
 \simeq \mathbb{Z}$ for
 $c\in H^{\bullet,\bullet}(X;\mathbb{Z})$.
+A $n$-dimensional rational polyhedral space
+$(X,\mathcal{O}_X^{\times})$
+admitting with a fundamental class satisfies
+\emph{Poincar\'e--Verdier duality} if 
+$\delta_{k}^{X}$ is an isomorphism for all
+$k\in \mathbb{Z}_{\geq 0}$
+\cite[Definition 6.4]{MR4637248}.
+If $(X,\mathcal{O}_X^{\times})$ satisfies 
+Poincar\'e--Verdier duality, then
+\cref{equation-PD-map} is an isomorphism
+\cite[Coroolary 6.9]{MR4637248}.
+We can see every tropical manifold
+satisfies Poincar\'e--Verdier duality
+from \cite[Proposition 5.5]{MR3894860} and
+\cite[Theorem 6.7]{MR4637248}.
+The integer valued Poincar\'e duality for tropical manifolds
+admitting a global face structure is firstly proved in
+\cite[Theorem 5.3]{MR3894860}.
+In recent work,
+Considerations have also been made using the Poincar\'e--Verdier duality
+and the local Poincar\'e duality for rational polyhedral
+spaces as indicators of smoothness
+(e.g. \cite{MR4626316,amini2021homology,MR4246795}). 
 
-任意の $k\in \mathbb{Z}_{\geq 0}$ に対して
-$\delta_{k}^{X}$ が同型射であるとき,
-$(X,\mathcal{O}_X^{\times})$ は
-\emph{Poincar\'e--Verdier duality}
-を満たすと呼ぶ \cite[Definition 6.4]{MR4637248}。
-有理多面空間が Poincar\'e--Verdier duality を満たすとき、
-\cref{equation-PD-map} は同型射となる。
-なお、$X$ が global な面構造を持つ場合の、
-基本類のカップ積による上述の同型は、
-\cite[Theorem 5.3]{MR3894860} にて初めて示された。
-
-
-トロピカル多様体が
-Poincar\'e--Verdier duality を満たすことは、
-Bergman fan に対する Poincar\'e duality
-\cite[Proposition 5.5]{MR3894860} と
-\cite[Theorem 6.7]{MR4637248}
-より分かる。
-\todo[inline]{これで文献は十分か？}
 For simplicity, we will use the following notation.
 \begin{notation}
 Let $(X,\mathcal{O}_X^{\times})$ be
@@ -2078,29 +2086,7 @@ $Z\in H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$.
 \end{notation}
 
 
-Every rational polyhedral space $(X,\mathcal{O}_X^{\times})$
-has the following exact sequence:
-\begin{align}
-\label{equation-tropical-exp}
-0\to \mathbb{R}_X \to 
-\mathcal{O}_X^{\times} \to \Omega_{\mathbb{Z},X}^{1}\to 0.
-\end{align}
-The exact sequence \eqref{equation-tropical-exp}
-defines
-the connecting homomorphism
-$\phi \colon H^{1,1}(X;\mathbb{Z})
-\to H^{0,2}(X;\mathbb{R})$.
-$\phi$ の双対概念として
-eigenwave homomorphism
-$\hat{\phi} \colon
-H_{n-1,n-1}^{\mathrm{BM}}(X;\mathbb{Z})
-\to H_{n,n-2}^{\mathrm{BM}}(X;\mathbb{R})$
-が存在する \cite[(5.2)]{MR3330789}
-(see also \cite[Definition 2.9]{MR3894860}).
-In fact both of them are compatible with 
-the Poincar\'e duality for tropical manifolds
-admitting a global face structure
-\cite[Lemma 5.13]{MR3894860}.
+
 
 \subsection{Tropical Cartier divisors}
 Let 
@@ -2188,6 +2174,11 @@ In particular, the following equation holds
 \opn{cyc}_X(D\cdot A)=c_1(\mathcal{L}(D))
 \frown \opn{cyc}_X(A).
 \end{align}
+
+\begin{notation}
+Let $A$ be a tropical $k$-cycle on a rational polyhedral space $X$.
+We write $[A]\deq \opn{cyc}_X(A)$.
+\end{notation}
 
 When $(X,\mathcal{O}_X^{\times})$ is 
 a purely $n$-dimensional rational polyhedral space
@@ -2300,150 +2291,6 @@ within the scope where confusion does not arise.
 
 
 
-\begin{proposition}
-$X$ を \cite{demedrano2023chern} の意味での
-トロピカル多様体としてのアトラスを持つ有理多面空間とし、
-$D,D'\in \opn{Div}^{[0]}(X)$ とする。
-このとき、$D$ と $D'$ の
-\cite[\textsection 2.4]{demedrano2023chern} の
-意味での交叉 $D*D'$ と 
-\cite[\textsection 3.4]{MR4637248}
-の意味での交叉$D\cdot D'$は一致する。
-\end{proposition}
-\begin{proof}
-\label{proposition-two-pairings}
-両者の定義は共に局所的である。
-よって、任意のチャートに対して示せばよい。
-任意の点 $x\in X$ に対して $x$ を含むチャート
-$ \psi_x
-\colon U_x \to 
-\opn{LC}_x X\times \mathbb{T}^{\opn{sed}_X(x)}$
-で、$\psi_x(x)=(0,-\infty)\in \opn{LC}_x X\times \mathbb{T}^{\opn{sed}_X(x)}$
-となるものが取れる。
-また $U_x$ は、$0\in \opn{LC}_x X$ の可縮な開近傍
-$V_x$ と $\mathbb{T}^{\opn{sed}_X(x)}$ の可縮な開近傍
-$W_x$ の直積 $V_x\times W_x$ に置き換えてもよい。
-さらに、$\opn{Div}^{[0]}(X)$ の定義から
-$D|_{V_x\times W_x}$ は 
-$B_x\cap \opn{LC}_x X=V_x$ となる
-$T_x X$ の開集合上の
-$\mathbb{Z}$PL 関数の$V_x$への制限の
-主因子 $\opn{div}_{V_x}(f|_{V_x})$ と
-$W_x$の直積と仮定してもよい。
-よって、両者の因子とサイクルの交叉は、$x$ の近傍では
-$V_x$ 上の主因子同士の交叉と $W_x$ の直積とみなせる。
-よって、$\opn{sed}_X(x)=0$ の場合に示せば十分である。
-以降より $\opn{sed}_X(x)=0$ とする。
-また、$i \colon V_x\to B_x$ を包含写像とすると
-$V_x$ 上の因子 $D_0$ に対して
-\begin{align}
-i_*((f|_{V_x})\cdot D_0)=(f)\cdot i_*D_0
-\in Z_{n-2}(B_x)
-\end{align}
-が成り立つ。$B_x$ は、ある実ベクトル空間の開集合であるため、
-\cite[\textsection 3.4]{MR4637248}の
-ペアリングは、実ベクトル空間上の
-\cite{MR2591823} によるトロピカルサイクルの
-ペアリングによって決定される。
-\cite[\textsection 2.4]{demedrano2023chern}
-の意味でのペアリングでも同様の議論が成り立ち、
-\cite[Proposition 2.1.9]{shaw2011tropical}
-より、やはり$\mathbb{R}^n$
-上のトロピカルサイクルの安定交叉
-\cite[Definition 4.4]{MR2275625} 
-の場合に帰着される。
-\cite[\textsection 2]{MR3032930} でも言及されている
-ように $\mathbb{R}^n$ 上のトロピカルサイクルの
-\cite{MR2591823} の意味での交叉と
-\cite{MR2149011,MR2275625} の意味での交叉が一致する
-ことは
-\cite{MR3529085} や \cite{MR2887109} で示されている。
-\end{proof}
-
-
-最後に
-古典的な代数曲面の交点数の異なる定義
-の一致をトロピカル曲面の場合で見る。
-
-
-
-
-
-\begin{proposition}
-\label{proposition-cycle-chern}
-$X$ をコンパクトトロピカル曲面とし、$D_1,D_2$
-をトロピカル $1$-サイクルとする。このとき、
-次が成り立つ。
-\begin{align}
-\label{equation-two-intersections}
-D_1 . D_2=\int_X \PD{D_1}\cdot \PD{D_2}.
-\end{align}
-ここで左辺は、
-\cite{shaw2015tropical}
-の意味での交点数である。
-\end{proposition}
-\begin{proof}
-$i=1,2$ とする。
-このとき、トロピカル $1$-サイクルは、
-\cite[Definition 4.2]{MR3330789} の意味での
-straight tropical $1$-cycle をなし、
-この straight tropical $1$-cycle を
-$H_{1,1}^{\mathrm{BM}}(X;\mathbb{Z})$
-へと移す写像は、\cite{MR3894860} や
-\cite{MR4637248} の意味でのサイクル写像と
-整合的である \cite[Theorem 5.13]{MR4637248}。
-さらに wave homomorphism 
-$\hat{\phi} \colon
-H_{n-1,n-1}^{\mathrm{BM}}(X;\mathbb{Z})
-\to H_{n,n-2}^{\mathrm{BM}}(X;\mathbb{R})$
-に対して
-$[D_i]\deq \opn{cyc}_X(D_i)\in \opn{Ker} \hat{\phi}$
-である \cite[Theorem 5.4]{MR3330789}。
-そのため、\cite[Lemma 5.13]{MR3894860}より
-$c_1(\mathcal{L}(D'_i))=\PD{D_i}$、つまり
-$c_1(\mathcal{L}(D'_i))\frown [X]=[D_i]$ となる
-因子 $D'_i\in \opn{Div}^{[0]}(X)$ を選ぶことができる。
-\cite[Proposition 5.12]{MR4637248}より、
-$[D_i']=c_1(\mathcal{L}(D'_i))\frown [X]=[D_i]\in 
-H_{1,1}^{\mathrm{BM}}(X;\mathbb{Z})$ 
-となる。
-このとき、
-\cite[Proposition 3.34]{shaw2015tropical} と基本事実より
-次の等式がそれぞれ成り立つ:
-\begin{align}
-D_1.D_2=D_1'.D_2', \quad 
-\int_X \PD{D_1}\cdot \PD{D_2}
-=\int_X \PD{D_1'}\cdot \PD{D_2'}.
-\end{align}
-
-よって、$D_1,D_2$ はともに$\opn{Div}(X)^{[0]}$ に属している
-と仮定してよい。
-また、トレース写像の定義と
-\cite[Proposition 5.12]{MR4637248}と射影公式より、
-\begin{align}
-\int_X \PD{D_1}\cdot \PD{D_2}
-&=a_{X*}(c_1(\mathcal{L}(D_1))\frown [D_2])
-=a_{X*}(\opn{cyc}_X(D_1\cdot D_2)).
-\end{align}
-
-\cite{shaw2015tropical} における
-$X$内のトロピカル
-$1$-サイクルの交点数の定義は
-\cite{shaw2011tropical} のものと異なるが
-\cite[Theorem 3.1.7]{shaw2011tropical}
-より一致する。また、
-\cite[\textsection 2.4]{demedrano2023chern}
-の sedentarity-$0$ の因子の
-トロピカルサイクルとの交叉は \cite{shaw2011tropical}
-をもとに定義されているため
-\cite{demedrano2023chern} と
-\cite{shaw2015tropical} は互いに整合的である。
-\cref{proposition-two-pairings} より、
-$D_1,D_2\in \opn{Div}^{[0]}(X)$ の
-\cite{demedrano2023chern} による交叉と
-\cite{MR4637248} による交叉は一致しているため、
-\cref{equation-two-intersections} が示される。
-\end{proof}
 
 
 \subsection{Chern classes and Todd classes of
@@ -2478,7 +2325,7 @@ the \emph{Chern character} of $L$ as follows:
 \begin{align}
 \opn{ch}(L)\deq \opn{exp}(L)
 \deq \sum_{i=0}^{\infty}\frac{L^{i}}{i!}\in 
-H^{\bullet,\bullet}(X;\mathbb{Q}).
+H^{\bullet,\bullet}(X;\mathbb{ Q}).
 \end{align}
 \end{notation}
 
@@ -2569,10 +2416,10 @@ a given complex manifold $M$ is defined
 as an element of $H^{2k}(M;\mathbb{Z})$.
 The image of the total Chern class 
 $c(M)\deq \sum_{i=0}^{\infty}c_i(M)$
-in the even cohomology ring $H^{\mathrm{even}}(X;\mathbb{Q})$
-of $M$ over $\mathbb{Q}$.
-Since $H^{\mathrm{even}}(M;\mathbb{Q})$
-is commutative and a graded $\mathbb{Q}$-algebra
+in the even cohomology ring $H^{\mathrm{even}}(X;\mathbb{R})$
+of $M$ over $\mathbb{R}$.
+Since $H^{\mathrm{even}}(M;\mathbb{R})$
+is commutative and a graded $\mathbb{R}$-algebra
 and $c_0(M)=1$,
 so the total Chern class of $M$ defines 
 the Todd class $\opn{td}(M)\deq \sum_{j=0}^{\infty}
@@ -2582,8 +2429,8 @@ the Todd class $\opn{td}(M)\deq \sum_{j=0}^{\infty}
 We can define the Todd class
 $\opn{td}(X)$ of a given tropical manifold
 $X$ by replacing 
-$H^{\mathrm{even}}(M;\mathbb{Q})$ with
-$\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{Q})$
+$H^{\mathrm{even}}(M;\mathbb{R})$ with
+$\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{R})$
 (\cref{definition-tropical-todd}).
 In \cite[Conjecture 6.13]{demedrano2023chern},
 the Todd class of tropical manifolds is
@@ -2597,12 +2444,12 @@ in algebraic geometry.
 \label{definition-tropical-todd}
 Let $X$ be a purely $n$-dimensional tropical manifold.
 The $j$-th \emph{Todd class} of $X$ is
-a cycle in $H^{j,j}(X;\mathbb{Q})$
+a cycle in $H^{j,j}(X;\mathbb{R})$
 defined from 
 the Todd $m$-sequence 
 $\opn{Todd}\deq (\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$
 with respect to $\bigoplus_{i=0}^{\infty}
-H^{i,i}(X;\mathbb{Q})$ as follows:
+H^{i,i}(X;\mathbb{R})$ as follows:
 \begin{align}
 \opn{td}_j(X)\deq \opn{Todd}_j(c_{1}^{\mathrm{sm}}(X),
 \ldots,c_{j}^{\mathrm{sm}}(X)),
@@ -2893,19 +2740,31 @@ From \cref{theorem-rr-euler-surface} and
 
 
 \begin{remark}
-In the proof of \cref{theorem-rr-euler-surface}, 
-の証明では、Euler calculus の視点から
-トロピカル多様体 $X$ の余次元 $1$ のトロピカル部分多様体
-$D$ の補集合の Euler 数 $\chi(X\setminus D)$ を計算するという
-手法をとった。
-
+In this remark,
+let $X$ be an $n$-dimensional compact tropical manifold
+and $(D,D')$ a pair of
+codimension $1$ tropical submanifold in moderate position
+on $X$.
+In \cref{remark-c-infinity-divisor},
+we stressed
+the cohomology $H^{\bullet}(X\setminus D)$ of
+the complement $X\setminus D$ is related with
+the graded modules $\opn{LMD}^{\bullet}(X;s)$
+associated with a permissible
+$C^{\infty}$-divisor $s$ on $X$.
+In this remark, we explain
+$\chi(X\setminus D')-\chi(D\setminus (D'\cap D))$
+is also the Euler characteristic of a graded module
+which is a natural generalization of 
+$H^{\bullet}(X\setminus D)$.
 ここでは、\cite{MR1299726} に書かれている知識が必要であるため
 それを整理する。
-$A$ を $\mathbb{R}$ の部分環とし、$A_X$ を
-$X$ 上の定数層とし、$\catn{Mod}(A_X)$ を $A_X$加群の層の
-なす圏とする。
-$Z$ を局所閉部分集合とし、
-$j\colon Z\to X$ を包含写像とする。
+Let $\mathbb{R}_X$ is the constant sheaf of $\mathbb{R}$
+on $X$ and 
+$\catn{Mod}(\mathbb{R}_X)$ be the category of sheaves of 
+$\mathbb{R}_X$-modules.
+Let $Z$ be a locally closed subset of $X$ and
+$j\colon Z\to X$ the inclusion map.
 $(\cdot)_{Z}\colon \catn{Mod}(A_X) \to \catn{Mod}(A_X)$
 を \cite[Proposition 2.3.6]{MR1299726} で定義される完全
 関手とし、
@@ -2917,56 +2776,55 @@ $(\mathcal{F})_{Z}\simeq j_!j^{-1}\mathcal{F}$ である。
 $\Gamma_{Z}\mathcal{F}\simeq
 j_*j^{-1}\mathcal{F}$ である
 \cite[Proposition 2.3.9 (iii)]{MR1299726}。
-このとき、次の層の完全列が存在する。
+Then, the following exact sequence exists
 \begin{align}
 \label{equation-closed-open-exact}
-0 \to (\mathbb{Q}_X)_{X\setminus D}
-\to \mathbb{Q}_X \to (\mathbb{Q}_X)_{D} \to 0.
+0 \to (\mathbb{R}_X)_{X\setminus D}
+\to \mathbb{R}_X \to (\mathbb{R}_X)_{D} \to 0.
 \end{align}
-
-次に、導来関手 $R\Gamma_{X\setminus D'}$ を
+The derived functor $R\Gamma_{X\setminus D'}$ also gives
+the following exact triangle:
 \begin{align}
-R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_{X\setminus D})
-\to  R\Gamma_{X\setminus D'}(\mathbb{Q}_X)
-\to R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_D)
-\to R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_{X\setminus D})[1].
+R\Gamma_{X\setminus D'}((\mathbb{R}_X)_{X\setminus D})
+\to  R\Gamma_{X\setminus D'}(\mathbb{R}_X)
+\to R\Gamma_{X\setminus D'}((\mathbb{R}_X)_D)
+\to R\Gamma_{X\setminus D'}((\mathbb{R}_X)_{X\setminus D})[1].
 \end{align}
 
 
 さらに、$i\colon D\to X$ を包含写像とすると
 \cite[(2.3.20)]{MR1299726} より
 \begin{align}
-R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_D)
-\simeq i_* R\Gamma_{D\setminus D'}\mathbb{Q}_D
+R\Gamma_{X\setminus D'}((\mathbb{R}_X)_D)
+\simeq i_* R\Gamma_{D\setminus D'}\mathbb{R}_D
 \end{align}
 となるので、次の等式が成り立つ。
 \begin{align}
-\chi(\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}((\mathbb{Q}_X)_{X\setminus D})))
+\chi(\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}((\mathbb{R}_X)_{X\setminus D})))
 = \chi(X\setminus D')
 - \chi(D\setminus (D'\cap D)).
 \end{align}
-
-なお、定義からわかるように
+Besides, from definition we can check
 \begin{align}
 \mathbb{H}^{\bullet}(X;R\Gamma_{X}
-((\mathbb{Q}_X)_{X\setminus D}))
+((\mathbb{R}_X)_{X\setminus D}))
 \simeq H^{\bullet}_c(X\setminus D), \quad
 \mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
-((\mathbb{Q}_X)_{X}))
-\simeq H^{\bullet}(X\setminus D')
+((\mathbb{R}_X)_{X}))
+\simeq H^{\bullet}(X\setminus D').
 \end{align}
-である。
-詳細は省くが、
-$\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
-((\mathbb{Q}_X)_{X\setminus D}))$
-は \cite{tsutsui2023graded} にて定義した
-コンパクトトロピカル多様体上の
-permissible な $C^{\infty}$ 因子 $s$ が定義する
-次数付き加群 $\opn{LMD}^{\bullet}(X;s)$
-の類似物の一種であり、密接に関係している。
-(簡単な場合は\cref{remark-c-infinity-divisor}
-にて説明している。)
 
+Therefore, the graded module 
+$\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
+((\mathbb{R}_X)_{X\setminus D}))$
+is a generalization of both
+$H^{\bullet}_c(X\setminus D)$ and
+$H^{\bullet}(X\setminus D)$, and
+$\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}
+((\mathbb{R}_X)_{X\setminus D}))$ is also related
+with graded modules associated with
+permissible $C^{\infty}$-divisors that are
+studied in \cite{tsutsui2023graded}.
 
 
 この論文では、\eqref{equation-closed-open-exact} を
@@ -2987,9 +2845,8 @@ $(\cdot )_{X\setminus D}$
 R\Gamma_{X\setminus D}((\mathcal{F})_{X\setminus D})
 \simeq R\Gamma_{X\setminus D}(\mathcal{F})
 \end{align}
-from $j^{-1}j_*=j^{-1}j_!=\opn{id}$
-\cite[p.110]{MR842190}.
-一方で次の同型が成り立つ。
+from \cite[p.110]{MR842190}.
+On the other hand, the following isomorphisms hold
 \begin{align}
 R\Gamma_{X\setminus D'}
 (R\Gamma_{X\setminus D}(\mathcal{F}))
@@ -3004,30 +2861,19 @@ a finite union of tropical submanifolds whose
 intersections satisfy a good condition.
 \end{remark}
 
-ここでは、
 
+\begin{remark}
+$[c]\in H_{i,i}^{|c|}(X)$に対して
+$[D^{k}\cdot c]\in H_{i-k,i-k}^{|D^{k}\cdot c|}(X)$
 
+\end{remark}
 
-\begin{definition}
-Let $\colon D\to X$ be the inclusion map
-of tropical submanifold of codimension $1$ on
-a tropical manifold of dimension $n$ 
-and $A\in\bigoplus_{k=0}^{\infty} Z_{k}(X)$.
-Suppose $D\in \opn{Div}^{[0]}(X)$.
-A element $B\in\bigoplus_{k=0}^{\infty} Z_{k}(X)$
-is a \emph{pullback} of $A$ if
-\begin{align}
-	\iota_* B=D\cdot A.
-\end{align}
-\end{definition}
 
 \begin{example}
 Let $B$ be a pullback of $\opn{csm}(X)=
 \sum_{k=0}^{n}\opn{csm}_k(X)$.
 Suppose the following equation holds:
-\begin{align}
-B=(1+\iota^{*}D)\cdot \opn{csm}(D).
-\end{align}
+
 Then, we get 
 \begin{align}
 \iota_*B=D\cdot \opn{csm}(X)
@@ -3049,20 +2895,6 @@ Then, we get
 
 \end{example}
 
-\begin{example}
-If $X=\mathbb{R}^{n}=L_{U_{d+1,n+1}}$ and 
-$D= L_{U_{d,n+1}}(\subset L_{U_{d+1,n+1}})$,
-then \cref{conjecture-grr-divisor} is true
-from \cite[Example 2.10]{MR3999674},
-$D\in \opn{Div}^{[0]}(X)$ and
-the recursive formula of binomial coefficients.
-The intersection of tropical cycles
-is local, so we can also say
-\cref{conjecture-grr-divisor} is true
-when $D$ is relatively uniform on $X$.
-\end{example}
-
-
 \begin{proposition}
 Let $X$ be a purely $n$-dimensional
 compact tropical manifold
@@ -3076,20 +2908,225 @@ equations hold:
 \end{align}
 \end{proposition}
 \begin{proof}
-If $D$ is relatively uniform on $X$,
-then for any $x\in |D^{j}|$ for some $j\in \mathbb{Z}_{>0}$
-there exists the following isomorphism:
+
+Let $\iota_k\colon |D^k|\to |D^{k-1}|$ be the inclusion map.
+Then, there exists the morphism of sheaves on $|D^{k-1}|$ 
+since every closed embedding into a
+locally compact Hausdorff space is proper:
+$\iota_{k*}\colon \iota_{k*}\mathscr{Z}_{i}^{|D^k|}\to \mathscr{Z}_{i}^{|D^{k-1}|}$.
 \begin{align}
-\label{equation-relatively-uniform-cone}
-\opn{LC}_x |D^{j}|\simeq 
-\opn{lineal}(D,x)\times \opn{LC}_x X/\opn{lineal}(X,x)
-\times L_{U_{r-j,r}}.
+B=(1+\iota^{*}D)\cdot \opn{csm}(D).
+\end{align}
+
+\begin{align}
+B\cdot \alpha=
+\end{align}
+
+\begin{align}
+\iota_*(\sum_{i} c_i[\iota^{*}D]^{i}\cdot \alpha)
+=\sum_{i} 
+\end{align}
+
+If $X=\mathbb{R}^{n}=L_{U_{d+1,n+1}}$ and 
+$D= L_{U_{d,n+1}}(\subset L_{U_{d+1,n+1}})$,
+then \cref{conjecture-grr-divisor} is true
+From \cite[Example 2.10]{MR3999674},
+\begin{align}
+\opn{csm}_{d-k}(L_{U_{d+1,n+1}})
+&=(-1)^{k}\binom{n-d+k-1}{k}[L_{U_{d-k+1,n+1}}]\\
+&=(-1)^{k}\binom{n-d+k-1}{k}[L_{U_{d,n+1}}]^{k}
+\end{align}
+
+\begin{align}
+\opn{csm}_k(X\times L_{U_{d+1-j,r+1}})=\sum_{l+m=k}
+\opn{csm}_l(X)\times \opn{csm}_m(L_{U_{r+1-j,r+1}})
 \end{align}
 
 
+\begin{align}
+[A\times B]\cdot [A'\times B]=\pi_{X}^{*}([A]\cdot [A'])\cdot
+\pi_{Y}^{*}([B]\cdot [B'])=([A]\cdot [A'])\times ([B]\cdot [B']) 
+\end{align}
+
+$f^*[D^{k}]=[(f^*D)^{k}]$
+
+\begin{align}
+\iota^{*}\colon H^{p,q}_{Z}(X)\to H^{p,q}_{Z\cap U}(U)
+\end{align}
 
 \end{proof}
 
+\appendix
+
+\section{Appendix}
+
+\begin{proposition}
+$X$ を \cite{demedrano2023chern} の意味での
+トロピカル多様体としてのアトラスを持つ有理多面空間とし、
+$D,D'\in \opn{Div}^{[0]}(X)$ とする。
+このとき、$D$ と $D'$ の
+\cite[\textsection 2.4]{demedrano2023chern} の
+意味での交叉 $D*D'$ と 
+\cite[\textsection 3.4]{MR4637248}
+の意味での交叉$D\cdot D'$は一致する。
+\end{proposition}
+\begin{proof}
+\label{proposition-two-pairings}
+両者の定義は共に局所的である。
+よって、任意のチャートに対して示せばよい。
+任意の点 $x\in X$ に対して $x$ を含むチャート
+$ \psi_x
+\colon U_x \to 
+\opn{LC}_x X\times \mathbb{T}^{\opn{sed}_X(x)}$
+で、$\psi_x(x)=(0,-\infty)\in \opn{LC}_x X\times \mathbb{T}^{\opn{sed}_X(x)}$
+となるものが取れる。
+また $U_x$ は、$0\in \opn{LC}_x X$ の可縮な開近傍
+$V_x$ と $\mathbb{T}^{\opn{sed}_X(x)}$ の可縮な開近傍
+$W_x$ の直積 $V_x\times W_x$ に置き換えてもよい。
+さらに、$\opn{Div}^{[0]}(X)$ の定義から
+$D|_{V_x\times W_x}$ は 
+$B_x\cap \opn{LC}_x X=V_x$ となる
+$T_x X$ の開集合上の
+$\mathbb{Z}$PL 関数の$V_x$への制限の
+主因子 $\opn{div}_{V_x}(f|_{V_x})$ と
+$W_x$の直積と仮定してもよい。
+よって、両者の因子とサイクルの交叉は、$x$ の近傍では
+$V_x$ 上の主因子同士の交叉と $W_x$ の直積とみなせる。
+よって、$\opn{sed}_X(x)=0$ の場合に示せば十分である。
+以降より $\opn{sed}_X(x)=0$ とする。
+また、$i \colon V_x\to B_x$ を包含写像とすると
+$V_x$ 上の因子 $D_0$ に対して
+\begin{align}
+i_*((f|_{V_x})\cdot D_0)=(f)\cdot i_*D_0
+\in Z_{n-2}(B_x)
+\end{align}
+が成り立つ。$B_x$ は、ある実ベクトル空間の開集合であるため、
+\cite[\textsection 3.4]{MR4637248}の
+ペアリングは、実ベクトル空間上の
+\cite{MR2591823} によるトロピカルサイクルの
+ペアリングによって決定される。
+\cite[\textsection 2.4]{demedrano2023chern}
+の意味でのペアリングでも同様の議論が成り立ち、
+\cite[Proposition 2.1.9]{shaw2011tropical}
+より、やはり$\mathbb{R}^n$
+上のトロピカルサイクルの安定交叉
+\cite[Definition 4.4]{MR2275625} 
+の場合に帰着される。
+\cite[\textsection 2]{MR3032930} でも言及されている
+ように $\mathbb{R}^n$ 上のトロピカルサイクルの
+\cite{MR2591823} の意味での交叉と
+\cite{MR2149011,MR2275625} の意味での交叉が一致する
+ことは
+\cite{MR3529085} や \cite{MR2887109} で示されている。
+\end{proof}
+
+
+最後に
+古典的な代数曲面の交点数の異なる定義
+の一致をトロピカル曲面の場合で見る。
+
+Every rational polyhedral space $(X,\mathcal{O}_X^{\times})$
+has the following exact sequence:
+\begin{align}
+\label{equation-tropical-exp}
+0\to \mathbb{R}_X \to 
+\mathcal{O}_X^{\times} \to \Omega_{\mathbb{Z},X}^{1}\to 0.
+\end{align}
+The exact sequence \eqref{equation-tropical-exp}
+defines
+the connecting homomorphism
+$\phi \colon H^{1,1}(X;\mathbb{Z})
+\to H^{0,2}(X;\mathbb{R})$.
+The connecting homomorphism
+$\phi$ is the dual of the
+eigenwave homomorphism
+$\hat{\phi} \colon
+H_{n-1,n-1}^{\mathrm{BM}}(X;\mathbb{Z})
+\to H_{n,n-2}^{\mathrm{BM}}(X;\mathbb{R})$
+\cite[(5.2)]{MR3330789}
+(see also \cite[Definition 2.9]{MR3894860}).
+In fact, both of them are compatible with 
+the Poincar\'e duality for tropical manifolds
+admitting a global face structure
+\cite[Lemma 5.13]{MR3894860}.
+
+
+
+\begin{proposition}
+\label{proposition-cycle-chern}
+Let $X$ be a compact tropical surface admitting a global face
+strucure and $D_1,D_2$
+tropical $1$-cycles on $X$. Then,
+\begin{align}
+\label{equation-two-intersections}
+D_1 . D_2=\int_X \PD{D_1}\cdot \PD{D_2}.
+\end{align}
+ここで左辺は、
+\cite{shaw2015tropical}
+の意味での交点数である。
+\end{proposition}
+\begin{proof}
+$i=1,2$ とする。
+このとき、トロピカル $1$-サイクルは、
+\cite[Definition 4.2]{MR3330789} の意味での
+straight tropical $1$-cycle をなし、
+この straight tropical $1$-cycle を
+$H_{1,1}^{\mathrm{BM}}(X;\mathbb{Z})$
+へと移す写像は、\cite{MR3894860} や
+\cite{MR4637248} の意味でのサイクル写像と
+整合的である \cite[Theorem 5.13]{MR4637248}。
+さらに wave homomorphism 
+$\hat{\phi} \colon
+H_{n-1,n-1}^{\mathrm{BM}}(X;\mathbb{Z})
+\to H_{n,n-2}^{\mathrm{BM}}(X;\mathbb{R})$
+に対して
+$[D_i]\deq \opn{cyc}_X(D_i)\in \opn{Ker} \hat{\phi}$
+である \cite[Theorem 5.4]{MR3330789}。
+そのため、\cite[Lemma 5.13]{MR3894860}より
+$c_1(\mathcal{L}(D'_i))=\PD{D_i}$、つまり
+$c_1(\mathcal{L}(D'_i))\frown [X]=[D_i]$ となる
+因子 $D'_i\in \opn{Div}^{[0]}(X)$ を選ぶことができる。
+\cite[Proposition 5.12]{MR4637248}より、
+$[D_i']=c_1(\mathcal{L}(D'_i))\frown [X]=[D_i]\in 
+H_{1,1}^{\mathrm{BM}}(X;\mathbb{Z})$ 
+となる。
+このとき、
+\cite[Proposition 3.34]{shaw2015tropical} と基本事実より
+次の等式がそれぞれ成り立つ:
+\begin{align}
+D_1.D_2=D_1'.D_2', \quad 
+\int_X \PD{D_1}\cdot \PD{D_2}
+=\int_X \PD{D_1'}\cdot \PD{D_2'}.
+\end{align}
+
+よって、$D_1,D_2$ はともに$\opn{Div}(X)^{[0]}$ に属している
+と仮定してよい。
+また、トレース写像の定義と
+\cite[Proposition 5.12]{MR4637248}と射影公式より、
+\begin{align}
+\int_X \PD{D_1}\cdot \PD{D_2}
+&=a_{X*}(c_1(\mathcal{L}(D_1))\frown [D_2])
+=a_{X*}(\opn{cyc}_X(D_1\cdot D_2)).
+\end{align}
+
+\cite{shaw2015tropical} における
+$X$内のトロピカル
+$1$-サイクルの交点数の定義は
+\cite{shaw2011tropical} のものと異なるが
+\cite[Theorem 3.1.7]{shaw2011tropical}
+より一致する。また、
+\cite[\textsection 2.4]{demedrano2023chern}
+の sedentarity-$0$ の因子の
+トロピカルサイクルとの交叉は \cite{shaw2011tropical}
+をもとに定義されているため
+\cite{demedrano2023chern} と
+\cite{shaw2015tropical} は互いに整合的である。
+\cref{proposition-two-pairings} より、
+$D_1,D_2\in \opn{Div}^{[0]}(X)$ の
+\cite{demedrano2023chern} による交叉と
+\cite{MR4637248} による交叉は一致しているため、
+\cref{equation-two-intersections} が示される。
+\end{proof}
 
 
 \bibliography{tropical-complement}
