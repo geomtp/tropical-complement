@@ -1588,7 +1588,7 @@ On the other hand, based on the study in \cite{tsutsui2023graded},
 we can expect that 
 $H^{\bullet}(X\setminus D)$ is highly related with
 the theory of Floer cohomology of
-Lagrangian submanifolds, homological mirror symmetry
+Lagrangian submanifolds, the homological mirror symmetry
 and the Strominger--Yau--Zaslow conjecture.
 Below, we will see about it by using examples. 
 For simplicity, let 
@@ -1635,6 +1635,10 @@ when $X$ is a boundaryless tropical manifold.
 In \cite{tsutsui2023graded}, elements 
 in $\opn{Div}^{\infty}(X)$ are called 
 \emph{$C^{\infty}$-divisors} on $X$.
+Let $\mathcal{C}^{0}_X$ the sheaf of continuous functions
+on $X$. Then, the group of tropical Cartier divisors on
+$X$ and $\opn{Div}^{\infty}(X)$ is in 
+$\Gamma (X;\mathcal{C}^{0}_X/\mathcal{O}_X^{\times})$.
 We note that the author 
 defined the group of $C^{\infty}$-divisor for \emph{any}
 tropical manifold in \cite{tsutsui2023graded}.
@@ -1660,22 +1664,38 @@ By smoothing of $f$, we can find a quasi-periodic
 convex $C^{\infty}$-function $g$ such that $f(x)=g(x)$ on 
 the complement of a sufficiently 
 small neighborhood of $\pi^{-1}(D)$. 
-This $g$ gives a $C^{\infty}$-divisor $s_1$ on
+This $g$ gives a $C^{\infty}$-divisor $s_{\alpha}$ on
 $X$ such that the associated line bundle on $X$ is equal
 to $\mathcal{L}(D)$.
-Moreover, we can deform $s_1$ to another 
+Moreover, we can deform $s_{\alpha}$ to another 
 linearly equivalent 
-$C^{\infty}$-divisor $s_2$ on $X$ such that 
-the intersection $s_0\cap s_2\deq 
-L_{0}\cap L_{s_2}$ of the associated 
-Lagrangian section $L_{s_2}$
-of $s_2$ and the zero section $L_0$ is contained in 
-$X\setminus D$ and $\sharp (E\cap L_{0}\cap L_{s_2})=1$
+$C^{\infty}$-divisor $s_{1}$ on $X$ such that 
+the intersection $s_0\cap s_{1}\deq 
+L_{0}\cap L_{s_{1}}$ of the associated 
+Lagrangian section $L_{s_{1}}$
+of $s_{1}$ and the zero section $L_0$ is contained in 
+$X\setminus D$ and $\sharp (E\cap L_{0}\cap L_{s_{1}})=1$
 for any $E\in \pi_0(X\setminus D)$.
-Then, $s_2$ is a \emph{permissible} 
-$C^{\infty}$-divisor and $\pi^{*}s_2$ is the 
+Then, $s_{1}$ is a \emph{permissible} 
+$C^{\infty}$-divisor and $\pi^{*}s_{1}$ is the 
 principal divisor of a strictly convex
-$C^{\infty}$-function. 
+$C^{\infty}$-function.
+More generally,
+we can construct a map $s\colon [0,1]\to 
+\Gamma (X;\mathcal{C}^{0}_X/\mathcal{O}_X^{\times})$ satisfies
+\begin{enumerate}
+\item $s(0)=D$, $s(1)=s_1$ and $s(t)\in \opn{Div}^{\infty}(X)$
+for all $t\in (0,1]$,
+\item for all $t\in [0,1]$, the line bundle
+$\mathcal{L}(s(t))\in \opn{Pic}(X)$ associated with
+$s(t)$ is equal. 
+\item $X\setminus D\supset s_0\cap s(t)\supset s_0\cap s(u)$ for all $0<t\leq u \leq 1$.
+\item $s_0\cap s(t)$ is homotopy equivalent to $X\setminus D$
+for all $t\in (0,1]$.
+\item for any $x\in X\setminus D$, there exists $t\in (0,1]$
+such that $x\in s_0\cap s(t)$. 
+\end{enumerate}
+
 In \cite{tsutsui2023graded}, the author
 defined the graded module $\opn{LMD}^{\bullet}(X;s)$
 for a permissible $C^{\infty}$-divisor $s$ on
@@ -1696,21 +1716,25 @@ since this conjecture appeared before
 
 If $X=\mathbb{R}/\mathbb{Z}$, then 
 $X$ is an integral affine manifold and  
-the graded module $\opn{LMD}^{\bullet}(X;s_2)$
-for $s_2$ is isomorphic to the Floer complex
-associated with the Lagrangian section $L_{s_2}$
-of $s_2$ \cite[Remark 13]{MR1882331} as a graded
+the graded module $\opn{LMD}^{\bullet}(X;s_{1})$
+for $s_{1}$ is isomorphic to the Floer complex
+associated with the Lagrangian section $L_{s_{1}}$
+of $s_{1}$ \cite[Remark 13]{MR1882331} as a graded
 module (see also \cite[\textsection 4.4]{tsutsui2023graded}
 for more detail about it). In our case, we have 
 the following isomorphisms:
 \begin{align}
-\opn{LMD}^{\bullet}(X;s_{2}) &\simeq 
-\bigoplus_{p\in s_0\cap s_{2}}\mathbb{Z}[0]
+\opn{LMD}^{\bullet}(X;s_{1}) &\simeq 
+\bigoplus_{p\in s_0\cap s_{1}}\mathbb{Z}[0]
 \simeq H^{\bullet}(X\setminus D;\mathbb{Z}), \\
-\opn{LMD}^{\bullet}(X;-s_{2}) &\simeq
-\bigoplus_{p\in s_0\cap s_{2}}\mathbb{Z}[-1]
+\opn{LMD}^{\bullet}(X;-s_{1}) &\simeq
+\bigoplus_{p\in s_0\cap s_{1}}\mathbb{Z}[-1]
 \simeq H^{\bullet}_c(X\setminus D;\mathbb{Z}).
 \end{align}
+
+
+
+
 The method presented here is indeed not canonical,
 but the isomorphisms are not coincidences. In fact, 
 a similar logic works for tropical toric varieties.
@@ -3055,7 +3079,7 @@ admitting a global face structure
 \begin{proposition}
 \label{proposition-cycle-chern}
 Let $X$ be a compact tropical surface admitting a global face
-strucure and $D_1,D_2$
+structure and $D_1,D_2$
 tropical $1$-cycles on $X$. Then,
 \begin{align}
 \label{equation-two-intersections}
