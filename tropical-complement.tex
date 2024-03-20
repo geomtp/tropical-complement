@@ -412,11 +412,11 @@ on $X$
 Then,
 \begin{align}
 \opn{RR}(X;-D)=
-\chi_c (X)-\chi_c(D)=
-\chi_c (X\setminus D)
+\chi (X)-\chi(D)=
+\chi (H^{\bullet}_c(X\setminus D;\mathbb{R}))
 \end{align}
-where $\chi_c(X)$ is the Euler characteristic
-with compact support of $X$.
+where $H_c^{\bullet}(X\setminus D;\mathbb{R})$ 
+is the cohomology with compact support of $X\setminus D$.
 \end{conjecture}
 
 \begin{example}
@@ -455,10 +455,11 @@ If $D$ is in \emph{moderate position}
 (\cref{definition-permissible-position}) on $X$,
 then 
 \begin{align}
-\opn{RR}(X;D)=\sum_{k=0}^{n}\chi(|D^k|)=\chi(X\setminus D)
+\opn{RR}(X;D)=\sum_{k=0}^{\infty}\chi(|D^k|)
+=\chi(H^{\bullet}(X\setminus D;\mathbb{R}))
 \end{align}
 where $|D^{k}|$ is the support of the $k$-th power
-of $D$ (\cref{notation-power-divisor}).
+of $D$ (\cref{notation-power-divisor}) in $X$.
 \end{conjecture}
 The first equation of \cref{conjecture-rr-euler}
 is a certain tropical analog of
@@ -639,10 +640,14 @@ $D'\cap D$.
 Then,
 \begin{align}
 \label{equation-rr-bertini}
-\opn{RR}(X;D'-D)=\chi (X\setminus D')-
-\chi(D\setminus (D'\cap D)).
+\opn{RR}(X;D'-D)=\sum_{k=0}^{\infty}\chi(|D'^k|)-
+\sum_{k=0}^{\infty}\chi(|(D'|_{D})^k|)
+=&\chi(H^{\bullet}(X\setminus D',D\setminus D';\mathbb{R})) \notag \\
+(=&\chi(X\setminus D')-\chi(D\setminus (D\cap D')))
 \end{align}
-
+where $H^{\bullet}(X\setminus D',D\setminus D';\mathbb{R})$
+is the relative cohomology of the pair
+$(X\setminus D',D\setminus D')$.
 \end{conjecture}
 
 \begin{definition}
@@ -707,7 +712,7 @@ by JSPS KAKENHI Grant Number JP21J14529 and JP21K18575.
 \section{On \cref{conjecture-rr-euler}}
 \label{section-on-rr-euler}
 \subsection{Tropical manifolds}
-In this subsection, we recall about 
+In this subsection, we recall
 the theory of tropical manifolds from
 \cite{shaw2011tropical,MR3330789,mikhalkin2018tropical,MR4637248,demedrano2023chern}.
 We also recall it from other references if necessary.
@@ -1083,8 +1088,10 @@ and thus we have the following equation from
 the Poincar\'e duality:
 \begin{align}
 \label{equation-pd}
-\chi_c(X\setminus D)=(-1)^{\dim X}\chi(X\setminus D).
+\chi_c(X\setminus D)=(-1)^{\dim X}\chi(X\setminus D)
 \end{align}
+where $\chi_c(X\setminus D)\deq 
+\chi_c(H^{\bullet}(X\setminus D))$.
 Therefore, \cref{proposition-divisor-poincare} follows from
 \cref{equation-trivial-serre} and
 \cref{equation-pd}.
@@ -1276,7 +1283,8 @@ the choice of $j$.
 \end{proposition}
 \begin{proof}
 By direct calculation, we have 
-$|(L_{U_{r,r+1}})^{j}|=L_{U_{r-j+1,r+1}}$.
+$|(L_{U_{r,r+1}})^{j}|=L_{U_{r-j+1,r+1}}$
+(see \cite[Example 3.9]{MR2591823}).
 The proposition is local, so we may assume 
 $X=\mathbb{T}^{m}\times L_{M}\times L_{U_{r+1,r+1}}$ and 
 $D=\mathbb{T}^{m}\times 
@@ -1849,9 +1857,7 @@ as an analog of the cohomology of a line bundle on
 an algebraic variety.
 
 From now on, let $C$ be a compact tropical curve
-of genus $2$ like the Figure 1 of
-\cite{MR2457739}.
-\todo[inline]{絵を描くべき？}
+of genus $2$ like \cite[Figure 1]{MR2457739}.
 Let $E$ be a connected component of  
  $C\setminus C_{\mathrm{sing}}$, and
 $D$ a nonempty finite subset of $E$. 
@@ -1947,7 +1953,7 @@ the dualizing complex of $X$
 (e.g. \cite[Definition 3.1.16]{MR1299726}.)
 The $(p,q)$-tropical cohomology
 $H^{p,q}(X;Q)$ and 
-$(p,q)$-tropical Borel--Moore homology
+the $(p,q)$-tropical Borel--Moore homology
 $H_{p,q}^{\mathrm{BM}}(X;Q)$ of $(X,\mathcal{O}_X)$
 are the following $Q$-modules
 \cite[Definition 4.1 and 4.3]{MR4637248}:
@@ -2448,7 +2454,7 @@ when \cref{conjecture-grr-divisor} is true.
 
 From now on, we discuss the Todd classes of
 tropical manifolds.
-At first, we recall about $m$-sequences.
+At first, we recall $m$-sequences.
 The notion of $m$-sequence is introduced
 by Hirzebruch in \cite[\textsection 1]{MR1335917},
 but some part of explanation in
@@ -2859,7 +2865,12 @@ R\Gamma_{X\setminus D'}((\mathbb{R}_X)_D)
 &\simeq H^{\bullet}(X\setminus D';(\mathbb{R}_{X\setminus D'})_{X\setminus (D\cup D')}).
 \end{align}
 The cohomology $H^{\bullet}(X\setminus D';(\mathbb{R}_{X\setminus D'})_{X\setminus (D\cup D')})$
-is just the relative cohomology of the pair $(X\setminus D', D\setminus D')$.
+is just the relative cohomology 
+$H^{\bullet}(X\setminus D;D\setminus D';\mathbb{R})$
+of the pair
+$(X\setminus D', D\setminus D')$
+\cite[Chapter IV. Definition 8.1]{MR842190}
+(see also \cite[Chapter II. Proposition 12.3]{MR1481706}).
 Hence, the following equation holds
 \begin{align}
 \chi(\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}((\mathbb{R}_X)_{X\setminus D})))
@@ -2898,74 +2909,88 @@ intersections satisfy a good condition.
 \appendix
 
 \section{Appendix}
-In this appendix, we check the compatibility of
+In this appendix, we note the compatibility of
 intersections of tropical cycles in
 \cite{MR4637248,demedrano2023chern,shaw2015tropical}.
 \begin{proposition}
-$X$ を \cite{demedrano2023chern} の意味での
-トロピカル多様体としてのアトラスを持つ有理多面空間とし、
-$D,D'\in \opn{Div}^{[0]}(X)$ とする。
-このとき、$D$ と $D'$ の
-\cite[\textsection 2.4]{demedrano2023chern} の
-意味での交叉 $D*D'$ と 
-\cite[\textsection 3.4]{MR4637248}
-の意味での交叉$D\cdot D'$は一致する。
+\label{proposition-two-intersection}
+Let $(X,\mathcal{O}_X^{\times})$ be a tropical manifold
+and $D_1,D_2\in \opn{Div}^{[0]}(X)$. Then,
+the intersection $D_1*D_2$ in the sense of
+\cite[\textsection 2.4]{demedrano2023chern} is equal
+to $D_1\cdot D_2$ \cite[\textsection 3.4]{MR4637248}.
 \end{proposition}
 \begin{proof}
 \label{proposition-two-pairings}
-両者の定義は共に局所的である。
-よって、任意のチャートに対して示せばよい。
-任意の点 $x\in X$ に対して $x$ を含むチャート
-$ \psi_x
+The definition of
+the intersection of Cartier divisors
+of both are local.
+Therefore, we only need to find an atlas
+$\mathcal{U}\deq \{(\psi_i:U_i\to V_i)\}_{i\in I}$
+of $X$
+such that $U_i$ satisfies
+\cref{proposition-two-intersection}.
+For any $x\in X$, there exists
+a standard chart \cite[Definition 7.2.10]{mikhalkin2018tropical},
+i.e., a chart $ \psi_x
 \colon U_x \to 
 \opn{LC}_x X\times \mathbb{T}^{\opn{sed}_X(x)}$
-で、$\psi_x(x)=(0,-\infty)\in \opn{LC}_x X\times \mathbb{T}^{\opn{sed}_X(x)}$
-となるものが取れる。
-また $U_x$ は、$0\in \opn{LC}_x X$ の可縮な開近傍
-$V_x$ と $\mathbb{T}^{\opn{sed}_X(x)}$ の可縮な開近傍
-$W_x$ の直積 $V_x\times W_x$ に置き換えてもよい。
-さらに、$\opn{Div}^{[0]}(X)$ の定義から
-$D|_{V_x\times W_x}$ は 
-$B_x\cap \opn{LC}_x X=V_x$ となる
-$T_x X$ の開集合上の
-$\mathbb{Z}$PL 関数の$V_x$への制限の
-主因子 $\opn{div}_{V_x}(f|_{V_x})$ と
-$W_x$の直積と仮定してもよい。
-よって、両者の因子とサイクルの交叉は、$x$ の近傍では
-$V_x$ 上の主因子同士の交叉と $W_x$ の直積とみなせる。
-よって、$\opn{sed}_X(x)=0$ の場合に示せば十分である。
-以降より $\opn{sed}_X(x)=0$ とする。
-また、$i \colon V_x\to B_x$ を包含写像とすると
-$V_x$ 上の因子 $D_0$ に対して
+such that $\psi_x(x)=(0,-\infty)\in
+\opn{LC}_x X\times \mathbb{T}^{\opn{sed}_X(x)}$.
+Furthermore, $U_x$ can be replaced with the product 
+$V_x \times W_x$,
+where $V_x$ is a contractible open neighborhood of $0$
+in $\opn{LC}_x X$,
+and $W_x$ is a contractible open neighborhood of
+$-\infty$ in $\mathbb{T}^{\opn{sed}_X(x)}$.
+Moreover, we also may assume 
+$H^{1}(V_x\times W_x;\mathcal{O}_{V_x\times W_x}^{\times})=0$,
+and there exists an open subset $B_x$ of $T_x X$ and
+a piecewise integer affine linear function $f$
+on $B_x$ such that 
+$\opn{div}_{V_x\times W_x}(D_1|_{V_x\times W_x})=\opn{div}_{V_x}(f|_{V_x})\times W_x$.
+Therefore, in the context of
+\cite{MR4637248}, as well as in the context of
+\cite{demedrano2023chern}, the intersection
+of sedentarity-0 Cartier divisors at $x$  
+can be regarded as the direct product of
+the intersection of principal divisors on 
+$V_x$ and $W_x$, and thus
+it is enough to prove \cref{proposition-two-pairings}
+when $\opn{sed}_X(x)=0$. From now on, we assume
+$\opn{sed}_X(x)=0$ and $V_x$ is a closed subset of
+$B_x$. Let $i \colon V_x\to B_x$ be the closed inclusion
+map of $V_x$. Then, for any $D_0\in \opn{Div}(V_x)$ 
 \begin{align}
 i_*((f|_{V_x})\cdot D_0)=(f)\cdot i_*D_0
-\in Z_{n-2}(B_x)
+\in Z_{n-2}(B_x).
 \end{align}
-が成り立つ。$B_x$ は、ある実ベクトル空間の開集合であるため、
-\cite[\textsection 3.4]{MR4637248}の
-ペアリングは、実ベクトル空間上の
-\cite{MR2591823} によるトロピカルサイクルの
-ペアリングによって決定される。
-\cite[\textsection 2.4]{demedrano2023chern}
-の意味でのペアリングでも同様の議論が成り立ち、
-\cite[Proposition 2.1.9]{shaw2011tropical}
-より、やはり$\mathbb{R}^n$
-上のトロピカルサイクルの安定交叉
-\cite[Definition 4.4]{MR2275625} 
-の場合に帰着される。
-\cite[\textsection 2]{MR3032930} でも言及されている
-ように $\mathbb{R}^n$ 上のトロピカルサイクルの
-\cite{MR2591823} の意味での交叉と
-\cite{MR2149011,MR2275625} の意味での交叉が一致する
-ことは
-\cite{MR3529085} や \cite{MR2887109} で示されている。
+Since $B_x$ is an open subset of a finite dimensional
+real vector space, the pairing in the sense of 
+\cite[\textsection 3.4]{MR4637248} is
+determined by \cite[Definition 3.4]{MR2591823}.
+By the same logic, the pairing in the sense
+of \cite[\textsection 2.4]{demedrano2023chern}
+is determined by the stable intersection of
+tropical Cartier divisors and tropical cycles
+in $\mathbb{R}^{n}$ \cite[Definition 4.4]{MR2275625}
+from \cite[Proposition 2.1.9]{shaw2011tropical}.
+
+As mentioned in \cite[\textsection 2]{MR3032930},
+it has been shown in \cite{MR3529085} and \cite{MR2887109}
+that the intersection of tropical cycles on
+$\mathbb{R}^n$ in the sense of \cite{MR2591823}
+coincides with the intersection in the sense of
+\cite{MR2149011,MR2275625}.
 \end{proof}
 
-
-最後に
-古典的な代数曲面の交点数の異なる定義
-の一致をトロピカル曲面の場合で見る。
-
+Next, we will see the compatibility of
+the intersection number of tropical $1$-cycles
+in compact surfaces (admitting a global face structure)
+in the sense of \cite{shaw2015tropical,demedrano2023chern}
+and in our sense. Before proving it,
+we recall eigenwave homomorphism from
+\cite{MR3961331,MR3894860}.
 Every rational polyhedral space $(X,\mathcal{O}_X^{\times})$
 has the following exact sequence:
 \begin{align}
@@ -3000,7 +3025,7 @@ structure and $D_1,D_2$
 tropical $1$-cycles on $X$. Then,
 \begin{align}
 \label{equation-two-intersections}
-D_1 .  D_2=\int_X \PD{D_1}\cdot \PD{D_2}.
+\opn{deg}(D_1 .  D_2)=\int_X \PD{D_1}\cdot \PD{D_2}.
 \end{align}
 where $D_1. D_2$ is the intersection of $D_1$ and $D_2$
 in the sense of \cite{shaw2015tropical}.
