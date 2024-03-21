@@ -1359,7 +1359,7 @@ Then, we have
 H^{\bullet}(X\setminus D;\mathbb{R}_{X\setminus D})
 \simeq \mathbb{H}^{\bullet}(X;Rj_*\mathbb{R}_{X\setminus D}).
 \end{align}
-From \cref{equation-relatively-uniform-cone}, we have
+From \cref{equation-relatively-uniform-cone}, we also get
 \begin{align}
 \label{equation-local-index}
 Rj_*\mathbb{R}_{X\setminus D}\simeq j_*\mathbb{R}_{X\setminus D},
@@ -3075,65 +3075,60 @@ in the sense of \cite{shaw2015tropical}.
 \end{proposition}
 \begin{proof}
 Let $i=1,2$.
-このとき、トロピカル $1$-サイクルは、
-\cite[Definition 4.2]{MR3330789} の意味での
-straight tropical $1$-cycle をなし、
-この straight tropical $1$-cycle を
-$H_{1,1}^{\mathrm{BM}}(X;\mathbb{Z})$
-へと移す写像は、\cite{MR3894860} や
-\cite{MR4637248} の意味でのサイクル写像と
-整合的である \cite[Theorem 5.13]{MR4637248}。
-さらに wave homomorphism 
+From \cite[Theorem 5.4]{MR3330789}
+(or more generally \cite[Theorem 1.1]{MR3894860}),
+$[D_i]\deq\opn{cyc}_X(D_i)$ is in the kernel 
+of the eigenwave homomorphism
 $\hat{\phi} \colon
 H_{n-1,n-1}^{\mathrm{BM}}(X;\mathbb{Z})
 \to H_{n,n-2}^{\mathrm{BM}}(X;\mathbb{R})$
-に対して
-$[D_i]\deq \opn{cyc}_X(D_i)\in \opn{Ker} \hat{\phi}$
-である \cite[Theorem 5.4]{MR3330789}。
-そのため、\cite[Lemma 5.13]{MR3894860}より
-$c_1(\mathcal{L}(D'_i))=\PD{D_i}$、つまり
-$c_1(\mathcal{L}(D'_i))\frown [X]=[D_i]$ となる
-因子 $D'_i\in \opn{Div}^{[0]}(X)$ を選ぶことができる。
-\cite[Proposition 5.12]{MR4637248}より、
-$[D_i']=c_1(\mathcal{L}(D'_i))\frown [X]=[D_i]\in 
-H_{1,1}^{\mathrm{BM}}(X;\mathbb{Z})$ 
-となる。
-このとき、
-\cite[Proposition 3.34]{shaw2015tropical} と基本事実より
-次の等式がそれぞれ成り立つ:
+(see also \cite[Theorem 5.13]{MR4637248}
+to verify that the cycle map
+in \cite[Definition 4.13]{MR3894860}
+is equivalent to the cycle map in
+\cite[Definition 5.4]{MR4637248}).
+Since $\hat{\phi}$ is compatible with
+the connecting homomorphism
+$\phi \colon H^{1,1}(X;\mathbb{Z})
+\to H^{0,2}(X;\mathbb{R})$ \cite[Lemma 5.13]{MR3894860},
+we can find $D'_i\in \opn{Div}^{[0]}(X)$
+such that 
+$[D'_i]=c_1(\mathcal{L}(D'_i))\frown [X]=[D_i]$
+from \cite[Proposition 5.12]{MR4637248}.
+Then, from 
+\cite[Proposition 3.34]{shaw2015tropical} we get
 \begin{align}
 D_1.D_2=D_1'.D_2', \quad 
 \int_X \PD{D_1}\cdot \PD{D_2}
 =\int_X \PD{D_1'}\cdot \PD{D_2'}.
 \end{align}
-
-よって、$D_1,D_2$ はともに$\opn{Div}(X)^{[0]}$ に属している
-と仮定してよい。
-また、トレース写像の定義と
-\cite[Proposition 5.12]{MR4637248}と射影公式より、
+Therefore, we may assume $D_1$ and $D_2$ are in
+$\opn{Div}(X)^{[0]}$.
+Moreover, the definition of trace map,
+\cite[Proposition 5.12]{MR4637248}, and the projection
+formula deduce
 \begin{align}
 \int_X \PD{D_1}\cdot \PD{D_2}
 &=a_{X*}(c_1(\mathcal{L}(D_1))\frown [D_2])
 =a_{X*}(\opn{cyc}_X(D_1\cdot D_2)).
 \end{align}
-
-\cite{shaw2015tropical} における
-$X$内のトロピカル
-$1$-サイクルの交点数の定義は
-\cite{shaw2011tropical} のものと異なるが
-\cite[Theorem 3.1.7]{shaw2011tropical}
-より一致する。また、
-\cite[\textsection 2.4]{demedrano2023chern}
-の sedentarity-$0$ の因子の
-トロピカルサイクルとの交叉は \cite{shaw2011tropical}
-をもとに定義されているため
-\cite{demedrano2023chern} と
-\cite{shaw2015tropical} は互いに整合的である。
-\cref{proposition-two-pairings} より、
-$D_1,D_2\in \opn{Div}^{[0]}(X)$ の
-\cite{demedrano2023chern} による交叉と
-\cite{MR4637248} による交叉は一致しているため、
-\cref{equation-two-intersections} が示される。
+By \cite[Theorem 3.1.7]{shaw2011tropical},
+the intersection number of tropical $1$-cycles
+in \cite{shaw2015tropical} is equivalent to
+that in \cite{shaw2011tropical}.
+Furthermore, the intersection of
+$D_1,D_2\in \opn{Div}^{[0]}(X)$ defined in
+\cite[\textsection 2.4]{demedrano2023chern},
+is based on \cite{shaw2011tropical},
+so the intersection in 
+\cite{demedrano2023chern} and 
+that in \cite{shaw2015tropical} are
+compatible with each other.
+From \cref{proposition-two-intersection},
+the intersection of $D_1$ and $D_2$ in
+\cite{demedrano2023chern} equivalent to
+\cite{MR4637248}, so we obtain
+\cref{equation-two-intersections}.
 \end{proof}
 
 
