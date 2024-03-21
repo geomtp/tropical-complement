@@ -464,7 +464,7 @@ of $D$ (\cref{notation-power-divisor}) in $X$.
 The first equation of \cref{conjecture-rr-euler}
 is a certain tropical analog of
 \cite[\textsection 20.6. (14)]{MR1335917}
-and we will explain it in \cref{example-sum-formula}.
+and we will explain it in \cref{example-sum-formula,remark-grothendieck-group}.
 The author believes that other researchers also expect 
 \cref{conjecture-rr-c-euler,conjecture-rr-euler} for 
 the reason that,
@@ -2738,6 +2738,41 @@ If $D|_D$ is also a tropical submanifold,
 then this process can be repeated.
 \end{example}
 
+\begin{remark}
+\label{remark-grothendieck-group}
+ここでは、\cref{conjecture-rr-euler} の
+第一等式の代数幾何的な意味についてもう少し説明する。
+$a_X\colon X\to \opn{Spec}k$
+を体$k$上の完備非特異代数多様体とし、$K_0(X)$ を
+$X$ 上の連接層の Grothendieck 環とする
+(e.g. \cite[\textsection 15.1]{MR1644323})。
+$K_0(X)$ の単位元は、構造層 $\mathcal{O}_X$ 
+の$K_0(X)$ 内での同型類$[\mathcal{O}_X]$ で書かれる。
+$a_X$ は固有射なので、押し出し群準同型
+$a_{X*}\colon K_0(X)\to K_0(\opn{Spec}k)$
+が定義され、連接層 $\mathcal{F}$ に対して、
+$a_{X*}([\mathcal{F}])=
+\chi(X;\mathcal{F})$
+となる。よって、$a_{X*}$ を $\chi$ と書くことにする。
+$D$を$X$上の非特異因子、$\iota\colon D\to X$ を
+包含写像とする。
+このとき、次の等式が成り立つ。
+\begin{align}
+[\mathcal{O}_X(-D)]=
+[\mathcal{O}_X]-[\iota_*\mathcal{O}_{D}], \quad
+[\mathcal{O}_X(D)]=
+([\mathcal{O}_X]-[\iota_*\mathcal{O}_{D}])^{-1}
+=\sum_{k=0}^{\infty}[\iota_*\mathcal{O}_D]^{k}, \\
+\chi(X;\mathcal{O}_X(-D))=
+\chi([\mathcal{O}_X]-[\iota_*\mathcal{O}_{D}]), \quad
+\chi(X;\mathcal{O}_X(D))=
+\sum_{k=0}^{\infty}\chi([\iota_*\mathcal{O}_D]^{k}).
+\label{equation-power-divisor}
+\end{align}
+\end{remark}
+つまり \cref{equation-power-divisor} が、
+\cref{conjecture-rr-c-euler,conjecture-rr-euler}
+の第一等式の代数幾何学的対応物である。
 \begin{proposition}
 If \label{proposition-euler-to-bertini}
 \cite[Conjecture 6.13]{demedrano2023chern},
