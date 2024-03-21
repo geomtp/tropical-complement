@@ -2740,23 +2740,30 @@ then this process can be repeated.
 
 \begin{remark}
 \label{remark-grothendieck-group}
-ここでは、\cref{conjecture-rr-euler} の
-第一等式の代数幾何的な意味についてもう少し説明する。
-$a_X\colon X\to \opn{Spec}k$
-を体$k$上の完備非特異代数多様体とし、$K_0(X)$ を
-$X$ 上の連接層の Grothendieck 環とする
-(e.g. \cite[\textsection 15.1]{MR1644323})。
-$K_0(X)$ の単位元は、構造層 $\mathcal{O}_X$ 
-の$K_0(X)$ 内での同型類$[\mathcal{O}_X]$ で書かれる。
-$a_X$ は固有射なので、押し出し群準同型
-$a_{X*}\colon K_0(X)\to K_0(\opn{Spec}k)$
-が定義され、連接層 $\mathcal{F}$ に対して、
-$a_{X*}([\mathcal{F}])=
-\chi(X;\mathcal{F})$
-となる。よって、$a_{X*}$ を $\chi$ と書くことにする。
-$D$を$X$上の非特異因子、$\iota\colon D\to X$ を
-包含写像とする。
-このとき、次の等式が成り立つ。
+In this remark, we see another explanation
+of an algebraic geometrical meaning of the first
+equation of \cref{conjecture-rr-euler}.
+Let $a_X\colon X\to \opn{Spec}k$
+be an complete nonsingular algebraic variety over $k$
+and $K_0(X)$ the Grothendieck ring of $X$
+(see, e.g., \cite[\textsection 15.1]{MR1644323}).
+For a coherent sheaf $\mathcal{F}$ on $X$, 
+let $[\mathcal{F}]$ be the isomorphism class of
+$\mathcal{F}$ in $K_0(X)$.
+The addition of $K_0(X)$ is given from
+the direct product of coherent sheaves and
+the multiplication of $K_0(X)$ is given
+from the tensor product of them.   
+The unit of $K_0(X)$ is $[\mathcal{O}_X]$.
+Since $a_X$ is a proper morphism, so $a_X$
+induces the pushforward group homomorphism
+$a_{X*}\colon K_0(X)\to K_0(\opn{Spec}k)$,
+and $a_{X*}([\mathcal{F}])=
+\chi(X;\mathcal{F})$.
+For simplicity, we write $\chi\deq a_{X*}$.
+Let $D$ be a nonsingular divisor on $X$ and 
+$\iota\colon D\to X$ the embedding morphism.
+Then, the following equations hold:
 \begin{align}
 [\mathcal{O}_X(-D)]=
 [\mathcal{O}_X]-[\iota_*\mathcal{O}_{D}], \quad
@@ -2770,9 +2777,10 @@ $D$を$X$上の非特異因子、$\iota\colon D\to X$ を
 \label{equation-power-divisor}
 \end{align}
 \end{remark}
-つまり \cref{equation-power-divisor} が、
-\cref{conjecture-rr-c-euler,conjecture-rr-euler}
-の第一等式の代数幾何学的対応物である。
+This means that \eqref{equation-power-divisor} is 
+the algebraic geometric counterpart of
+the first equation in
+\cref{conjecture-rr-c-euler,conjecture-rr-euler}.
 \begin{proposition}
 If \label{proposition-euler-to-bertini}
 \cite[Conjecture 6.13]{demedrano2023chern},
