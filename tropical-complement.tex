@@ -243,12 +243,13 @@ the Chern--Schwartz--MacPherson cycles on matroids.
 This makes it possible to define
 the Riemann--Roch number of tropical Cartier divisors
 on compact tropical manifolds.
-In this paper, we
-discuss a conjecture
+In this paper,
+we introduce the notion of a moderate position,
+and discuss a conjecture
 that the Riemann--Roch number
 $\opn{RR}(X;D)$ of
 a tropical submanifold $D$ of codimension $1$
-in \emph{moderate position} on
+in moderate position on
 a compact tropical manifold
 $X$ is equal to the topological Euler characteristic of 
 the complement $X\setminus D$.
@@ -268,14 +269,14 @@ as an extension
 of their theory of
 the Chern--Schwartz--MacPherson cycles on matroids
 \cite{MR3999674}.
-In particular, we can also define the Riemann--Roch
-number $\opn{RR}(X;D)$ for any (sedentarity-0)
-tropical Cartier divisor $D$ on
-a compact (purely) $n$-dimensional tropical manifold $X$:
+In particular, this makes it possible to define
+the Riemann--Roch number $\opn{RR}(X;D)$
+for any (sedentarity-0) tropical Cartier divisor $D$ on
+a compact (purely) $n$-dimensional tropical manifold $X$;
 \begin{align}
 \label{equation-intro-rr}
 \opn{RR}(X;D)\deq 
-\int_{X}\opn{ch}(\mathcal{L}(D))\opn{td}(X).
+\int_{X}\opn{ch}(\mathcal{L}(D))\opn{td}(X)
 \end{align}
 where $\mathcal{L}(D)$ is the 
 tropical line bundle associated with $D$,
@@ -285,7 +286,7 @@ is the Chern character of $\mathcal{L}(D)$
 and $\int_X$ is the trace map of $X$.
 We can extend the Riemann--Roch number for
 tropical cycles of codimension $1$
-by Poincar\'e duality
+by the Poincar\'e duality of tropical cohomology
 (\cref{definition-rr-number}).
 In algebraic geometry, the Riemann--Roch number
 $\opn{RR}(X;D)$ of a given Cartier divisor $D$
@@ -301,7 +302,7 @@ particularly the structure sheaf
 on tropical manifolds
 (e.g. \cite[\textsection 1]{MR3330789}) 
 do not form sheaves of Abelian groups.
-Consequently, there is no direct
+Consequently, there is no \emph{direct}
 analog of the Euler characteristic of 
 the sheaf cohomology of 
 tropical Cartier divisors now.
@@ -322,7 +323,8 @@ the tropical Riemann--Roch
 theorem for higher-dimensional
 compact tropical manifolds
 as a direct generalization of the tropical
-Riemann--Roch theorem for compact tropical curves.
+Riemann--Roch theorem for compact tropical curves
+by \cite{MR2377750,MR2457739}.
 Regardless of the specifics, it seems that understanding
 the tropical geometric meaning of $\opn{RR}(X;D)$ is 
 important.
@@ -343,7 +345,7 @@ tropical surfaces admit Delzant face structures
 \cite[Corollary 6.11]{demedrano2023chern}.
 (The tropical Noether formula
 was studied in \cite{shaw2015tropical} previously.
-We also note that a study of the Noether
+We also note a study of the Noether
 formula for tropical complexes of dimension $2$
 in \cite{cartwright2015combinatorial}).
 Many researchers expect that the topological Euler 
@@ -384,7 +386,7 @@ Then, there exists the following exact sequence
 of sheaves:
 \begin{align}
      0\to \mathcal{O}_X(-D)\to 
-\mathcal{O}_X\to \iota_*\mathcal{O}_D\to 0
+\mathcal{O}_X\to \iota_*\mathcal{O}_D\to 0.
 \end{align}
 From this, we get the following equation for the Euler
 characteristic of the sheaf cohomology:
@@ -452,7 +454,7 @@ the dual of $\opn{RR}(X;-D)$.
 \begin{conjecture}
 \label{conjecture-rr-euler}
 Let $D$ be a tropical submanifold of codimension 
-$1$ of a $n$-dimensional compact tropical manifold $X$
+$1$ of an $n$-dimensional compact tropical manifold $X$
 \cite[Definition 2.14]{demedrano2023chern}.
 If $D$ is in \emph{moderate position}
 (\cref{definition-permissible-position}) on $X$,
@@ -473,7 +475,8 @@ The author believes that other researchers also expect
 the reason that,
 when $X \deq \mathbb{T}P^n$,
 for a tropical hypersurface $D \deq V(F)$
-defined by a $d$-degree tropical homogeneous polynomial $F$, 
+defined by a $d$-degree tropical homogeneous
+smooth polynomial $F$, 
 \cref{conjecture-rr-c-euler,conjecture-rr-euler}
 follow as a consequence of facts
 that are classically known.
@@ -539,8 +542,6 @@ the complements of tropical varieties in
 $\mathbb{R}^n$ based on motivations
 different from our paper.
 
-\todo[inline]{失礼な表現になっていないか?}
-
 Incidentally, the author arrived at
 \cref{conjecture-rr-euler} as
 a derivation from the study in
@@ -583,7 +584,7 @@ a Delzant face structure, then
 \cref{conjecture-rr-euler} is true.
 \end{corollary}
 From this point, 
-we will consider an extension of both
+we will also consider an extension of both
 \cref{conjecture-rr-c-euler,conjecture-rr-euler}.
 We recall well-known properties in algebraic geometry again.
 Let $X$ be a nonsingular projective variety,
@@ -613,7 +614,6 @@ on $D$, then
 It may seem that 
 the assumption for a pair $(D,D')$ above is
 too strict.
-
 However, through the application of the theorem of
 Bertini, we can select a pair $(D,D')$ of divisors 
 satisfying the condition above 
@@ -661,12 +661,10 @@ the condition (1)-(3) in \cref{conjecture-rr-bertini}.
 \end{definition}
 In this paper, we won't discuss how many pairs of 
 tropical submanifolds of codimension $1$ in moderate position,
-but we expect there to be a sufficient number of them.
-
+but we expect there exists a sufficient number of them.
 Instead, we will see that we can deduce
-\cref{conjecture-rr-bertini} from 
-\cref{conjecture-rr-euler} and 
-a conjecture about the Todd class of tropical 
+\cref{conjecture-rr-bertini} from \cref{conjecture-rr-euler}
+and a conjecture about the Todd class of tropical 
 manifolds (\cref{conjecture-grr-divisor})
 in \cref{proposition-euler-to-bertini}.
 From this observation, we will
@@ -689,7 +687,7 @@ of the three conjecture above.
 Moreover, it is important that 
 the RHS of \eqref{equation-rr-bertini} 
 can be considered as a certain homological data.
-This data also related with the study in 
+This data is also related with the study in 
 \cite{tsutsui2023graded}, so we expect 
 \cref{conjecture-rr-bertini} is highly related
 with homological mirror symmetry.
@@ -712,7 +710,7 @@ for answering my questions on
 This work was partially supported 
 by JSPS KAKENHI Grant Number JP21J14529 and JP21K18575.
 
-\section{On \cref{conjecture-rr-euler}}
+\section{Tropical submanifolds in moderate position}
 \label{section-on-rr-euler}
 \subsection{Tropical manifolds}
 In this subsection, we recall
@@ -1151,8 +1149,8 @@ isomorphic to the tropical projective
 $n$-space $\mathbb{T}P^{n}$ \cite[Example 3.10]{MR2275625}.
 From a direct calculation of the \v{C}ech cohomology of
 $\mathcal{O}_{X_{\Sigma}}^{\times}$, we get 
-$H^{1}(X;\mathcal{O}_{X_{\Sigma}}^{\times})
-\simeq H^{1,1}(X;\mathbb{Z})\simeq \mathbb{Z}$.
+$H^{1}(X_{\Sigma};\mathcal{O}_{X_{\Sigma}}^{\times})
+\simeq H^{1,1}(X_{\Sigma};\mathbb{Z})\simeq \mathbb{Z}$.
 In general, the Picard group of toric 
 schemes over semifields is studied in \cite{MR4016643}. 
 (See also  and
@@ -1746,8 +1744,6 @@ $\mathcal{L}(s)$.
 give an explicit definition of the Riemann--Roch number
 since this conjecture appeared before
 \cite{demedrano2023chern}.)
-\todo[inline]{直前の説明は失礼に当たらないか大丈夫？}
-
 
 If $X=\mathbb{R}/\mathbb{Z}$, then 
 $X$ is an integral affine manifold and  
@@ -1903,7 +1899,8 @@ inequality of the Baker--Norine rank
 \end{remark}
 
 
-\section{On \cref{conjecture-rr-bertini}}
+\section{The Riemann--Roch number of pairs of
+tropical submanifolds}
 \label{section-on-rr-bertini}
 In this section, we discuss \cref{conjecture-rr-bertini}.
 In order to discuss \cref{conjecture-rr-bertini},
@@ -2119,7 +2116,7 @@ Poincar\'e--Verdier duality, then
 \cref{equation-PD-map} is an isomorphism
 \cite[Coroolary 6.9]{MR4637248}.
 We can see every tropical manifold
-satisfies Poincar\'e--Verdier duality
+satisfies the Poincar\'e--Verdier duality
 from \cite[Proposition 5.5]{MR3894860} and
 \cite[Theorem 6.7]{MR4637248}.
 The integer valued Poincar\'e duality for tropical manifolds
@@ -2587,7 +2584,7 @@ $f$ is the inclusion map.
 Since $\cdot \frown [Y]$ is an isomorphism, we only need
 to prove the following:
 \begin{align}
-    f_!(f^{*}(c)\cdot d)\frown [Y]=(c\cdot f_!(d))\frown [Y]
+    f_!(f^{*}(c)\cdot d)\frown [Y]=(c\cdot f_!(d))\frown [Y].
 \end{align}
 We can get the projection formula for generalized Gysin
 map from that for the pushforward of tropical 
@@ -2758,7 +2755,8 @@ The addition of $K_0(X)$ is given from
 the direct product of coherent sheaves and
 the multiplication of $K_0(X)$ is given
 from the tensor product of them.   
-The unit of $K_0(X)$ is $[\mathcal{O}_X]$.
+The unit of $K_0(X)$ is $[\mathcal{O}_X]$
+where $\mathcal{O}_X$ is the structure sheaf of $X$.
 Since $a_X$ is a proper morphism, so $a_X$
 induces the pushforward group homomorphism
 $a_{X*}\colon K_0(X)\to K_0(\opn{Spec}k)$,
