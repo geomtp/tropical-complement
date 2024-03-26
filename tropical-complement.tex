@@ -306,6 +306,11 @@ Consequently, there is no \emph{direct}
 analog of the Euler characteristic of 
 the sheaf cohomology of 
 tropical Cartier divisors now.
+(A different tropical analog of the Euler characteristic of
+line bundles is persued in \cite{tsutsui2023graded} by using ideas
+of the Strominger--Yau--Zaslow conjecture and
+microlocal sheaf theory, but this approach is somewhat special.)
+
 The tropical Riemann--Roch theorem for 
 compact tropical curves was proved by 
 both Gathmann--Kerber \cite{MR2377750}
@@ -317,7 +322,6 @@ established by Baker--Norine \cite{MR2355607}.
 The generalization of these results and
 their derivatives have developed in works such as 
 \cite{MR3046301,MR4251610,MR4229604,MR4444458,MR4512397}.
-
 However, researchers have not yet established
 the tropical Riemann--Roch
 theorem for higher-dimensional
@@ -325,6 +329,7 @@ compact tropical manifolds
 as a direct generalization of the tropical
 Riemann--Roch theorem for compact tropical curves
 by \cite{MR2377750,MR2457739}.
+
 Regardless of the specifics, it seems that understanding
 the tropical geometric meaning of $\opn{RR}(X;D)$ is 
 important.
@@ -393,7 +398,7 @@ characteristic of the sheaf cohomology:
 \begin{align}
 \label{equation-anti-effective-divisor}
 \chi(X;\mathcal{O}_X(-D))=\chi(X;\mathcal{O}_X)
--\chi(D;\mathcal{O}_D)
+-\chi(D;\mathcal{O}_D).
 \end{align}
 From \eqref{equation-anti-effective-divisor},
 the conjecture below is very natural and 
@@ -401,13 +406,14 @@ seems to be widely
 believed among many researchers
 before \cite{demedrano2023chern}, if
 we mildly ignore a technical condition of 
-tropical submanifolds \cite[Definition 2.14]{demedrano2023chern}
-and their definition of the Todd class of
-tropical manifolds
+tropical submanifolds 
+\cite[Definition 2.14]{demedrano2023chern}
 (see also
-\cite[Definition 4.3]{shaw2015tropical}).
+\cite[Definition 4.3]{shaw2015tropical})
+and their definition of the Todd class of
+tropical manifolds.
 
-\begin{conjecture}[{Widely believed?}]
+\begin{conjecture}
 \label{conjecture-rr-c-euler}
 Let $X$ be a compact
 (purely) $n$-dimensional tropical manifold and
@@ -441,9 +447,8 @@ $K_X$ and $D$ in the meaning of \cite{shaw2015tropical}.
 Therefore, if $X$ admits a Delzant face structure,
 then \cref{conjecture-rr-c-euler} is true
 by \cite[Theorem 6.3]{demedrano2023chern}.
-(We will see the compatibility of different definition of
-intersection numbers which is needed to prove it in
-\cref{proposition-cycle-chern}.)
+(In \cref{proposition-cycle-chern}, we will see the compatibility of different definition of
+intersection numbers which is needed.)
 \end{example}
 
 The main conjecture of this paper is the following 
@@ -464,17 +469,17 @@ then
 =\chi(H^{\bullet}(X\setminus D;\mathbb{R}))
 \end{align}
 where $|D^{k}|$ is the support of the $k$-th power
-of $D$ (\cref{notation-power-divisor}) in $X$.
+of $D$ in $X$ (\cref{notation-power-divisor}).
 \end{conjecture}
 The first equation of \cref{conjecture-rr-euler}
 is a certain tropical analog of
 \cite[\textsection 20.6. (14)]{MR1335917}
 and we will explain it in \cref{example-sum-formula,remark-grothendieck-group}.
-The author believes that other researchers also expect 
+We believes that other researchers also expect 
 \cref{conjecture-rr-c-euler,conjecture-rr-euler} for 
 the reason that,
 when $X \deq \mathbb{T}P^n$,
-for a tropical hypersurface $D \deq V(F)$
+for the tropical hypersurface $D \deq V(F)$
 defined by a $d$-degree tropical homogeneous
 smooth polynomial $F$, 
 \cref{conjecture-rr-c-euler,conjecture-rr-euler}
@@ -660,7 +665,8 @@ $1$ on a compact tropical manifold $X$ is
 the condition (1)-(3) in \cref{conjecture-rr-bertini}.
 \end{definition}
 In this paper, we won't discuss how many pairs of 
-tropical submanifolds of codimension $1$ in moderate position,
+tropical submanifolds of codimension $1$ in moderate position
+exist,
 but we expect there exists a sufficient number of them.
 Instead, we will see that we can deduce
 \cref{conjecture-rr-bertini} from \cref{conjecture-rr-euler}
@@ -699,8 +705,9 @@ discuss \cref{conjecture-rr-euler} and
 give a proof of \cref{theorem-rr-euler-surface}.
 In \cref{section-on-rr-bertini}, we mainly
 discuss \cref{conjecture-rr-bertini,proposition-euler-to-bertini}.
-We also give a generalization of
-\cref{theorem-rr-euler-surface}.
+We also give a generalization
+(\cref{theorem-rr-bertini-surface}) of
+\cref{theorem-rr-euler-surface} in this section.
 
 \subsection*{Acknowledgement}
 We would like to thank Kazushi Ueda for his continuous advice
@@ -2047,15 +2054,17 @@ the following \cite[p.627]{MR4637248}:
 \upomega_X^{\bullet}).
 \end{align}
 Of course, $\delta_0^{X}=[X]$.
-
 Besides, the natural isomorphism from
+
+\noindent
 $\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(- 
 \otimes^{L}_{\mathbb{Z}_X} \Omega_X^{p}[q],
-\upomega_X^{\bullet})$ to 
+\upomega_X^{\bullet})$ to
 $\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(-,
 \mathcal{D}_{\mathbb{Z}_X}(\Omega_X^{p}[q]))$
 gives the following commutative diagram
-for any $\alpha \colon \mathbb{Z}_X\to \Omega_X^{n-p}[n-q]$:
+for any 
+$\alpha \colon \mathbb{Z}_X\to \Omega_X^{n-p}[n-q]$:
 \[\begin{tikzcd}
 {\opn{Hom}_{D^{b}(\mathbb{Z}_X)}(\Omega_X^{n-p}[n-q]
 \otimes^{L}_{\mathbb{Z}_X} \Omega_X^{p}[q]
@@ -2953,7 +2962,7 @@ intersections satisfy a good condition.
 
 \appendix
 
-\section{Appendix}
+\section{Compatibility of intersections of tropical cycles}
 In this appendix, we note the compatibility of
 intersections of tropical cycles in
 \cite{MR4637248,demedrano2023chern,shaw2015tropical}.
