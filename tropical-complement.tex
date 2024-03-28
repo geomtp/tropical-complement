@@ -781,7 +781,8 @@ over $[n]\deq \{1,\ldots,n\}$.
 \end{notation}
 
 In this paper, a rational polyhedral subspace is meant
-in the following sense.
+in the following sense
+(cf. \cite[Definition 2.14]{demedrano2023chern}).
 
 \begin{definition}
 Let 
@@ -792,7 +793,7 @@ a \emph{rational polyhedral subspace} of
 $(X,\mathcal{O}_X^{\times})$ if 
 for any $x\in Y$, there exists a chart
 $\psi \colon U \to V (\subset \mathbb{T}^{n})$
-of $X$
+of $X$ \cite[Definition 2.2]{MR4637248}
 such that $x\in U$ and the restriction
 $\psi|_{U\cap Y}\colon U\cap Y\to 
 \psi(U\cap Y)$ is also a chart of $Y$.
@@ -817,7 +818,6 @@ Follwoing \cite[Definition 7.1.8]{mikhalkin2018tropical} and
 an \emph{atlas} of $X$ means a family 
 $\{(U_i,\psi_i)\}_{i\in I}$ of charts 
 $\psi_i\colon U_i\to V_i (\subset \mathbb{T}^{n_i})$
-\cite[Definition 2.2]{MR4637248}
 such that $\bigcup_{i\in I}U_i=X$.
 
 Let $(X,\mathcal{O}_X^{\times})$ be
@@ -834,7 +834,7 @@ is regular at infinity is paracompact and
 locally contractible,
 so the singular cohomology
 of it is isomorphic to the sheaf cohomology
-of the constant sheaf on it, so we identify
+of the constant sheaf on it, and thus we identify
 the two cohomologies.
 Moreover,
 every nonempty
@@ -873,8 +873,8 @@ if $\opn{LC}_x X\simeq L_M$ for some loopless matroid $M$
 \cite[\textsection 6]{MR4637248}. When a data
 $(X,\{\psi_\alpha \colon U_{\alpha} \to 
 \Omega_{\alpha}\subset X_{\alpha}\}_{\alpha \in \mathcal{I}})$
-is a tropical manifold in the sense of 
-\cite[Definition 2.3]{demedrano2023chern},
+is a tropical manifold (in the sense of 
+\cite[Definition 2.3]{demedrano2023chern}),
 then the associated rational polyhedral space
 is locally matroidal.
 
@@ -888,8 +888,8 @@ $\iota_{*,x}\colon \opn{LC}_x Y\to \opn{LC}_x X$
 from the local cone $\opn{LC}_x Y$ of $Y$ at $x$ to 
 that of $X$ at $x$.
 As long as it does not lead to confusion, we will identify
-$\opn{LC}_x Y$ with $\iota_{*,x}(\opn{LC}_x Y)$.
-
+$\opn{LC}_x Y$ with $\iota_{*,x}(\opn{LC}_x Y)$, and
+consider $T_x Y$ as a subspace of $T_{x}X$.
 We set 
 \begin{align}
 \opn{codim}(Y/X)\deq \dim X -\dim Y,\quad 
@@ -933,21 +933,23 @@ and for any inclusion $\opn{LC}_x Y\subset \opn{LC}_x X$ of
 the local cones at $x$ comes from the inclusion
 $L_M\subset L_N$ induced from some two matroids $M,N$ with
 the common ground set
-(see also \cite[\textsection 3]{MR3041763} or \cite[\textsection 2.4]{MR3032930}
-for $L_M\subset L_N$).  
-If $X$ is a tropical manifold and $Y$ is a tropical submanifold of $X$
+(see also \cite[\textsection 3]{MR3041763} 
+or \cite[\textsection 2.4]{MR3032930}).  
+If $X$ is a tropical manifold and $Y$ is
+a tropical submanifold of $X$
 \cite[Definition 2.14]{demedrano2023chern},
 then the inclusion map $Y\hookto X$ is locally matroidal. 
 We note that a codimension $1$ tropical submanifold of a given
 tropical manifold $X$ is essentially same with
-a locally degree 1 divisor on $X$
+a locally degree $1$ divisor on $X$
 \cite[Definition 4.3]{shaw2015tropical}
 (We thank Kris Shaw for answering our question about this).
 As stressed in \cite[Example 2.15]{demedrano2023chern},
 there exist examples such that $Y$ is a tropical manifold and
 a rational polyhedral subspace of another tropical manifold
 $X$, but $Y$ is not a tropical submanifold of $X$.
-We can see such examples in \cite{MR2594592,MR3339531,shaw2015tropical}.
+We can see such examples
+in \cite{MR2594592,MR3339531,shaw2015tropical}.
 The support of every tropical cycle in a given
 rational polyhedral space is
 a closed subset of it,
@@ -955,14 +957,14 @@ so every tropical submanifold of a given
 tropical manifold $X$ is a closed subset of $X$.
 
 \subsection{Moderate position}
-Let $(X,\mathcal{O}_X^{\times})$ be a rational polyhedral space.
+Let $(X,\mathcal{O}_X^{\times})$ be
+a rational polyhedral space.
 For $x\in X$, let 
 $\opn{lineal}(X,x)$ be the (maximal) lineality space
 $\opn{lineal}(\opn{LC}_x X)$ of 
-$\opn{LC}_x X (\subset T_x X)$ \cite[\textsection 2.1]{MR4246795}
+$\opn{LC}_x X (\subset T_x X)$
+\cite[\textsection 2.1]{MR4246795}
 (see also \cite[\textsection 3]{demedrano2023chern}).
-
-
 
 \begin{remark}
 The lineality space of the local cone $\opn{LC}_x X$
@@ -974,7 +976,7 @@ the maximal lineality space of $\opn{LC}_x X$ in
 \cite[\textsection 5]{MR3041763}.
 We can check about this as follows:
 Since every conical rational polyhedral set $P$ has an isomorphism
-$P\simeq P/\opn{lineal}(P)\simeq \opn{lineal}(P)$, we
+$P\simeq P/\opn{lineal}(P)\times \opn{lineal}(P)$, we
 may assume $\opn{lineal}(P)$ is trivial.
 Therefore, to see that the two coincide,
 it is sufficient to observe that 
@@ -983,13 +985,14 @@ always possess a fan structure.
 We can give a proof of it like
 that of the existence theorem
 of a triangulation of compact convex polyhedron
-in $\mathbb{R}^{n}$ (cf. \cite[Theorem 2.11]{MR665919}):
+in $\mathbb{R}^{n}$ (cf. \cite[Theorem 2.11]{MR665919}).
 From definition, every conical rational polyhedral set $P$
 is the finite union $\bigcup_{i\in I}\sigma_i$ of 
 rational polyhedral cones $\sigma_i$.
 Besides, we may assume every $\sigma_i$ is strongly convex.
 For every $i\in I$, there exists a
-complete fan $\Sigma_i$ such that $\sigma_i\in\Sigma_i$.
+complete fan $\Sigma_i$ on $\mathbb{R}^n$
+such that $\sigma_i\in\Sigma_i$.
 (We can prove it by an application of Sumihiro's
 compactification theorem for toric varieties
 \cite[Theorem 3]{MR337963}.)
@@ -1004,6 +1007,7 @@ Let $(X,\mathcal{O}_X^{\times})$
 be a rational polyhedral space  and 
 $(Y,\mathcal{O}_Y^{\times})$ a
 rational polyhedral subspace of $X$.
+The rational polyhedral subspace
 $Y$ is in \emph{moderate position} on $X$ if
 for any $x\in Y$
 \begin{align}
@@ -1032,7 +1036,7 @@ when $X$ is an integral affine manifold.
 If $Y$ is in moderate position, then
 the inclusion 
 $\opn{LC}_x Y\to \opn{LC}_x X$ induces the following 
-exact sequence:
+exact sequences:
 % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiXFxvcG57bGluZWFsfShZLHgpIl0sWzAsMCwiMCJdLFswLDEsIjAiXSxbMSwxLCJcXG9wbntsaW5lYWx9KFgseCkiXSxbMiwwLCJUX3ggWSJdLFsyLDEsIlRfeCBYIl0sWzMsMSwiVF94IFgvXFxvcG57bGluZWFsfShYLHgpIl0sWzMsMCwiVF94IFkvXFxvcG57bGluZWFsfShZLHgpIl0sWzQsMSwiMCJdLFs0LDAsIjAiXSxbMSwwXSxbMiwzXSxbNSw2XSxbNCw3XSxbNyw2XSxbMCwzXSxbMCw0XSxbMyw1XSxbNCw1XSxbNiw4XSxbNyw5XV0=
 \[\begin{tikzcd}
 	0 & {\opn{lineal}(Y,x)} & {T_x Y} & {T_x Y/\opn{lineal}(Y,x)} & 0 \\
@@ -1086,10 +1090,10 @@ all compact integral affine manifolds when
 true for any compact tropical manifold.
 \end{proposition}
 \begin{proof}
-Since $X$ is an integral affine manifold
-(see \cref{definition-tropical-todd}),
+Since $X$ is an integral affine manifold,
 $D$ is always in moderate position in $X$.
-Since $\opn{td}(X)=1$, we have
+Since $\opn{td}(X)=1$ (see \cref{definition-tropical-todd}),
+we have
 \begin{align}
 \label{equation-trivial-serre}
 \opn{RR}(X;-D)=(-1)^{\dim X}\opn{RR}(X;D).
@@ -1102,7 +1106,7 @@ the Poincar\'e duality:
 \chi_c(X\setminus D)=(-1)^{\dim X}\chi(X\setminus D)
 \end{align}
 where $\chi_c(X\setminus D)\deq 
-\chi_c(H^{\bullet}(X\setminus D))$.
+\chi(H^{\bullet}_c(X\setminus D;\mathbb{R}))$.
 Therefore, \cref{proposition-divisor-poincare} follows from
 \cref{equation-trivial-serre} and
 \cref{equation-pd}.
@@ -1135,7 +1139,7 @@ similar with
 \cref{proposition-divisor-poincare}, and 
 one of essential points of the proof of it
 is that $X\setminus D$ is a topological manifold.
-Hence, we expect that we can generalize
+Therefore, we expect that we can generalize
 \cref{conjecture-rr-euler,conjecture-rr-bertini} for 
 integral affine manifolds with singularities
 and this description is compatible with
@@ -1147,7 +1151,7 @@ to integral affine manifold with singularities
 \begin{example}[{\cite[Example 2.11]{demedrano2023chern}}]
 \label{example-TPn}
 Let $e_i$ the $i$-th coordinate vector of $\mathbb{R}^n$
-and $\Delta_{n}$ be the standard simplex generated by
+and $\Delta_{n}$ be the standard $n$-simplex generated by
 $e_i$ ($i=1,\ldots,n$) and the origin of $\mathbb{R}^n$.
 The normal fan $\Sigma$ of $\Delta_{n}$ induces 
 a compactification $X_{\Sigma}$ of $\mathbb{R}^n$.
@@ -1162,7 +1166,7 @@ $H^{1}(X_{\Sigma};\mathcal{O}_{X_{\Sigma}}^{\times})
 \simeq H^{1,1}(X_{\Sigma};\mathbb{Z})\simeq \mathbb{Z}$.
 In general, the Picard group of toric 
 schemes over semifields is studied in \cite{MR4016643}. 
-(See also  and
+(See also \cite{Meyer2011} and
 \cite[Chapter 3]{mikhalkin2018tropical} for more detail
 about tropical toric varieties.)
 Let $f$ be a Laurent polynomial on $\mathbb{R}^{n}$
@@ -1196,10 +1200,13 @@ to the $\sharp (\opn{int}(d\Delta_n)(\mathbb{Z}))$-th
 bouquet of $(n-1)$-spheres
 (e.g. \cite[Proposition 3.1.6]{MR3287221}
 or \cite[Proposition 3.4.12]{mikhalkin2018tropical}).
-In particular, every connected component is a polyhedron in 
+In particular, every connected component
+of $\mathbb{T}P^{n}\setminus
+\overline{V_{\mathbb{T}}(f)}$ is an open polyhedron in 
 $\mathbb{T}P^{n}$, so it is contractible.
 Moreover, the definition of Chern classes of
-tropical toric manifolds is compatible with
+tropical toric manifolds \cite{demedrano2023chern}
+is compatible with
 that of algebraic toric manifolds
 (cf. \cite[Proposition 13.1.2]{MR2810322}).
 Therefore, the Todd class of $\mathbb{T}P^{n}$
@@ -1228,9 +1235,9 @@ $\chi_{c}(\mathbb{T}P^{n}\setminus
 \overline{V_{\mathbb{T}}(f)})
 =1-\chi (\overline{V_{\mathbb{T}}(f)})$
 and $\overline{V_{\mathbb{T}}(f)}$ is homotopy 
-equivalent to the bouquet
-of $\sharp \opn{int}(d\Delta_n(\mathbb{Z}))$
-$(n-1)$-dimensional spheres.
+equivalent to the 
+$\sharp \opn{int}(d\Delta_n(\mathbb{Z}))$-th
+bouquet of $(n-1)$-dimensional spheres.
 \end{example}
 
 
@@ -1244,7 +1251,7 @@ in \cref{theorem-euler-power}.
 \label{definition-relatively-uniform}
 Let $X$ be an $n$-dimensional tropical manifold $X$
 and $\iota\colon D\to X$ is the embedding map of
-a codimension-1 sedentarity-0 tropical submanifold
+a codimension-1 and sedentarity-0 tropical submanifold
 $D$ on $X$.
 The tropical submanifold $D$ of $X$
 is \emph{relatively uniform} on $X$ if, for any $x\in D$, 
@@ -1311,7 +1318,7 @@ By repeating this, we obtain
 \eqref{equation-relatively-uniform-cone}.
 \end{proof}
 
-The following proposition is also trivial,
+The following proposition is also elementary,
 but important.
 
 \begin{proposition}
@@ -1326,7 +1333,7 @@ Then, the canonical inclusion
 $i\colon X\setminus D\to
 (X\setminus D)^{\dagger}$ is
 locally aspheric in the sense of
-\cite[Chapter V. Corollary 1.3.2]{MR3838359} and
+\cite[Chapter V. Corollary 1.3.2]{MR3838359}, and
 the composition of $i$ with
 the canonical map $\iota\colon
 (X\setminus D)^{\dagger}\to X$ is the inclusion 
@@ -1410,7 +1417,8 @@ From \cite[Theorem 9.7.1]{MR1299726} and
 
 \begin{remark}
 In the proof of \cref{theorem-euler-power},
-we considered $Rj_*\mathbb{R}_{X\setminus D}$ to calculate
+we considered $Rj_*\mathbb{R}_{X\setminus D}$
+in order to calculate
 the Euler characteristic of $X\setminus D$.
 This method comes from \emph{Euler calculus}
 \cite{MR970076,MR1115569}.
@@ -1476,7 +1484,7 @@ in moderate position on $S$. Then,
 First, we will see the classification of
 the embeddings
 $\opn{LC}_x C \subset \opn{LC}_x S$ of local cones.
-If $C$ is in moderate position on $S$
+If $C$ is in moderate position on $S$, then
 $\dim \opn{lineal}(S,x)=1,2$ for any $x\in C$.
 \begin{enumerate}[align=left,leftmargin=*]
 \item Suppose $\dim \opn{lineal}(S,x)=2$.
@@ -1484,7 +1492,8 @@ Then, $\opn{LC}_x S\simeq \mathbb{R}^2$ and
 $\opn{LC}_x C$ should be isomorphic to 
 $L_{U_{2,3}}$ or $L_{U_{2,2}}$. 
 In particular, $\opn{val}_C(x)=2,3$ in this case.
-\item We assume $\dim \opn{lineal}(S,x)=1$. 
+\item We assume $\dim \opn{lineal}(S,x)=1$ and
+$x\in C\setminus C_{\infty}$. 
 Then, $\dim \opn{lineal}(C,x)=0$.
 In particular, $\opn{val}_C(x)\geq 3$.
 From \cite[Corollary 2.4]{shaw2015tropical}, 
@@ -1527,17 +1536,18 @@ We can also prove from \cite[Theorem 4.2]{MR3032930}
 or \cite[Theorem 4.11]{shaw2015tropical}
 since the intersection pairing in the sense of
 \cite{MR4637248} is compatible with that of
-\cite{shaw2015tropical,demedrano2023chern}. 
+\cite{shaw2015tropical,demedrano2023chern}
+(see \cref{proposition-two-intersection}). 
 \end{remark}
 
-From this, we will prove \cref{theorem-rr-euler-surface}.
+From now on, we will prove \cref{theorem-rr-euler-surface}.
 Most of the proof is the same as \cref{theorem-euler-power},
 but for simplicity,
 we will show it independently of \cref{theorem-euler-power}.
 
 \begin{proof}[{Proof of \cref{theorem-rr-euler-surface}}]
-Let
-$j\colon S\setminus C\to S$ be an inclusion map.
+Let $j\colon S\setminus C\to S$ be the inclusion map
+of $S\setminus C$.
 Then, the following equation holds:
 \begin{align}
 \chi(S\setminus C)=\chi(Rj_*\mathbb{R}_{S\setminus C})
@@ -1618,16 +1628,22 @@ This remark highly depends on
 skip this remark to understand the main theorem of  
 this paper. As explained in the introduction of this paper,
 the Euler characteristic 
-$\chi_c(X\setminus D)\deq \chi_c(X)-\chi_c(D)$ of 
+$\chi_c(X\setminus D)$ of
+the cohomology of compact support of
 the complement of a tropical submanifold $D$ on
 a compact tropical manifold $X$ is an analog of  
 \cref{equation-anti-effective-divisor}, so 
 it is natural to expect that \cref{conjecture-rr-c-euler} holds.
-On the other hand, the author does not know some theorem
+We will explain about algebraic geometrical backgrounds of
+the first equation of
+\cref{conjecture-rr-euler} in
+\cref{example-sum-formula,remark-grothendieck-group}.
+However, the author does not know some theorem
 in algebraic geometry or Berkovich geometry
-which suggests \cref{conjecture-rr-euler} directly
-as like \cref{conjecture-rr-c-euler}
-(except toric varieties or special cases like them).
+which suggests the \emph{second} equation of
+\cref{conjecture-rr-euler} directly
+as like \cref{conjecture-rr-c-euler},
+except toric varieties or special cases like them.
 On the other hand, based on the study in \cite{tsutsui2023graded},
 we can expect that 
 $H^{\bullet}(X\setminus D)$ is highly related with
@@ -1687,12 +1703,12 @@ We note that the author
 defined the group of $C^{\infty}$-divisor for \emph{any}
 tropical manifold in \cite{tsutsui2023graded}.
 If $B$ is an integral affine manifold,
-then every $C^{\infty}$-divisor defines
+then every $C^{\infty}$-divisor on $B$ defines
 a Lagrangian section of the standard Lagrangian
 torus fibration $\check{f}_B\colon \check{X}(B)\to B$
-on $B$, we can consider $C^{\infty}$-divisors on
-tropical manifolds as derivative objects
-of Lagrangian sections.
+on $B$, we can consider $C^{\infty}$-divisors
+as derivative objects of Lagrangian sections of
+Lagrangian torus fibrations.
 
 For a given finite set $D$ on
 $X=\mathbb{R}/\mathbb{Z}$,
@@ -1728,23 +1744,25 @@ More generally,
 we can construct a map $s\colon [0,1]\to 
 \Gamma (X;\mathcal{C}^{0}_X/\mathcal{O}_X^{\times})$ satisfies
 \begin{enumerate}
-\item $s(0)=D$, $s(1)=s_1$ and $s(t)\in \opn{Div}^{\infty}(X)$
+\item $s(0)=D$, $s(1)=s_1$ and 
+$s(t)$ is a prepermissible $C^{\infty}$-divisor
 for all $t\in (0,1]$,
 \item for all $t\in [0,1]$, the line bundle
 $\mathcal{L}(s(t))\in \opn{Pic}(X)$ associated with
-$s(t)$ is equal. 
-\item $X\setminus D\supset s_0\cap s(t)\supset s_0\cap s(u)$ for all $0<t\leq u \leq 1$.
+$s(t)$ is equal,
+\item $X\setminus D\supset s_0\cap 
+s(t)\supset s_0\cap s(u)$ for all $0<t\leq u \leq 1$,
 \item $s_0\cap s(t)$ is homotopy equivalent to $X\setminus D$
-for all $t\in (0,1]$.
-\item For any $x\in X\setminus D$, there exists $t\in (0,1]$
+for all $t\in (0,1]$,
+\item for any $x\in X\setminus D$, there exists $t\in (0,1]$
 such that $x\in s_0\cap s(t)$. 
 \end{enumerate}
 
 In \cite{tsutsui2023graded}, the author
 defined the graded module $\opn{LMD}^{\bullet}(X;s)$
 for a permissible $C^{\infty}$-divisor $s$ on
-a compact tropical manifold.
-By using the theory of \cite{demedrano2023chern}
+a compact tropical manifold $X$.
+By using the theory of \cite{demedrano2023chern},
 we can refine the Conjecture 1.2 in 
 \cite{tsutsui2023graded}
 like this: the Euler characteristic of
@@ -1783,7 +1801,7 @@ a similar logic works for tropical toric varieties.
 
 
 Let $P$ be a top dimensional lattice polytope
-in $\mathbb{Z}^{n}$ and $X_P$ tropical toric variety
+in $\mathbb{R}^{n}$ and $X_P$ tropical toric variety
 of $P$. Recall that,
 if $f$ is a tropical Laurent polynomial on 
 $\mathbb{R}^{n}$ 
@@ -1794,7 +1812,7 @@ the hypersurface of $f$ in $X_P$ is a tropical submanifold
 of $X_P$ and the set of connected component of 
 $X_P\setminus \overline{V(f)}$ is bijective with the set $P(\mathbb{Z})$
 of lattice points in $P$.
-By using the method the Maslov dequantization 
+By using the Maslov dequantization 
 of a family of nonnegative valued Laurent polynomial
 which converges to $f$, we get a 
 $C^{\infty}$-divisor $s_f$ on $X_P$ whose line bundle is
@@ -1816,13 +1834,12 @@ H^{\bullet}(W;\mathbb{Z}) \notag \\
 H^{\bullet}_c(W;\mathbb{Z}) \notag \\
 &\simeq H^{\bullet}_c(X_P\setminus \overline{V(f)};\mathbb{Z}).
 \end{align}
-
-See \cite[Appendix D]{tsutsui2023graded}
+See also \cite[Appendix D]{tsutsui2023graded}
 for more detail about $C^{\infty}$-divisors on
 tropical toric manifolds associated with lattice polytopes.
 
 From these examples, it seems that the cohomology
-of the complement of tropical submanifold $D$ of codimension
+of the complement of tropical submanifolds $D$ of codimension
 $1$ on a compact tropical manifold $X$ has a piece of data of
 homological invariant of $\mathcal{L}(D)$.
 From analogy of Floer cohomology,
@@ -1833,9 +1850,9 @@ $H^{\bullet}(X\setminus D)$ (over some Novikov field).
 One of reason why we need some ``Floer differential'' for
 $H^{\bullet}(X\setminus D)$ is explained
 in \cref{remark-complement-cohomology}.
-We also note that 
-Demazure's theorem \cite{MR284446} is also related
-with this remark 
+We also note that Demazure's theorem
+\cite{MR284446} is also related
+with the current remark
 (see also \cite[\textsection 9.1]{MR2810322}).
 \end{remark}
 
@@ -1928,7 +1945,7 @@ understood about Chern classes of tropical manifolds.
 (The theory of tropical vector bundle is studied
 in \cite{MR2961320,MR4646329} or 
 \cite[Theorem 1.8]{amini2020hodge}.)
-On the other hand, we can use facts 
+On the other hand, we can use facts
 which arise from elementary properties of
 multiplicative sequences (or $m$-sequences)
 \cite[\textsection 1]{MR1335917}
@@ -1948,7 +1965,7 @@ We also prove a generalization of
 in \cref{theorem-rr-bertini-surface}.
 
 \subsection{Tropical homology}
-In this subsection, we recall
+We recall
 the theory of tropical homology from
 \cite{MR3330789,MR3894860,MR4637248}.
 In this subsection, let
@@ -1962,11 +1979,12 @@ on $X$ \cite[Definition 2.7]{MR4637248}
 (cf. \cite[\textsection 2.4]{MR3330789}).
 Let $\upomega_{X}^{\bullet}$ be
 the dualizing complex of $X$
-(e.g. \cite[Definition 3.1.16]{MR1299726}.)
+(e.g. \cite[Definition 3.1.16]{MR1299726}).
 The $(p,q)$-tropical cohomology
 $H^{p,q}(X;Q)$ and 
 the $(p,q)$-tropical Borel--Moore homology
-$H_{p,q}^{\mathrm{BM}}(X;Q)$ of $(X,\mathcal{O}_X)$
+$H_{p,q}^{\mathrm{BM}}(X;Q)$ of
+$(X,\mathcal{O}_X^{\times})$
 are the following $Q$-modules
 \cite[Definition 4.1 and 4.3]{MR4637248}:
 \begin{align}
@@ -2023,7 +2041,8 @@ $\opn{cyc}_X \colon Z_k(X)\to
 H^{\mathrm{BM}}_{k,k}(X;\mathbb{Z})$
 and $f_*\circ \opn{cyc}_X=\opn{cyc}_Y \circ f_*$
 for any proper morphism $f\colon X\to Y$ of rational
-spaces \cite[Definition 5.4 and Corollary 5.8]{MR4637248}
+polyhedral spaces 
+\cite[Definition 5.4 and Corollary 5.8]{MR4637248}
 (see also \cite[Definition 4.13]{MR3894860}).
 A purely $n$-dimensional rational polyhedral space
 $(X,\mathcal{O}_X^{\times})$
@@ -2111,7 +2130,7 @@ H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z}).
 In particular, if $X$ is compact,
 then the unique morphism 
 $a_X\colon X\to \{\mathrm{pt}\}$
-to $\{\mathrm{pt}\}$
+to the one-point space $\{\mathrm{pt}\}$
 defines the trace map
 $\int_X c\deq a_{X*}(c\frown [X])\in 
 H_{0,0}^{\mathrm{BM}}(\{\mathrm{pt}\};\mathbb{Z})
@@ -2136,21 +2155,23 @@ The integer valued Poincar\'e duality for tropical manifolds
 admitting a global face structure is firstly proved in
 \cite[Theorem 5.3]{MR3894860}.
 In recent work,
-Considerations have also been made using the Poincar\'e--Verdier duality
+considerations have also been made using
+the Poincar\'e--Verdier duality
 and the local Poincar\'e duality for rational polyhedral
 spaces as indicators of smoothness
-(e.g. \cite{MR4626316,amini2021homology,MR4246795}). 
+(e.g. \cite{MR4626316,amini2021homology,MR4637248}). 
 
 For simplicity, we will use the following notation.
 \begin{notation}
 Let $(X,\mathcal{O}_X^{\times})$ be
 a rational polyhedral space admitting
 a fundamental class $[X]$ which satisfies
-Poincar\'e--Verdier duality.
+the Poincar\'e--Verdier duality.
 We write $\opn{PD}_X$ for the inverse of
 the cap product homomorphism $\cdot \frown [X]$,
 and $\PD{Z}\deq \opn{PD}_X(Z)$ for all 
-$Z\in H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$.
+$Z\in H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$ or 
+$Z\in Z_{k}(X)$.
 \end{notation}
 
 
@@ -2195,7 +2216,8 @@ line bundle of $D$
 \begin{remark}
 The definition of rational functions on tropical
 manifolds varies depending on the author.
-Therefore, the definition of Cartier divisors
+Therefore, the definition of tropical
+Cartier divisors
 on tropical manifolds also varies.
 In \cite{MR3894860,MR4637248},
 the previously mentioned group
@@ -2263,7 +2285,7 @@ See also \cite[Theorem 4.15]{MR3894860}.
 Let $A$ be a tropical $k$-cycle on $X$
 , $|A|$ the support of $A$
 \cite[Definition 3.5]{MR4637248},
-and $i\colon |A|\to X$ を $A$
+and $i\colon |A|\to X$
 the inclusion of $|A|$.
 We note that we can consider $A$ as an
 element of $Z_k(|A|)$ and 
@@ -2332,7 +2354,7 @@ of $Z_{n-k}(X)$ and satisfies
 \end{align}
 For simplicity, $D^{0}\deq X$.
 Additionally, we suppose $D$ is a tropical submanifold on $X$
-and $D|_{D}$ is a tropical submanifold on $D$.
+and the pullback $D|_{D}$ of $D$ is a tropical submanifold on $D$.
 For the embedding morphism $\iota_{D}\colon D\to X$,
 we obtain the following equation:
 \begin{align}
@@ -2377,7 +2399,8 @@ the $k$-th Chern--Schwartz--MacPherson
 cycle of $\opn{csm}_{k}(X)$ by a sheaf
 theoretical approach  
 from \cite[Proposition 3.11 and Lemma 3.12]{demedrano2023chern}
-and \cite[Lemma 4.13]{MR4637248}.
+and \cite[Lemma 4.13]{MR4637248}
+(see also \cite[Lemma 5.4]{shaw2022birational}).
 Then, we write the $k$-th Chern class of $X$ as
 \begin{align}
 c_{k}^{\mathrm{sm}}(X)\deq
@@ -2387,7 +2410,7 @@ c_{k}^{\mathrm{sm}}(X)\deq
 This notation $c_{k}^{\mathrm{sm}}(X)$
 is used to avoid confusion with the Chern classes of divisors.
 As like this, we write the total Chern class of $X$ as
-$c^{\mathrm{sm}}(X)=\sum_{k=0}^{n} c_{k}^{\mathrm{sm}}(X)$.
+$c^{\mathrm{sm}}(X)\deq\sum_{k=0}^{n} c_{k}^{\mathrm{sm}}(X)$.
 For a given $L\in H^{1,1}(X;\mathbb{Z})$, we write
 the \emph{Chern character} of $L$ as follows:
 \begin{align}
@@ -2456,7 +2479,7 @@ also holds.
 When $\dim X=1$, \cref{conjecture-grr-divisor} holds
 trivially. When $\dim X=2$,
 \cref{conjecture-grr-divisor}
-is just another representation of adjunction formula
+is just another representation of the adjunction formula
 of locally degree 1 tropical curves on tropical surfaces
 (\cite[Theorem 6]{shaw2015tropical},
 \cite[Theorem 5.2]{demedrano2023chern}).
@@ -2474,7 +2497,7 @@ by Hirzebruch in \cite[\textsection 1]{MR1335917},
 but some part of explanation in
 \cite[\textsection 19]{MR440554}
 by Milnor--Stasheff are more comprehensible,
-we also follow from \cite[\textsection 19]{MR440554}.
+and thus we also follow from \cite[\textsection 19]{MR440554}.
 Let $\opn{Todd}\deq 
 (\opn{Todd}_j)_{j\in \mathbb{Z}_{\geq 0}}$ be 
 the Todd $m$-sequence \cite[\textsection 1.7]{MR1335917}.
@@ -2482,10 +2505,10 @@ In complex geometry, the $k$-th Chern class
 $c_k(M)\deq c_k(\mathcal{T}_M)$ of
 a given complex manifold $M$ is defined
 as an element of $H^{2k}(M;\mathbb{Z})$.
-The image of the total Chern class 
-$c(M)\deq \sum_{i=0}^{\infty}c_i(M)$
-in the even cohomology ring $H^{\mathrm{even}}(X;\mathbb{R})$
-of $M$ over $\mathbb{R}$.
+Let $c(M)\deq \sum_{i=0}^{\infty}c_i(M)$ be
+the total Chern class of $M$
+in the real valued
+even cohomology ring $H^{\mathrm{even}}(X;\mathbb{R})$.
 Since $H^{\mathrm{even}}(M;\mathbb{R})$
 is commutative and a graded $\mathbb{R}$-algebra
 and $c_0(M)=1$,
@@ -2501,7 +2524,7 @@ $H^{\mathrm{even}}(M;\mathbb{R})$ with
 $\bigoplus_{i=0}^{\infty} H^{i,i}(X;\mathbb{R})$
 (\cref{definition-tropical-todd}).
 In \cite[Conjecture 6.13]{demedrano2023chern},
-the Todd class of tropical manifolds is
+the Todd class of tropical manifold is
 defined as a tropical cycle.
 In this paper, we use the Poincar\'e dual of the image 
 of the cycle map of it
@@ -2590,7 +2613,7 @@ $d\in H^{\bullet,\bullet}(X;Q)$ the following equation holds:
 \end{align}
 In particular, $f_!(f^{*}(c))=c\cdot f_!(1)=c\cdot \PD{X}$
 when $X$ is a rational polyhedral subspace of $Y$ and 
-$f$ is the inclusion map.
+$f$ is the inclusion map of $X$.
 \end{proposition}
 
 \begin{proof}
@@ -2731,7 +2754,7 @@ T(X;D_1,\ldots,D_m)&=T(D_1;D_2|_{D_1},\ldots,D_m|_{D_1}), \\
 \label{equation-rr-reduction}
 \end{align}
 If $D|_D$ is also a tropical submanifold,
-then this process can be repeated.
+then we can repeat this process.
 \end{example}
 
 \begin{remark}
@@ -2773,11 +2796,16 @@ Then, the following equations hold:
 \sum_{k=0}^{\infty}\chi([\iota_*\mathcal{O}_D]^{k}).
 \label{equation-power-divisor}
 \end{align}
-\end{remark}
 This means that \eqref{equation-power-divisor} is 
 the algebraic geometric counterpart of
 the first equation in
 \cref{conjecture-rr-c-euler,conjecture-rr-euler}.
+\end{remark}
+
+The following proposition demonstrates
+the relationships among the various conjectures
+presented in this paper.
+
 \begin{proposition}
 If \label{proposition-euler-to-bertini}
 \cite[Conjecture 6.13]{demedrano2023chern},
@@ -2814,8 +2842,9 @@ Based on the above, we will generalize
 \begin{theorem}
 \label{theorem-rr-bertini-surface}
 Let $X$ be a compact tropical surface
-and $(D,D')$ a pair of tropical submanifold of
-codimension $1$ in moderate position. Then,
+and $(D,D')$ a pair of tropical submanifolds of
+codimension $1$ in moderate position on $X$.
+Then,
 \begin{align}
 \chi(X\setminus D')-\chi(D\setminus (D'\cap D))
 =\frac{\opn{deg}((D'-D).(D'-D-K_X))}{2}+\chi(X).
@@ -2826,7 +2855,8 @@ when $X$ admits a Delzant face structure.
 
 \begin{proof}
 Since $\dim X=2$, 
-\cref{conjecture-grr-divisor} is true.
+\cref{conjecture-grr-divisor} is true from
+\cite[Theorem 5.2]{demedrano2023chern}.
 From \cref{theorem-rr-euler-surface} and 
 \eqref{equation-rr-number-divisor}, we have
 \begin{align}
@@ -2853,9 +2883,13 @@ associated with a permissible
 $C^{\infty}$-divisor $s$ on $X$.
 In this remark, we explain
 $\chi(X\setminus D')-\chi(D\setminus (D'\cap D))$
-is also the Euler characteristic of a graded module
-which is a natural generalization of 
-$H^{\bullet}(X\setminus D)$.
+is also the Euler characteristic of
+the relative cohomology 
+$H^{\bullet}(X\setminus D,D\setminus D';\mathbb{R})$
+of the pair
+$(X\setminus D', D\setminus D')$
+\cite[Chapter IV. Definition 8.1]{MR842190}
+(see also \cite[Chapter II. Proposition 12.3]{MR1481706}).
 
 Let $\mathbb{R}_X$ is the constant sheaf of $\mathbb{R}$
 on $X$ and 
@@ -2907,9 +2941,7 @@ The cohomology $H^{\bullet}(X\setminus D';(\mathbb{R}_{X\setminus D'})_{X\setmin
 is just the relative cohomology 
 $H^{\bullet}(X\setminus D,D\setminus D';\mathbb{R})$
 of the pair
-$(X\setminus D', D\setminus D')$
-\cite[Chapter IV. Definition 8.1]{MR842190}
-(see also \cite[Chapter II. Proposition 12.3]{MR1481706}).
+$(X\setminus D', D\setminus D')$.
 Hence, the following equation holds
 \begin{align}
 \chi(\mathbb{H}^{\bullet}(X;R\Gamma_{X\setminus D'}((\mathbb{R}_X)_{X\setminus D})))
@@ -2941,7 +2973,7 @@ studied in \cite{tsutsui2023graded}.
 We expect that \cref{conjecture-rr-bertini}
 is also true for a pair $(D_1,D_2)$ of rational polyhedral
 subspaces on $X$ such that each $D_i$ is
-a finite union of tropical submanifolds whose
+a finite union of codimension $1$ tropical submanifolds whose
 intersections satisfy a good condition.
 \end{remark}
 
@@ -3049,7 +3081,9 @@ $\hat{\phi} \colon
 H_{n-1,n-1}^{\mathrm{BM}}(X;\mathbb{Z})
 \to H_{n,n-2}^{\mathrm{BM}}(X;\mathbb{R})$
 \cite[(5.2)]{MR3330789}
-(see also \cite[Definition 2.9]{MR3894860}).
+(see also \cite[Definition 2.9]{MR3894860})
+when $X$ is a tropical manifold admitting
+a global face structure.
 In fact, both of them are compatible with 
 the Poincar\'e duality for tropical manifolds
 admitting a global face structure
