@@ -343,7 +343,7 @@ and they proved it when
 $X$ is a compact tropical surface admitting
 a Delzant face structure \cite[Theorem 6.3]{demedrano2023chern}.
 They also proved a sufficiently broad range of 
-tropical surfaces admit Delzant face structures
+tropical surfaces admitting Delzant face structures
 \cite[Corollary 6.11]{demedrano2023chern}.
 (The tropical Noether formula
 was studied in \cite{shaw2015tropical} previously.
@@ -381,7 +381,7 @@ of divisors on algebraic varieties.
 To clarify the similarities we wish to investigate,
 we will recall them under strong conditions.
 
-Let $D$ be a non-singular divisor on a non-singular
+Let $D$ be a nonsingular divisor on a nonsingular
 algebraic variety $X$, and a morphism  
 $\iota\colon D\to X$ the closed embedding.
 Then, there exists the following exact sequence
@@ -620,7 +620,7 @@ too strict.
 However, through the application of the theorem of
 Bertini, we can select a pair $(D,D')$ of divisors 
 satisfying the condition above 
-and $D_0=D'-D$ for a given divisor $D_0$ on $X$.
+and $D_0\sim D'-D$ for a given divisor $D_0$ on $X$.
 For such a pair, the following equation holds:
 \begin{align}
 \chi(X;\mathcal{O}_X(D'-D))=
@@ -649,7 +649,7 @@ Then,
 \opn{RR}(X;D'-D)=\sum_{k=0}^{\infty}\chi(|D'^k|)-
 \sum_{k=0}^{\infty}\chi(|(D'|_{D})^k|)
 =&\chi(H^{\bullet}(X\setminus D',D\setminus D';\mathbb{R})) \notag \\
-(=&\chi(X\setminus D')-\chi(D\setminus (D\cap D')))
+(=&\chi(X\setminus D')-\chi(D\setminus (D'\cap D)))
 \end{align}
 where $H^{\bullet}(X\setminus D',D\setminus D';\mathbb{R})$
 is the relative cohomology of the pair
@@ -724,7 +724,7 @@ We also recall it from other references if necessary.
 We mainly follow the sheaf theoretic approach of
 rational polyhedral spaces in \cite{MR4637248}.
 For simplicity, we adopt the definition of
-tropical manifold
+tropical manifold in
 \cite[Definition 2.3]{demedrano2023chern}.
 Every tropical manifold in the sense of
 \cite{demedrano2023chern} induce a structure
@@ -825,7 +825,7 @@ a rational polyhedral space which is regular at
 infinity \cite[\textsection 6.1]{MR4637248}
 (see also \cite[Definition 1.2]{MR3330789}
 and \cite[Definition 7.2.4 and Corollary 7.2.11]{mikhalkin2018tropical}).
-Then, every $x\in X$ has an open neighborhood $U_x$
+Then, every point $x$ in $X$ has an open neighborhood $U_x$
 which is isomorphic to an open subset of 
 $\opn{LC}_x X\times \mathbb{T}^{m_x}$ for some
 $m_x\in \mathbb{Z}_{\geq 0}$.
@@ -942,7 +942,7 @@ then the inclusion map $Y\hookto X$ is locally matroidal.
 We note that a codimension $1$ tropical submanifold of a given
 tropical manifold $X$ is essentially same with
 a locally degree $1$ divisor on $X$
-\cite[Definition 4.3]{shaw2015tropical}
+\cite[Definition 4.3]{shaw2015tropical}.
 (We thank Kris Shaw for answering our question about this).
 As stressed in \cite[Example 2.15]{demedrano2023chern},
 there exist examples such that $Y$ is a tropical manifold and
@@ -953,7 +953,7 @@ in \cite{MR2594592,MR3339531,shaw2015tropical}.
 The support of every tropical cycle in a given
 rational polyhedral space is
 a closed subset of it,
-so every tropical submanifold of a given
+and thus every tropical submanifold of a given
 tropical manifold $X$ is a closed subset of $X$.
 
 \subsection{Moderate position}
@@ -987,7 +987,7 @@ that of the existence theorem
 of a triangulation of compact convex polyhedron
 in $\mathbb{R}^{n}$ (cf. \cite[Theorem 2.11]{MR665919}).
 From definition, every conical rational polyhedral set $P$
-is the finite union $\bigcup_{i\in I}\sigma_i$ of 
+is a finite union $\bigcup_{i\in I}\sigma_i$ of 
 rational polyhedral cones $\sigma_i$.
 Besides, we may assume every $\sigma_i$ is strongly convex.
 For every $i\in I$, there exists a
@@ -1018,7 +1018,8 @@ for any $x\in Y$
 We remark that
 the complement $X\setminus Y$ of tropical submanifold
 $Y$ in moderate position on $X$
-does not usually satisfy the condition of finite type. 
+does not usually satisfy the condition of finite type
+\cite[Definition 7.1.14 (c)]{mikhalkin2018tropical}. 
 \begin{example}
 We retain the notation of 
 \cref{definition-permissible-position}.
@@ -1026,7 +1027,8 @@ We retain the notation of
 \item If $Y$ is in moderate position on $X$, then
 $Y\cap\{x\in X\mid \opn{lineal}(X,x)=\{0\}\}
 =\varnothing$.
-\item $Y\cap X_{\mathrm{reg}}$ is in 
+\item The rational polyhedral subspace $Y\cap X_{\mathrm{reg}}$ of $X_{\mathrm{reg}}$
+is in 
 moderate position on $X_{\mathrm{reg}}$.
 In particular, $Y$ is always in moderate position
 when $X$ is an integral affine manifold.
@@ -1180,12 +1182,13 @@ a homogeneous polynomial of degree $d$
 The degree of $\overline{V_{\mathbb{T}}(f)}$
 on $\mathbb{T}P^n$ is equal to 
 that of $f$ and the first Chern class 
-of $\mathcal{L}(\overline{V_{\mathbb{T}}(f)})$.
+of the line bundle
+$\mathcal{L}(\overline{V_{\mathbb{T}}(f)})$.
 The tropical hypersurface $V_{\mathbb{T}}(f)$ of $f$
 is \emph{smooth} (in the sense of
 \cite[\textsection 4.5]{MR3287221})
 if the regular subdivision of $f$ is unimodular.
-If $f$ the regular subdivision of $f$ is unimodular,
+If the regular subdivision of $f$ is unimodular,
 then $\overline{V_{\mathbb{T}}(f)}$ is a tropical manifold.
 Let $d\Delta_n(\mathbb{Z})$ be the set of lattice points
 in $d\Delta_n$, and 
@@ -1202,10 +1205,11 @@ bouquet of $(n-1)$-spheres
 or \cite[Proposition 3.4.12]{mikhalkin2018tropical}).
 In particular, every connected component
 of $\mathbb{T}P^{n}\setminus
-\overline{V_{\mathbb{T}}(f)}$ is an open polyhedron in 
+\overline{V_{\mathbb{T}}(f)}$ is a locally closed
+polyhedron in 
 $\mathbb{T}P^{n}$, so it is contractible.
 Moreover, the definition of Chern classes of
-tropical toric manifolds \cite{demedrano2023chern}
+tropical toric manifolds
 is compatible with
 that of algebraic toric manifolds
 (cf. \cite[Proposition 13.1.2]{MR2810322}).
@@ -1388,7 +1392,8 @@ Rj_*\mathbb{R}_{X\setminus D}\simeq j_*\mathbb{R}_{X\setminus D},
 \end{align}
 Fix a finite tropical atlas $\mathcal{U}$ for $X$.
 From the inclusion-exclusion principle and the Meyer--Vietoris
-sequence of sheaves, we only need to check
+sequence of sheaves
+(e.g. \cite[p.185]{MR842190}), we only need to check
 \begin{align}
 \label{equation-open-euler-calculus}
 \chi(H^{\bullet}_c(U;(j_*\mathbb{R}_{X\setminus D})|_{U}))
@@ -1800,8 +1805,8 @@ but the isomorphisms are not coincidences. In fact,
 a similar logic works for tropical toric varieties.
 
 
-Let $P$ be a top dimensional lattice polytope
-in $\mathbb{R}^{n}$ and $X_P$ tropical toric variety
+Let $P$ be a top dimensional Delzant lattice polytope
+in $\mathbb{R}^{n}$ and $X_P$ the tropical toric variety
 of $P$. Recall that,
 if $f$ is a tropical Laurent polynomial on 
 $\mathbb{R}^{n}$ 
@@ -1862,7 +1867,7 @@ Let $C$ be a compact tropical curve and $D$
 a finite set of $C\setminus C_{\mathrm{sing}}$.
 Then, there exist the following relationships
 between the rank of cohomology of compact support
-of $C\setminus D$ and that of Baker--Norine rank
+of $C\setminus D$ and the Baker--Norine rank
 $r(D)$ of $D$ \cite[Definition 1.12]{MR2377750}: 
 \begin{align}
 \label{equation-bn-rank-negative}
@@ -2047,15 +2052,18 @@ polyhedral spaces
 A purely $n$-dimensional rational polyhedral space
 $(X,\mathcal{O}_X^{\times})$
 \emph{admits a fundamental class} if
-$X$ is the constant function on 
+the constant function on 
 $X$ with value $1$ forms
 an $n$-dimensional tropical cycle
 $1_{X_{\mathrm{reg}}}$
 \cite[\textsection 6.1]{MR4637248},
-and the image of it by the cycle map
-$[X]\in H_{n,n}^{\mathrm{BM}}(X;\mathbb{Z})$ 
+and the image
+$[X]\deq \opn{cyc}_X(1_{X_{\mathrm{reg}}})
+\in H_{n,n}^{\mathrm{BM}}(X;\mathbb{Z})$ 
 is called the \emph{fundamental class} of $X$
 (see also \cite[Definition 4.8]{MR3894860}).
+For simplicity, we sometimes write $X$ as
+$1_{X_{\mathrm{reg}}}$.
 From definition,
 $H_{n,n}^{\mathrm{BM}}
 (X;\mathbb{Z})\deq \opn{Hom}_{D^{b}(\mathbb{Z}_X)}
@@ -2105,7 +2113,7 @@ The morphism of each row of
 this commutative diagram is an isomorphism.
 In particular,
 the image of $\eta^X_{p}$ by the homomorphism
-on the left column of this commutative diagram
+on the left column of the commutative diagram
 is the cap product $\alpha\frown [X]$
 of $\alpha$ and $[X]$ \cite[\textsection 4.6]{MR4637248}.
 (For the sake of visibility, we have reversed 
@@ -2152,7 +2160,7 @@ satisfies the Poincar\'e--Verdier duality
 from \cite[Proposition 5.5]{MR3894860} and
 \cite[Theorem 6.7]{MR4637248}.
 The integer valued Poincar\'e duality for tropical manifolds
-admitting a global face structure is firstly proved in
+admitting a global face structure was firstly proved in
 \cite[Theorem 5.3]{MR3894860}.
 In recent work,
 considerations have also been made using
@@ -2165,13 +2173,12 @@ For simplicity, we will use the following notation.
 \begin{notation}
 Let $(X,\mathcal{O}_X^{\times})$ be
 a rational polyhedral space admitting
-a fundamental class $[X]$ which satisfies
+a fundamental class $[X]$ and satisfying
 the Poincar\'e--Verdier duality.
 We write $\opn{PD}_X$ for the inverse of
 the cap product homomorphism $\cdot \frown [X]$,
 and $\PD{Z}\deq \opn{PD}_X(Z)$ for all 
-$Z\in H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$ or 
-$Z\in Z_{k}(X)$.
+$Z\in H^{\mathrm{BM}}_{p,q}(X;\mathbb{Z})$.
 \end{notation}
 
 
@@ -2215,7 +2222,7 @@ line bundle of $D$
 
 \begin{remark}
 The definition of rational functions on tropical
-manifolds varies depending on the author.
+manifolds varies depending on authors.
 Therefore, the definition of tropical
 Cartier divisors
 on tropical manifolds also varies.
@@ -2266,8 +2273,12 @@ In particular, the following equation holds
 \end{align}
 
 \begin{notation}
-Let $A$ be a tropical $k$-cycle on a rational polyhedral space $X$.
-We write $[A]\deq \opn{cyc}_X(A)$.
+Let $A$ be a tropical $k$-cycle on a rational polyhedral space
+$(X,\mathcal{O}_X^{\times})$.
+We write $[A]\deq \opn{cyc}_X(A)$. We also write
+$[A]_{\mathrm{PD}}\deq \opn{PD}_X(\opn{cyc}_X(A))$
+when $(X,\mathcal{O}_X^{\times})$ satisfies
+the Poincar\'e duality.
 \end{notation}
 
 When $(X,\mathcal{O}_X^{\times})$ is 
@@ -2330,7 +2341,7 @@ of a piecewise
 integer affine linear function on $\opn{LC}_x X$ 
 by the projection $\opn{LC}_x X\times \mathbb{T}^{n}\to \opn{LC}_x X$
 locally. If $X$ is boundaryless, then
-a generalization of {proposition-divisor-map-injective}
+a generalization of \cref{proposition-divisor-map-injective}
 holds
 \cite[Theorem 4.5]{MR4246795}.
 Therefore, it has been proved.
@@ -2827,7 +2838,7 @@ then
 \opn{RR}(D;D'|_{D}) \notag \\
 =&\chi(X\setminus D')-\chi(D\setminus (D'\cap D)). \notag
 \end{align}
-Therefore, it has been proved.
+Therefore, the proposition has been proved.
 \end{proof}
 
 \begin{remark}
@@ -2972,7 +2983,7 @@ studied in \cite{tsutsui2023graded}.
 
 We expect that \cref{conjecture-rr-bertini}
 is also true for a pair $(D_1,D_2)$ of rational polyhedral
-subspaces on $X$ such that each $D_i$ is
+subspaces in moderate position on $X$ such that each $D_i$ is
 a finite union of codimension $1$ tropical submanifolds whose
 intersections satisfy a good condition.
 \end{remark}
@@ -3110,8 +3121,8 @@ From \cite[Theorem 5.4]{MR3330789}
 $[D_i]\deq\opn{cyc}_X(D_i)$ is in the kernel 
 of the eigenwave homomorphism
 $\hat{\phi} \colon
-H_{n-1,n-1}^{\mathrm{BM}}(X;\mathbb{Z})
-\to H_{n,n-2}^{\mathrm{BM}}(X;\mathbb{R})$
+H_{1,1}^{\mathrm{BM}}(X;\mathbb{Z})
+\to H_{2,0}^{\mathrm{BM}}(X;\mathbb{R})$
 (see also \cite[Theorem 5.13]{MR4637248}
 to verify that the cycle map
 in \cite[Definition 4.13]{MR3894860}
